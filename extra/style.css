@@ -1,0 +1,132 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+}
+
+.page h1 {
+  color: #009432;
+}
+.page h2 {
+  color: #000099;
+  font-size: 140%;
+}
+a {
+  color: #3867d6;
+}
+
+.note {
+  border-left: 4px solid #3867d6;
+  color: #1e272e;
+}
+
+.image_expand {
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+.interactive {
+  text-align: center;
+  border: 1px solid #2ecc71;
+  border-radius: 2px;
+  background: #ffffff;
+}
+.image_link {
+  border: 2px solid #2ecc71;
+}
+
+li {
+  padding: 0 0 0.4em 0;
+}
+
+code, code_math {
+  display: inline;
+}
+code, pre, code_math {
+  font-family: 'UbuntuMono', monospace;
+  font-size: 107%;
+  color: #778890;
+}
+xmp {
+  font-family: 'UbuntuMono', monospace;
+  font-size: 107%;
+  color: #e67e22;
+  border: 1px solid #e67e22;
+}
+
+.katex {
+  font-size: 110% !important;
+}
+
+.cover_title {
+  position: absolute;
+  color: #0089cd;
+  font-size: 350%;
+  text-align: center;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+}
+.cover_subtitle {
+  position: absolute;
+  left: 57px;
+  right: 0px;
+  bottom: 45px;
+  text-align: center;
+  color: #0089cd;
+  font-size: 220%;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+}
+
+.chap_text {
+  text-align: right;
+  color: #0089cd;
+  font-size: 300%;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+  border-right: 5px solid #0089cd;
+  padding-right: 0.25em;
+}
+.chap_name {
+  text-align: right;
+  color: #0089cd;
+  font-size: 150%;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+  border-bottom: 5px solid #0089cd;
+  border-right: 5px solid #0089cd;
+  padding: 0.5em;
+  margin-bottom: 3em;
+}
+#cap_bibliografia {
+  font-size:300%;
+  color: #0089cd;
+  font-weight: normal;
+  padding: 0 0.25em 0 0;
+}
+
+em {
+  color: #1e3799;
+}
+figcaption {
+  margin-top: 0.5em;
+  color: #34495e;
+}
+
+figcaption[class="interactive_note"] {
+  color: #e74c3c;
+}
+.blue {
+  color: #3867d6;
+}
+.red {
+  color: #c0392b;
+}
+
+/* esta linea es solo para ver el limite del texto, para que no sobre pase los números */
+.page_number {
+  border-top: 1px solid #ddd;
+  padding: 0.5em 3.75em 0 3.75em;
+}
+.page:nth-child(even) .page_number {
+  text-align: right;
+}
+.page:nth-child(odd) .page_number {
+  text-align: left;
+}

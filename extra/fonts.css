@@ -1,0 +1,51 @@
+/* Nunito */
+@font-face {
+  font-family: 'Nunito';
+  src: url("fonts/Nunito/Nunito-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url("fonts/Nunito/Nunito-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url("fonts/Nunito/Nunito-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url("fonts/Nunito/Nunito-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* UbuntuMono */
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("fonts/UbuntuMono/UbuntuMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("fonts/UbuntuMono/UbuntuMono-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("fonts/UbuntuMono/UbuntuMono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("fonts/UbuntuMono/UbuntuMono-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}

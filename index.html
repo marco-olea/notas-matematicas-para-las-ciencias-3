@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=yes,minimal-ui">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>Notas para el curso Matemáticas para las Ciencias 3</title>
+
+  <!-- configuración del libro -->
+  <script>
+  window.book_config = {
+    remember_last_page: true,
+    auto_numerate_sections_and_figures: true,
+  }
+  </script>
+
+  <!-- núcleo del libro interactivo -->
+  <link rel="stylesheet" href="book/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="book/css/style_print.css" type="text/css" media="print">
+  <script type="text/javascript" src="book/js/book.js" charset="utf-8"></script>
+  
+  <!-- personalización del usuario -->
+  <link rel="stylesheet" href="extra/fonts.css" type="text/css">
+  <link rel="stylesheet" href="extra/style.css" type="text/css">
+
+  <!-- inclusión de la biblioteca KaTex -->
+  <link rel="stylesheet" type="text/css" href="extra/katex/katex.min.css" />
+  <script src="extra/katex/katex.min.js"></script>
+  <script src="extra/katex/auto-render.min.js" ></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}, {left: "\\[", right: "\\]", display: true}, {left: "\\(", right: "\\)", display: false} ]
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div id="book_loader_container"><div id="book_loader"></div></div>
+
+  <div id="book_container" remember_last_page="true">
+    <div id="btn_back_page"></div>
+    <div id="btn_next_page"></div>
+    <button id="go_to_table_of_content"></button>
+
+    <div id="table_of_content"></div>
+
+    <div id="pages_container">
+
+      <div class="page" style="background-color:transparent;"></div>
+
+      <!--  -->
+      <div class="page" style="margin:0; padding:0; background-size:contain; background-image:url(images/general/portada.svg);">
+        <div class="cover_title" style="font-size:220%; top: 700px; left: 0px;">Notas para el curso Matemáticas para las Ciencias 3</div>
+
+        <!-- <div class="cover_subtitle">Libro interactivo</div> -->
+      </div>
+
+      <!--  -->
+      <div class="page" style="display:flex; align-items:center; justify-content:center;">
+        <a style="width:50%" target="_blank" href="http://descartes.matem.unam.mx/"><img src="images/general/logo_descartes.svg" width="100%"></a>
+      </div>
+
+      <!--  -->
+      <div class="page" style="text-align:center; font-size:120%;" init-page-num="true" num="">
+        <br><br><br><br><br><br>
+        <p><b style="font-size:180%;">Notas para el curso Matemáticas para las Ciencias 3</b></p>
+
+        <br><br><br><br><br><br><br><br><br>
+        <img src="images/general/logo_UNAM.svg" height="75px" style="float:right;padding-top:0.5em;">
+        <p style="text-align:left; margin:0;">
+          <br>
+          Marco Iván Olea Olvera <br>
+          <b>Universidad Nacional Autónoma de México</b>
+        </p>
+      </div>
+
+      <!--  -->
+      <div class="page" num="">
+        <p>
+          Título de la obra:
+          <br> 
+          Notas para el curso Matemáticas para las Ciencias 3
+        </p>
+        <br>
+
+        <p>
+          Autor:
+          <br> 
+          <b>Marco Iván Olea Olvera </b>
+        </p>
+        <br>
+
+        <p>
+          Código JavaScript para el libro: <a href="https://github.com/jlongi/libro_interactivo" target="_blank">Joel Espinosa Longi</a>, <a href="https://www.matem.unam.mx/" target="_blank">IMATE</a>, UNAM.
+          <br> 
+          Fuentes: <a href="https://fonts.google.com/specimen/Nunito" target="_blank">Nunito</a> y <a href="https://fonts.google.com/specimen/Ubuntu+Mono" target="_blank">UbuntuMono</a>
+          <br>
+          Fórmulas matemáticas: <a href="https://katex.org/" target="_blank">$\KaTeX$</a>
+        </p>
+        
+        <div style="margin-bottom:20em;"></div>
+
+        <p style="font-size:80%;">
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank"><img src="images/general/by-nc-sa.svg" style="height:3em; margin-right:0.75em; float:left;"></a>
+          Esta obra está bajo una <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
+        </p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h2>Tabla de contenido</h2>
+
+        <div class="toc_link" href="#cap_prefacio"></div>
+        
+        <div class="toc_link" href="#cap_integral_de_riemann"></div>
+        <div class="toc_link" href="#sec_c1_integral_rectangulos"></div>
+        <div class="toc_link" href="#sec_c1_integral_regiones_generales"></div>
+        <div class="toc_link" href="#sec_c1_integral_iterada_y_el_teorema_de_fubini"></div>
+        <div class="toc_link" href="#sec_c1_geometría_de_funciones_de_R2_en_R2"></div>
+        <div class="toc_link" href="#sec_c1_teorema_de_cambio_de_variable"></div>
+        <div class="toc_link" href="#sec_c1_aplicaciones"></div>
+        
+        <div class="toc_link" href="#cap_funciones_con_valores_vectoriales"></div>
+        <div class="toc_link" href="#sec_c2_campos_vectoriales_campos_gradientes"></div>
+        <div class="toc_link" href="#sec_c2_divergencia_y_rotacional"></div>
+        <div class="toc_link" href="#sec_c2_diferenciación"></div>
+
+        <div class="toc_link" href="#cap_integral_sobre_trayectorias_y_superficies"></div>
+        <div class="toc_link" href="#sec_c3_curvas_orientación"></div>
+        <div class="toc_link" href="#sec_c3_la_integral_de_trayectoria"></div>
+        <div class="toc_link" href="#sec_c3_integrales_de_linea"></div>
+        <div class="toc_link" href="#sec_c3_parametrización_de_superficies"></div>
+        <div class="toc_link" href="#sec_c3_área_de_una_superficie"></div>
+        <div class="toc_link" href="#sec_c3_integral_de_funciones_reales_sobre_superficies"></div>
+        <div class="toc_link" href="#sec_c3_integral_de_superficie"></div>
+      </div>
+
+      <div class="page">
+        <div class="toc_link" href="#sec_c3_aplicaciones"></div>
+
+        <div class="toc_link" href="#cap_teorema_de_green_y_strokes"></div>
+        <div class="toc_link" href="#sec_c4_teorema_de_green"></div>
+        <div class="toc_link" href="#sec_c4_teorema_de_stokes"></div>
+        <div class="toc_link" href="#sec_c4_campos_conservativos"></div>
+        <div class="toc_link" href="#sec_c4_teorema_de_gauss"></div>
+        <div class="toc_link" href="#sec_c4_aplicaciones"></div>
+
+        <div class="toc_link" href="#cap_apendice_1"></div>
+
+        <div class="toc_link" href="#cap_bibliografia"></div>
+      </div>
+
+      <!--  -->
+      <div class="page" num=""></div>
+
+      <!--  -->
+      <div class="page" num-type-arabic="true">
+        <h1 id="cap_prefacio">Introducción</h1>
+
+        <p>Información correspondiente al desarrollo de este libro</p>
+      </div>
+
+      <!------------------------------------------------------------>
+      <!-- CAPITULO 1 -->
+      <!------------------------------------------------------------>
+      <!--  -->
+      <div class="page">
+        <div class="chap_text">Capítulo I</div>
+        <h1 class="chap_name" id="cap_integral_de_riemann">Integral de Riemann</h1>
+
+        <h2 id="sec_c1_integral_rectangulos">Integral sobre rectángulos. Propiedades de la integral.</h2>
+
+        <p>Para cambiar los estilos o las tipografías hay que modificar los estilos que se encuentra en el directorio <code>extra</code>.</p>
+
+        <p>El código correspondiente al funcionamiento del libro se encuentra en el directorio <code>book</code>, este código lo yo lo voy a modificar, y si tiene sugerencias o cambios los podemos incorporar, pero en general no hay que meterse con lo que hay en este directorio.
+
+        <p>Una organización sugerida es que coloques las imágenes de los capítulos (si es que tienes) en el directorio <code>images/capituloN</code> y los interactivos en el directorio <code>interactivos/capituloN</code>, esto con la finalidad de que sea más fácil organizar los componentes de las notas.</p>
+
+        <h2 id="sec_c1_integral_regiones_generales">La integral sobre regiones más generales.</h2>
+
+        <p>La línea arriba de los números de página va a desaparecer en la versión final, solo está para evitar que el texto por página se salga visualmente. Aunque no prohíbe que se pase del tamaño. Así que hay que tener cuidado con el contenido para no pasarse.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h2 id="sec_c1_integral_iterada_y_el_teorema_de_fubini">Integral iterada y el teorema de Fubini.</h2>
+
+        <h2 id="sec_c1_geometría_de_funciones_de_R2_en_R2">Geometría de las funciones de $ℝ^2$ en $ℝ^2$.</h2>
+
+        <h2 id="sec_c1_teorema_de_cambio_de_variable">Teorema del cambio de variable..</h2>
+
+        <h2 id="sec_c1_aplicaciones">Aplicaciones.</h2>
+      </div>
+
+      <div class="page" num=""></div>
+      <div class="page" num=""></div>
+
+      <!------------------------------------------------------------>
+      <!-- CAPITULO 2 -->
+      <!------------------------------------------------------------>
+      <div class="page">
+        <div class="chap_text">Capítulo II</div>
+        <h1 class="chap_name" id="cap_funciones_con_valores_vectoriales">Funciones con valores vectoriales</h1>
+
+        <h2 id="sec_c2_campos_vectoriales_campos_gradientes">Campos vectoriales. Campos gradientes.</h2>
+
+        <h2 id="sec_c2_divergencia_y_rotacional">Divergencia y rotacional. Interpretación física.</h2>
+
+        <h2 id="sec_c2_diferenciación">Diferenciación.</h2>
+      </div>
+
+      <!--  -->
+      <!-- Una página en blanco y sin numeración visible -->
+      <!--  -->
+      <div class="page" num=""></div>
+
+
+      <!------------------------------------------------------------>
+      <!-- CAPITULO 3 -->
+      <!------------------------------------------------------------>
+      <!--  -->
+      <div class="page">
+        <div class="chap_text">Capítulo III</div>
+        <h1 class="chap_name" id="cap_integral_sobre_trayectorias_y_superficies">Integral sobre trayectorias y superficies</h1>
+
+        <h2 id="sec_c3_curvas_orientación">Curvas. Orientación.</h2>
+
+        <h2 id="sec_c3_la_integral_de_trayectoria">La integral de trayectoria.</h2>
+
+        <h2 id="sec_c3_integrales_de_linea">Integrales de línea (trabajo, circulación).</h2>
+
+        <h2 id="sec_c3_parametrización_de_superficies">Parametrización de superficies. Orientación.</h2>
+
+        <h2 id="sec_c3_área_de_una_superficie">Área de una superficie.</h2>
+
+        <h2 id="sec_c3_integral_de_funciones_reales_sobre_superficies">Integral de funciones reales sobre superficies (masa y carga total de una superficie).</h2>
+
+        <h2 id="sec_c3_integral_de_superficie">Integral de superficie (flujo a través de una superficie).</h2>
+
+        <h2 id="sec_c3_aplicaciones">Aplicaciones.</h2>
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+
+      <!------------------------------------------------------------>
+      <!-- CAPITULO 4 -->
+      <!------------------------------------------------------------>
+      <div class="page">
+        <div class="chap_text">Capítulo IV</div>
+        <h1 class="chap_name" id="cap_teorema_de_green_y_strokes">Teoremas de Green y Stokes</h1>
+
+        <h2 id="sec_c4_teorema_de_green.">Teorema de Green.</h2>
+
+        <h2 id="sec_c4_teorema_de_stokes">Teorema de Stokes.</h2>
+
+        <h2 id="sec_c4_campos_conservativos">Campos conservativos.</h2>
+
+        <h2 id="sec_c4_teorema_de_gauss">Teorema de Gauss.</h2>
+
+        <h2 id="sec_c4_aplicaciones">Aplicaciones.</h2>
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!------------------------------------------------------------>
+      <!-- Apéndice 1 -->
+      <!------------------------------------------------------------>
+      <div class="page">
+        <div class="chap_text">Apéndice 1</div>
+        <h1 class="chap_name" id="cap_apendice_1" prefix="Apéndice 1:">Cualquier información preliminar que sea necesaria para las notas</h1>
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+
+      <!------------------------------------------------------------>
+      <!-- Bibliografía -->
+      <!------------------------------------------------------------>
+      <div class="page">
+        <h1 class="chap_name" id="cap_bibliografia" prefix="">Bibliografía</h1>
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page" num="" style="background-image: radial-gradient(white, #ecf0f1, #e3e5e7); display:flex; align-items:center; justify-content:center;"></div>
+
+    <!-- [cierra] pages_container -->
+    </div>
+  <!-- [cierra] book_container -->
+  </div>
+
+</body>
+</html>
