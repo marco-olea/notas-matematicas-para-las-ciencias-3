@@ -112,12 +112,14 @@ function addTableOfContentEntries() {
     }
 
     let elem;
+    let elem_text;
     let page_elem;
     let page_num;
     let prefix;
 
     for (let i=0, l=auto_toc_links.length; i<l; i++) {
       elem = document.querySelector( auto_toc_links[i].getAttribute("href") );
+      elem_text = elem.textContent.trim().replace(/\.$/, "");
       page_elem = getPageContainer(elem);
 
       if (page_elem) {
@@ -131,13 +133,13 @@ function addTableOfContentEntries() {
 
           if (prefix) {
             auto_toc_links[i].setAttribute("style", "font-weight:bold;");
-            auto_toc_links[i].innerHTML = `<a style="padding:0;">${prefix}. ${elem.textContent}<span class="toc_number">${page_num}</span></a>`;
+            auto_toc_links[i].innerHTML = `<a><span>${prefix}. ${elem_text}</span><span class="toc_number">${page_num}</span></a>`;
           }
           else {
             if (elem.hasAttribute("prefix")) {
               auto_toc_links[i].setAttribute("style", "font-weight:bold;");
             }
-            auto_toc_links[i].innerHTML = `<a>${elem.textContent}<span class="toc_number">${page_num}</span></a>`;
+            auto_toc_links[i].innerHTML = `<a><span style="padding-left:1em;">${elem_text}</span><span class="toc_number">${page_num}</span></a>`;
           }
         }
       }
