@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='c0c0c0' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
+      <param name="E_02" value="tipo='R2' id='E2' x='3%' y='4%' ancho='15%' alto='15%' dibujar-si='1' fijo='sí' escala='1' O.x='-50%' O.y='50%' despl_imagen='mosaico' fondo='f0f8fa' red='no' red10='no' ejes='no' texto='no' números='no' eje-x='x' eje-y='y' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
+      <param name="C_01" value="id='F' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='f(x,y)' expresión='(0,0,150,40)' valor='2/x+2/y' min='0' max='100' discreto='no' decimales='0' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_3' ">
+      <param name="C_02" value="id='a' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='a' expresión='(0,0,150,40)' valor='1' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_03" value="id='b' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='b' expresión='(0,0,150,40)' valor='4.5' incr='0.1' min='a' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_04" value="id='c' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='c' expresión='(0,0,150,40)' valor='1' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_05" value="id='d' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='d' expresión='(0,0,150,40)' valor='5.5' incr='0.1' min='c' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_06" value="id='m' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='m' expresión='(0,0,150,40)' valor='3' incr='1' min='1' discreto='sí' decimales='0' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_07" value="id='n' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='n' expresión='(0,0,150,40)' valor='5' incr='1' min='1' discreto='sí' decimales='0' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_08" value="id='ver_solido' tipo='checkbox' región='norte' espacio='E1' nombre='Ver sólido' expresión='(0,0,150,40)' valor='0' radio_group='ver' ">
+      <param name="C_09" value="id='ver_cajas' tipo='checkbox' región='norte' espacio='E1' nombre='Ver cajas' expresión='(0,0,150,40)' valor='1' radio_group='ver' ">
+      <param name="A_01" value="id='dx' expresión='(b-a)/m' tipo='variable' info='Δx' ">
+      <param name="A_02" value="id='dy' expresión='(d-c)/n' tipo='variable' info='Δy' ">
+      <param name="A_03" value="id='f(x,y)' algoritmo='no' expresión='_Eval_(F)' tipo='función' info='Función principal' ">
+      <param name="A_04" value="id='longitud_ejes' expresión='6' tipo='variable' ">
+      <param name="A_05" value="id='g1(s)' algoritmo='no' expresión='a+dx*(m<=n?s%m:floor(s/n))' tipo='función' info='Incremento en x' ">
+      <param name="A_06" value="id='g2(s)' algoritmo='no' expresión='c+dy*(n<m?s%n:floor(s/m))' tipo='función' info='Incremento en y' ">
+      <param name="A_07" value="id='rect_x' tipo='variable' ">
+      <param name="A_08" value="id='rect_y' tipo='variable' ">
+      <param name="A_09" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='rect_x=E2._w/2;rect_y=E2._h/2' ">
+      <param name="A_10" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="A_11" value="id='ratón_apretado' evento='sí' condición='E2.mouse_pressed' acción='calcular' parámetro='rect_x=E2.mouse_x;rect_y=E2.mouse_y' ejecución='siempre' ">
+      <param name="G_01" value="espacio='E2' tipo='rectángulo' fondo='no' color='000000' coord_abs='sí' expresión='(0,0,E2._w-1,E2._h-1)' relleno='eeffaa' ancho='1' border_radius='0' lineDash='solid' info='rect' ">
+      <param name="G_02" value="espacio='E2' tipo='punto' fondo='no' color='20303a' coord_abs='sí' expresión='(rect_x,E2._h-rect_y)' decimales='2' fijo='sí' tamaño='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='punto' ">
+      <param name="G_03" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(E2._w-12.5,E2._h-20)' texto='x' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_center' anchor='a_top_left' info='x' ">
+      <param name="G_04" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(4,0)' texto='y' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='16' align='a_center' anchor='a_top_left' info='y' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(longitud_ejes,0,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='eje x' ">
+      <param name="S_02" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(0,longitud_ejes,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='eje y' ">
+      <param name="S_03" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(0,0,longitud_ejes)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='eje z' ">
+      <param name="S_04" value="espacio='E1' tipo='superficie' fondo='no' color='eeffaa' color_reverso='eeffaa' expresión='x=u*(b-a) y=v*(d-c) z=0' rotini='(0,0,0)' posini='(a,c,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='000000' modelo='color' Nu='m' Nv='n' info='Región R' ">
+      <param name="S_05" value="espacio='E1' tipo='superficie' fondo='no' color='106090a0' color_reverso='10eeffaa' expresión='x=a+u*(b-a) y=c+v*(d-c) z=f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='luz' Nu='(m>=7)?m:7' Nv='(n>=7)?n:7' info='Función principal' ">
+      <param name="S_06" value="espacio='E1' tipo='paralelepípedo' fondo='no' color='70ffc800' color_reverso='70ffc800' dibujar-si='ver_cajas' expresión='Paralelepípedo' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' rotini='(0,0,0)' posini='(g1(s)+dx/2,g2(s)+dy/2,f(g1(s)+dx*(rect_x/E2._w),g2(s)+dy*(rect_y/E2._h))/2)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='sí' aristas='000000' modelo='metal' ancho='dx' largo='dy' alto='f(g1(s)+dx*(rect_x/E2._w),g2(s)+dy*(rect_y/E2._h))' info='Cajas' ">
+      <param name="S_07" value="espacio='E1' tipo='segmento' fondo='no' color='ff0000' dibujar-si='ver_cajas' expresión='(g1(s)+dx*(rect_x/E2._w), g2(s)+dy*(rect_y/E2._h), f(g1(s)+dx*(rect_x/E2._w), g2(s)+dy*(rect_y/E2._h)))(g1(s)+dx*(rect_x/E2._w), g2(s)+dy*(rect_y/E2._h), 0)' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' ">
+      <param name="S_08" value="espacio='E1' tipo='superficie' fondo='no' color='8000ffff' color_reverso='8000ffff' dibujar-si='ver_solido' expresión='x=a+u*(b-a) y=c z=v*f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='7' Nv='7' info='Cara 1' ">
+      <param name="S_09" value="espacio='E1' tipo='superficie' fondo='no' color='8000ffff' color_reverso='8000ffff' dibujar-si='ver_solido' expresión='x=a+u*(b-a) y=d z=v*f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='7' Nv='7' info='Cara 2' ">
+      <param name="S_10" value="espacio='E1' tipo='superficie' fondo='no' color='8000ffff' color_reverso='8000ffff' dibujar-si='ver_solido' expresión='x=a y=c+v*(d-c) z=u*f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='7' Nv='7' info='Cara 3' ">
+      <param name="S_11" value="espacio='E1' tipo='superficie' fondo='no' color='8000ffff' color_reverso='8000ffff' dibujar-si='ver_solido' expresión='x=b y=c+v*(d-c) z=u*f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='7' Nv='7' info='Cara 4' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
