@@ -86,6 +86,9 @@ document.addEventListener("DOMContentLoaded", function(evt) {
 
   // 
   addTableOfContentEntries();
+
+  //
+  addBibliography();
 });
 
 /**
@@ -95,11 +98,28 @@ function addTableOfContentEntries() {
   let init_page_num = document.querySelector("[init-page-num=true]");
   let toc_links = document.querySelectorAll(".toc_link");
   let auto_toc_links = [];
+  let no_auto_toc_links = [];
   for (let i=0, l=toc_links.length; i<l; i++) {
     if (toc_links[i].getAttribute("href")) {
       auto_toc_links.push(toc_links[i]);
     }
+    else {
+      no_auto_toc_links.push(toc_links[i]);
+    }
   }
+
+  let temp_a;
+  // adjust style of manual toc links
+  if (no_auto_toc_links.length > 0) {
+    no_auto_toc_links.forEach(toc_link => {
+      temp_a = toc_link.querySelector("a");
+
+      if (!temp_a.innerHTML.match(/^<span/)) {
+        temp_a.innerHTML = "<span>" + temp_a.innerHTML.replace(/<span class="toc_number">/, `</span><span class="toc_number">`)
+      }
+    });
+  }
+
 
   if (auto_toc_links.length > 0) {
     let pages = Array.from(pages_container.querySelectorAll(".page"));
@@ -129,7 +149,7 @@ function addTableOfContentEntries() {
           page_num -= init_page_num;
           auto_toc_links[i].setAttribute("onclick", `goToPage(${page_num})`);
 
-          prefix = elem.getAttribute("prefix");
+          prefix = elem.getAttribute("prefix") || auto_toc_links[i].getAttribute("prefix");
 
           if (prefix) {
             auto_toc_links[i].setAttribute("style", "font-weight:bold;");
@@ -145,6 +165,53 @@ function addTableOfContentEntries() {
       }
     }
   }
+}
+
+/** 
+ * 
+ */
+function addBibliography() {
+  let bibitems = document.querySelectorAll("bibitem");
+  let tmp;
+  let tmp_attr;
+  let attr_list = ["authors", "title", "editorial", "edition", "year"];
+
+  bibitems.forEach(item => {
+    let margin_left = "5em";
+
+    item.setAttribute("style", `margin-left:${margin_left};`)
+
+    // id
+    tmp_attr = item.getAttribute("id");
+    if (tmp_attr) {
+      tmp = document.createElement("span")
+      tmp.innerHTML = "[" + tmp_attr + "] ";
+      tmp.setAttribute("style", `position:absolute; left:-${margin_left};`)
+      tmp.classList = "bibitem_id";
+      item.appendChild(tmp);
+    }
+
+    for (let i=0; i<attr_list.length; i++) {
+      tmp_attr = item.getAttribute(attr_list[i]);
+      if (tmp_attr) {
+        tmp = document.createElement("span")
+        tmp.innerHTML = tmp_attr + ". ";
+        tmp.classList = "bibitem_" + attr_list[i];
+        item.appendChild(tmp);
+      }
+    }
+  });
+
+  // add bib references
+  let bibrefs = document.querySelectorAll("bibref");
+  let tmp_id;
+  bibrefs.forEach(ref => {
+    tmp_id = document.getElementById(ref.getAttribute("ref_id"));
+    if (tmp_id) {
+      ref.innerHTML = "[" + tmp_id.getAttribute("id") + "]";
+      ref.title = tmp_id.textContent.trim();
+    }
+  });
 }
 
 /**
@@ -247,7 +314,7 @@ function numerateSectionsAndFigures(pages) {
         // figure
         else if (tag_name == "figcaption") {
           figure_counter++;
-          ele.innerHTML = `<b>Figure ${chapter_counter}.${figure_counter}:</b> ${ele.innerHTML}`;
+          ele.innerHTML = `<b>Figura ${chapter_counter}.${figure_counter}:</b> ${ele.innerHTML}`;
         }
       }
     }
