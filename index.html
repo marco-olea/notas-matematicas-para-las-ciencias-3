@@ -175,15 +175,85 @@
 
         <h2 id="sec_c1_integral_rectangulos">Integral sobre rectángulos. Propiedades de la integral.</h2>
 
-        <p>Para cambiar los estilos o las tipografías hay que modificar los estilos que se encuentra en el directorio <code>extra</code>.</p>
+        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlos para encontrar el volumen de un sólido sobre una región rectangular en el plano $xy$.</p>
 
-        <p>El código correspondiente al funcionamiento del libro se encuentra en el directorio <code>book</code>, este código lo yo lo voy a modificar, y si tiene sugerencias o cambios los podemos incorporar, pero en general no hay que meterse con lo que hay en este directorio.
+        <h3>Volúmenes e Integrales Dobles</h3>
 
-        <p>Una organización sugerida es que coloques las imágenes de los capítulos (si es que tienes) en el directorio <code>images/capituloN</code> y los interactivos en el directorio <code>interactivos/capituloN</code>, esto con la finalidad de que sea más fácil organizar los componentes de las notas.</p>
+        <p>Considérese el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función contínua de dos variables $f(x,\ y) \geq 0$ definida sobre $R$. Formalmente:</p>
 
+        <p>\[R = [a,\ b]\times[c,\ d] = \{(x,\ y) \in \R^2:\ a \leq x \leq b,\ c \leq y \leq d\}\]</p>
+
+        <p>La gráfica de $f$ representa una superficie en $\R^3$ con ecuación $z = f(x,\ y)$, donde $z$ es la altura de la superficie en el punto $(x,\ y)$. Sea $S$ el sólido debajo de la gráfica de $f$, tal que su base es $R$. Se desea calcular el volumen de $S$.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Para esto divídase la región $R$ en rectángulos $R_{ij}$ de área $\Delta A$ cuyos lados miden $\Delta x$ y $\Delta y$. Esto se logra dividiendo el intervalo $[a,\ b]$ en $m$ subintervalos del mismo tamaño y dividiendo el intervalo $[c,\ d]$ en $n$ subintervalos del mismo tamaño (Figura 1.1). Por tanto: $\Delta x = \frac{b - a}{m}$, $\Delta y = \frac{d - c}{n}$, y $\Delta A = \Delta x \Delta y$.</p>
+
+        <figure id="cap1_1_region_R">
+          <img src="images/capitulo1/region_R.svg" width="530">
+          <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$.</figcaption>
+        </figure>
+
+        <p>Considérese un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij},\ y^*_{ij})$ dentro de este. Entonces el volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij},\ y^*_{ij})$ es $f(x^*_{ij},\ y^*_{ij}) \Delta A$.</p>
+
+        <p>Tomando puntos arbitrarios para cada uno de los rectángulos interiores, podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera:</p>
+
+        <p>\[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij},\ y^*_{ij}) \Delta A\]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/integral_rectangulos.html"></div>
+          <figcaption>Experimenta cambiando la función $f$, los intervalos $[a,\ b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij},\ y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
+        </figure>
+
+        <p>Nótese que se obtiene una aproximación mejor si se incrementa el número de rectángulos interiores, es decir, si se incrementa $m$ y $n$.</p>
+
+        <p>\[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij},\ y^*_{ij}) \Delta A\]</p> 
+
+        <p>O equivalentemente,</p>
+
+        <p>\[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij},\ y^*_{ij}) \Delta A\]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Sea $R = [a,\ b]\times[c,\ d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como</p>
+
+        <p>\[\int\int_R\ f(x,\ y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij},\ y^*_{ij}) \Delta A\]</p>
+
+        <p>Donde $dA$ se puede expresar como $dxdy$ o bien $dydx$, ya que $\Delta A = \Delta x \Delta y = \Delta y \Delta x$.</p>
+
+        <p>Obsérvese que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x, y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f$ o bien puede haber espacio debajo de $f$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
+
+        <p>Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.</p>
+
+        <h3>Propiedades de la integral</h3>
+
+        <p>Sea $R = [a,\ b]\times[c,\ d]$ una región rectangular en el plano $xy$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
+
+        <ol>
+          <li>La suma $f(x,\ y) + g(x, y)$ es integrable y</li>
+        </ol>
+        <p>\[\int\int_R\ [f(x,\ y) + g(x,\ y)] dA = \int\int_R\ f(x,\ y) dA + \int\int_R\ g(x,\ y) dA\]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <ol start="2">
+          <li>Si $c \in \R$ es una constante, entonces $cf(x,\ y)$ es integrable y \[\int\int_R cf(x,\ y) dA = c \int\int_R f(x,\ y)\]</li>
+          <li>Si $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos, entonces \[\int\int_R f(x,\ y) dA = \int\int_S f(x,\ y) dA + \int\int_T f(x,\ y) dA\]</li>
+          <li>Si $f(x,\ y) \geq g(x,\ y)$ para todo $(x,\ y) \in R$, entonces \[\int\int_R f(x,\ y) dA \geq \int\int_R g(x,\ y) dA\]</li>
+          <li>Sean $m,M \in \R$ tales que $m \leq f(x,\ y) \leq M$ para todo $(x,\ y) \in R$. Si $A(R)$ es el área de R, entonces \[m \cdot A(R) \leq \int\int_R f(x,\ y) dA \leq M \cdot A(R)\]</li>
+          <li>Si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que $f(x,\ y) = h_1(x)h_2(y)$, entonces \[\int\int_R f(x,\ y) dA = \left( \int_a^b h_1(x)dx \right) \left( \int_c^d h_2(y)dy \right)\]</li>
+        </ol>
+      </div>
+
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c1_integral_regiones_generales">La integral sobre regiones más generales.</h2>
-
-        <p>La línea arriba de los números de página va a desaparecer en la versión final, solo está para evitar que el texto por página se salga visualmente. Aunque no prohíbe que se pase del tamaño. Así que hay que tener cuidado con el contenido para no pasarse.</p>
       </div>
 
       <!--  -->
@@ -206,6 +276,14 @@
       <div class="page">
         <div class="chap_text">Capítulo II</div>
         <h1 class="chap_name" id="cap_funciones_con_valores_vectoriales">Funciones con valores vectoriales</h1>
+
+        <p>Para cambiar los estilos o las tipografías hay que modificar los estilos que se encuentra en el directorio <code>extra</code>.</p>
+
+        <p>El código correspondiente al funcionamiento del libro se encuentra en el directorio <code>book</code>, este código lo yo lo voy a modificar, y si tiene sugerencias o cambios los podemos incorporar, pero en general no hay que meterse con lo que hay en este directorio.
+
+        <p>Una organización sugerida es que coloques las imágenes de los capítulos (si es que tienes) en el directorio <code>images/capituloN</code> y los interactivos en el directorio <code>interactivos/capituloN</code>, esto con la finalidad de que sea más fácil organizar los componentes de las notas.</p>
+
+        <p>La línea arriba de los números de página va a desaparecer en la versión final, solo está para evitar que el texto por página se salga visualmente. Aunque no prohíbe que se pase del tamaño. Así que hay que tener cuidado con el contenido para no pasarse.</p>
 
         <h2 id="sec_c2_campos_vectoriales_campos_gradientes">Campos vectoriales. Campos gradientes.</h2>
 
