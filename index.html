@@ -179,7 +179,8 @@
 
         <h3>Volúmenes e Integrales Dobles</h3>
 
-        <p>Considérese el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función contínua de dos variables $f(x, y) \geq 0$ definida sobre $R$. Formalmente: \[R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}\]</p>
+        <p>Considérese el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función contínua de dos variables $f(x, y) \geq 0$ definida sobre $R$. Formalmente: 
+        \[R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}\]</p>
 
         <p>La gráfica de $f$ representa una superficie en $\R^3$ con ecuación $z = f(x, y)$, donde $z$ es la altura de la superficie en el punto $(x, y)$. Sea $S$ el sólido debajo de la gráfica de $f$, tal que su base es $R$. Se desea calcular el volumen de $S$.</p>
       </div>
@@ -193,7 +194,8 @@
           <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$.</figcaption>
         </figure>
 
-        <p>Considérese un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. Entonces el volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior, podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: \[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        <p>Considérese un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. Entonces el volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior, podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: 
+        \[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
       </div>
 
       <!--  -->
@@ -203,14 +205,17 @@
           <figcaption>Experimenta cambiando la función $f$, los intervalos $[a, b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij}, y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
         </figure>
 
-        <p>Nótese que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$: \[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p> 
+        <p>Nótese que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$: 
+        \[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p> 
 
-        <p>O equivalentemente: \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        <p>O equivalentemente: 
+        \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: \[\iint\limits_R f(x, y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
+        \[\iint\limits_R f(x, y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
         <p>Donde $dA$ se puede expresar como $dxdy$ o bien $dydx$, ya que $\Delta A = \Delta x \Delta y = \Delta y \Delta x$.</p>
 
@@ -231,11 +236,16 @@
       <!--  -->
       <div class="page">
         <ol start="2">
-          <li>Si $c \in \R$ es una constante, entonces $cf(x, y)$ es integrable y \[\iint\limits_R cf(x, y) dA = c \iint\limits_R f(x, y)\]</li>
-          <li>Si $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos, entonces \[\iint\limits_R f(x, y) dA = \iint\limits_S f(x, y) dA + \iint\limits_T f(x, y) dA\]</li>
-          <li>Si $f(x, y) \geq g(x, y)$ para todo $(x, y) \in R$, entonces \[\iint\limits_R f(x, y) dA \geq \iint\limits_R g(x, y) dA\]</li>
-          <li>Sean $m,M \in \R$ tales que $m \leq f(x, y) \leq M$ para todo $(x, y) \in R$. Si $A(R)$ es el área de R, entonces \[m \cdot A(R) \leq \iint\limits_R f(x, y) dA \leq M \cdot A(R)\]</li>
-          <li>Si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que $f(x, y) = h_1(x)h_2(y)$, entonces \[\iint\limits_R f(x, y) dA = \left( \int_a^b h_1(x)dx \right) \left( \int_c^d h_2(y)dy \right)\]</li>
+          <li>Si $c \in \R$ es una constante, entonces $cf(x, y)$ es integrable y 
+          \[\iint\limits_R cf(x, y) dA = c \iint\limits_R f(x, y)\]</li>
+          <li>Si $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos, entonces 
+          \[\iint\limits_R f(x, y) dA = \iint\limits_S f(x, y) dA + \iint\limits_T f(x, y) dA\]</li>
+          <li>Si $f(x, y) \geq g(x, y)$ para todo $(x, y) \in R$, entonces 
+          \[\iint\limits_R f(x, y) dA \geq \iint\limits_R g(x, y) dA\]</li>
+          <li>Sean $m,M \in \R$ tales que $m \leq f(x, y) \leq M$ para todo $(x, y) \in R$. Si $A(R)$ es el área de R, entonces 
+          \[m \cdot A(R) \leq \iint\limits_R f(x, y) dA \leq M \cdot A(R)\]</li>
+          <li>Si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que $f(x, y) = h_1(x)h_2(y)$, entonces 
+          \[\iint\limits_R f(x, y) dA = \left( \int_a^b h_1(x)dx \right) \left( \int_c^d h_2(y)dy \right)\]</li>
         </ol>
       </div>
 
@@ -248,7 +258,40 @@
       <div class="page">
         <h2 id="sec_c1_integral_iterada_y_el_teorema_de_fubini">Integral iterada y el teorema de Fubini.</h2>
 
-        <h2 id="sec_c1_geometría_de_funciones_de_R2_en_R2">Geometría de las funciones de $ℝ^2$ en $ℝ^2$.</h2>
+        <p>En la sección anterior vimos cómo evaluar una integral doble y obtener una aproximación al volumen del espacio entre una región rectangular $R$ y una función $f: \R^2 \rightarrow \R$. Pero esto puede ser un proceso largo y complicado, por lo que necesitamos una técnica para evaluar dichas integrales dobles sin tener que usar la definición que ocupa límites y sumas dobles.</p>
+
+        <p>A grandes rasgos, esta técnica consiste en descomponer la integral doble en dos integrales simples, para posteriormente evaluar una después de la otra.</p>
+
+        <h3>Integral iterada</h3>
+
+        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
+
+        <ol type="i">
+          <li>\[\int^b_a\int^d_c f(x, y)dydx = \int^b_a \left[ \int^d_c f(x, y)dy \right] dx\]</li>
+          <li>\[\int^d_c\int^b_a f(x, y)dxdy = \int^d_c \left[ \int^b_a f(x, y)dx \right] dy\]</li>
+        </ol>
+
+        <p>La expresión $(i)$ significa que se integra $f(x, y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión $(ii)$ significa que se integra $f(x, y)$</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>respecto a $x$, tratando a $y$ como constante, y luego el resultado se integra respecto a $y$.</p>
+
+        <h3>Teorema de Fubini</h3>
+
+        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
+        \[\begin{aligned}
+          \iint\limits_R f(x, y)dA
+            &= \iint\limits_R f(x, y)dxdy \\
+            &= \int^b_a\int^d_c f(x, y)dydx \\
+            &= \int^d_c\int^b_a f(x, y)dxdy
+        \end{aligned}\]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h2 id="sec_c1_geometría_de_funciones_de_R2_en_R2">Geometría de las funciones de $\R^2$ en $\R^2$.</h2>
 
         <h2 id="sec_c1_teorema_de_cambio_de_variable">Teorema del cambio de variable..</h2>
 
