@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="700" height="525">
+      <param name="tamaño" value="700x525">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='3%' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
+      <param name="C_01" value="id='f_dz' tipo='numérico' interfaz='barra' región='sur' espacio='E1' nombre='Sólido bajo f' expresión='(0,0,150,40)' valor='0' incr='0.001' min='0' max='1' discreto='no' decimales='3' fijo='sí' visible='no' ">
+      <param name="C_02" value="id='g_dz' tipo='numérico' interfaz='barra' región='sur' espacio='E1' nombre='Sólido bajo g' expresión='(0,0,150,40)' valor='0' incr='0.001' min='0' max='1' discreto='no' decimales='3' fijo='sí' visible='no' ">
+      <param name="A_01" value="id='longitud_ejes' expresión='10' tipo='variable' ">
+      <param name="A_02" value="id='f(x,y)' algoritmo='no' expresión='1.5+0.5cos(x)' tipo='función' ">
+      <param name="A_03" value="id='g(x,y)' algoritmo='no' expresión='3+0.5sin(y)' tipo='función' ">
+      <param name="A_04" value="id='a' expresión='0.5' tipo='variable' ">
+      <param name="A_05" value="id='b' expresión='3pi/2' tipo='variable' ">
+      <param name="A_06" value="id='c' expresión='0.5' tipo='variable' ">
+      <param name="A_07" value="id='d' expresión='7pi/4' tipo='variable' ">
+      <param name="A_08" value="id='dx' expresión='0.1' tipo='variable' ">
+      <param name="A_09" value="id='dy' expresión='0.1' tipo='variable' ">
+      <param name="A_10" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-40' ">
+      <param name="A_11" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(295,48)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i f(x,y)\i0}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='20' align='a_left' anchor='a_top_left' info='f(x,y)' ">
+      <param name="G_02" value="espacio='E2' tipo='segmento' fondo='no' color='000000' coord_abs='sí' expresión='(343,62)(368,80)' decimales='2' fijo='sí' tamaño='0' ancho='0.5' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='f(x,y)' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0, (0<s)&&(s<1)?longitud_ejes:0, s==1?longitud_ejes:0)' familia='s' s.intervalo='[0,1]' s.pasos='3' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='cara' fondo='no' color='30ff8000' color_reverso='30ff8000' expresión='(a,c)(b,c)(b,d)(a,d)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='000000' modelo='color' info='R' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' expresión='(a+0.5*(b-a),c+0.5*(d-c),0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i R\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='0' offset_angle='270' info='R' ">
+      <param name="S_04" value="espacio='E1' tipo='superficie' fondo='no' color='400000ff' color_reverso='400000ff' expresión='x=a+u*(b-a) y=c+v*(d-c) z=f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='7' Nv='7' info='f(x,y)' ">
+      <param name="S_05" value="espacio='E1' tipo='superficie' fondo='no' color='900000ff' color_reverso='900000ff' expresión='x=s==0?a:(s==1?b:a+u*(b-a));y=s==2?c:(s==3?d:c+u*(d-c));z=v*f(x,y)*f_dz' familia='s' s.intervalo='[0,3]' s.pasos='3' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='7' Nv='7' info='f(x,y) sólido' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' fondo='no' color='eeffaa' color_reverso='6090a0' expresión='(b,c,0.75+f(b,c))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i f(x,y)\i0}\i0\cf1 }' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='10' offset_angle='270' info='f(x,y) texto' ">
+      <param name="S_07" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(b,c,f(b,c))(b,c,0.35+f(b,c))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='f(x,y) línea' ">
+      <param name="S_08" value="espacio='E1' tipo='superficie' fondo='no' color='40ffff00' color_reverso='40ffff00' expresión='x=a+u*(b-a) y=c+v*(d-c) z=g(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='7' Nv='7' info='g(x,y)' ">
+      <param name="S_09" value="espacio='E1' tipo='superficie' fondo='no' color='90ffff00' color_reverso='90ffff00' expresión='x=s==0?a:(s==1?b:a+u*(b-a));y=s==2?c:(s==3?d:c+u*(d-c));z=v*g(x,y)*g_dz+f(x,y)*f_dz' familia='s' s.intervalo='[0,3]' s.pasos='3' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='7' Nv='7' info='g(x,y) sólido' ">
+      <param name="S_10" value="espacio='E1' tipo='punto' fondo='no' color='eeffaa' color_reverso='6090a0' expresión='(b,c,0.75+g(b,c))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i g(x,y)\i0}\i0\cf1 }' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='10' offset_angle='270' info='g(x,y) texto' ">
+      <param name="S_11" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(b,c,g(b,c))(b,c,0.35+g(b,c))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='g(x,y) línea' ">
+      <param name="S_12" value="espacio='E1' tipo='superficie' fondo='no' color='40ff0000' color_reverso='40ff0000' expresión='x=a+u*(b-a) y=c+v*(d-c) z=f(x,y)+g(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='7' Nv='7' info='f+g' ">
+      <param name="S_13" value="espacio='E1' tipo='punto' fondo='no' color='eeffaa' color_reverso='6090a0' expresión='(b,c,0.75+f(b,c)+g(b,c))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i f(x,y) + g(x,y)\i0}\i0\cf1 }' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='10' offset_angle='270' info='(f+g)(x,y) texto' ">
+      <param name="S_14" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(b,c,f(b,c)+g(b,c))(b,c,0.35+f(b,c)+g(b,c))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='(f+g) línea' ">
+      <param name="Animación" value="pausa='50' controles='sí' auto='no' repetir='no' inicio='siguiente=0;ii=1;Ay_y=c+(d-c)/2;Ay_x=a' hacer='Ay_x=siguiente?Ay_x:Ay_x+dx;siguiente=Ay_x>=b-a;Ay_y=siguiente?(ii?c:Ay_y+dy):Ay_y;ii=!siguiente' mientras='Ay_y<d-dy' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
