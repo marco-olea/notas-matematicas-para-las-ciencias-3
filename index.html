@@ -179,22 +179,22 @@
 
         <h3>Volúmenes e Integrales Dobles</h3>
 
-        <p>Considérese el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función contínua de dos variables $f(x, y) \geq 0$ definida sobre $R$. Formalmente: 
+        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función contínua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
         \[R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}\]</p>
 
-        <p>La gráfica de $f$ representa una superficie en $\R^3$ con ecuación $z = f(x, y)$, donde $z$ es la altura de la superficie en el punto $(x, y)$. Sea $S$ el sólido debajo de la gráfica de $f$, tal que su base es $R$. Se desea calcular el volumen de $S$.</p>
+        <p>La gráfica de $f$ representa una superficie en $\R^3$ cuya ecuación es $z = f(x,y)$, donde $z$ es la altura de la superficie en el punto $(x, y)$. Sea $S$ el sólido debajo de la gráfica de $f$, tal que su base es $R$. Queremos calcular el volumen de $S$.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Para esto divídase la región $R$ en rectángulos $R_{ij}$ de área $\Delta A$ cuyos lados miden $\Delta x$ y $\Delta y$. Esto se logra dividiendo el intervalo $[a, b]$ en $m$ subintervalos del mismo tamaño y dividiendo el intervalo $[c, d]$ en $n$ subintervalos del mismo tamaño (Figura 1.1). Por tanto: $\Delta x = \frac{b - a}{m}$, $\Delta y = \frac{d - c}{n}$, y $\Delta A = \Delta x \Delta y$.</p>
+        <p>Para esto dividiremos la región $R$ en rectángulos $R_{ij}$ de área $\Delta A$ cuyos lados miden $\Delta x$ y $\Delta y$. Esto se logra dividiendo el intervalo $[a, b]$ en $m$ subintervalos del mismo tamaño y dividiendo el intervalo $[c, d]$ en $n$ subintervalos del mismo tamaño (Figura 1.1). Por tanto: $\Delta x = \frac{b - a}{m}$, $\Delta y = \frac{d - c}{n}$, y $\Delta A = \Delta x \Delta y$.</p>
 
         <figure id="cap1_1_region_R">
           <img src="images/capitulo1/region_R.svg" width="530">
           <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$.</figcaption>
         </figure>
 
-        <p>Considérese un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. Entonces el volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior, podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: 
+        <p>Consideremos un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. Entonces el volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior, podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: 
         \[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
       </div>
 
@@ -205,7 +205,7 @@
           <figcaption>Experimenta cambiando la función $f$, los intervalos $[a, b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij}, y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
         </figure>
 
-        <p>Nótese que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$: 
+        <p>Notemos que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$: 
         \[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p> 
 
         <p>O equivalentemente: 
@@ -215,11 +215,11 @@
       <!--  -->
       <div class="page">
         <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
-        \[\iint\limits_R f(x, y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        \[\iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
         <p>Donde $dA$ se puede expresar como $dxdy$ o bien $dydx$, ya que $\Delta A = \Delta x \Delta y = \Delta y \Delta x$.</p>
 
-        <p>Obsérvese que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x, y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f$ o bien puede haber espacio debajo de $f$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
+        <p>Observemos que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x,y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f$ o bien puede haber espacio debajo de $f$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
 
         <p>Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.</p>
 
@@ -228,47 +228,83 @@
         <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
 
         <ol>
-          <li>La suma $f(x, y) + g(x, y)$ es integrable y</li>
+          <li>La suma $f(x,y) + g(x, y)$ es integrable y</li>
         </ol>
-        <p>\[\iint\limits_R \left[ f(x, y) + g(x, y) \right] dA = \iint\limits_R f(x, y) dA + \iint\limits_R g(x, y) dA\]</p>
+        <p>\[\iint\limits_R \left[ f(x,y) + g(x, y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x, y) dA\]</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>Es decir, el volumen del sólido bajo $f$ más el volumen del sólido bajo $g$ es igual al volumen del sólido bajo $f + g$.</p>
+
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_1.html"></div>
-          <figcaption>El volumen del sólido bajo $f$ más el volumen del sólido bajo $g$ es igual al volumen del sólido bajo $f + g$.</figcaption>
         </figure>
-
-        <ol start="2">
-          <li>Si $c \in \R$ es una constante, entonces $cf(x, y)$ es integrable y 
-          \[\iint\limits_R cf(x, y) dA = c \iint\limits_R f(x, y)\]</li>
-        </ol>
       </div>
 
       <!--  -->
       <div class="page">
+        <ol start="2">
+          <li>Si $c \in \R$ es una constante, entonces $cf(x,y)$ es integrable y 
+          \[\iint\limits_R cf(x,y) dA = c \iint\limits_R f(x,y)\]
+          Esto es, el volumen del sólido bajo $cf$ es igual a $c$ veces el volumen del sólido bajo $f$.</li>
+        </ol>
+
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_2.html"></div>
-          <figcaption>El volumen del sólido bajo $cf$ es igual a $c$ veces el volumen del sólido bajo $f$.</figcaption>
         </figure>
+      </div>
 
+      <!--  -->
+      <div class="page">
         <ol start="3">
           <li>Si $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos, entonces 
-          \[\iint\limits_R f(x, y) dA = \iint\limits_S f(x, y) dA + \iint\limits_T f(x, y) dA\]</li>
+          \[\iint\limits_R f(x,y) dA = \iint\limits_S f(x,y) dA + \iint\limits_T f(x,y) dA\]
+          Dicho de otra manera, el volumen del sólido entre $f$ y $S$ más el volumen del sólido entre $f$ y $T$ es igual al volumen del sólido entre $f$ y $R$.</li>
         </ol>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_3.html"></div>
+        </figure>
       </div>
 
       <!--  -->
       <div class="page">
         <ol start="4">
-          <li>Si $f(x, y) \geq g(x, y)$ para todo $(x, y) \in R$, entonces 
-          \[\iint\limits_R f(x, y) dA \geq \iint\limits_R g(x, y) dA\]</li>
-          <li>Sean $m,M \in \R$ tales que $m \leq f(x, y) \leq M$ para todo $(x, y) \in R$. Si $A(R)$ es el área de R, entonces 
-          \[m \cdot A(R) \leq \iint\limits_R f(x, y) dA \leq M \cdot A(R)\]</li>
-          <li>Si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que $f(x, y) = h_1(x)h_2(y)$, entonces 
-          \[\iint\limits_R f(x, y) dA = \left( \int_a^b h_1(x)dx \right) \left( \int_c^d h_2(y)dy \right)\]</li>
+          <li>Si $g(x,y) \geq f(x, y)$ para todo $(x, y) \in R$, entonces 
+          \[\iint\limits_R g(x,y) dA \geq \iint\limits_R f(x, y) dA\]</li>
         </ol>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_4.html"></div>
+          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <ol start="5">
+          <li>Sean $m,M \in \R$ tales que $m \leq f(x,y) \leq M$ para todo $(x, y) \in R$. Entonces 
+          \[m \cdot A(R) \leq \iint\limits_R f(x,y) dA \leq M \cdot A(R)\]
+          Donde $A(R)$ es el área de $R$, por lo que $m \cdot A(R)$ es el volumen del prisma rectangular de base $R$ y altura $m$, y análogamente $M \cdot A(R)$ es volumen del prisma rectangular de base $R$ y altura $M$.</li>
+        </ol>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_5.html"></div>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <ol start="6">
+          <li>Si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que $f(x,y) = h_1(x)h_2(y)$, entonces 
+          \[\iint\limits_R f(x,y) dA = \left( \int_a^b h_1(x)dx \right) \left( \int_c^d h_2(y)dy \right)\]</li>
+        </ol>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_6.html"></div>
+          <figcaption>El área bajo la curva $h_1$ (rojo) multiplicado por el área bajo la curva $h_2$ (verde) es igual al volumen del sólido bajo la superficie $z = f(x,y) = h_1(x)h_2(y)$.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
@@ -284,11 +320,11 @@
         <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
 
         <ol type="i">
-          <li>\[\int^b_a\int^d_c f(x, y)dydx = \int^b_a \left[ \int^d_c f(x, y)dy \right] dx\]</li>
-          <li>\[\int^d_c\int^b_a f(x, y)dxdy = \int^d_c \left[ \int^b_a f(x, y)dx \right] dy\]</li>
+          <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
+          <li>\[\int^d_c\int^b_a f(x,y)dxdy = \int^d_c \left[ \int^b_a f(x,y)dx \right] dy\]</li>
         </ol>
 
-        <p>La expresión $(i)$ significa que se integra $f(x, y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión $(ii)$ significa que se integra $f(x, y)$</p>
+        <p>La expresión $(i)$ significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión $(ii)$ significa que se integra $f(x,y)$</p>
       </div>
 
       <!--  -->
@@ -299,10 +335,10 @@
 
         <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
         \[\begin{aligned}
-          \iint\limits_R f(x, y)dA
-            &= \iint\limits_R f(x, y)dxdy \\
-            &= \int^b_a\int^d_c f(x, y)dydx \\
-            &= \int^d_c\int^b_a f(x, y)dxdy
+          \iint\limits_R f(x,y)dA
+            &= \iint\limits_R f(x,y)dxdy \\
+            &= \int^b_a\int^d_c f(x,y)dydx \\
+            &= \int^d_c\int^b_a f(x,y)dxdy
         \end{aligned}\]</p>
       </div>
 
@@ -310,12 +346,12 @@
       <div class="page">
         <figure>
           <div class="interactive" width="530" height="300" src="interactivos/capitulo1/teorema_fubini_1.html"></div>
-          <figcaption>$\int^b_a\int^d_c f(x, y)dydx$</figcaption>
+          <figcaption>$\int^b_a\int^d_c f(x,y)dydx$</figcaption>
         </figure>
 
         <figure>
           <div class="interactive" width="530" height="300" src="interactivos/capitulo1/teorema_fubini_2.html"></div>
-          <figcaption>$\int^d_c\int^b_a f(x, y)dxdy$</figcaption>
+          <figcaption>$\int^d_c\int^b_a f(x,y)dxdy$</figcaption>
         </figure>
       </div>
 
