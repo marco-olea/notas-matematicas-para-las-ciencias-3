@@ -191,29 +191,32 @@
 
         <figure id="cap1_1_region_R">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/region_R.html"></div>
-          <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$.</figcaption>
+          <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$. Haz clic dentro de dichos rectángulos para cambiar los puntos $(x^*_{ij}, y^*_{ij})$.</figcaption>
         </figure>
 
-        <p>Consideremos un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. Entonces el volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior, podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: 
-        \[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        <p>Consideremos un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. El volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior,</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: 
+        \[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/integral_rectangulos.html"></div>
           <figcaption>Experimenta cambiando la función $f$, los intervalos $[a, b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij}, y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
         </figure>
 
-        <p>Notemos que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$: 
-        \[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p> 
-
-        <p>O equivalentemente: 
-        \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        <p>Notemos que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$:</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>\[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p> 
+
+        <p>O equivalentemente: 
+        \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+
         <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
         \[\iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
@@ -222,7 +225,10 @@
         <p>Observemos que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x,y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f$ o bien puede haber espacio debajo de $f$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
 
         <p>Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.</p>
+      </div>
 
+      <!--  -->
+      <div class="page">
         <h3>Propiedades de la integral</h3>
 
         <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
@@ -230,15 +236,12 @@
         <ol>
           <li>La suma $f(x,y) + g(x, y)$ es integrable y</li>
         </ol>
-        <p>\[\iint\limits_R \left[ f(x,y) + g(x, y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x, y) dA\]</p>
-      </div>
 
-      <!--  -->
-      <div class="page">
-        <p>Es decir, el volumen del sólido bajo $f$ más el volumen del sólido bajo $g$ es igual al volumen del sólido bajo $f + g$.</p>
+        <p>\[\iint\limits_R \left[ f(x,y) + g(x, y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x, y) dA\]</p>
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_1.html"></div>
+          <figcaption>El volumen del sólido bajo $f$ más el volumen del sólido bajo $g$ es igual al volumen del sólido bajo $f + g$.</figcaption>
         </figure>
       </div>
 
