@@ -175,11 +175,11 @@
 
         <h2 id="sec_c1_integral_rectangulos">Integral sobre rectángulos. Propiedades de la integral.</h2>
 
-        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlos para encontrar el volumen de un sólido sobre una región rectangular en el plano $xy$.</p>
+        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlos para encontrar el volumen de un sólido sobre una región rectangular en el plano $z = 0$.</p>
 
         <h3>Volúmenes e Integrales Dobles</h3>
 
-        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función contínua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
+        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $z = 0$. Dicho espacio está delimitado por una función contínua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
         \[R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}\]</p>
 
         <p>La gráfica de $f$ representa una superficie en $\R^3$ cuya ecuación es $z = f(x,y)$, donde $z$ es la altura de la superficie en el punto $(x, y)$. Sea $S$ el sólido debajo de la gráfica de $f$, tal que su base es $R$. Queremos calcular el volumen de $S$.</p>
@@ -190,7 +190,7 @@
         <p>Para esto dividiremos la región $R$ en rectángulos $R_{ij}$ de área $\Delta A$ cuyos lados miden $\Delta x$ y $\Delta y$. Esto se logra dividiendo el intervalo $[a, b]$ en $m$ subintervalos del mismo tamaño y dividiendo el intervalo $[c, d]$ en $n$ subintervalos del mismo tamaño (Figura 1.1). Por tanto: $\Delta x = \frac{b - a}{m}$, $\Delta y = \frac{d - c}{n}$, y $\Delta A = \Delta x \Delta y$.</p>
 
         <figure id="cap1_1_region_R">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/region_R.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/region_rectangular.html"></div>
           <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$. Haz clic dentro de dichos rectángulos para cambiar los puntos $(x^*_{ij}, y^*_{ij})$.</figcaption>
         </figure>
 
@@ -217,7 +217,7 @@
         <p>O equivalentemente: 
         \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
-        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
+        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
         \[\iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
         <p>Donde $dA$ se puede expresar como $dxdy$ o bien $dydx$, ya que $\Delta A = \Delta x \Delta y = \Delta y \Delta x$.</p>
@@ -231,7 +231,7 @@
       <div class="page">
         <h3>Propiedades de la integral</h3>
 
-        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
+        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
 
         <ol>
           <li>La suma $f(x,y) + g(x, y)$ es integrable y</li>
@@ -280,7 +280,7 @@
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_4.html"></div>
-          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$.</figcaption>
+          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) < f(x,y)$, entonces el volumen del sólido bajo $g$ podría ser menor al volumen del sólido bajo $f$.</figcaption>
         </figure>
       </div>
 
@@ -320,7 +320,7 @@
 
         <h3>Integral iterada</h3>
 
-        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
+        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
 
         <ol type="i">
           <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
@@ -336,7 +336,7 @@
 
         <h3>Teorema de Fubini</h3>
 
-        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
+        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
         \[\begin{aligned}
           \iint\limits_R f(x,y)dA
             &= \iint\limits_R f(x,y)dxdy \\
@@ -361,6 +361,17 @@
       <!--  -->
       <div class="page">
         <h2 id="sec_c1_integral_regiones_generales">La integral sobre regiones más generales.</h2>
+
+        <p>En esta sección analizaremos integrales dobles de funciones definidas sobre una región general acotada $D$ en un plano.</p>
+
+        <h3>Regiones generales acotadas</h3>
+
+        <p>Como $D$ es acotada, debe existir una región rectangular $R$ en el mismo plano que contiene a $D$ ($D \subseteq R$).</p>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/region_general.html"></div>
+          <figcaption>Ejemplo de una región general acotada $D$ y la región rectangular $R$ que lo contiene.</figcaption>
+        </figure>
       </div>
 
       <!--  -->

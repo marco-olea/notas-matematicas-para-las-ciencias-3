@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='-5%' O.y='0%' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
+      <param name="A_01" value="id='longitud_ejes' expresión='15' tipo='variable' ">
+      <param name="A_02" value="id='f(x,y)' algoritmo='no' expresión='sin(x)+sin(y)+3' tipo='función' ">
+      <param name="A_03" value="id='a' expresión='0.5' tipo='variable' ">
+      <param name="A_04" value="id='b' expresión='4.5' tipo='variable' ">
+      <param name="A_05" value="id='c' expresión='0.5' tipo='variable' ">
+      <param name="A_06" value="id='d' expresión='5.5' tipo='variable' ">
+      <param name="A_07" value="id='elipse_a' expresión='1.5' tipo='variable' ">
+      <param name="A_08" value="id='elipse_b' expresión='2' tipo='variable' ">
+      <param name="A_09" value="id='elipse_h' expresión='3' tipo='variable' ">
+      <param name="A_10" value="id='elipse_k' expresión='4' tipo='variable' ">
+      <param name="A_11" value="id='elipse_Nu' expresión='30' tipo='variable' ">
+      <param name="A_12" value="id='elipse_margenx' expresión='0.5' tipo='variable' ">
+      <param name="A_13" value="id='elipse_margeny' expresión='1' tipo='variable' ">
+      <param name="A_14" value="id='max_x' expresión='elipse_h+elipse_a+elipse_margenx' tipo='variable' ">
+      <param name="A_15" value="id='min_x' expresión='elipse_h-elipse_a-elipse_margenx' tipo='variable' ">
+      <param name="A_16" value="id='max_y' expresión='elipse_k+elipse_b+elipse_margeny' tipo='variable' ">
+      <param name="A_17" value="id='min_y' expresión='elipse_k-elipse_b-elipse_margeny' tipo='variable' ">
+      <param name="A_18" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-40' ">
+      <param name="A_19" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E2' tipo='segmento' fondo='no' color='000000' dibujar-si='Ay_y==c+(d-c)/2' coord_abs='sí' expresión='(270,355)(358,355)' decimales='2' fijo='sí' tamaño='0' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='Fijar y' ">
+      <param name="G_02" value="espacio='E2' tipo='texto' fondo='no' color='000000' dibujar-si='siguiente||(Ay_y==c+(d-c)/2)' coord_abs='sí' expresión='(500,30)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\i{\*\mjaformula{\integral{\from\i c\i0}{\to\i d\i0}{\what{\integral{\from\i a\i0}{\to\i b\i0}{\what\i f(x,y)dxdy\i0}}}}}\i0\cf0 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' info='integral' ">
+      <param name="G_03" value="espacio='E2' tipo='rectángulo' fondo='no' color='ffffff' dibujar-si='!siguiente' coord_abs='sí' expresión='(500,30,50,60)' relleno='ffffff' ancho='1' border_radius='0' lineDash='solid' info='integral1' ">
+      <param name="G_04" value="espacio='E2' tipo='rectángulo' fondo='no' color='ffffff' dibujar-si='!siguiente' coord_abs='sí' expresión='(660,30,50,60)' relleno='ffffff' ancho='1' border_radius='0' lineDash='solid' info='integral2' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0, (0<s)&&(s<1)?longitud_ejes:0, s==1?longitud_ejes:0)' familia='s' s.intervalo='[0,1]' s.pasos='3' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='curva' fondo='no' color='30ff8000' relleno='30ff8000' expresión='y=elipse_k-elipse_b+u*2elipse_b;x=elipse_h-sqrt(elipse_a^2*(1-(y-elipse_k)^2/elipse_b^2));z=0' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='elipse_Nu' info='D 1' ">
+      <param name="S_03" value="espacio='E1' tipo='curva' fondo='no' color='30ff8000' relleno='30ff8000' expresión='y=elipse_k-elipse_b+u*2elipse_b;x=elipse_h+sqrt(elipse_a^2*(1-(y-elipse_k)^2/elipse_b^2));z=0' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='elipse_Nu' info='D 2' ">
+      <param name="S_04" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' expresión='(elipse_h,elipse_k,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i D\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='0' offset_angle='270' info='D texto' ">
+      <param name="S_05" value="espacio='E1' tipo='superficie' fondo='no' color='306090a0' color_reverso='306090a0' expresión='y=elipse_k-elipse_b+u*2elipse_b;x=min_x+v*((elipse_h-sqrt(elipse_a^2*(1-(y-elipse_k)^2/elipse_b^2)))-min_x);z=0' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='elipse_Nu' Nv='1' info='R 1' ">
+      <param name="S_06" value="espacio='E1' tipo='superficie' fondo='no' color='306090a0' color_reverso='306090a0' expresión='y=elipse_k-elipse_b+u*2elipse_b;x=max_x-v*(max_x-(elipse_h+sqrt(elipse_a^2*(1-(y-elipse_k)^2/elipse_b^2))));z=0' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='elipse_Nu' Nv='1' info='R 2' ">
+      <param name="S_07" value="espacio='E1' tipo='cara' fondo='no' color='306090a0' color_reverso='306090a0' expresión='(min_x,min_y,0)(max_x,min_y,0)(max_x,min_y+elipse_margeny,0)(min_x,min_y+elipse_margeny,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' info='R 3' ">
+      <param name="S_08" value="espacio='E1' tipo='cara' fondo='no' color='306090a0' color_reverso='306090a0' expresión='(min_x,max_y,0)(max_x,max_y,0)(max_x,max_y-elipse_margeny,0)(min_x,max_y-elipse_margeny,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' info='R 4' ">
+      <param name="S_09" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' expresión='(min_x+elipse_margeny/2,min_y+elipse_margeny/2,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i R\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='0' offset_angle='270' info='R texto' ">
+      <param name="S_10" value="espacio='E1' tipo='segmento' fondo='no' color='808080' dibujar-si='siguiente||(Ay_y==c+(d-c)/2)' expresión='(a,0,0)(a,c,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='a' ">
+      <param name="S_11" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' dibujar-si='siguiente||(Ay_y==c+(d-c)/2)' expresión='(a,0,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i a\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='135' info='a' ">
+      <param name="S_12" value="espacio='E1' tipo='segmento' fondo='no' color='808080' dibujar-si='siguiente||(Ay_y==c+(d-c)/2)' expresión='(b,0,0)(b,c,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='b' ">
+      <param name="S_13" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' dibujar-si='siguiente||(Ay_y==c+(d-c)/2)' expresión='(b,0,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i b\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='135' info='b' ">
+      <param name="S_14" value="espacio='E1' tipo='segmento' fondo='no' color='808080' dibujar-si='siguiente' expresión='(0,c,0)(a,c,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='c' ">
+      <param name="S_15" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' dibujar-si='siguiente' expresión='(0,c,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i c\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='45' info='c' ">
+      <param name="S_16" value="espacio='E1' tipo='segmento' fondo='no' color='808080' dibujar-si='siguiente' expresión='(0,d,0)(a,d,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='d' ">
+      <param name="S_17" value="espacio='E1' tipo='punto' fondo='no' color='000000' color_reverso='000000' dibujar-si='siguiente' expresión='(0,d,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i d\i0}' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='45' info='d' ">
+      <param name="S_18" value="espacio='E1' tipo='superficie' fondo='no' color='506090a0' color_reverso='50eeffaa' expresión='y=elipse_k-elipse_b+u*2elipse_b;x=elipse_h-v*(elipse_h-(elipse_h-sqrt(elipse_a^2*(1-(y-elipse_k)^2/elipse_b^2))));z=f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='elipse_Nu' Nv='7' info='f(x,y) 1' ">
+      <param name="S_19" value="espacio='E1' tipo='superficie' fondo='no' color='506090a0' color_reverso='50eeffaa' expresión='y=elipse_k-elipse_b+u*2elipse_b;x=elipse_h+v*((elipse_h+sqrt(elipse_a^2*(1-(y-elipse_k)^2/elipse_b^2)))-elipse_h);z=f(x,y)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='elipse_Nu' Nv='7' info='f(x,y) 2' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
