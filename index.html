@@ -234,10 +234,10 @@
         <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
 
         <ol>
-          <li>La suma $f(x,y) + g(x, y)$ es integrable y</li>
+          <li>La suma $f(x,y) + g(x,y)$ es integrable y</li>
         </ol>
 
-        <p>\[\iint\limits_R \left[ f(x,y) + g(x, y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x, y) dA\]</p>
+        <p>\[\iint\limits_R \left[ f(x,y) + g(x,y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x,y) dA\]</p>
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_1.html"></div>
@@ -322,12 +322,12 @@
 
         <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
 
-        <ol type="i">
+        <ol type="I">
           <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
           <li>\[\int^d_c\int^b_a f(x,y)dxdy = \int^d_c \left[ \int^b_a f(x,y)dx \right] dy\]</li>
         </ol>
 
-        <p>La expresión $(i)$ significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión $(ii)$ significa que se integra $f(x,y)$</p>
+        <p>La expresión <i>I</i> significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión <i>II</i> significa que se integra $f(x,y)$</p>
       </div>
 
       <!--  -->
@@ -366,11 +366,51 @@
 
         <h3>Regiones generales acotadas</h3>
 
-        <p>Como $D$ es acotada, debe existir una región rectangular $R$ en el mismo plano que contiene a $D$ ($D \subseteq R$).</p>
+        <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, contínua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la Figura 1.8.</p>
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/region_general.html"></div>
+          <div class="interactive" width="800" height="525" src="interactivos/capitulo1/region_general.html"></div>
           <figcaption>Ejemplo de una región general acotada $D$ y la región rectangular $R$ que lo contiene.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Sea $f: \R^2 \rightarrow \R$ una superficie definida sobre $D$. Para calcular integrales dobles de $f$ sobre $D$ usando las técnicas vistas en las secciones anteriores, debemos extender la definición de $f$ para incluir todos los puntos en $R$. Para esto definiremos una función $g: R \rightarrow \R$ de la siguiente manera:
+        \[
+          g(x,y) = 
+            \begin{cases}
+              f(x,y) & \text{si } (x,y) \in D \\
+              0 & \text{si } (x,y) \not\in D
+            \end{cases}
+        \]
+        </p>
+
+        <p>Además, como dichas técnicas de integración suponen que $f$ es integrable, debemos verificar que $g$ sea integrable sobre la región rectangular $R$. Esto sucede si $D$ está acotada por curvas simples cerradas.</p>
+
+        <p>Ahora veremos dos tipos de regiones generales acotadas.</p>
+
+        <ol type="I">
+          <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
+          \[D = \{(x,y) \in \R^2: a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}\]
+          Es decir, si está acotada por las líneas verticales $x = a$ y $x = b$ y por las curvas $g_1$ y $g_2$.</li>
+
+          <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
+          \[D = \{(x,y) \in \R^2: c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}\]
+          Es decir, si está acotada por las líneas horizontales $y = c$ y $y = d$ y por las curvas $h_1$ y $h_2$.</li>
+        </ol>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/region_general_tipoi.html"></div>
+          <figcaption>Ejemplo de una región de Tipo I. La parte sombreada sólo se mostrará si $g_1(x) \leq g_2(x)$ para todo $a \leq x \leq b$.</figcaption>
+        </figure>
+
+        <figure>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/region_general_tipoii.html"></div>
+          <figcaption>Ejemplo de una región de Tipo II. La parte sombreada sólo se mostrará si $h_1(y) \leq h_2(y)$ para todo $c \leq y \leq d$.</figcaption>
         </figure>
       </div>
 

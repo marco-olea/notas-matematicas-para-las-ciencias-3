@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="685" height="375">
+      <param name="tamaño" value="685x375">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='-35%' O.y='45%' despl_imagen='arr-izq' fondo='ffffff' red='c0c0c0' red10='808080' ejes='404040' texto='no' números='sí' eje-x='x' eje-y='y' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
+      <param name="C_01" value="id='a' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='a' expresión='(0,0,150,40)' valor='1' incr='0.1' max='b-1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' btn_pos='v_left' ">
+      <param name="C_02" value="id='b' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='b' expresión='(0,0,150,40)' valor='10' incr='0.1' min='a+1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' btn_pos='v_left' ">
+      <param name="C_03" value="id='g1_control' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='sur' espacio='E1' nombre='g1(x)' expresión='(0,0,150,40)' valor='(x^2)/20' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' evaluar='no' respuesta='krypto_5' info='función g1' ">
+      <param name="C_04" value="id='g2_control' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='sur' espacio='E1' nombre='g2(x)' expresión='(0,0,150,40)' valor='x^(1/2)+2' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' evaluar='no' respuesta='krypto_0' info='función g2' ">
+      <param name="A_01" value="id='g1(x)' algoritmo='no' expresión='_Eval_(g1_control)' tipo='función' ">
+      <param name="A_02" value="id='g2(x)' algoritmo='no' expresión='_Eval_(g2_control)' tipo='función' ">
+      <param name="A_03" value="id='g3(x)' algoritmo='no' expresión='abs(g1(x))>abs(g2(x))?g1(x):g2(x)' tipo='función' info='mayor distancia de g1 y g2' ">
+      <param name="A_04" value="id='g4(x)' algoritmo='no' expresión='abs(g1(x))<abs(g2(x))?g1(x):g2(x)' tipo='función' info='menor distancia de g1 y g2' ">
+      <param name="A_05" value="id='pm' expresión='a+(b-a)/2' tipo='variable' ">
+      <param name="A_06" value="id='validar_region()' algoritmo='sí' expresión='0' local='i,n' inicio='i=0;n=100;dx=(b-a)/n;dibujar=1' hacer='p=a+i*dx;dibujar=dibujar&&(g1(p)<=g2(p));i=i+1' mientras='i<=n' tipo='función' ">
+      <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' inicio='validar_region()' ">
+      <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' fondo='no' color='000000' coord_abs='no' expresión='(t,g1(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='10' ancho='2' visible='no' editable='no' lineDash='solid' info='g1' ">
+      <param name="G_02" value="espacio='E1' tipo='segmento' fondo='no' color='000000' coord_abs='no' expresión='(pm,g1(pm)) (pm+0.25,g1(pm)-0.25)' decimales='2' fijo='sí' tamaño='0' ancho='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='g1 línea' ">
+      <param name="G_03" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='(pm,g1(pm))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i g\i0{\subix\i 1\i0}\i (x)\i0}\i0\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' info='g1 texto' ">
+      <param name="G_04" value="espacio='E1' tipo='curva' fondo='no' color='000000' coord_abs='no' expresión='(t,g2(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='10' ancho='2' visible='no' editable='no' lineDash='solid' info='g2' ">
+      <param name="G_05" value="espacio='E1' tipo='segmento' fondo='no' color='000000' coord_abs='no' expresión='(pm,g2(pm)) (pm-0.25,g2(pm)+0.25)' decimales='2' fijo='sí' tamaño='0' ancho='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='g2 línea' ">
+      <param name="G_06" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='(pm,g2(pm))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i g\i0{\subix\i 2\i0}\i (x)\i0}\i0\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_bottom_right' info='g2 texto' ">
+      <param name="G_07" value="espacio='E1' tipo='segmento' fondo='no' color='000000' coord_abs='no' expresión='(a,g3(a))(a,((g1(a)>0)&&(g2(a)>0))||((g1(a)<0)&&(g2(a)<0))?0:g4(a))' decimales='2' fijo='sí' tamaño='0' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='a línea' ">
+      <param name="G_08" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='(a,g1(a)+(g2(a)-g1(a))/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i a\i0}\i0\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_right' info='a texto' ">
+      <param name="G_09" value="espacio='E1' tipo='segmento' fondo='no' color='000000' coord_abs='no' expresión='(b,g3(b))(b,((g1(b)>0)&&(g2(b)>0))||((g1(b)<0)&&(g2(b)<0))?0:g4(b))' decimales='2' fijo='sí' tamaño='0' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='b línea' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='(b,g1(b)+(g2(b)-g1(b))/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i b\i0}\i0\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_left' info='b texto' ">
+      <param name="G_11" value="espacio='E1' tipo='relleno' fondo='no' color='ff8000' dibujar-si='dibujar' coord_abs='no' expresión='(a+(b-a)/2,abs(g1(pm)-g2(pm))/2+(g1(pm)<g2(pm)?g1(pm):g2(pm)))' info='región D' ">
+      <param name="G_12" value="espacio='E1' tipo='texto' fondo='no' color='20303a' dibujar-si='dibujar' coord_abs='no' expresión='(pm,g1(pm)+(g2(pm)-g1(pm))/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i D\i0}\i0\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='región D texto' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
