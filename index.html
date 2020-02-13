@@ -217,21 +217,21 @@
         <p>O equivalentemente: 
         \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
-        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
+        <p><b><i>Definición 1.1:</i></b> Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
         \[\iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
 
         <p>Donde $dA$ se puede expresar como $dxdy$ o bien $dydx$, ya que $\Delta A = \Delta x \Delta y = \Delta y \Delta x$.</p>
 
         <p>Observemos que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x,y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f$ o bien puede haber espacio debajo de $f$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
 
-        <p>Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.</p>
+        <p><b><i>Definición 1.2:</i></b> Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.</p>
       </div>
 
       <!--  -->
       <div class="page">
         <h3>Propiedades de la integral</h3>
 
-        <p>Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
+        <p><b><i>Teorema 5.1:</i></b> Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
 
         <ol>
           <li>La suma $f(x,y) + g(x,y)$ es integrable y</li>
@@ -320,23 +320,23 @@
 
         <h3>Integral iterada</h3>
 
-        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
+        <p><b><i>Definición 1.3:</i></b> Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
 
-        <ol type="I">
+        <ol>
           <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
           <li>\[\int^d_c\int^b_a f(x,y)dxdy = \int^d_c \left[ \int^b_a f(x,y)dx \right] dy\]</li>
         </ol>
 
-        <p>La expresión <i>I</i> significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión <i>II</i> significa que se integra $f(x,y)$</p>
+        <p>La expresión (1) significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>respecto a $x$, tratando a $y$ como constante, y luego el resultado se integra respecto a $y$.</p>
+        <p>respecto a $x$. La expresión (2) significa que se integra $f(x,y)$ respecto a $x$, tratando a $y$ como constante, y luego el resultado se integra respecto a $y$.</p>
 
         <h3>Teorema de Fubini</h3>
 
-        <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
+        <p><b><i>Teorema 1.2 (Teorema de Fubini):</i></b> Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
         \[\begin{aligned}
           \iint\limits_R f(x,y)dA
             &= \iint\limits_R f(x,y)dxdy \\
@@ -388,17 +388,21 @@
 
         <p>Además, como dichas técnicas de integración suponen que $f$ es integrable, debemos verificar que $g$ sea integrable sobre la región rectangular $R$. Esto sucede si $D$ está acotada por curvas simples cerradas.</p>
 
-        <p>Ahora veremos dos tipos de regiones generales acotadas.</p>
+        <p>Ahora definiremos dos tipos de regiones generales acotadas.</p>
 
-        <ol type="I">
-          <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
-          \[D = \{(x,y) \in \R^2: a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}\]
-          Es decir, si está acotada por las líneas verticales $x = a$ y $x = b$ y por las curvas $g_1$ y $g_2$.</li>
+        <div class="note">
+          <b><i>Definición 1.4</i></b>
 
-          <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
-          \[D = \{(x,y) \in \R^2: c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}\]
-          Es decir, si está acotada por las líneas horizontales $y = c$ y $y = d$ y por las curvas $h_1$ y $h_2$.</li>
-        </ol>
+          <ol type="I">
+            <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
+            \[D = \{(x,y) \in \R^2: a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}\]
+            Es decir, si está acotada por las líneas verticales $x = a$ y $x = b$ y por las curvas $g_1(x)$ y $g_2(x)$.</li>
+
+            <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
+            \[D = \{(x,y) \in \R^2: c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}\]
+            Es decir, si está acotada por las líneas horizontales $y = c$ y $y = d$ y por las curvas $h_1(y)$ y $h_2(y)$.</li>
+          </ol>
+        </div>
       </div>
 
       <!--  -->
@@ -412,6 +416,66 @@
           <div class="interactive" width="675" height="375" src="interactivos/capitulo1/region_general_tipoii.html"></div>
           <figcaption>Ejemplo de una región de Tipo II. La parte sombreada sólo se mostrará si $h_1(y) \leq h_2(y)$ para todo $c \leq y \leq d$.</figcaption>
         </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/region_general_tipoi_tipoii.html"></div>
+          <figcaption>Ejemplo de una región que se puede describir como Tipo I y Tipo II.</figcaption>
+        </figure>
+
+        <h3>Integrales Dobles sobre Regiones No Recangulares</h3>
+
+        <div class="note">
+          <p><b><i>Teorema 1.3</i></b></p>
+
+          <p>Sea $g: R \rightarrow \R$ la extensión de la función $f: \R^2 \rightarrow \R$ definida sobre las regiones $D$ y $R$, así como se muestra en la Figura 1.8. Entonces $g(x,y)$ es integrable y la integral doble de $f(x,y)$ sobre $D$ es:
+          \[\iint\limits_D f(x,y)dA = \iint\limits_R g(x,y)dA\]</p>
+        </div>
+
+        <p>El lado derecho de esta ecuación se ha visto en las secciones anteriores. Además la igualdad es válida porque $g(x,y) = 0$ para cualquier punto $(x,y)$ que se encuentra fuera de $D$, por lo que no aportan nada a la integral.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Pero si la región $D$ está acotada por curvas suaves y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
+
+        <div class="note">
+          <p><b><i>Teorema 1.4: Teorema de Fubini (Fuerte)</i></b></p>
+
+          <p>Sea $f: \R^2 \rightarrow \R$ una función contínua sobre una región $D$.</p>
+
+          <ol>
+            <li>Si $D$ es de Tipo I, entonces:
+              \[\iint\limits_D f(x,y)dA = \iint\limits_D f(x,y)dydx = \int\limits^b_a \left[ \int\limits^{g_2(x)}_{g_1(x)} f(x,y)dy \right] dx\]
+            </li>
+
+            <li>Si $D$ es de Tipo II, entonces:
+              \[\iint\limits_D f(x,y)dA = \iint\limits_D f(x,y)dxdy = \int\limits^d_c \left[ \int\limits^{h_2(y)}_{h_1(y)} f(x,y)dx \right] dy\]
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
       </div>
 
       <!--  -->
