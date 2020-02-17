@@ -180,7 +180,9 @@
         <h3>Volúmenes e Integrales Dobles</h3>
 
         <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $z = 0$. Dicho espacio está delimitado por una función contínua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
-        \[R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}\]</p>
+        \[
+          R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}
+        \]</p>
 
         <p>La gráfica de $f$ representa una superficie en $\R^3$ cuya ecuación es $z = f(x,y)$, donde $z$ es la altura de la superficie en el punto $(x, y)$. Sea $S$ el sólido debajo de la gráfica de $f$, tal que su base es $R$. Queremos calcular el volumen de $S$.</p>
       </div>
@@ -200,11 +202,13 @@
       <!--  -->
       <div class="page">
         <p>podemos aproximar el volumen de $S$ mediante una <b>suma de Riemann doble</b> de la siguiente manera: 
-        \[V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        \[
+          V \approx \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A
+        \]</p>
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/integral_rectangulos.html"></div>
-          <figcaption>Experimenta cambiando la función $f$, los intervalos $[a, b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij}, y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
+          <figcaption>Experimenta cambiando la función $f(x,y)$, los intervalos $[a, b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij}, y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
         </figure>
 
         <p>Notemos que se obtiene una aproximación mejor incrementando el número de rectángulos interiores, es decir, incrementando $m$ y $n$:</p>
@@ -212,36 +216,51 @@
 
       <!--  -->
       <div class="page">
-        <p>\[V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p> 
+        <p>\[
+          V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A
+        \]</p> 
 
         <p>O equivalentemente: 
-        \[V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        \[
+          V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A
+        \]</p>
 
-        <p><b><i>Definición 1.1:</i></b> Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
-        \[\iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A\]</p>
+        <div class="num_block" prefix="Definición">
+          Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
+          \[
+            \iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A
+          \]
+        </div>
 
         <p>Donde $dA$ se puede expresar como $dxdy$ o bien $dydx$, ya que $\Delta A = \Delta x \Delta y = \Delta y \Delta x$.</p>
 
-        <p>Observemos que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x,y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f$ o bien puede haber espacio debajo de $f$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
+        <p>Observemos que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x,y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f(x,y)$ o bien puede haber espacio debajo de $f(x,y)$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
 
-        <p><b><i>Definición 1.2:</i></b> Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.</p>
+        <div class="num_block" prefix="Definición" id="integrabilidad">
+          Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
         <h3>Propiedades de la integral</h3>
 
-        <p><b><i>Teorema 5.1:</i></b> Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sean $S$ y $T$ dos subregiones de $R$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:</p>
+        <div class="num_block" prefix="Teorema">
+          Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:
+        </div>
 
         <ol>
           <li>La suma $f(x,y) + g(x,y)$ es integrable y</li>
         </ol>
 
-        <p>\[\iint\limits_R \left[ f(x,y) + g(x,y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x,y) dA\]</p>
+        <p>\[
+          \iint\limits_R \left[ f(x,y) + g(x,y) \right] dA = \iint\limits_R f(x,y) dA + \iint\limits_R g(x,y) dA
+        \]</p>
+        
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_1.html"></div>
-          <figcaption>El volumen del sólido bajo $f$ más el volumen del sólido bajo $g$ es igual al volumen del sólido bajo $f + g$.</figcaption>
+          <figcaption>El volumen del sólido bajo $f(x,y)$ más el volumen del sólido bajo $g(x,y)$ es igual al volumen del sólido bajo $(f+g)(x,y)$.</figcaption>
         </figure>
       </div>
 
@@ -250,7 +269,7 @@
         <ol start="2">
           <li>Si $c \in \R$ es una constante, entonces $cf(x,y)$ es integrable y 
           \[\iint\limits_R cf(x,y) dA = c \iint\limits_R f(x,y)\]
-          Esto es, el volumen del sólido bajo $cf$ es igual a $c$ veces el volumen del sólido bajo $f$.</li>
+          Esto es, el volumen del sólido bajo $cf(x,y)$ es igual a $c$ veces el volumen del sólido bajo $f(x,y)$.</li>
         </ol>
 
         <figure>
@@ -261,9 +280,11 @@
       <!--  -->
       <div class="page">
         <ol start="3">
-          <li>Si $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos, entonces 
-          \[\iint\limits_R f(x,y) dA = \iint\limits_S f(x,y) dA + \iint\limits_T f(x,y) dA\]
-          Dicho de otra manera, el volumen del sólido entre $f$ y $S$ más el volumen del sólido entre $f$ y $T$ es igual al volumen del sólido entre $f$ y $R$.</li>
+          <li>Sean $S$ y $T$ dos subregiones de $R$ tales que $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos. Entonces 
+          \[
+            \iint\limits_R f(x,y) dA = \iint\limits_S f(x,y) dA + \iint\limits_T f(x,y) dA
+          \]
+          Dicho de otra manera, el volumen del sólido entre $f(x,y)$ y $S$ más el volumen del sólido entre $f(x,y)$ y $T$ es igual al volumen del sólido entre $f(x,y)$ y $R$.</li>
         </ol>
 
         <figure>
@@ -280,7 +301,7 @@
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_4.html"></div>
-          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) < f(x,y)$, entonces el volumen del sólido bajo $g$ podría ser menor al volumen del sólido bajo $f$.</figcaption>
+          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) < f(x,y)$, entonces el volumen del sólido bajo $g(x,y)$ podría ser menor al volumen del sólido bajo $f(x,y)$.</figcaption>
         </figure>
       </div>
 
@@ -306,7 +327,7 @@
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/propiedades_integral_6.html"></div>
-          <figcaption>El área bajo la curva $h_1$ (rojo) multiplicado por el área bajo la curva $h_2$ (verde) es igual al volumen del sólido bajo la superficie $z = f(x,y) = h_1(x)h_2(y)$.</figcaption>
+          <figcaption>El área bajo la curva $h_1(x)$ (rojo) multiplicado por el área bajo la curva $h_2(y)$ (verde) es igual al volumen del sólido bajo la superficie $z = f(x,y) = h_1(x)h_2(y)$.</figcaption>
         </figure>
       </div>
 
@@ -320,12 +341,14 @@
 
         <h3>Integral iterada</h3>
 
-        <p><b><i>Definición 1.3:</i></b> Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f$ sobre $R$:</p>
+        <div class="num_block" prefix="Definición"> 
+          Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f(x,y)$ sobre $R$:
 
-        <ol>
-          <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
-          <li>\[\int^d_c\int^b_a f(x,y)dxdy = \int^d_c \left[ \int^b_a f(x,y)dx \right] dy\]</li>
-        </ol>
+          <ol>
+            <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
+            <li>\[\int^d_c\int^b_a f(x,y)dxdy = \int^d_c \left[ \int^b_a f(x,y)dx \right] dy\]</li>
+          </ol>
+        </div>
 
         <p>La expresión (1) significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra</p>
       </div>
@@ -336,24 +359,29 @@
 
         <h3>Teorema de Fubini</h3>
 
-        <p><b><i>Teorema 1.2 (Teorema de Fubini):</i></b> Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f$ sobre $R$ es igual a una integral iterada:
-        \[\begin{aligned}
-          \iint\limits_R f(x,y)dA
-            &= \iint\limits_R f(x,y)dxdy \\
-            &= \int^b_a\int^d_c f(x,y)dydx \\
-            &= \int^d_c\int^b_a f(x,y)dxdy
-        \end{aligned}\]</p>
+        <div class="num_block" prefix="Teorema" id="fubini_debil">
+          <b><i>Teorema de Fubini (Débil):</i></b>
+          <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f(x,y)$ sobre $R$ es igual a una integral iterada:
+          \[
+            \begin{aligned}
+              \iint\limits_R f(x,y)dA
+              &= \iint\limits_R f(x,y)dxdy \\
+              &= \int^b_a\int^d_c f(x,y)dydx \\
+              &= \int^d_c\int^b_a f(x,y)dxdy
+            \end{aligned}
+          \]</p>
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
         <figure>
-          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/teorema_fubini_1.html"></div>
+          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/fubini_debil_1.html"></div>
           <figcaption>$\int^b_a\int^d_c f(x,y)dydx$</figcaption>
         </figure>
 
         <figure>
-          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/teorema_fubini_2.html"></div>
+          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/fubini_debil_2.html"></div>
           <figcaption>$\int^d_c\int^b_a f(x,y)dxdy$</figcaption>
         </figure>
       </div>
@@ -368,7 +396,7 @@
 
         <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, contínua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la Figura 1.8.</p>
 
-        <figure>
+        <figure id="region_general">
           <div class="interactive" width="800" height="525" src="interactivos/capitulo1/region_general.html"></div>
           <figcaption>Ejemplo de una región general acotada $D$ y la región rectangular $R$ que lo contiene.</figcaption>
         </figure>
@@ -376,7 +404,7 @@
 
       <!--  -->
       <div class="page">
-        <p>Sea $f: \R^2 \rightarrow \R$ una superficie definida sobre $D$. Para calcular integrales dobles de $f$ sobre $D$ usando las técnicas vistas en las secciones anteriores, debemos extender la definición de $f$ para incluir todos los puntos en $R$. Para esto definiremos una función $g: R \rightarrow \R$ de la siguiente manera:
+        <p>Sea $f: \R^2 \rightarrow \R$ una superficie definida sobre $D$. Para calcular integrales dobles de $f(x,y)$ sobre $D$ usando las técnicas vistas en las secciones anteriores, debemos extender la definición de $f$ para incluir todos los puntos en $R$. Para esto definiremos una función $g: R \rightarrow \R$ de la siguiente manera:
         \[
           g(x,y) = 
             \begin{cases}
@@ -386,21 +414,17 @@
         \]
         </p>
 
-        <p>Además, como dichas técnicas de integración suponen que $f$ es integrable, debemos verificar que $g$ sea integrable sobre la región rectangular $R$. Esto sucede si $D$ está acotada por curvas simples cerradas.</p>
+        <p>Además, como dichas técnicas de integración suponen que $f$ es integrable (<ref ref_id="integrabilidad"></ref>), debemos verificar que $g$ sea integrable sobre la región rectangular $R$. Esto sucede si $D$ está acotada por curvas simples cerradas.</p>
 
         <p>Ahora definiremos dos tipos de regiones generales acotadas.</p>
 
-        <div class="note">
-          <b><i>Definición 1.4</i></b>
-
+        <div class="num_block" prefix="Definición">
           <ol type="I">
             <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
-            \[D = \{(x,y) \in \R^2: a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}\]
-            Es decir, si está acotada por las líneas verticales $x = a$ y $x = b$ y por las curvas $g_1(x)$ y $g_2(x)$.</li>
+            \[D = \{(x,y) \in \R^2: a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}\]</li>
 
             <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
-            \[D = \{(x,y) \in \R^2: c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}\]
-            Es decir, si está acotada por las líneas horizontales $y = c$ y $y = d$ y por las curvas $h_1(y)$ y $h_2(y)$.</li>
+            \[D = \{(x,y) \in \R^2: c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}\]</li>
           </ol>
         </div>
       </div>
@@ -425,24 +449,22 @@
           <figcaption>Ejemplo de una región que se puede describir como Tipo I y Tipo II.</figcaption>
         </figure>
 
-        <h3>Integrales Dobles sobre Regiones No Recangulares</h3>
+        <h3>Integrales Dobles sobre Regiones No Rectangulares</h3>
 
-        <div class="note">
-          <p><b><i>Teorema 1.3</i></b></p>
-
-          <p>Sea $g: R \rightarrow \R$ la extensión de la función $f: \R^2 \rightarrow \R$ definida sobre las regiones $D$ y $R$, así como se muestra en la Figura 1.8. Entonces $g(x,y)$ es integrable y la integral doble de $f(x,y)$ sobre $D$ es:
-          \[\iint\limits_D f(x,y)dA = \iint\limits_R g(x,y)dA\]</p>
+        <div class="num_block" prefix="Teorema">
+          Sea $g: R \rightarrow \R$ la extensión de la función $f: \R^2 \rightarrow \R$ definida sobre las regiones $D$ y $R$, así como se muestra en la <ref ref_id="region_general"></ref>. Entonces $g(x,y)$ es integrable y la integral doble de $f(x,y)$ sobre $D$ es:
+          \[\iint\limits_D f(x,y)dA = \iint\limits_R g(x,y)dA\]
         </div>
 
-        <p>El lado derecho de esta ecuación se ha visto en las secciones anteriores. Además la igualdad es válida porque $g(x,y) = 0$ para cualquier punto $(x,y)$ que se encuentra fuera de $D$, por lo que no aportan nada a la integral.</p>
+        <p>El lado derecho de esta ecuación se ha visto en las secciones anteriores. Además la igualdad es válida porque $g(x,y) = 0$ para cualquier punto $(x,y)$ que se encuentra fuera de $D$, por lo que no aporta nada a la integral.</p>
       </div>
 
       <!--  -->
       <div class="page">
         <p>Pero si la región $D$ está acotada por curvas suaves y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
 
-        <div class="note">
-          <p><b><i>Teorema 1.4: Teorema de Fubini (Fuerte)</i></b></p>
+        <div class="num_block" prefix="Teorema" id="fubini_fuerte">
+          <b><i>Teorema de Fubini (Fuerte):</i></b>
 
           <p>Sea $f: \R^2 \rightarrow \R$ una función contínua sobre una región $D$.</p>
 
@@ -456,21 +478,8 @@
             </li>
           </ol>
         </div>
-      </div>
 
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
+        <p>Notemos que el <ref ref_id="fubini_debil"></ref> es un caso particular del <ref ref_id="fubini_fuerte"></ref> en el que $g_1(x) = c$, $g_2(x) = d$, $h_1(y) = a$, $h_2(y) = b$ y $D$ es una región rectangular.</p>
       </div>
 
       <!--  -->
@@ -481,9 +490,26 @@
       <!--  -->
       <div class="page">
         <h2 id="sec_c1_geometría_de_funciones_de_R2_en_R2">Geometría de las funciones de $\R^2$ en $\R^2$.</h2>
+      </div>
 
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div>
         <h2 id="sec_c1_teorema_de_cambio_de_variable">Teorema del cambio de variable..</h2>
-
         <h2 id="sec_c1_aplicaciones">Aplicaciones.</h2>
       </div>
 
