@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
+      <param name="C_01" value="id='f_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='f(r,θ)' expresión='(0,0,150,40)' valor='3+sin(r)+cos(θ)' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_o' ">
+      <param name="C_02" value="id='a' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='a' expresión='(0,0,150,40)' valor='1' incr='0.1' min='0' max='b-0.01' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_03" value="id='b' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='b' expresión='(0,0,150,40)' valor='5' incr='0.1' min='a+0.01' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_04" value="id='m' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='m' expresión='(0,0,150,40)' valor='5' incr='1' min='1' discreto='sí' decimales='0' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="C_05" value="id='alfa' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='⍺' expresión='(0,0,150,40)' valor='pi/6' incr='pi/100' min='0' max='beta-0.01' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' info='α' ">
+      <param name="C_06" value="id='beta' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='β' expresión='(0,0,150,40)' valor='5pi/6' incr='pi/100' min='alfa+0.01' max='2pi' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' info='β' ">
+      <param name="C_07" value="id='n' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='n' expresión='(0,0,150,40)' valor='5' incr='1' min='1' discreto='sí' decimales='0' fijo='sí' visible='sí' btn_pos='v_left' ">
+      <param name="A_01" value="id='longitud_ejes' expresión='10' tipo='variable' ">
+      <param name="A_02" value="id='f(r,θ)' algoritmo='no' expresión='_Eval_(f_texto)' tipo='función' ">
+      <param name="A_03" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-20' ">
+      <param name="A_04" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,(0<s)&&(s<1)?longitud_ejes:0, s==1?longitud_ejes:0)' familia='s' s.intervalo='[0,1]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='superficie' fondo='no' color='6090a0' color_reverso='eeffaa' expresión='x=-b+u*2b;y=-b+v*2b;t=atan(y/x)+pi*(1-sgn(x))/2;r=sqrt(x^2+y^2);z=f(r,t)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='7' Nv='7' ">
+      <param name="S_03" value="espacio='E1' tipo='superficie' fondo='no' color='eeffaa' color_reverso='ff00ff' dibujar-si='0' expresión='x=2*u-1;y=2*v-1;z=2+x^2+y^2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='7' Nv='7' ">
+      <param name="S_04" value="espacio='E1' tipo='segmento' fondo='no' color='ff8000' expresión='(a*cos(alfa+s*abs(beta-alfa)),a*sin(alfa+s*abs(beta-alfa)),0) (b*cos(alfa+s*abs(beta-alfa)),b*sin(alfa+s*abs(beta-alfa)),0)' familia='s' s.intervalo='[0,1]' s.pasos='n' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' ">
+      <param name="S_05" value="espacio='E1' tipo='curva' fondo='no' color='ff8000' expresión='ri=(a+s*abs(b-a));x=ri*cos(beta)+u*abs(ri*cos(beta)-ri*cos(alfa));y=sqrt((ri)^2-x^2);z=0' familia='s' s.intervalo='[0,1]' s.pasos='m' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='30' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

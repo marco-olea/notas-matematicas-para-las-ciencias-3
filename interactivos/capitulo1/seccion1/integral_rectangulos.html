@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>TITULO</title>
   
-  <script type="text/javascript" src="../lib/descartes-min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
 <body style="padding:0; margin:0; background:#eff0f1;">
@@ -21,7 +21,7 @@
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='-50' O.y='0' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
       <param name="E_02" value="tipo='R2' id='E2' x='3%' y='4%' ancho='15%' alto='15%' dibujar-si='1' fijo='sí' escala='1' O.x='-50%' O.y='50%' despl_imagen='mosaico' fondo='f0f8fa' red='no' red10='no' ejes='no' texto='no' números='no' eje-x='x' eje-y='y' resizable='false' sensible_a_los_movimientos_del_ratón='no' color_borde_texto='0' borderColor='000000' border_radius='0' ">
-      <param name="C_01" value="id='F' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='f(x,y)' expresión='(0,0,150,40)' valor='1/x+1/y' min='0' max='100' discreto='no' decimales='0' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_5' ">
+      <param name="C_01" value="id='F' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='f(x,y)' expresión='(0,0,150,40)' valor='1/x+1/y' min='0' max='100' discreto='no' decimales='0' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_e' ">
       <param name="C_02" value="id='a' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='a' expresión='(0,0,150,40)' valor='0.5' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
       <param name="C_03" value="id='b' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='b' expresión='(0,0,150,40)' valor='4.5' incr='0.1' min='a' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
       <param name="C_04" value="id='c' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='c' expresión='(0,0,150,40)' valor='0.5' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='v_left' ">
@@ -36,14 +36,14 @@
       <param name="A_04" value="id='longitud_ejes' expresión='10' tipo='variable' ">
       <param name="A_05" value="id='g1(s)' algoritmo='no' expresión='a+dx*(m<=n?s%m:floor(s/n))' tipo='función' info='Incremento en x' ">
       <param name="A_06" value="id='g2(s)' algoritmo='no' expresión='c+dy*(n<m?s%n:floor(s/m))' tipo='función' info='Incremento en y' ">
-      <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-20;E1.observador=1000;rect_x=E2._w/2;rect_y=E2._h/2' ">
+      <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-20;rect_x=E2._w/2;rect_y=E2._h/2' ">
       <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
       <param name="A_09" value="id='ratón_apretado' evento='sí' condición='E2.mouse_pressed' acción='calcular' parámetro='rect_x=E2.mouse_x;rect_y=E2.mouse_y' ejecución='siempre' ">
       <param name="G_01" value="espacio='E2' tipo='rectángulo' fondo='no' color='000000' coord_abs='sí' expresión='(0,0,E2._w-1,E2._h-1)' relleno='ff8000' ancho='1' border_radius='0' lineDash='solid' info='rect' ">
       <param name="G_02" value="espacio='E2' tipo='punto' fondo='no' color='000000' coord_abs='sí' expresión='(rect_x,E2._h-rect_y)' decimales='2' fijo='sí' tamaño='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='punto' ">
       <param name="G_03" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(E2._w-12.5,E2._h-20)' texto='x' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_center' anchor='a_top_left' info='x' ">
       <param name="G_04" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(4,0)' texto='y' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='16' align='a_center' anchor='a_top_left' info='y' ">
-      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='60000000' expresión='(0,0,0)(s==0?longitud_ejes:0,(0<s)&&(s<1)?longitud_ejes:0, s==1?longitud_ejes:0)' familia='s' s.intervalo='[0,1]' s.pasos='3' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='60000000' expresión='(0,0,0)(s==0?longitud_ejes:0,(0<s)&&(s<1)?longitud_ejes:0, s==1?longitud_ejes:0)' familia='s' s.intervalo='[0,1]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
       <param name="S_02" value="espacio='E1' tipo='punto' fondo='no' color='eeffaa' color_reverso='6090a0' expresión='(a,0,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i a\i0}' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='135' info='a' ">
       <param name="S_03" value="espacio='E1' tipo='punto' fondo='no' color='eeffaa' color_reverso='6090a0' expresión='(b,0,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i b\i0}' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='135' info='b' ">
       <param name="S_04" value="espacio='E1' tipo='punto' fondo='no' color='eeffaa' color_reverso='6090a0' expresión='(0,c,0)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i c\i0}' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='0' offset_dist='12' offset_angle='45' info='c' ">
