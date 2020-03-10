@@ -245,7 +245,7 @@
       <div class="page">
         <h3>Propiedades de la integral</h3>
 
-        <div class="num_block" prefix="Teorema">
+        <div class="num_block" prefix="Teorema" id="propiedades_integral">
           Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:
         </div>
 
@@ -524,7 +524,7 @@
           <figcaption>Un rectángulo polar $R$ dividido en $m \cdot n$ rectángulos polares $R_{ij}$.</figcaption>
         </figure>
 
-        <p style="text-align-last:justify;">Recordemos que para un círculo de radio $r$, la longitud $s$ de un arco delimitado por un ángulo central de $\theta$ radianes es $s = r \theta$. Observa en la <ref ref_id="rectangulo_polar"></ref> que $R_{ij}$ se parece a un trapecio de altura $\Delta r$, base mayor $r_i \Delta \theta$ y base menor $r_{i-1} \Delta \theta$. Por tanto, el área del rectángulo polar $R_{ij}$ es 
+        <p>Recordemos que para un círculo de radio $r$, la longitud $s$ de un arco delimitado por un ángulo central de $\theta$ radianes es $s = r \theta$. Observa en la <ref ref_id="rectangulo_polar"></ref> que $R_{ij}$ se parece a un trapecio de altura $\Delta r$, base mayor $r_i \Delta \theta$ y base menor $r_{i-1} \Delta \theta$. Por tanto, el área del rectángulo polar $R_{ij}$ es:
         \[
           \begin{aligned}
               \Delta A &= \frac{1}{2} \Delta r (r_{i-1}\Delta \theta + r_i \Delta \theta) \\
@@ -532,7 +532,7 @@
           \end{aligned}
         \]</p>
 
-        <p style="text-align-last:justify;">Si definimos $r^*_{ij} = \frac{1}{2} (r_{i-1} + r_i)$, entonces $\Delta A = r^*_{ij} \Delta r \Delta \theta$. Por lo</p>
+        <p>Si definimos $r^*_{ij} = \frac{1}{2} (r_{i-1} + r_i)$, entonces $\Delta A = r^*_{ij} \Delta r \Delta \theta$. Por lo</p>
       </div>
 
       <!--  -->
@@ -545,6 +545,49 @@
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_rectangulos_polares.html"></div>
           <figcaption>Un rectángulo polar $R$ dividido en $m \cdot n$ rectángulos polares $R_{ij}$.</figcaption>
+        </figure>
+
+        <p>Para obtener una suma de Riemann doble sobre la región $R$, sumamos los volúmenes de los prismas sobre cada uno de los rectángulos polares $R_{ij}$. Esto nos da el siguiente resultado:
+        \[
+          \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
+        \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Al igual que con las regiones rectangulares, obtenemos mejores aproximaciones conforme aumentan $m$ y $n$, por lo que definimos el volumen polar de la siguiente manera:
+        \[
+          V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
+        \]</p>
+
+        <div class="num_block" prefix="Definición">
+          La integral doble de la función $f(r,\theta)$ sobre el rectángulo polar $R$ en el plano $r\theta$ es:
+          \[
+            \begin{aligned}
+              \iint\limits_R f(r,\theta)dA
+                &= \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) \Delta A \\
+                &= \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
+            \end{aligned}
+          \]
+        </div>
+
+        <p>Esta integral doble también se puede expresar como una integral iterada en coordenadas polares:
+        \[
+          \iint\limits_R f(r,\theta)dA = \iint\limits_R f(r,\theta)r\ drd\theta = \int\limits^{\theta=\beta}_{\theta=\alpha} \int\limits^{r=b}_{r=a} f(r,\theta)r\ drd\theta
+        \]</p>
+
+        <p>Observa que la expresión $dA$ se sutituye por $rdrd\theta$ al trabajar con coordenadas polares.</p>
+
+        <p>Todas la propiedades enunciadas en el <ref ref_id="propiedades_integral"></ref> para las integrales dobles en coordenadas rectangulares también aplican para coordenadas polares.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h3>Integrales sobre regiones generales polares</h3>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_generales_polares.html"></div>
+          <figcaption>TODO</figcaption>
         </figure>
       </div>
 
