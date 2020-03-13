@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="685" height="375">
+      <param name="tamaño" value="685x375">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='-10%' O.y='45%' despl_imagen='arr-izq' fondo='ffffff' red='no' red10='no' ejes='404040' texto='no' números='no' eje-x='x' eje-y='y' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
+      <param name="C_01" value="id='h1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='sur' espacio='E1' nombre='h₁(θ)' expresión='(0,0,150,40)' valor='1+sin(θ)' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' evaluar='no' respuesta='krypto_j' info='función h1' ">
+      <param name="C_02" value="id='h2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='sur' espacio='E1' nombre='h₂(θ)' expresión='(0,0,150,40)' valor='4.5+cos(θ)' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' evaluar='no' respuesta='krypto_b' info='función h2' ">
+      <param name="C_03" value="id='alfa' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='⍺' expresión='(0,0,150,40)' valor='0.26' incr='pi/50' min='beta-2pi' max='beta' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' btn_pos='v_left' info='⍺' ">
+      <param name="C_04" value="id='beta' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='β' expresión='(0,0,150,40)' valor='2.8' incr='pi/50' min='alfa' max='alfa+2pi' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='validar_region()' btn_pos='v_left' info='β' ">
+      <param name="A_01" value="id='h1(θ)' algoritmo='no' expresión='_Eval_(h1_texto)' tipo='función' ">
+      <param name="A_02" value="id='h2(θ)' algoritmo='no' expresión='_Eval_(h2_texto)' tipo='función' ">
+      <param name="A_03" value="id='tm' expresión='0.5*(alfa+beta)' tipo='variable' ">
+      <param name="A_04" value="id='rm' expresión='0.5*(h1(tm)+h2(tm))' tipo='variable' ">
+      <param name="A_05" value="id='validar_region()' algoritmo='sí' expresión='0' local='j,n,dt' inicio='j=0;n=100;dt=(beta-alfa)/n;dibujar=1' hacer='tj=alfa+j*dt;dibujar=dibujar&&(h1(tj)<=h2(tj));j=j+1' mientras='j<=n' tipo='función' ">
+      <param name="A_06" value="id='es_circulo' expresión='beta>=alfa+199pi/100' tipo='variable' ">
+      <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' inicio='validar_region()' ">
+      <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' fondo='no' color='000000' coord_abs='no' expresión='(h1(t)*cos(t),h1(t)*sin(t))' parámetro='t' t.intervalo='[alfa,beta]' t.pasos='100' ancho='2' visible='no' editable='no' lineDash='solid' info='h1' ">
+      <param name="G_02" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='((-0.7+h1(tm))*cos(tm),(-0.7+h1(tm))*sin(tm))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i h\i0{\subix\i 1\i0}\i (θ)\i0}\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='h1 texto' ">
+      <param name="G_03" value="espacio='E1' tipo='curva' fondo='no' color='000000' coord_abs='no' expresión='(h2(t)*cos(t),h2(t)*sin(t))' parámetro='t' t.intervalo='[alfa,beta]' t.pasos='100' ancho='2' visible='no' editable='no' lineDash='solid' info='h2' ">
+      <param name="G_04" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='((0.7+h2(tm))*cos(tm),(0.7+h2(tm))*sin(tm))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i h\i0{\subix\i 2\i0}\i (θ)\i0}\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='h2 texto' ">
+      <param name="G_05" value="espacio='E1' tipo='segmento' fondo='no' color='000000' dibujar-si='!es_circulo' coord_abs='no' expresión='(h1(alfa)*cos(alfa),h1(alfa)*sin(alfa)) (h2(alfa)*cos(alfa),h2(alfa)*sin(alfa))' decimales='2' fijo='sí' tamaño='0' ancho='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='⍺ línea' ">
+      <param name="G_06" value="espacio='E1' tipo='texto' fondo='no' color='20303a' dibujar-si='!es_circulo' coord_abs='no' expresión='(0.5*(h1(alfa)+h2(alfa))*cos(alfa-0.1), 0.5*(h1(alfa)+h2(alfa))*sin(alfa-0.1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i θ=⍺\i0}\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='⍺ texto' ">
+      <param name="G_07" value="espacio='E1' tipo='segmento' fondo='no' color='000000' dibujar-si='!es_circulo' coord_abs='no' expresión='(h1(beta)*cos(beta),h1(beta)*sin(beta)) (h2(beta)*cos(beta),h2(beta)*sin(beta))' decimales='2' fijo='sí' tamaño='0' ancho='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='β línea' ">
+      <param name="G_08" value="espacio='E1' tipo='texto' fondo='no' color='20303a' dibujar-si='!es_circulo' coord_abs='no' expresión='(0.5*(h1(beta)+h2(beta))*cos(beta+0.1), 0.5*(h1(beta)+h2(beta))*sin(beta+0.1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i θ=β\i0}\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_left' info='β texto' ">
+      <param name="G_09" value="espacio='E1' tipo='relleno' fondo='no' color='ff8000' dibujar-si='dibujar' coord_abs='no' expresión='(rm*cos(tm),rm*sin(tm))' info='región D' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' fondo='no' color='20303a' dibujar-si='dibujar' coord_abs='no' expresión='(rm*cos(tm),rm*sin(tm))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i D\i0}\i0\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='región D texto' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
