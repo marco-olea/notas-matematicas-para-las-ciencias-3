@@ -625,7 +625,7 @@
       <div class="page">
         <h2 id="sec_c1_teorema_de_cambio_de_variable">Teorema del cambio de variable.</h2>
 
-        <p>Hagamos un breve recordatorio del método de integración por sustitución:
+        <p>A continuación se hará un breve recordatorio del método de integración por sustitución:
         \[
           \int\limits^b_a f(x)dx = \int\limits^d_c f(g(u))g'(u)du
         \]</p>
@@ -639,14 +639,31 @@
         <div class="num_block" prefix="Definición">
           Sea $G \subseteq \R^2$ una región en un plano. Una <b>transformación planar</b> es una función $T$ que transforma $G$ en una región $R \subseteq \R^2$ en otro plano mediante un cambio de variables.
         </div>
+
+        <p>Un ejemplo de esto se muestra en la <ref ref_id="transformacion_planar"></ref>, donde el cambio de variables es $x = g(u,v)$ y $y = h(u,v)$, aunque a veces se escribe $x = x(u,v)$ y $y = y(u,v)$.</p>
+
+        <p>Típicamente supondremos que cada una de estas funciones tienen primeras derivadas parciales contínuas, esto es, que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son contínuas.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <figure>
+        <figure id="transformacion_planar">
           <div class="interactive" width="800" height="1000" src="interactivos/capitulo1/seccion5/transformacion_planar.html"></div>
-          <figcaption>TODO</figcaption>
+          <figcaption>Una transformación de una región $G$ en el plano $uv$ a una región $R$ en el plano $xy$, mediante el cambio de variables $x = g(u,v)$ y $y = h(u,v)$, es decir, $T(u,v) = (g(u,v),h(u,v))$.</figcaption>
         </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <div class="num_block" prefix="Definición">
+          Sea $T: G \rightarrow R$ una transformación, donde $G \subseteq \R^2$ es una región en el plano $uv$ y $R \subseteq \R^2$ es una región en otro plano. Decimos que $T$ es <b>inyectiva</b> si para todo $(u_1,v_1),(u_2,v_2) \in G$ tal que $(u_1,v_1) \not = (u_2,v_2)$, entonces $T(u_1,v_1) \not = T(u_2,v_2)$.
+        </div>
+
+        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son funciones identidad.</p>
+
+        <h3>Jacobianas</h3>
+
+
       </div>
 
       <!--  -->
