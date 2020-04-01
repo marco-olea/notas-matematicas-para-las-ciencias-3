@@ -179,7 +179,7 @@
 
         <h3>Volúmenes e Integrales Dobles</h3>
 
-        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $z = 0$. Dicho espacio está delimitado por una función contínua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
+        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $z = 0$. Dicho espacio está delimitado por una función continua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
         \[
           R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}
         \]</p>
@@ -237,7 +237,7 @@
         <p>Observemos que las alturas de los prismas rectangulares no son exactas si la superficie $z = f(x,y)$ es curva. Es decir, los prismas pueden contener espacio que no está debajo de $f(x,y)$ o bien puede haber espacio debajo de $f(x,y)$ que no está contenido en ninguno de los prismas. Sin embargo, estos errores tienden a $0$ conforme $m$ y $n$ tienden a infinito.</p>
 
         <div class="num_block" prefix="Definición" id="integrabilidad">
-          Si $f$ es acotada y contínua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.
+          Si $f$ es acotada y continua sobre $R$ excepto posiblemente en un número finito de curvas suaves, entonces existe la integral doble y decimos que $f$ es <b>integrable</b> sobre $R$.
         </div>
       </div>
 
@@ -394,7 +394,7 @@
 
         <h3>Regiones generales acotadas</h3>
 
-        <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, contínua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la Figura 1.8.</p>
+        <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, continua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la Figura 1.8.</p>
 
         <figure id="region_general">
           <div class="interactive" width="800" height="525" src="interactivos/capitulo1/seccion3/region_general.html"></div>
@@ -466,7 +466,7 @@
         <div class="num_block" prefix="Teorema" id="fubini_fuerte">
           <b><i>Teorema de Fubini (Fuerte):</i></b>
 
-          <p>Sea $f: \R^2 \rightarrow \R$ una función contínua sobre una región $D$.</p>
+          <p>Sea $f: \R^2 \rightarrow \R$ una función continua sobre una región $D$.</p>
 
           <ol>
             <li>Si $D$ es de Tipo I, entonces:
@@ -507,7 +507,7 @@
 
         <h3>Integrales sobre regiones polares rectangulares</h3>
 
-        <p>Cuando definimos la integral doble de una función contínua sobre una región rectangular, dividimos dicha región en rectángulos más pequeños cuyos lados $\Delta x$ y $\Delta y$ eran paralelos a los ejes de las abscisas y ordenadas, y eran de tamaño constante (<ref ref_id="region_rectangular"></ref>). En coordenadas polares, trabajaremos con <b>rectángulos polares</b> cuyos lados $\Delta r$ y $\Delta \theta$ son de tamaño constante. Formalmente:
+        <p>Cuando definimos la integral doble de una función continua sobre una región rectangular, dividimos dicha región en rectángulos más pequeños cuyos lados $\Delta x$ y $\Delta y$ eran paralelos a los ejes de las abscisas y ordenadas, y eran de tamaño constante (<ref ref_id="region_rectangular"></ref>). En coordenadas polares, trabajaremos con <b>rectángulos polares</b> cuyos lados $\Delta r$ y $\Delta \theta$ son de tamaño constante. Formalmente:
         \[
           R = \{(r, \theta): a \leq r \leq b, \alpha \leq \theta \leq \beta\}
         \]</p>
@@ -585,7 +585,7 @@
       <div class="page">
         <h3>Integrales sobre regiones polares generales</h3>
 
-        <p>Para evaluar la integral doble de una función contínua sobre una región polar general, describimos dos tipos de regiones de análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
+        <p>Para evaluar la integral doble de una función continua sobre una región polar general, describimos dos tipos de regiones de análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
 
         <p>Dado que es más común escribir ecuaciones polares en términos de $\theta$ ($r = f(\theta)$), definimos una región polar general como se muestra en la <ref ref_id="polar_general_tipoii"></ref>, es decir:
         \[
@@ -593,7 +593,7 @@
         \]</p>
 
         <div class="num_block" prefix="Teorema">
-          Sea $f: \R^2 \rightarrow \R$ una función contínua sobre una región polar general $D$. Entonces:
+          Sea $f: \R^2 \rightarrow \R$ una función continua sobre una región polar general $D$. Entonces:
           \[
             \iint\limits_D f(r,\theta)r\ drd\theta = \int\limits^{\theta=\beta}_{\theta=\alpha} \int\limits^{r=h_2(\theta)}_{r=h_1(\theta)} f(r,\theta)r\ drd\theta
           \]
@@ -617,7 +617,7 @@
       <div class="page">
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_polares_generales.html"></div>
-          <figcaption>Una región polar general y el sólido que se encuentra entre este y una función contínua $f(r,\theta)$.</figcaption>
+          <figcaption>Una región polar general y el sólido que se encuentra entre este y una función continua $f(r,\theta)$.</figcaption>
         </figure>
       </div>
 
@@ -642,7 +642,7 @@
 
         <p>Un ejemplo de esto se muestra en la <ref ref_id="transformacion_planar"></ref>, donde el cambio de variables es $x = g(u,v)$ y $y = h(u,v)$, aunque a veces se escribe $x = x(u,v)$ y $y = y(u,v)$.</p>
 
-        <p>Típicamente supondremos que cada una de estas funciones tienen primeras derivadas parciales contínuas, esto es, que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son contínuas.</p>
+        <p>Típicamente supondremos que cada una de estas funciones tienen primeras derivadas parciales continuas, esto es, que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son continuas.</p>
       </div>
 
       <!--  -->
