@@ -661,9 +661,42 @@
 
         <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son funciones identidad.</p>
 
-        <h3>Jacobianas</h3>
+        <h3>Jacobiano</h3>
 
+        <p>Sea $T(u,v) = (g(u,v),h(u,v))$ una transformación inyectiva. Si sucede que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son continuas, entonces decimos que $T$ es una transformación $C^1$ (donde $C$ denota continuidad).</p>
 
+        <p>Veamos cómo $T$ transforma una región rectangular $S$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a una región $R$ en el plano $xy$.</p>
+
+        <p>Como $x = g(u,v)$ y $y = h(u,v)$, el vector de posición de la imagen del punto $(u,v)$ es $\textbf{r}(u,v) = g(u,v)\textbf{i} + h(u,v)\textbf{j}$. Sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen es $(x_0,y_0) = T(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva con función vectorial $r(u,v_0)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
+        \[
+          \textbf{r}_u = g_u(u_0,v_0)\textbf{i} + h_u(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial u}\textbf{i} + \frac{\partial y}{\partial u}\textbf{j}
+        \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva con función vectorial $r(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es 
+        \[
+          \textbf{r}_v = g_v(u_0,v_0)\textbf{i} + h_v(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial v}\textbf{i} + \frac{\partial y}{\partial v}\textbf{j}
+        \]</p>
+
+        <p>Ahora, notemos que:
+        \[
+          r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica}
+        \]
+        \[
+          \textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0) \approx \Delta u \textbf{r}_u
+        \]</p>
+
+        <p>Análogamente:
+        \[
+          r_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \ \text{implica}
+        \]
+        \[
+          \textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \Delta v \textbf{r}_v
+        \]</p>
+
+        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left| \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right| = \left| \textbf{r}_u \times \textbf{r}_v \right| \Delta u \Delta v$</p>
       </div>
 
       <!--  -->
