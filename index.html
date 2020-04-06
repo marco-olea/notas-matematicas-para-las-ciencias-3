@@ -696,7 +696,78 @@
           \textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \Delta v \textbf{r}_v
         \]</p>
 
-        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left| \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right| = \left| \textbf{r}_u \times \textbf{r}_v \right| \Delta u \Delta v$</p>
+        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left\Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right\Vert = \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v$, donde el producto cruz (en su forma matricial con los vectores canónicos $\textbf{i}$, $\textbf{j}$ y $\textbf{k}$) es:
+        </p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>
+        \[
+          \begin{aligned}
+            \textbf{r}_u \times \textbf{r}_v
+            = \left| \begin{array}{ccc}
+              \textbf{i} & \textbf{j} & \textbf{k} \\[5pt]
+              \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} & 0 \\[11pt]
+              \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v} & 0
+            \end{array} \right|
+            &= \left| \begin{array}{cc}
+              \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+              \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+            \end{array} \right| \textbf{k} \\
+            &= \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k}
+          \end{aligned}
+        \]</p>
+
+        <p>De donde:
+        \[
+          \begin{aligned}
+            \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert 
+            &= \left\Vert \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k} \right\Vert \\
+            &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Vert \textbf{k} \Vert \\
+            &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right|
+          \end{aligned}
+        \]</p>
+
+        <p>Por tanto:
+        \[
+          \Delta A \approx \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v = \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Delta u \Delta v
+        \]</p>
+
+        <div class="num_block" prefix="Definición" id="jacobiano">
+          Sea $T(u,v) = (x,y)$ una transformación $C^1$, donde $x = g(u,v)$ y $y = h(u,v)$. El <b>Jacobiano</b> de $T$, denotado $J(u,v)$, es:
+          \[
+            J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|
+            = \left| \begin{array}{cc}
+              \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+              \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+            \end{array} \right|
+            = \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right)
+          \]
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Con la <ref ref_id="jacobiano"></ref> tenemos que:
+        \[
+          \Delta A \approx \left| J(u,v) \right| \Delta u \Delta v
+        \]</p>
+
+        <p>Notemos que usualmente el Jacobiano se denota simplemente con $J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|$. Observemos además que:
+        \[
+          \left| \begin{array}{cc}
+            \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+            \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+          \end{array} \right|
+          = \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right)
+          = \left| \begin{array}{cc}
+            \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial x}{\partial v} \\[11pt]
+            \displaystyle\frac{\partial y}{\partial u} & \displaystyle\frac{\partial y}{\partial v}
+          \end{array} \right|
+        \]</p>
+
+        <p>Por lo que la notación $J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|$ implica que el determinante Jacobiano se puede escribir con las parciales de $x$ en la primera fila y las parciales de $y$ en la segunda fila, o bien las parciales de $x$ en la primera columna y las parciales de $y$ en la segunda columna.</p>
       </div>
 
       <!--  -->
