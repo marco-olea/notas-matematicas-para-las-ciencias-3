@@ -177,7 +177,7 @@
 
         <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlos para encontrar el volumen de un sólido sobre una región rectangular en el plano $z = 0$.</p>
 
-        <h3>Volúmenes e Integrales Dobles</h3>
+        <h3>Volúmenes e integrales dobles</h3>
 
         <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $z = 0$. Dicho espacio está delimitado por una función continua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
         \[
@@ -225,7 +225,7 @@
           V = \lim_{\Delta x, \Delta y \rightarrow 0} \sum^m_{i=1} \sum^n_{j=1} f(x^*_{ij}, y^*_{ij}) \Delta A
         \]</p>
 
-        <div class="num_block" prefix="Definición">
+        <div id="integral_doble" class="num_block" prefix="Definición">
           Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
           \[
             \iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A
@@ -360,7 +360,7 @@
         <h3>Teorema de Fubini</h3>
 
         <div class="num_block" prefix="Teorema" id="fubini_debil">
-          <b><i>Teorema de Fubini (Débil):</i></b>
+          <b><i>Teorema de Fubini (Débil)</i></b>
           <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f(x,y)$ sobre $R$ es igual a una integral iterada:
           \[
             \begin{aligned}
@@ -449,7 +449,7 @@
           <figcaption>Ejemplo de una región que se puede describir como Tipo I y Tipo II.</figcaption>
         </figure>
 
-        <h3>Integrales Dobles sobre Regiones No Rectangulares</h3>
+        <h3>Integrales dobles sobre regiones no rectangulares</h3>
 
         <div class="num_block" prefix="Teorema">
           Sea $g: R \rightarrow \R$ la extensión de la función $f: \R^2 \rightarrow \R$ definida sobre las regiones $D$ y $R$, así como se muestra en la <ref ref_id="region_general"></ref>. Entonces $g(x,y)$ es integrable y la integral doble de $f(x,y)$ sobre $D$ es:
@@ -464,7 +464,7 @@
         <p>Pero si la región $D$ está acotada por curvas suaves y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
 
         <div class="num_block" prefix="Teorema" id="fubini_fuerte">
-          <b><i>Teorema de Fubini (Fuerte):</i></b>
+          <b><i>Teorema de Fubini (Fuerte)</i></b>
 
           <p>Sea $f: \R^2 \rightarrow \R$ una función continua sobre una región $D$.</p>
 
@@ -663,9 +663,9 @@
 
         <h3>Jacobiano</h3>
 
-        <p>Sea $T(u,v) = (g(u,v),h(u,v))$ una transformación inyectiva. Si sucede que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son continuas, entonces decimos que $T$ es una transformación $C^1$ (donde $C$ denota continuidad).</p>
+        <p>Sea $T(u,v) = (g(u,v),h(u,v))$ una transformación inyectiva. Si sucede que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son continuas, entonces decimos que $T$ es una transformación $C^1$ ($C$ denota continuidad).</p>
 
-        <p>Veamos cómo $T$ transforma una región rectangular $S$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a una región $R$ en el plano $xy$.</p>
+        <p>Observa en la <ref ref_id="jacobiano_explicacion"></ref> cómo $T$ transforma una región rectangular $S$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a una región $R$ en el plano $xy$.</p>
 
         <p>Como $x = g(u,v)$ y $y = h(u,v)$, el vector de posición de la imagen del punto $(u,v)$ es $\textbf{r}(u,v) = g(u,v)\textbf{i} + h(u,v)\textbf{j}$. Sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen es $(x_0,y_0) = T(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva con función vectorial $r(u,v_0)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
         \[
@@ -675,14 +675,19 @@
 
       <!--  -->
       <div class="page">
-        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva con función vectorial $r(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es 
+        <figure id="jacobiano_explicacion"><!-- TODO -->
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html"></div>
+          <figcaption></figcaption>
+        </figure>
+
+        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva con función vectorial $r(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
         \[
           \textbf{r}_v = g_v(u_0,v_0)\textbf{i} + h_v(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial v}\textbf{i} + \frac{\partial y}{\partial v}\textbf{j}
         \]</p>
 
         <p>Ahora, notemos que:
         \[
-          r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica}
+          r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica que}
         \]
         \[
           \textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0) \approx \Delta u \textbf{r}_u
@@ -690,18 +695,18 @@
 
         <p>Análogamente:
         \[
-          r_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \ \text{implica}
-        \]
-        \[
-          \textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \Delta v \textbf{r}_v
+          r_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \ \text{implica que}
         \]</p>
-
-        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left\Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right\Vert = \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v$, donde el producto cruz (en su forma matricial con los vectores canónicos $\textbf{i}$, $\textbf{j}$ y $\textbf{k}$) es:
-        </p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>\[
+          \textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \Delta v \textbf{r}_v
+        \]</p>
+
+        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left\Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right\Vert = \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v$, donde el producto cruz (en su forma matricial con los vectores canónicos $\textbf{i}$, $\textbf{j}$ y $\textbf{k}$) es:</p>
+
         <p>
         \[
           \begin{aligned}
@@ -728,7 +733,10 @@
             &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right|
           \end{aligned}
         \]</p>
+      </div>
 
+      <!--  -->
+      <div class="page">
         <p>Por tanto:
         \[
           \Delta A \approx \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v = \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Delta u \Delta v
@@ -745,10 +753,7 @@
             = \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right)
           \]
         </div>
-      </div>
 
-      <!--  -->
-      <div class="page">
         <p>Con la <ref ref_id="jacobiano"></ref> tenemos que:
         \[
           \Delta A \approx \left| J(u,v) \right| \Delta u \Delta v
@@ -768,11 +773,61 @@
         \]</p>
 
         <p>Por lo que la notación $J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|$ implica que el determinante Jacobiano se puede escribir con las parciales de $x$ en la primera fila y las parciales de $y$ en la segunda fila, o bien las parciales de $x$ en la primera columna y las parciales de $y$ en la segunda columna.</p>
+      </div>
 
-        <figure id="jacobiano_explicacion">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html"></div>
+      <!--  -->
+      <div class="page">
+        <h3>Cambio de variables para integrales dobles</h3>
+
+        <p>Recordemos la <ref ref_id="integral_doble"></ref> (integral doble) dada en la primera sección de este capítulo:
+        \[
+          \iint\limits_R f(x,y)dA = \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A
+        \]</p>
+
+        <p>Ahora observa en la <ref ref_id="cambio_variables"></ref> que dividimos la región $S$ en el plano $uv$ en subrectángulos $S_{ij}$ tales que los subrectángulos $R_{ij}$ en el plano $xy$ son las imágenes de $S_{ij}$ bajo la transformación $T(u,v) = (x,y)$.</p>
+
+        <figure id="cambio_variables">
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/cambio_variables.html"></div>
           <figcaption></figcaption>
         </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Entonces la integral doble de $f$ sobre $R$ es:
+        \[
+          \begin{aligned}
+            \iint\limits_R &f(x,y)dA \\
+              &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A \\
+              &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(g(u_{ij},v_{ij}),h(u_{ij},v_{ij})) |J(u_{ij},v_{ij})| \Delta u \Delta v
+          \end{aligned}
+        \]</p>
+
+        <p>Nota que lo anterior es la suma de Riemann doble de la integral:
+        \[
+          \iint\limits_S f(g(u,v),h(u,v)) \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
+        \]</p>
+
+        <p>Por lo que podemos concluir el siguiente teorema.</p>
+
+        <div class="num_block" prefix="Teorema">
+          <b><i>Cambio de variables para integrales dobles</i></b>
+          <p>Sea $T(u,v) = (x,y)$ una transformación $C^1$ inyectiva que transforma una región $S$ en el plano $uv$ a una región $R$ en el plano $xy$, y donde $x = g(u,v)$ y $y = h(u,v)$. Supongamos que el Jacobiano en el interior de $S$ es distinto de cero. Sea $f: \R^2 \rightarrow \R$ una función continua sobre $R$. Entonces:
+          \[
+            \iint\limits_R f(x,y)dA = \iint\limits_S f(g(u,v),h(u,v)) \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
+          \]</p>
+        </div>
+
+        <p>Con este teorema, podemos cambiar las variables $(x,y)$ a $(u,v)$ con la siguiente substitución:</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>\[
+          dA = dxdy = \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
+        \]</p>
+
+        <p>Recordando que $x = g(u,v)$ y $y = h(u,v)$ y que se deben cambiar los límites de integración. Este cambio de variables puede facilitar mucho el cálculo de una integral doble.</p>
       </div>
 
       <!--  -->
