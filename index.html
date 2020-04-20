@@ -675,12 +675,7 @@
 
       <!--  -->
       <div class="page">
-        <figure id="jacobiano_explicacion"><!-- TODO -->
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html"></div>
-          <figcaption></figcaption>
-        </figure>
-
-        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva con función vectorial $r(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
+        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva $r(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
         \[
           \textbf{r}_v = g_v(u_0,v_0)\textbf{i} + h_v(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial v}\textbf{i} + \frac{\partial y}{\partial v}\textbf{j}
         \]</p>
@@ -697,6 +692,11 @@
         \[
           r_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \ \text{implica que}
         \]</p>
+
+        <figure id="jacobiano_explicacion">
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html"></div>
+          <figcaption>Mueve el cursor dentro de $S$ para ver cómo se mapea a un punto de $R$. Los vectores verdes miden aproximadamente lo mismo que los morados, por lo que el área de $R$ se aproxima al área del paralelogramo, es decir, $\Delta A \approx \Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \Vert$.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
@@ -818,7 +818,7 @@
           \]</p>
         </div>
 
-        <p>Con este teorema, podemos cambiar las variables $(x,y)$ a $(u,v)$ con la siguiente substitución:</p>
+        <p>Con este teorema, podemos cambiar las variables $(x,y)$ a $(u,v)$ con la siguiente sustitución:</p>
       </div>
 
       <!--  -->
