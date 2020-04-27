@@ -165,8 +165,9 @@
         <p>Información correspondiente al desarrollo de este libro</p>
       </div>
 
+
       <!------------------------------------------------------------>
-      <!-- CAPITULO 1 -->
+      <!-- CAPÍTULO 1 -->
       <!------------------------------------------------------------>
       <!--  -->
       <div class="page">
@@ -788,7 +789,7 @@
 
         <figure id="cambio_variables">
           <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/cambio_variables.html"></div>
-          <figcaption>Haz clic en un subrectángulo $S_{ij}$ para ver su imagen $R_{ij}$ en la región $R$. Observa que conforme aumentan $m$ y $n$, la suma del área de todos los paralelogramos formados por los vectores tangentes a $\textbf{r}(u_i,v)$ y $\textbf{r}(u,v_j)$ en los puntos $(u_{ij},v_{ij})$ se va aproximando al área de $R$.</figcaption>
+          <figcaption>Haz clic en un subrectángulo $S_{ij}$ para ver su imagen $R_{ij}$ en la región $R$. Observa que conforme aumentan $m$ y $n$, la suma del área de todos los paralelogramos formados por los vectores tangentes a $\textbf{r}(u_i,v)$ y $\textbf{r}(u,v_j)$ en los puntos $(x_{ij},y_{ij})$ se va aproximando al área de $R$.</figcaption>
         </figure>
       </div>
 
@@ -812,7 +813,7 @@
 
         <div class="num_block" prefix="Teorema">
           <b><i>Cambio de variables para integrales dobles</i></b>
-          <p>Sea $T(u,v) = (x,y)$ una transformación $C^1$ inyectiva que transforma una región $S$ en el plano $uv$ a una región $R$ en el plano $xy$, y donde $x = g(u,v)$ y $y = h(u,v)$. Supongamos que el Jacobiano en el interior de $S$ es distinto de cero. Sea $f: \R^2 \rightarrow \R$ una función continua sobre $R$. Entonces:
+          <p>Sea $T(u,v) = (x,y)$ una transformación $C^1$ inyectiva que transforma una región $S$ en el plano $uv$ a una región $R$ en el plano $xy$, tal que $x = g(u,v)$ y $y = h(u,v)$. Supongamos que el Jacobiano en el interior de $S$ es distinto de cero. Sea $f: \R^2 \rightarrow \R$ una función continua sobre $R$. Entonces:
           \[
             \iint\limits_R f(x,y)dA = \iint\limits_S f(g(u,v),h(u,v)) \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
           \]</p>
@@ -833,25 +834,65 @@
       <!--  -->
       <div class="page">
         <h2 id="sec_c1_aplicaciones">Aplicaciones.</h2>
+
+        <h3>Áreas</h3>
+        
+        <p>Las integrales dobles nos pueden servir para calcular el área de una región general $D$ contenida en un plano. Simplemente integramos la función $f(x,y) = 1$.</p>
+
+        <div class="num_block" prefix="Definición">
+          El área de una región $D$ contenida en un plano se define como $\iint\limits_D 1dA$.
+        </div>
+
+        <p>Para ilustrar esto, veamos un ejemplo de cómo calcular el área entre dos curvas polares. Consideremos las distintas regiones delimitadas por el círculo $r = 3\cos(\theta)$, la cardioide $r = 1 + \cos(\theta)$ y la recta $\theta = 0$, como se puede observar en la <ref ref_id="area_entre_curvas_polares"></ref>. Primero debemos encontrar los puntos de intersección. Igualando las primeras dos ecuaciones nos da:
+        \[
+          \begin{aligned}
+            3\cos(\theta) = 1 + \cos(\theta) &\Rightarrow 2\cos(\theta) = 1 \\
+              &\Rightarrow \theta = \arccos \left( \frac{1}{2} \right) \\
+              &\Rightarrow \theta = \frac{\pi}{3}
+          \end{aligned}
+        \]</p>
+
+        <p>Por tanto, uno de los puntos de intersección es $(r = \frac{1}{2},\theta = \frac{\pi}{3})$ y entonces la primera región (de izquierda a derecha) está definida entre el círculo y la cardioide de $\theta = \frac{\pi}{3}$ a $\theta = \pi$, la segunda está definida por el círculo de $\theta = \frac{\pi}{3}$ a $\theta = \frac{\pi}{2}$, la tercera está definida por la cardioide de $\theta = 0$ a $\theta = \frac{\pi}{3}$ y la cuarta está definida entre la cardioide y el círculo de $\theta = 0$ a $\theta = \frac{\pi}{3}$.</p>
       </div>
 
-      <div class="page" num=""></div>
+      <!--  -->
+      <div class="page">
+        <figure id="area_entre_curvas_polares">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/area_entre_curvas_polares.html"></div>
+          <figcaption>Haz clic en cualquiera de las cuatro regiones para activar o desactivarla y observa cómo se actualizan los límites de integración.</figcaption>
+        </figure>
+
+        <h3>Valores promedios</h3>
+
+        <p></p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h3>Volúmenes</h3>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h3>Cambio de variables</h3>
+      </div>
+
+      <!--  -->
       <div class="page" num=""></div>
 
+
       <!------------------------------------------------------------>
-      <!-- CAPITULO 2 -->
+      <!-- CAPÍTULO 2 -->
       <!------------------------------------------------------------>
+      <!--  -->
       <div class="page">
         <div class="chap_text">Capítulo II</div>
         <h1 class="chap_name" id="cap_funciones_con_valores_vectoriales">Funciones con valores vectoriales</h1>
-
-        <p>Para cambiar los estilos o las tipografías hay que modificar los estilos que se encuentra en el directorio <code>extra</code>.</p>
-
-        <p>El código correspondiente al funcionamiento del libro se encuentra en el directorio <code>book</code>, este código lo yo lo voy a modificar, y si tiene sugerencias o cambios los podemos incorporar, pero en general no hay que meterse con lo que hay en este directorio.
-
-        <p>Una organización sugerida es que coloques las imágenes de los capítulos (si es que tienes) en el directorio <code>images/capituloN</code> y los interactivos en el directorio <code>interactivos/capituloN</code>, esto con la finalidad de que sea más fácil organizar los componentes de las notas.</p>
-
-        <p>La línea arriba de los números de página va a desaparecer en la versión final, solo está para evitar que el texto por página se salga visualmente. Aunque no prohíbe que se pase del tamaño. Así que hay que tener cuidado con el contenido para no pasarse.</p>
 
         <h2 id="sec_c2_campos_vectoriales_campos_gradientes">Campos vectoriales. Campos gradientes.</h2>
 
@@ -860,8 +901,6 @@
         <h2 id="sec_c2_diferenciación">Diferenciación.</h2>
       </div>
 
-      <!--  -->
-      <!-- Una página en blanco y sin numeración visible -->
       <!--  -->
       <div class="page" num=""></div>
 
@@ -920,6 +959,7 @@
       <div class="page">
 
       </div>
+
 
       <!------------------------------------------------------------>
       <!-- Apéndice 1 -->
