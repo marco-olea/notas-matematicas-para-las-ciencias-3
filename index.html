@@ -837,7 +837,7 @@
       <div class="page">
         <h2 id="sec_c1_aplicaciones">Aplicaciones.</h2>
 
-        <h3>Áreas</h3>
+        <h3>Área</h3>
         
         <p>Las integrales dobles nos pueden servir para calcular el área de una región general $D$ contenida en un plano. Simplemente integramos la función $f(x,y) = 1$.</p>
 
@@ -863,11 +863,11 @@
           <figcaption>Haz clic en cualquiera de las cuatro regiones para activar o desactivarla y observa cómo se actualizan los límites de integración.</figcaption>
         </figure>
 
-        <h3>Volúmenes</h3>
+        <h3>Volumen</h3>
         
         <p>Como hemos visto anteriormente, podemos usar integrales dobles para encontrar el volumen de un sólido acotado por arriba por una función $f(x,y)$ sobre una región general $D$, siempre y cuando $f(x,y) \geq 0$ para todo $(x,y) \in D$.</p>
 
-        <p style="text-align-last:justify;">Ejemplo: Encontrar el volumen del sólido acotado por arriba por la función $f(x,y) = 2x + 5y$ sobre la región $D$ descrita en la figura. Podemos descomponer a $D$ en una unión de tres regiones $D_1$, $D_2$ y $D_3$, donde $D_1 = \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\}$,</p>
+        <p style="text-align-last:justify;">Ejemplo: Encontrar el volumen del sólido acotado por arriba por la función $f(x,y) = y - 2x + 5$ sobre la región $D$ descrita en la figura. Podemos descomponer a $D$ en una unión de tres regiones $D_1$, $D_2$ y $D_3$, donde $D_1 = \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\}$,</p>
       </div>
 
       <!--  -->
@@ -875,23 +875,24 @@
         <p>$D_2 = \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\}$ y $D_3 = \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}$. Aquí $D_1$ es de Tipo I mientras que $D_2$ y $D_3$ son de Tipo II. Por tanto, el volumen es:
         \[
           \begin{aligned}
-            V & = \iint\limits_D (2x + 5y)dA \\
-              & = \iint\limits_{D_1} (2x + 5y)dA + \iint\limits_{D_2} (2x + 5y)dA + \iint\limits_{D_3} (2x + 5y)dA \\
-              & = \int\limits_{x=-2}^{x=0} \int\limits_{y=0}^{y=(x+2)^2} (2x + 5y)dydx + \int\limits_{y=0}^{y=4} \int\limits_{x=0}^{x=y-\frac{1}{16}y^3} (2x + 5y)dxdy \\
-              & \hspace{46mm} + \int\limits_{y=-4}^{y=0} \int\limits_{x=-2}^{x=y-\frac{1}{16}y^3} (2x + 5y)dxdy \\
-              & = \int\limits_{x=-2}^{x=0} \left[ \frac{1}{2}(2 + x)^2 (20 + 24x + 5x^2) \right] \\
-              & \hspace{23mm} + \int\limits_{y=0}^{y=4} \left[ \frac{1}{256}y^6 - \frac{7}{16}y^4 + 6y^2 \right] \\
-              & \hspace{23mm} + \int\limits_{y=-4}^{y=0} \left[ \frac{1}{256}y^6 - \frac{7}{16}y^4 + 6y^2 + 10y - 4 \right] \\
-              & = \frac{40}{3} + \frac{1664}{35} - \frac{1696}{35} = \frac{1304}{105}
+            V & = \iint\limits_D (y - 2x + 5)dA \\
+              & = \iint\limits_{D_1} (y - 2x + 5)dA \\
+              &     \hspace{5em} + \iint\limits_{D_2} (y - 2x + 5)dA \\
+              &     \hspace{5em} + \iint\limits_{D_3} (y - 2x + 5)dA \\
+              & = \int\limits_{x=-2}^{x=0} \int\limits_{y=0}^{y=(x+2)^2} (y - 2x + 5)dydx \\
+              &     \hspace{5em} + \int\limits_{y=0}^{y=4} \int\limits_{x=0}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
+              &     \hspace{5em} + \int\limits_{y=-4}^{y=0} \int\limits_{x=-2}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
+              & = \frac{96}{5} + \frac{828}{35} + \frac{828}{35} \\
+              & = \frac{2328}{35}
           \end{aligned}
         \]</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/valor_promedio_ejemplo.html"></div><!--TODO-->
+        <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/volumen_ejemplo.html"></div>
 
-        <h3>Valores promedios</h3>
+        <h3>Valor promedio</h3>
 
         <p>Recuerda la definición del valor promedio de una función de una variable en un intervalo $[a,b]$:
         \[
@@ -939,7 +940,64 @@
 
         <h3>Cambio de variables</h3>
 
-        <p></p>
+        <p>A continuación se presenta una estrategia general para resolver problemas de cambios de variables.</p>
+
+        <ol>
+          <li>Hacer un bosquejo en el plano $xy$ de la región descrita en el problema, y escribir las ecuaciones de las curvas que forman</li>
+        </ol>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <ol>
+          <li style="list-style-type: none">su contorno.</li>
+          <li>Elegir las transformaciones $x = g(u,v)$ y $y = h(u,v)$ según la región o el integrando.</li>
+          <li>Determinar los nuevos límites de integración en el plano $uv$.</li>
+          <li>Calcular el Jacobiano $J(u,v)$.</li>
+          <li>Obtener el nuevo integrando haciendo el cambio de variables en el integrando original.</li>
+          <li>Reemplazar $dydx$ o $dxdy$ por $J(u,v)dudv$.</li>
+        </ol>
+
+        <p>Ejemplo: Evaluar la integral $\iint\limits_R (x - y)e^{x^2 - y^2}dA$, donde $R$ es la región delimitada por las líneas $x + y = 1$ y $x + y = 3$ y por las curvas $x^2 - y^2 = -1$ y $x^2 - y^2 = 1$. Utilizaremos la estrategia anterior.</p>
+
+        <ol>
+          <li>En la siguiente figura se muestran las regiones:</li>
+        </ol>
+
+        <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion6/cambio_variables_ejemplo.html"></div>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <ol start="2">
+          <li>Dado el integrando y las funciones que acotan la región $R$, podemos notar que los cambios de variables $u = x - y$ y $v = x + y$ serían muy útiles, ya que $uv = x^2 - y^2$. Con esto, resolviendo el sistema de ecuaciones, tenemos que $x = \frac{u + v}{2}$ y $y = \frac{v - u}{2}$, por lo que la transformación a utilizar es $T(u,v) = \left( \frac{u + v}{2}, \frac{v - u}{2} \right)$.</li>
+          <li>Las líneas $x + y = 1$ y $x + y = 3$ se convierten en $v = 1$ y $v = 3$, respectivamente. Las curvas $x^2 - y^2 = 1$ y $x^2 - y^2 = -1$ se convierten en $u = \frac{1}{v}$ y $u = -\frac{1}{v}$, respectivamente.</li>
+          <li>El Jacobiano para esta transformación es:
+            \[
+              J(u,v) = \frac{\partial (x,y)}{\partial (u,v)}
+              = \left| \begin{array}{cc}
+                \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[3ex]
+                \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+              \end{array} \right|
+              = \left| \begin{array}{cc}
+                \displaystyle\frac{1}{2} & -\displaystyle\frac{1}{2} \\[2ex]
+                \displaystyle\frac{1}{2} & \displaystyle\frac{1}{2}
+              \end{array} \right|
+              = \frac{1}{2}
+            \]
+          </li>
+          <li>El integrando se convierte en:
+            \[
+              (x - y)e^{x^2 - y^2} \Rightarrow ue^{uv}
+            \]
+          </li>
+          <li>La integral se convierte en:
+            \[
+              \iint\limits_R (x - y)e^{x^2 - y^2}dA = \frac{1}{2} \int\limits_{v = 1}^{v = 3} \int\limits_{u = -\frac{1}{v}}^{u = \frac{1}{v}} ue^{uv}dudv
+            \]
+            Evaluando esta integral da como resultado $\frac{2}{3e}$.
+          </li>
+        </ol>
       </div>
 
       <!--  -->
