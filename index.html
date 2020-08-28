@@ -1014,7 +1014,7 @@
 
         <p>Las funciones con valores vectoriales, al conformar un método útil para estudiar curvas en espacios de dos y tres dimensiones, nos permitirán calcular la velocidad, aceleración, longitud de arco y curvatura de la trayectoria de un objeto.</p>
 
-        <div class="num_block" prefix="Definición">
+        <div class="num_block" prefix="Definición" id="funcion_valores_vectoriales">
           Una <b>función con valores vectoriales</b> es una función de la forma:
           \[
             \textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} \quad \text{o} \quad \textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}
@@ -1046,10 +1046,35 @@
         <h2 id="sec_c2_campos_vectoriales_campos_gradientes">Campos vectoriales. Campos gradientes.</h2>
 
         <p>Los campos vectoriales son una herramienta importante para describir conceptos físicos como la gravitación y electromagnetismo, los cuales afectan el comportamiento de objetos sobre una región grande de un plano o un espacio. También sirven para trabajar con comportamiento de grande escala como tormentas atmosféricas o corrientes marinas. En esta sección analizaremos definiciones básicas y gráficas de campos vectoriales.</p>
+
+        <h3>Campos vectoriales en $\R^2$</h3>
+
+        <div class="num_block" prefix="Definición" id="campo_vectorial_r2">
+          Sea $D \subseteq \R^2$. Un <b>campo vectorial</b> en $\R^2$ es una asignación de un vector de dos dimensiones $\textbf{F}(x,y)$ a cada punto $(x,y) \in D$.
+        </div>
+
+        <p>Un campo vectorial en $\R^2$ se puede representar de dos maneras equivalentes. La primera es con un vector cuyos componentes son funciones de dos variables:
+          \[
+            \textbf{F}(x,y) = \langle P(x,y), Q(x,y) \rangle
+          \]
+        </p>
+
+        <p>La segunda es con los vectores unitarios:
+          \[
+            \textbf{F}(x,y) = P(x,y)\textbf{i} + Q(x,y)\textbf{j}
+          \]
+        </p>
+
+        <p>Un campo vectorial es continuo si sus componentes son continuas.</p>
       </div>
 
       <!--  -->
-      <div class="page"></div>
+      <div class="page">
+        <figure id="grafica_funcion_valores_vectoriales">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html"></div>
+          <figcaption>Campo vectorial en $\R^2$.</figcaption>
+        </figure>
+      </div>
 
       <!--  -->
       <div class="page">
