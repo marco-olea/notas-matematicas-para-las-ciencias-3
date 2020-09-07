@@ -1066,13 +1066,43 @@
         </p>
 
         <p>Un campo vectorial es continuo si sus componentes son continuas.</p>
+
+        <p style="text-align-last:justify;">Ahora bien, representar un campo vectorial visualmente es complicado porque tanto su dominio como su rango viven en $\R^2$,</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>por lo que la gráfica pertenece a un espacio de cuatro dimensiones. Como no se puede representar $\R^4$ visualmente, los campos vectoriales en $\R^2$ se dibujan en un plano. Esto es, si el punto $(a,b)$ está asociado al vector $\langle x,y \rangle$, entonces se dibuja $\langle x,y \rangle$ sobre $(a,b)\text{.}$ Se deben escoger los suficientes vectores para ver la forma general, pero no tantos que la gráfica deja de ser entendible.</p>
+
         <figure id="grafica_funcion_valores_vectoriales">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html"></div>
-          <figcaption>Campo vectorial en $\R^2$.</figcaption>
+          <figcaption>Ejemplo de un campo vectorial $\langle P(x,y), Q(x,y) \rangle$ en $\R^2$. Utiliza el control izquierdo para manipular la región $D \subseteq \R^2$ y el control derecho para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
+        </figure>
+
+        <p style="text-align-last:justify;">Existen dos tipos de campos vectoriales en $\R^2$: campos radiales y campos rotacionales. Los campos radiales modelan ciertos campos</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>gravitacionales y de fuentes de energía, mientras que los campos rotacionales modelan el movimiento de un fluido en un vórtice.</p>
+
+        <p>En un <b>campo radial</b>, todos los vectores apuntan directamente al origen o directamente en dirección contraria al origen. Es decir, el vector asociado al punto $(a,b)$ es perpendicular al círculo con centro en el origen que contiene a $(a,b)$ y todos los vectores en dicho círculo tienen la misma magnitud.</p>
+
+        <figure id="ejemplo_campo_vectorial_radial">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_radial.html"></div>
+          <figcaption><!--TODO-->ejemplo_campo_vectorial_radial.</figcaption>
+        </figure>
+
+        <p style="text-align-last:justify;">En un <b>campo rotacional</b>, todos los vectores apuntan en dirección a las manecillas de un reloj o en dirección contraria a las manecillas</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>de un reloj, y su magnitud está en función de su distancia del origen. A diferencia de los campos radiales, en los campos rotacionales el vector asociado al punto $(a,b)$ es tangente (no perpendicular) al círculo con radio $r = \sqrt{x^2 + y^2}$.</p>
+
+        <figure id="ejemplo_campo_vectorial_rotacional">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_rotacional.html"></div>
+          <figcaption><!--TODO-->ejemplo_campo_vectorial_rotacional.</figcaption>
         </figure>
       </div>
 
