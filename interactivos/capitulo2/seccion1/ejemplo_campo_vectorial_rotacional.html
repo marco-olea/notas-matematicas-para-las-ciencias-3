@@ -20,30 +20,238 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=1 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' red='c0c0c0' red10='000000' ejes='404040' texto='no' números='sí' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='p_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='P(x,y)' expresión='(0,0,150,40)' valor='x/2' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_n' ">
-      <param name="C_02" value="id='q_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='Q(x,y)' expresión='(0,0,150,40)' valor='y/2' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_4' ">
-      <param name="C_03" value="id='region' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Región' expresión='(0,0,150,40)' valor='5' incr='0.1' min='0' discreto='no' decimales='1' fijo='sí' visible='no' btn_pos='h_left_right' ">
-      <param name="C_04" value="id='densidad' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Densidad' expresión='(0,0,150,40)' valor='11' incr='1' min='0' discreto='no' decimales='0' fijo='sí' visible='no' btn_pos='h_left_right' ">
-      <param name="A_01" value="id='P(x,y)' algoritmo='no' expresión='_Eval_(p_texto)' tipo='función' ">
-      <param name="A_02" value="id='Q(x,y)' algoritmo='no' expresión='_Eval_(q_texto)' tipo='función' ">
-      <param name="A_03" value="id='a' expresión='-region' tipo='variable' ">
-      <param name="A_04" value="id='b' expresión='region' tipo='variable' ">
-      <param name="A_05" value="id='c' expresión='-region' tipo='variable' ">
-      <param name="A_06" value="id='d' expresión='region' tipo='variable' ">
-      <param name="A_07" value="id='m' expresión='densidad' tipo='variable' ">
-      <param name="A_08" value="id='n' expresión='densidad' tipo='variable' ">
-      <param name="A_09" value="id='dx' expresión='(b-a)/m' tipo='variable' ">
-      <param name="A_10" value="id='dy' expresión='(d-c)/n' tipo='variable' ">
-      <param name="A_11" value="id='_x(s)' algoritmo='no' expresión='a+dx*(s%(m+1))' tipo='función' info='Determina la coordenada x dado s' ">
-      <param name="A_12" value="id='_y(s)' algoritmo='no' expresión='c+dy*floor(s/(n+1))' tipo='función' info='Determina la coordenada y dado s' ">
-      <param name="A_13" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
-      <param name="A_14" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='flecha' fondo='no' color='0080ff' coord_abs='no' expresión='(_x(s),_y(s)) (_x(s)+P(_x(s),_y(s)),_y(s)+Q(_x(s),_y(s)))' familia='s' s.intervalo='[0,m*n+m+n]' s.pasos='m*n+m+n' decimales='2' fijo='sí' ancho='1' punta='3' flecha='0080ff' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='vectores' ">
-      <param name="G_02" value="espacio='E1' tipo='punto' fondo='no' color='20303a' dibujar-si='0' coord_abs='no' expresión='(_x(s),_y(s))' familia='s' s.intervalo='[0,m*n+m+n]' s.pasos='m*n+m+n' decimales='2' fijo='sí' tamaño='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
+      <param name="C_01" value="id='region' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Región' expresión='(0,0,150,40)' valor='5' incr='1' min='1' max='20' discreto='no' decimales='0' fijo='sí' visible='no' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='densidad' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Densidad' expresión='(0,0,150,40)' valor='3' incr='1' min='1' discreto='no' decimales='0' fijo='sí' visible='no' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='radio' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Círculo' expresión='(0,0,150,40)' valor='1' incr='0.05' discreto='no' decimales='2' fijo='sí' visible='no' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='P(x,y)' algoritmo='no' expresión='-y/4' tipo='función' ">
+      <param name="A_02" value="id='Q(x,y)' algoritmo='no' expresión='x/4' tipo='función' ">
+      <param name="A_03" value="id='n' expresión='region' tipo='variable' info='cantidad de círculos' ">
+      <param name="A_04" value="id='d' expresión='densidad' tipo='variable' info='multiplicador de vectores en cada círculo' ">
+      <param name="A_05" value="id='totales' expresión='d*n*(n+1)/2' tipo='variable' info='cantidad de vectores totales' ">
+      <param name="A_06" value="id='_x(s)' algoritmo='no' expresión='h(s)*cos((s%(d*h(s)))*2pi/(d*h(s)))' tipo='función' info='determina la coordenada x dado s' ">
+      <param name="A_07" value="id='_y(s)' algoritmo='no' expresión='h(s)*sin((s%(d*h(s)))*2pi/(d*h(s)))' tipo='función' info='determina la coordenada y dado s' ">
+      <param name="A_08" value="id='g' vector='sí' evaluar='una-sola-vez' tamaño='210' archivo='ejemplo_campo_vectorial_radial_func.txt' tipo='vector' ">
+      <param name="A_09" value="id='h(s)' algoritmo='no' expresión='g[floor(s/d)]' tipo='función' ">
+      <param name="A_10" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_11" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='flecha' fondo='no' color='ff0080' coord_abs='no' expresión='(_x(s),_y(s)) (_x(s)+P(_x(s),_y(s)),_y(s)+Q(_x(s),_y(s)))' familia='s' s.intervalo='[0,totales-1]' s.pasos='totales-1' decimales='2' fijo='sí' ancho='1' punta='3' flecha='ff0080' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='vectores' ">
+      <param name="G_02" value="espacio='E1' tipo='arco' fondo='no' color='000000' coord_abs='no' centro='(0,0)' radio='radio' inicio='0' fin='360' vectores='no' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='círculo' ">
+      <param name="G_03" value="espacio='E1' tipo='punto' fondo='no' color='20303a' dibujar-si='0' coord_abs='no' expresión='(_x(s),_y(s))' familia='s' s.intervalo='[0,totales-1]' s.pasos='totales-1' decimales='2' fijo='sí' tamaño='3' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
     </ajs>
   </div>
 
-
+<script type="descartes/vectorFile" id="ejemplo_campo_vectorial_radial_func.txt">
+1
+2
+2
+3
+3
+3
+4
+4
+4
+4
+5
+5
+5
+5
+5
+6
+6
+6
+6
+6
+6
+7
+7
+7
+7
+7
+7
+7
+8
+8
+8
+8
+8
+8
+8
+8
+9
+9
+9
+9
+9
+9
+9
+9
+9
+10
+10
+10
+10
+10
+10
+10
+10
+10
+10
+11
+11
+11
+11
+11
+11
+11
+11
+11
+11
+11
+12
+12
+12
+12
+12
+12
+12
+12
+12
+12
+12
+12
+13
+13
+13
+13
+13
+13
+13
+13
+13
+13
+13
+13
+13
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+14
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+15
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+16
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+17
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+18
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+19
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+20
+</script>
 
 </body>
 </html>
