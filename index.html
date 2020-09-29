@@ -1104,8 +1104,39 @@
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_rotacional.html"></div>
           <figcaption>El campo rotacional $F(x,y) = -\frac{y}{4}\textbf{i} + \frac{x}{4}\textbf{j}$.</figcaption>
         </figure>
+
+        <p>Los ejemplos de la <ref ref_id="ejemplo_campo_vectorial_radial"></ref> y la <ref ref_id="ejemplo_campo_vectorial_rotacional"></ref> contienen vectores de distintas magnitudes, pero así como existen vectores unitarios pueden haber campos vectoriales unitarios.</p>
+
+        <div class="num_block" prefix="Definición" id="campo_vectorial_unitario">
+          Un campo vectorial $\textbf{F}$ es <b>unitario</b> si la magnitud de todos los vectores en el campo es 1.
+        </div>
       </div>
 
+      <!--  -->
+      <div class="page">
+        <p>Si $\textbf{F} = \langle P, Q, R \rangle$ es un campo vectorial, entonces su campo vectorial unitario correspondiente es $\langle \frac{P}{\left\Vert \textbf{F} \right\Vert}, \frac{Q}{\left\Vert \textbf{F} \right\Vert}, \frac{R}{\left\Vert \textbf{F} \right\Vert} \rangle$. Observa que los vectores de los campos radiales y rotacionales tienen una magnitud bien definida, que está en función de su distancia al origen, por lo que es sencillo obtener el campo vectorial unitario de un campo de estos tipos.</p>
+
+        <p>Si $\textbf{F}$ es un campo vectorial, decimos que el campo vectorial unitario $\frac{\textbf{F}}{\left\Vert \textbf{F} \right\Vert}$ es la <b>normalización</b> de $\textbf{F}$.</p>
+
+        <h3>Campos vectoriales en $\R^3$</h3>
+
+        <div class="num_block" prefix="Definición" id="campo_vectorial_r2">
+          Sea $D \subseteq \R^3$. Un <b>campo vectorial</b> en $\R^3$ es una asignación de un vector de tres dimensiones $\textbf{F}(x,y,z)$ a cada punto $(x,y,z) \in D$.
+        </div>
+
+        <p>Un campo vectorial en $\R^3$ se puede representar de dos maneras equivalentes. La primera es con un vector cuyos componentes son funciones de tres variables:
+          \[
+            \textbf{F}(x,y,z) = \langle P(x,y,z), Q(x,y,z), R(x,y,z) \rangle
+          \]
+        </p>
+
+        <p>La segunda es con los vectores unitarios:
+          \[
+            \textbf{F}(x,y,z) = P(x,y,z)\textbf{i} + Q(x,y,z)\textbf{j} + R(x,y,z)\textbf{k}
+          \]
+        </p>
+      </div>
+      
       <!--  -->
       <div class="page">
         <h2 id="sec_c2_divergencia_y_rotacional">Divergencia y rotacional. Interpretación física.</h2>
