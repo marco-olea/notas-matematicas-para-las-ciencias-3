@@ -176,7 +176,7 @@
 
         <h2 id="sec_c1_integral_rectangulos">Integral sobre rectángulos. Propiedades de la integral.</h2>
 
-        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlos para encontrar el volumen de un sólido sobre una región rectangular en el plano $z = 0$.</p>
+        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlas para encontrar el volumen de un sólido sobre una región rectangular en el plano $z = 0$.</p>
 
         <h3>Volúmenes e integrales dobles</h3>
 
@@ -269,7 +269,7 @@
       <div class="page">
         <ol start="2">
           <li>Si $c \in \R$ es una constante, entonces $cf(x,y)$ es integrable y 
-          \[\iint\limits_R cf(x,y) dA = c \iint\limits_R f(x,y)\]
+          \[\iint\limits_R cf(x,y) dA = c \iint\limits_R f(x,y) dA\]
           Esto es, el volumen del sólido bajo $cf(x,y)$ es igual a $c$ veces el volumen del sólido bajo $f(x,y)$.</li>
         </ol>
 
@@ -351,7 +351,7 @@
           </ol>
         </div>
 
-        <p>La expresión (1) significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra</p>
+        <p style="text-align-last:justify">La expresión (1) significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra</p>
       </div>
 
       <!--  -->
@@ -395,7 +395,7 @@
 
         <h3>Regiones generales acotadas</h3>
 
-        <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, continua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la Figura 1.8.</p>
+        <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, continua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la <ref ref_id="region_general"></ref>.</p>
 
         <figure id="region_general">
           <div class="interactive" width="800" height="525" src="interactivos/capitulo1/seccion3/region_general.html"></div>
@@ -547,7 +547,7 @@
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_polares_rectangulares.html"></div>
-          <figcaption>Un rectángulo polar $R$ dividido en $m \cdot n$ rectángulos polares $R_{ij}$.</figcaption>
+          <figcaption>Una suma de Riemann doble sobre un rectángulo polar.</figcaption>
         </figure>
 
         <p>Para obtener una suma de Riemann doble sobre la región $R$, sumamos los volúmenes de los prismas sobre cada uno de los rectángulos polares $R_{ij}$. Esto nos da el siguiente resultado:
@@ -588,7 +588,7 @@
       <div class="page">
         <h3>Integrales sobre regiones polares generales</h3>
 
-        <p>Para evaluar la integral doble de una función continua sobre una región polar general, describimos dos tipos de regiones de análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
+        <p>Para evaluar la integral doble de una función continua sobre una región polar general, describimos dos tipos de regiones análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
 
         <p>Dado que es más común escribir ecuaciones polares en términos de $\theta$ ($r = f(\theta)$), definimos una región polar general como se muestra en la <ref ref_id="polar_general_tipoii"></ref>, es decir:
         \[
@@ -867,12 +867,12 @@
         
         <p>Como hemos visto anteriormente, podemos usar integrales dobles para encontrar el volumen de un sólido acotado por arriba por una función $f(x,y)$ sobre una región general $D$, siempre y cuando $f(x,y) \geq 0$ para todo $(x,y) \in D$.</p>
 
-        <p style="text-align-last:justify;">Ejemplo: Encontrar el volumen del sólido acotado por arriba por la función $f(x,y) = y - 2x + 5$ sobre la región $D$ descrita en la figura. Podemos descomponer a $D$ en una unión de tres regiones $D_1$, $D_2$ y $D_3$, donde $D_1 = \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\}$,</p>
+        <p style="text-align-last:justify;">Ejemplo: Encontrar el volumen del sólido acotado por arriba por la función $f(x,y) = y - 2x + 5$ sobre la región $D$ descrita en la figura. Descomponemos a $D$ en una unión de tres regiones $D_1$, $D_2$ y $D_3$, donde $D_1 = \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\}$,</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>$D_2 = \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\}$ y $D_3 = \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}$. Aquí $D_1$ es de Tipo I mientras que $D_2$ y $D_3$ son de Tipo II. Por tanto, el volumen es:
+        <p style="text-align-last: justify;">$D_2 = \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\}$ y $D_3 = \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}$. Aquí $D_1$ es de Tipo I mientras que $D_2$ y $D_3$ son de Tipo II. Por tanto, el volumen es:
         \[
           \begin{aligned}
             V & = \iint\limits_D (y - 2x + 5)dA \\
@@ -943,7 +943,7 @@
         <p>A continuación se presenta una estrategia general para resolver problemas de cambios de variables.</p>
 
         <ol>
-          <li>Hacer un bosquejo en el plano $xy$ de la región descrita en el problema, y escribir las ecuaciones de las curvas que forman</li>
+          <li style="text-align-last: justify;">Hacer un bosquejo en el plano $xy$ de la región descrita en el problema, y escribir las ecuaciones de las curvas que forman</li>
         </ol>
       </div>
 
@@ -1019,7 +1019,7 @@
           \[
             \textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} \quad \text{o} \quad \textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}
           \]
-          Donde las <b>componentes</b> $f$, $g$ y $h$ son funciones de valores reales sobre el parámetro $t$. Las funciones de valores vectroriales también se pueden escribir de la forma:
+          Donde las <b>componentes</b> $f$, $g$ y $h$ son funciones de valores reales sobre el parámetro $t$. Las funciones de valores vectoriales también se pueden escribir de la forma:
           \[
             \textbf{r}(t) = \langle f(t), g(t)\rangle \quad \text{o} \quad \textbf{r}(t) = \langle f(t), g(t), h(t) \rangle
           \]
@@ -1045,7 +1045,7 @@
       <div class="page">
         <h2 id="sec_c2_campos_vectoriales_campos_gradientes">Campos vectoriales. Campos gradientes.</h2>
 
-        <p>Los campos vectoriales son una herramienta importante para describir conceptos físicos como la gravitación y electromagnetismo, los cuales afectan el comportamiento de objetos sobre una región grande de un plano o un espacio. También sirven para trabajar con comportamiento de grande escala como tormentas atmosféricas o corrientes marinas. En esta sección analizaremos definiciones básicas y gráficas de campos vectoriales.</p>
+        <p>Los campos vectoriales son una herramienta importante para describir conceptos físicos como la gravitación y el electromagnetismo, los cuales afectan el comportamiento de objetos sobre una región grande de un plano o un espacio. También sirven para trabajar con comportamiento a gran escala como tormentas atmosféricas o corrientes marinas. En esta sección analizaremos definiciones básicas y gráficas de campos vectoriales.</p>
 
         <h3>Campos vectoriales en $\R^2$</h3>
 
@@ -1076,7 +1076,7 @@
 
         <figure id="grafica_funcion_valores_vectoriales">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html"></div>
-          <figcaption>Ejemplo de un campo vectorial $F(x,y) = \langle P(x,y), Q(x,y) \rangle$ en $\R^2$. Utiliza el control izquierdo para manipular la región $D \subseteq \R^2$ y el control derecho para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
+          <figcaption>Ejemplo de un campo vectorial $F(x,y) = \langle P(x,y), Q(x,y) \rangle$ en $\R^2$. Utiliza el control "Región" para manipular la región $D \subseteq \R^2$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
 
         <p style="text-align-last:justify;">Existen dos tipos de campos vectoriales en $\R^2$: campos radiales y campos rotacionales. Los campos radiales modelan ciertos campos</p>
