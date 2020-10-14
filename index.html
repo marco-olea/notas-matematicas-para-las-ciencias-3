@@ -1114,7 +1114,7 @@
 
       <!--  -->
       <div class="page">
-        <p>Si $\textbf{F} = \langle P, Q, R \rangle$ es un campo vectorial, entonces su campo vectorial unitario correspondiente es $\langle \frac{P}{\left\Vert \textbf{F} \right\Vert}, \frac{Q}{\left\Vert \textbf{F} \right\Vert}, \frac{R}{\left\Vert \textbf{F} \right\Vert} \rangle$. Observa que los vectores de los campos radiales y rotacionales tienen una magnitud bien definida, que está en función de su distancia al origen, por lo que es sencillo obtener el campo vectorial unitario de un campo de estos tipos.</p>
+        <p>Si $\textbf{F} = \langle P, Q \rangle$ es un campo vectorial, entonces su campo vectorial unitario correspondiente es $\langle \frac{P}{\left\Vert \textbf{F} \right\Vert}, \frac{Q}{\left\Vert \textbf{F} \right\Vert} \rangle$. Observa que los vectores de los campos radiales y rotacionales tienen una magnitud bien definida, que está en función de su distancia al origen, por lo que es sencillo obtener el campo vectorial unitario de un campo de estos tipos.</p>
 
         <p>Si $\textbf{F}$ es un campo vectorial, decimos que el campo vectorial unitario $\frac{\textbf{F}}{\left\Vert \textbf{F} \right\Vert}$ es la <b>normalización</b> de $\textbf{F}$.</p>
 
@@ -1145,10 +1145,36 @@
 
         <figure id="grafica_funcion_valores_vectoriales">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r3.html"></div>
-          <figcaption>Ejemplo de un campo vectorial $F(x,y,z) = \langle P(x,y,z), Q(x,y,z), R(x,y,z) \rangle$ en $\R^3$. Utiliza el control "Región" para manipular la región $D \subseteq \R^3$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
+          <figcaption>Ejemplo de un campo vectorial $\textbf{F} = \langle P, Q, R \rangle$ en $\R^3$. Utiliza el control "Región" para manipular la región $D \subseteq \R^3$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
       </div>
-      
+
+      <!--  -->
+      <div class="page">
+        <h3>Campos gradientes</h3>
+
+        <p>Existen tipos de campos vectoriales denominados <b>gradientes</b> o <b>conservativos</b>, que modelan sistemas físicos en los cuales se conserva la energía. Un campo gravitacional es un ejemplo de un campo gradiente.</p>
+
+        <p>Recordemos que si $f: \R^2 \rightarrow \R$ es una función escalar, entonces el gradiente de $f$ es:
+          \[
+            \text{grad } f = \nabla f = f_x(x,y)\textbf{i} + f_y(x,y)\textbf{j}
+          \]
+        </p>
+
+        <p style="text-align-last:justify;">Por definición, $\nabla f$ es un campo vectorial en $\R^2$. Análogamente, si $f: \R^3 \rightarrow \R$ es una función escalar, entonces el gradiente de $F$ es:
+        </p>
+
+        \[
+          \text{grad } f = \nabla f = f_x(x,y,z)\textbf{i} + f_y(x,y,z)\textbf{j} + f_z(x,y,z)\textbf{k}
+        \]
+
+        <p>El gradiente de $f$ es un campo vectorial en $\R^3$.</p>
+
+        <div class="num_block" prefix="Definición" id="campo_gradiente">
+          Un campo vectorial $\textbf{F}$ en $\R^2$ o $\R^3$ es un <b>campo gradiente</b> si existe una función escalar $f$ tal que $\nabla f = \textbf{F}$.
+        </div>
+      </div>
+
       <!--  -->
       <div class="page">
         <h2 id="sec_c2_divergencia_y_rotacional">Divergencia y rotacional. Interpretación física.</h2>
