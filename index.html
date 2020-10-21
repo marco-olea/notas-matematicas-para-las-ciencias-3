@@ -1074,7 +1074,7 @@
       <div class="page">
         <p>por lo que la gráfica pertenece a un espacio de cuatro dimensiones. Como no se puede representar $\R^4$ visualmente, los campos vectoriales en $\R^2$ se dibujan en un plano. Esto es, si el punto $(a,b)$ está asociado al vector $\langle x,y \rangle$, entonces se dibuja $\langle x,y \rangle$ sobre $(a,b)\text{.}$ Se deben escoger los suficientes vectores para ver la forma general, pero no tantos que la gráfica deja de ser entendible.</p>
 
-        <figure id="grafica_funcion_valores_vectoriales">
+        <figure id="ejemplo_campo_vectorial_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html"></div>
           <figcaption>Ejemplo de un campo vectorial $F(x,y) = \langle P(x,y), Q(x,y) \rangle$ en $\R^2$. Utiliza el control "Región" para manipular la región $D \subseteq \R^2$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
@@ -1143,26 +1143,27 @@
       <div class="page">
         <p>Esto es, si el punto $(a,b,c)$ está asociado al vector $\langle x,y,z \rangle$, entonces se dibuja $\langle x,y,z \rangle$ sobre $(a,b,c)$. Se debe escoger una cantidad suficientemente grande de vectores para ver la forma general.</p>
 
-        <figure id="grafica_funcion_valores_vectoriales">
+        <figure id="ejemplo_campo_vectorial_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r3.html"></div>
           <figcaption>Ejemplo de un campo vectorial $\textbf{F} = \langle P, Q, R \rangle$ en $\R^3$. Utiliza el control "Región" para manipular la región $D \subseteq \R^3$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
-      </div>
-
-      <!--  -->
-      <div class="page">
+      
         <h3>Campos gradientes</h3>
 
-        <p>Existen tipos de campos vectoriales denominados <b>gradientes</b> o <b>conservativos</b>, que modelan sistemas físicos en los cuales se conserva la energía. Un campo gravitacional es un ejemplo de un campo gradiente.</p>
-
+        <p style="text-align-last:justify;">Existen tipos de campos vectoriales denominados <b>gradientes</b> o <b>conservativos</b>, los cuales modelan sistemas físicos en los que la</p>
+      </div>
+      
+      <!--  -->
+      <div class="page">
+        <p>energía se conserva.</p>
+        
         <p>Recordemos que si $f: \R^2 \rightarrow \R$ es una función escalar, entonces el gradiente de $f$ es:
           \[
             \text{grad } f = \nabla f = f_x(x,y)\textbf{i} + f_y(x,y)\textbf{j}
           \]
         </p>
 
-        <p style="text-align-last:justify;">Por definición, $\nabla f$ es un campo vectorial en $\R^2$. Análogamente, si $f: \R^3 \rightarrow \R$ es una función escalar, entonces el gradiente de $F$ es:
-        </p>
+        <p style="text-align-last:justify;">Por definición, $\nabla f$ es un campo vectorial en $\R^2$. Análogamente, si $f: \R^3 \rightarrow \R$ es una función escalar, entonces el gradiente de $F$ es:</p>
 
         \[
           \text{grad } f = \nabla f = f_x(x,y,z)\textbf{i} + f_y(x,y,z)\textbf{j} + f_z(x,y,z)\textbf{k}
@@ -1171,12 +1172,70 @@
         <p>El gradiente de $f$ es un campo vectorial en $\R^3$.</p>
 
         <div class="num_block" prefix="Definición" id="campo_gradiente">
-          Un campo vectorial $\textbf{F}$ en $\R^2$ o $\R^3$ es un <b>campo gradiente</b> si existe una función escalar $f$ tal que $\nabla f = \textbf{F}$.
+          Un campo vectorial $\textbf{F}$ en $\R^2$ o $\R^3$ es un <b>campo gradiente</b> si existe una función escalar $f$ tal que $\nabla f = \textbf{F}$. En este caso, a $f$ se le conoce como <b>función potencial</b> para $\textbf{F}$.
+        </div>
+
+        <p>Los campos gravitacionales son ejemplos de campos gradientes. La ley de gravitación de Newton dice que si $m_1$ es la masa de un objeto centrado en el origen, $m_2$ es la masa de un objeto ubicado en el punto $(x,y,z)$ y $G$ es la constante de gravitación universal, entonces la magnitud de la fuerza que ejerce el primer objeto sobre el segundo es:
+          \[
+            \displaystyle\frac{G m_1 m_2}{\left\Vert (x,y,z) \right\Vert^2}
+          \]
+        </p>
+
+        <p style="text-align-last:justify;">El vector unitario del primer objeto al segundo es $- \frac{(x,y,z)}{\left\Vert (x,y,z) \right\Vert}$. Multiplicando esta dirección por la magnitud dada en la ley de Newton da como resultado el siguiente campo vectorial:</p> 
+      </div>
+
+      <!--  -->
+      <div class="page">
+        \[
+          \begin{aligned}
+            \textbf{F}
+              &= \frac{G m_1 m_2}{\left\Vert (x,y,z) \right\Vert^3} (x,y,z) \\ 
+            \textbf{F}
+              &= \left\langle \frac{-G m_1 m_2 x}{(x^2 + y^2 + z^2)^{3/2}}, \frac{-G m_1 m_2 y}{(x^2 + y^2 + z^2)^{3/2}}, \frac{-G m_1 m_2 z}{(x^2 + y^2 + z^2)^{3/2}} \right\rangle
+          \end{aligned}
+        \]
+
+        <p>La función potencial del campo gradiente $\textbf{F}$ es:
+          \[
+            f(x,y,z) = \frac{G m_1 m_2}{\sqrt{x^2 + y^2 + z^2}}
+          \]
+        </p>
+
+        <figure id="ejemplo_campo_gravitacional">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_gravitacional.html"></div>
+          <figcaption>Un campo gravitacional donde $m_1 = 900000 \text{kg}$ y $m_2 = 100000 \text{kg}$. La constante de gravitación universal es $G = 6.67384 \times 10^{-11} \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$. Observa que las magnitudes de los vectores incrementan conforme los se acercan al origen.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Si $\textbf{F}$ es un campo gradiente, entonces existe al menos una función potencial $f$ tal que $\nabla f = \textbf{F}$. El siguiente teorema afirma que puede existir otro y que además, hay una relación entre dos funciones potenciales del mismo campo vectorial. Se requiere suponer que el dominio del campo es abierto y conectado. Estar conectado significa que para cualesquiera dos puntos en el dominio, el camino que conecta dichos puntos está contenido completamente dentro del dominio.</p>
+
+        <div class="num_block" prefix="Teorema" id="unicidad_funciones_potenciales">
+          Sea $\textbf{F}$ un campo vectorial gradiente con un dominio abierto y conectado. Sean $f$ y $g$ funciones tales que $\nabla f = \textbf{F}$ y $\nabla g = \textbf{F}$. Entonces existe una constante $C$ tal que $f = g + C$.
+        </div>
+
+        <p>Los campos gradientes además tienen la propiedad de las derivadas cruzadas. Esta ayuda a descartar que un campo vectorial sea un campo gradiente.</p>
+
+        <div class="num_block" prefix="Teorema" id="derivadas_cruzadas">
+          Sea $\textbf{F}$ un campo vectorial en $\R^2$ o en $\R^3$ tal que sus componentes tienen derivadas parciales mixtas continuas y de segundo orden. <br>
+          Si $\textbf{F}(x,y) = \langle P(x,y), Q(x,y) \rangle$ es un campo gradiente en $\R^2$, entonces:
+            \[
+              \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+            \]
+          Si $\textbf{F}(x,y,z) = \langle P(x,y,z), Q(x,y,z), R(x,y,z) \rangle$ es un campo gradiente en $\R^3$, entonces:
+            \[
+              \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \text{,} \quad \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y} \quad \text{y} \quad \frac{\partial R}{\partial x} = \frac{\partial P}{\partial z}
+            \]
         </div>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>Nota que la inversa no se cumple, es decir, si un campo vectorial tiene derivadas parciales cruzadas, esto no implica que sea un campo gradiente.</p>
+
+        <p>El teorema anterior muestra que la mayoría de los campos vectoriales no son conservativos, ya que es difícil satisfacer la propiedad de las derivadas cruzadas.</p>
+
         <h2 id="sec_c2_divergencia_y_rotacional">Divergencia y rotacional. Interpretación física.</h2>
 
         <h2 id="sec_c2_diferenciación">Diferenciación.</h2>
