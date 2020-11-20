@@ -1163,7 +1163,7 @@
           \]
         </p>
 
-        <p style="text-align-last:justify;">Por definición, $\nabla f$ es un campo vectorial en $\R^2$. Análogamente, si $f: \R^3 \rightarrow \R$ es una función escalar, entonces el gradiente de $F$ es:</p>
+        <p style="text-align-last:justify;">Por definición, $\nabla f$ es un campo vectorial en $\R^2$. Análogamente, si $f: \R^3 \rightarrow \R$ es una función escalar, entonces el gradiente de $f$ es:</p>
 
         \[
           \text{grad } f = \nabla f = f_x(x,y,z)\textbf{i} + f_y(x,y,z)\textbf{j} + f_z(x,y,z)\textbf{k}
@@ -1203,7 +1203,7 @@
 
         <figure id="ejemplo_campo_gravitacional">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_gravitacional.html"></div>
-          <figcaption>Un campo gravitacional donde $m_1 = 900000 \text{kg}$ y $m_2 = 100000 \text{kg}$. La constante de gravitación universal es $G = 6.67384 \times 10^{-11} \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$. Observa que las magnitudes de los vectores incrementan conforme los se acercan al origen.</figcaption>
+          <figcaption>Un campo gravitacional donde $m_1 = 900000 \text{kg}$ y $m_2 = 100000 \text{kg}$. La constante de gravitación universal es $G = 6.67384 \times 10^{-11} \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$. Observa que las magnitudes de los vectores incrementan conforme se acercan al origen.</figcaption>
         </figure>
       </div>
 
@@ -1215,7 +1215,7 @@
           Sea $\textbf{F}$ un campo vectorial gradiente con un dominio abierto y conectado. Sean $f$ y $g$ funciones tales que $\nabla f = \textbf{F}$ y $\nabla g = \textbf{F}$. Entonces existe una constante $C$ tal que $f = g + C$.
         </div>
 
-        <p>Los campos gradientes además tienen la propiedad de las derivadas cruzadas. Esta ayuda a descartar que un campo vectorial sea un campo gradiente.</p>
+        <p>Los campos gradientes además tienen la propiedad de las derivadas cruzadas. Esto ayuda a descartar que un campo vectorial sea un campo gradiente.</p>
 
         <div class="num_block" prefix="Teorema" id="derivadas_cruzadas">
           Sea $\textbf{F}$ un campo vectorial en $\R^2$ o en $\R^3$ tal que sus componentes tienen derivadas parciales mixtas continuas y de segundo orden. <br>
@@ -1232,10 +1232,18 @@
 
       <!--  -->
       <div class="page">
+        <figure id="ejemplo_campo_gravitacional">
+          <div class="interactive" width="908" height="680" src="interactivos/capitulo2/seccion1/ejemplo_derivadas_cruzadas.html"></div>
+          <figcaption>Un campo gravitacional donde $m_1 = 900000 \text{kg}$ y $m_2 = 100000 \text{kg}$. La constante de gravitación universal es $G = 6.67384 \times 10^{-11} \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$. Observa que las magnitudes de los vectores incrementan conforme se acercan al origen.</figcaption>
+        </figure>
+
         <p>Nota que la inversa no se cumple, es decir, si un campo vectorial tiene derivadas parciales cruzadas, esto no implica que sea un campo gradiente.</p>
 
         <p>El teorema anterior muestra que la mayoría de los campos vectoriales no son conservativos, ya que es difícil satisfacer la propiedad de las derivadas cruzadas.</p>
+      </div>
 
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c2_divergencia_y_rotacional">Divergencia y rotacional. Interpretación física.</h2>
 
         <h2 id="sec_c2_diferenciación">Diferenciación.</h2>
