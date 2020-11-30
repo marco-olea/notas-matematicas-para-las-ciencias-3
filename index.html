@@ -1237,14 +1237,27 @@
 
       <!--  -->
       <div class="page">
-        <figure id="ejemplo_campo_gravitacional">
-          <div class="interactive" width="908" height="680" src="interactivos/capitulo2/seccion1/ejemplo_derivadas_cruzadas.html"></div>
-          <figcaption>Un campo gravitacional donde $m_1 = 900000 \text{kg}$ y $m_2 = 100000 \text{kg}$. La constante de gravitación universal es $G = 6.67384 \times 10^{-11} \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$. Observa que las magnitudes de los vectores incrementan conforme se acercan al origen.</figcaption>
-        </figure>
-
         <p>Nota que la inversa no se cumple, es decir, si un campo vectorial tiene derivadas parciales cruzadas, esto no implica que sea un campo gradiente.</p>
 
         <p>El teorema anterior muestra que la mayoría de los campos vectoriales no son conservativos, ya que es difícil satisfacer la propiedad de las derivadas cruzadas.</p>
+
+        <figure id="ejemplo_derivadas_cruzadas">
+          <div class="interactive" width="908" height="680" src="interactivos/capitulo2/seccion1/ejemplo_derivadas_cruzadas.html"></div>
+          <figcaption>Las gráficas de $P(x,y)$, $Q(x,y)$, $p(y)$ y $q(x)$. El <ref ref_id="derivadas_cruzadas"></ref> afirma que las dos líneas rojas siempre tendrán la misma pendiente, para cualquier $(x_0, y_0)$.</figcaption>
+        </figure>
+
+        <p>La figura anterior ilustra la primera parte del <ref ref_id="derivadas_cruzadas"></ref>. Tenemos el siguiente campo vectorial en $\R^2$:</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>
+          \[
+            \textbf{F}(x,y) = \left\langle P(x,y), Q(x,y) \right\rangle = \left\langle \displaystyle\frac{x^2y^2}{2}, \displaystyle\frac{x^3y}{3} \right\rangle
+          \]
+        </p>
+
+        <p>Este es un campo gradiente ya que $\textbf{F}(x,y) = \nabla f(x,y)$, donde $f(x,y) = \frac{1}{6}x^3y^2$. Ahora consideremos un punto arbitrario $(x_0,y_0)$ en el dominio de $\textbf{F}$. Sea $p(y)$ la curva que resulta de la intersección de $P(x,y)$ con el plano $x = x_0$, es decir, $p(y) = P(x_0, y)$. Análogamente, sea $q(x)$ la curva que resulta de la intersección de $Q(x,y)$ con el plano $y = y_0$, es decir, $q(x) = Q(x, y_0)$. El teorema afirma que la pendiente de la recta tangente a $p(y)$ en el punto $(y_0, p(y_0))$ es igual a la pendiente de la recta tangente a $q(x)$ en el punto $(x,q(x_0))$.</p>
       </div>
 
       <!--  -->
