@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='800' alto='600' dibujar-si='1' fijo='sí' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' red='no' red10='no' ejes='no' texto='no' números='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
+      <param name="C_01" value="id='op' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='F(x,y)=' expresión='(0,0,600,40)' valor='0' decimales='2' fijo='sí' visible='no' opciones='Divergencia positiva, Divergencia negativa, Divergencia cero' acción='calcular' parámetro='dd=0' label_color='e0e4e8' label_text_color='000000' font_family='Serif' fuente puntos='0' negrita='no' cursiva='sí' ">
+      <param name="C_02" value="id='boton' interfaz='botón' tipo='numérico' región='interior' espacio='E1' nombre='►' expresión='(600,0,200,40)' valor='0' color='000000' borderColor='no' color-int='f0f8ff' flat='no' text_align='a_center_center' image_align='a_center_center' negrita='no' cursiva='no' subrayada='no' font_family='SansSerif' fuente puntos='19' acción='animar' ">
+      <param name="A_01" value="id='a' expresión='-11' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='12' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='-9' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='10' tipo='variable' ">
+      <param name="A_05" value="id='m' expresión='abs(a)+abs(b)' tipo='variable' ">
+      <param name="A_06" value="id='n' expresión='abs(c)+abs(d)' tipo='variable' ">
+      <param name="A_07" value="id='dx' expresión='(b-a)/m' tipo='variable' ">
+      <param name="A_08" value="id='dy' expresión='(d-c)/n' tipo='variable' ">
+      <param name="A_09" value="id='X(s)' algoritmo='no' expresión='a+(s%m)*dx' tipo='función' ">
+      <param name="A_10" value="id='Y(s)' algoritmo='no' expresión='c+floor(s/m)*dy' tipo='función' ">
+      <param name="A_11" value="id='P(x,y)' algoritmo='no' expresión='op==0?x/2:(op==1?-x/4:1)' tipo='función' ">
+      <param name="A_12" value="id='Q(x,y)' algoritmo='no' expresión='op==0?y/2:(op==1?-y/4:2)' tipo='función' ">
+      <param name="A_13" value="id='pasos' expresión='50' tipo='variable' ">
+      <param name="A_14" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' inicio='dd=0' ">
+      <param name="A_15" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='punto' fondo='sí' color='000000' coord_abs='no' expresión='(0,0)' texto='O' decimales='2' fijo='sí' tamaño='3' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='origen' ">
+      <param name="G_02" value="espacio='E1' tipo='arco' fondo='sí' color='20303a' coord_abs='no' centro='(0,0)' radio='5' inicio='0' fin='360' vectores='no' decimales='2' fijo='sí' ancho='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' ">
+      <param name="G_03" value="espacio='E1' tipo='punto' fondo='no' color='800000' coord_abs='no' expresión='(X(s)+dd*P(X(s),Y(s)), Y(s)+dd*Q(X(s),Y(s)))' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' decimales='2' fijo='sí' tamaño='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='no' repetir='no' inicio='dd=0' hacer='dd=dd+1/pasos' mientras='dd<1' ">
+    </ajs>
+  </div>
+
+<script type="descartes/macro" id="circulo_en_coordenadas_polares.html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+  &lt;title&gt;TITULO&lt;/title&gt;
+  
+  &lt;script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="padding:0; margin:0; background:#eff0f1;"&gt;
+  &lt;div align="center"&gt;
+    &lt;ajs name="Descartes" code="Descartes" width="970" height="550"&gt;
+      &lt;param name="tamaño" value="970x550"&gt;
+      &lt;param name="decimal_symbol" value="."&gt;
+      &lt;param name="nombre" value=""&gt;
+      &lt;param name="Versión" value="5.5"&gt;
+      &lt;param name="editable" value="no"&gt;
+      &lt;param name="Idioma" value="español"&gt;
+      &lt;param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 "&gt;
+      &lt;param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' red='c0c0c0' red10='808080' ejes='404040' texto='no' números='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' "&gt;
+      &lt;param name="A_01" value="id='r' expresión='1' tipo='variable' "&gt;
+      &lt;param name="A_02" value="id='h' expresión='1' tipo='variable' "&gt;
+      &lt;param name="A_03" value="id='k' expresión='1' tipo='variable' "&gt;
+      &lt;param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' "&gt;
+      &lt;param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' "&gt;
+      &lt;param name="G_01" value="espacio='E1' tipo='curva' fondo='no' color='20303a' coord_abs='no' expresión='(r*cos(t),r*sin(t))' parámetro='t' t.intervalo='[0,2pi]' t.pasos='r&lt;=1?25:50' ancho='1' visible='no' editable='no' lineDash='solid' "&gt;
+    &lt;/ajs&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</script>
+
+<script type="descartes/macro" id="macros/circulo_en_coordenadas_polares.txt">
+id='radio' expresión='1' tipo='variable' 
+id='INICIO' algoritmo='sí' evaluar='una-sola-vez' 
+id='CALCULOS' algoritmo='sí' evaluar='siempre' 
+espacio='E1' tipo='curva' fondo='no' color='000000' coord_abs='no' expresión='(radio*cos(t),radio*sin(t))' parámetro='t' t.intervalo='[0,2pi]' t.pasos='radio&lt;=1?25:50' ancho='1' visible='no' editable='no' lineDash='solid' 
+</script>
+
+</body>
+</html>
