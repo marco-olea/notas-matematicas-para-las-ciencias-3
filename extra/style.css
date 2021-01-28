@@ -69,20 +69,26 @@ xmp {
 
 .cover_title {
   position: absolute;
-  color: #0089cd;
-  font-size: 350%;
+  color: #1B1464;
   text-align: center;
   text-shadow: 1px 2px rgba(0,0,0,0.15);
+
+  font-size:220%;
+  left: 110px;
+  top: 130px;
+  width: 420px;
 }
 .cover_subtitle {
   position: absolute;
-  left: 57px;
-  right: 0px;
-  bottom: 45px;
+  color: #1B1464;
   text-align: center;
-  color: #0089cd;
-  font-size: 220%;
   text-shadow: 1px 2px rgba(0,0,0,0.15);
+
+  font-size: 260%;
+  left: 110px;
+  top: 200px;
+  width: 420px;
+  font-weight: bold;
 }
 
 .chap_text {
@@ -115,7 +121,7 @@ em {
 }
 figcaption {
   margin-top: 0.5em;
-  color: #34495e;
+  color: var(--figcaption-text);
 }
 
 figcaption[class="interactive_note"] {
