@@ -20,7 +20,7 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=1 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='3%' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='k' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Multiplicar sólido bajo f por:' expresión='(0,0,150,40)' valor='1' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' btn_pos='h_left_right' ">
+      <param name="C_01" value="id='k' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Multiplicar sólido bajo f por:' expresión='(0,0,150,40)' valor='1' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='longitud_ejes' expresión='10' tipo='variable' ">
       <param name="A_02" value="id='f(x,y)' algoritmo='no' expresión='1.5+0.5cos(x)' tipo='función' ">
       <param name="A_03" value="id='a' expresión='0.5' tipo='variable' ">
@@ -29,7 +29,7 @@
       <param name="A_06" value="id='d' expresión='7pi/4' tipo='variable' ">
       <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-40' ">
       <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(295,48)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i f(x,y)\i0}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='20' align='a_left' anchor='a_top_left' info='f(x,y)' ">
+      <param name="G_01" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='sí' expresión='(295,48)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40\i f(x,y)\i0}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='sí' font_family='SansSerif' fuente puntos='20' align='a_left' anchor='a_top_left' border_size='0' shadowColor='false' shadowBlur='0' shadowOffsetX='0' shadowOffsetY='0' info='f(x,y)' ">
       <param name="G_02" value="espacio='E2' tipo='segmento' fondo='no' color='000000' coord_abs='sí' expresión='(343,62)(368,80)' decimales='2' fijo='sí' tamaño='0' ancho='0.5' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='f(x,y)' ">
       <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0, (0<s)&&(s<1)?longitud_ejes:0, s==1?longitud_ejes:0)' familia='s' s.intervalo='[0,1]' s.pasos='3' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
       <param name="S_02" value="espacio='E1' tipo='cara' fondo='no' color='30ff8000' color_reverso='30ff8000' expresión='(a,c)(b,c)(b,d)(a,d)' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='000000' modelo='color' info='R' ">
