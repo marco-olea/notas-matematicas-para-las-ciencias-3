@@ -1267,7 +1267,7 @@
 
         <h3>Divergencia</h3>
 
-        <p>La divergencia es un operación sobre un campo vectorial que produce un campo escalar. En particular, la divergencia de un campo vectorial $\textbf{F}$ en un punto $P$ es una medida del grado en que un volumen infinitésimo alrededor de $P$ es una "fuente" (flechas apuntan hacia afuera) o un "sumidero" (flechas apunta hacia adentro) para el flujo vectorial.</p>
+        <p>La divergencia es una operación sobre un campo vectorial que produce un campo escalar. En particular, la divergencia de un campo vectorial $\textbf{F}$ en un punto $P$ es una medida del grado en que un volumen infinitésimo alrededor de $P$ es una "fuente" (flechas apuntan hacia afuera) o un "sumidero" (flechas apuntan hacia adentro) para el flujo vectorial.</p>
 
         <div class="num_block" prefix="Definición" id="divergencia">
           Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces la divergencia de $\textbf{F}$ es:
@@ -1287,7 +1287,7 @@
       <div class="page">
         <figure id="ejemplo_divergencia">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia.html"></div>
-          <figcaption>Pulsa el botón "►" para mover los puntos a su posición final después de aplicar la transformación $\textbf{F}_{\textbf{1}}$, $\textbf{F}_{\textbf{2}}$ o $\textbf{F}_{\textbf{3}}$.</figcaption>
+          <figcaption>Pulsa el botón "►" para mover los puntos a su posición final después de aplicar la transformación $\textbf{F}_{\textbf{1}} = \left\langle x,y \right\rangle$, $\textbf{F}_{\textbf{2}} = \left\langle -x,-y \right\rangle$ o $\textbf{F}_{\textbf{3}} = \left\langle 1,2 \right\rangle$.</figcaption>
         </figure>
 
         <p>"negativa" y "cero", respectivamente. Supongamos que estos campos vectoriales representan la velocidad de un fluido. En la figura también se encuentran un conjunto de puntos y una región delimitada por un círculo centrado en el origen.</p>
@@ -1299,17 +1299,18 @@
       <div class="page">
         <p>por lo que la divergencia del campo es negativa. En la animación de $\textbf{F}_{\textbf{3}}$ parecen haber un número constante de puntos dentro de la región, porque entra y sale la misma cantidad de fluido. En este último campo la divergencia es cero.</p>
 
-        <p>Una aplicación física de la diveregencia ocurre con los campos magnéticos. Un campo magnético es un campo vectorial que describe la influencia magnética sobre cargas y corrientes eléctricas. La ley de Gauss para el magnetismo indica que si $\textbf{B}$ es un campo magnético entonces $div \textbf{ B} = 0$.</p>
+        <p>Una aplicación física de la divergencia ocurre con los campos magnéticos. Un campo magnético es un campo vectorial que describe la influencia magnética sobre cargas y corrientes eléctricas. La ley de Gauss para el magnetismo indica que si $\textbf{B}$ es</p>
 
         <figure id="ejemplo_divergencia_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r3.html"></div>
-          <!-- TODO Generalize l to bounded regions in order to color vectors-->
-          <figcaption>Pulsa el botón "►" para mover los puntos a su posición final después de aplicar la transformación $\textbf{F}_{\textbf{1}}$, $\textbf{F}_{\textbf{2}}$ o $\textbf{F}_{\textbf{3}}$.</figcaption>
+          <figcaption>El campo vectorial $\textbf{F}(x,y,z) = \left\langle -\frac{xy}{4}, \frac{y}{4}, \frac{z}{8} \right\rangle$. Usa los pulsadores para controlar la posición de la esfera, la cual es verde cuando la divergencia es positiva, roja cuando es negativa y gris cuando es cero. Observa cómo cambia la entrada y salida de vectores al mover la esfera.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>un campo magnético entonces $div \textbf{ B} = 0$.</p>
+
         <h3>Rotacional</h3>
       </div>
 
