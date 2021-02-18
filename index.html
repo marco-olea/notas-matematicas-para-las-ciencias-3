@@ -1285,8 +1285,8 @@
 
       <!--  -->
       <div class="page">
-        <figure id="ejemplo_divergencia">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia.html"></div>
+        <figure id="ejemplo_divergencia_r2">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r2.html"></div>
           <figcaption>Pulsa el botón "►" para mover los puntos a su posición final después de aplicar la transformación $\textbf{F}_{\textbf{1}} = \left\langle x,y \right\rangle$, $\textbf{F}_{\textbf{2}} = \left\langle -x,-y \right\rangle$ o $\textbf{F}_{\textbf{3}} = \left\langle 1,2 \right\rangle$.</figcaption>
         </figure>
 
@@ -1312,11 +1312,32 @@
         <p>un campo magnético entonces $div \textbf{ B} = 0$.</p>
 
         <h3>Rotacional</h3>
+
+        <p>El rotacional es una operación sobre un campo vectorial que produce otro un campo vectorial. En particular, el rotacional de un campo vectorial $\textbf{F}$ en un punto $P$ es un vector que mide la tendencia de $\textbf{F}$ a causar rotación alrededor del eje que apunta en la dirección de este vector. La magnitud del vector indica qué tan rápidamente es esa rotación.</p>
+
+        <div class="num_block" prefix="Definición" id="rotacional">
+          Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces el rotacional de $\textbf{F}$ es:
+            \[
+              rot \textbf{ F} = (Q_x - P_y)\textbf{k} = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\textbf{k}
+            \]
+          Sea $\textbf{F} = \left\langle P,Q,R \right\rangle$ un campo vectorial en $\R^3$. Si existen $P_x$, $Q_y$ y $R_z$, entonces el rotacional de $\textbf{F}$ es:
+            \[
+              \begin{aligned}
+                rot \textbf{ F} 
+                &= (R_y - Q_z)\textbf{i} + (P_z - R_x)\textbf{j} + (Q_x - P_y)\textbf{k} \\
+                &= \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)\textbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right)\textbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\textbf{k}
+              \end{aligned}
+            \]
+          Es importante notar que, ya sea que se trate de un campo vectorial en $\R^2$ o en $\R^3$, el rotacional existe en un espacio de tres dimensiones.
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <figure id="ejemplo_rotacional_r2">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r2.html"></div>
+          <figcaption>.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
