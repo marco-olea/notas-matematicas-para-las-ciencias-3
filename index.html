@@ -1330,24 +1330,40 @@
             \]
           Es importante notar que, ya sea que se trate de un campo vectorial en $\R^2$ o en $\R^3$, el rotacional existe en un espacio de tres dimensiones.
         </div>
+
+        <p>Consideremos los campos vectoriales $\textbf{F}_1 = \left\langle 2,3 \right\rangle$ y $\textbf{F}_2 = \left\langle -y,x \right\rangle$, en la <ref ref_id="ejemplo_rotacional_r2"></ref>. Observa que $\textbf{F}_1$ es constante y todos los vectores son paralelos. Ningún punto induce rotación y el rotacional</p>
       </div>
 
       <!--  -->
       <div class="page">
         <figure id="ejemplo_rotacional_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r2.html"></div>
-          <figcaption>.</figcaption>
+          <figcaption>Selecciona un campo vectorial y un punto $(x_0,y_0)$ para ver cómo rota la "rueda" al colocarla ahí. Nota que la tercera componente del vector rotacional indica la dirección y rapidez de la rotación.</figcaption>
         </figure>
+
+        <p>del campo se evalúa a cero: $rot\ \textbf{F}_1 = \left( \frac{\partial (3)}{\partial x} - \frac{\partial (2)}{\partial y} \right)\textbf{k} = 0 \textbf{k}$. En el caso de $\textbf{F}_2$ se trata de un campo rotacional por lo que se espera que $rot\ \textbf{F}_2$ se evalúe a un valor distinto de cero: $rot\ \textbf{F}_2 = \left( \frac{\partial (x)}{\partial x} - \frac{\partial (-y)}{\partial y} \right)\textbf{k} = 2 \textbf{k}$.</p>
+
+        <p style="text-align-last:justify;">Para un campo vectorial $\textbf{F}$ en $\R^3$, el rotacional en un punto $(x_0,y_0,z_0)$ se puede visualizar insertando una pequeña esfera con centro fijo en un fluido cuyo flujo está dado por $\textbf{F}$. Si la esfera gira implica que $\textbf{F}$ induce rotación en el punto $(x_0,y_0,z_0)$. El</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>componente $x$ del vector rotacional indica la dirección y rapidez con la que gira la esfera con respecto al eje $x$, donde un valor positivo significa que gira en el sentido contrario a las manecillas de un reloj, suponiendo que el eje se observa desde el lado positivo hacia el negativo, tal como se muestra en la siguiente figura:</p>
+
+        <figure id="ejemplo_rotacional_r3">
+          <div class="interactive" width="600" height="450" src="interactivos/capitulo2/seccion2/giros_respecto_a_ejes.html"></div>
+        </figure>
         
+        <p>Análogamente, los componentes $y$ y $z$ del vector rotacional indican la dirección y rapidez con la que gira la esfera con respecto a los ejes $y$ y $z$, respectivamente. La magnitud de este vector representa la rapidez neta con la que está girando la esfera.</p>
+
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <figure id="ejemplo_rotacional_r3">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r3.html"></div>
+          <figcaption>Selecciona un campo vectorial y un punto $(x_0,y_0,z_0)$ para ver cómo gira la esfera al colocarla ahí.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
