@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Ejemplo de rotacional en &#8477;&#178;</title>
+  <title>Ejemplo de rotacional en ℝ²</title>
   
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
@@ -35,15 +35,16 @@
       <param name="A_10" value="id='ung' expresión='pi/25' tipo='variable' info='unidad de giro: si |rot(x₀,y₀)|=1 la rueda girará &squot;ung&squot; radianes cada paso de la animación' ">
       <param name="A_11" value="id='X(s)' algoritmo='no' expresión='a+(s%m)*dx' tipo='función' ">
       <param name="A_12" value="id='Y(s)' algoritmo='no' expresión='c+floor(s/m)*dy' tipo='función' ">
-      <param name="A_13" value="id='P(x,y)' algoritmo='no' expresión='op==0?0.5:(op==1?y/8:(op==2?-y/4:1/2))' tipo='función' ">
-      <param name="A_14" value="id='Q(x,y)' algoritmo='no' expresión='op==0?1:(op==1?0:(op==2?x/4:x^2/40))' tipo='función' ">
-      <param name="A_15" value="id='rot(x,y)' algoritmo='no' expresión='op==0?0:(op==1?-1:(op==2?2:2h))' tipo='función' ">
-      <param name="A_16" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
-      <param name="A_17" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='segmento' fondo='no' color='964b00' coord_abs='no' expresión='(h,k) (h+r*cos(s/2*pi+dt),k+r*sin(s/2*pi+dt))' familia='s' s.intervalo='[0,3]' s.pasos='3' decimales='2' fijo='sí' tamaño='5' ancho='4' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='dot' info='paddlewheel' ">
+      <param name="A_13" value="id='campos' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='4' expresión='campos[0,0]=&squot;0.5&squot;;campos[0,1]=&squot;1&squot;;;campos[1,0]=&squot;y/8&squot;;campos[1,1]=&squot;0&squot;;;campos[2,0]=&squot;-y/4&squot;;campos[2,1]=&squot;x/4&squot;;;campos[3,0]=&squot;1/2&squot;;campos[3,1]=&squot;x^2/40&squot;;' tipo='matriz' info='campos vectoriales; en cada fila 0=P(x,y), 1=Q(x,y)' ">
+      <param name="A_14" value="id='P(x,y)' algoritmo='no' expresión='_Eval_(campos[op,0])' tipo='función' info='función P en F(x,y)=<P(x,y),Q(x,y)>' ">
+      <param name="A_15" value="id='Q(x,y)' algoritmo='no' expresión='_Eval_(campos[op,1])' tipo='función' info='función Q en F(x,y)=<P(x,y),Q(x,y)>' ">
+      <param name="A_16" value="id='rot(x,y)' algoritmo='no' expresión='op==0?0:(op==1?-1:(op==2?2:2h))' tipo='función' info='rotacional de cada campo vectorial' ">
+      <param name="A_17" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_18" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='segmento' fondo='no' color='964b00' coord_abs='no' expresión='(h,k) (h+r*cos((s*2/5*pi+dt)%(2pi)),k+r*sin((s*2/5*pi+dt)%(2pi)))' familia='s' s.intervalo='[0,4]' s.pasos='4' decimales='2' fijo='sí' tamaño='5' ancho='4' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='dot' info='paddlewheel' ">
       <param name="G_02" value="espacio='E1' tipo='flecha' fondo='no' color='0000ff' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+P(X(s),Y(s)), Y(s)+Q(X(s),Y(s)))' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' decimales='2' fijo='sí' ancho='1' punta='3' flecha='0000ff' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
-      <param name="G_03" value="espacio='E1' tipo='rectángulo' fondo='no' color='20303a' coord_abs='sí' expresión='(15,20,245,30)' relleno='10c0c0c0' ancho='0' border_radius='0' lineDash='solid' ">
-      <param name="G_04" value="espacio='E1' tipo='texto' fondo='no' color='000000' coord_abs='sí' expresión='(20,20)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs50 {\*\mjaformula\i rot \i0\i\b F\b0\i0\i (\i0\i{\expr h\decimals 2\fixed1}\i0\i ,\i0\i{\expr k\decimals 2\fixed1}\i0\i ) = \i0\i{\expr rot(h,k)\decimals 2\fixed0}\i0}}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' border_size='0' shadowColor='false' shadowBlur='0' shadowOffsetX='0' shadowOffsetY='0' info='rotacional' ">
+      <param name="G_03" value="espacio='E1' tipo='rectángulo' fondo='no' color='20303a' coord_abs='sí' expresión='(15,20,255,30)' relleno='10c0c0c0' ancho='0' border_radius='0' lineDash='solid' ">
+      <param name="G_04" value="espacio='E1' tipo='texto' fondo='no' color='000000' coord_abs='sí' expresión='(20,20)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs50 {\*\mjaformula\i rot \i0\i\b F\b0\i0\i (x\i0{\subix\i 0\i0}\i ,y\i0{\subix\i 0\i0}\i ) = (0,0,\i0\i{\expr rot(h,k)\decimals 2\fixed0}\i0 )}}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' border_size='0' shadowColor='false' shadowBlur='0' shadowOffsetX='0' shadowOffsetY='0' info='rotacional' ">
       <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='sí' inicio='dt=0' hacer='dt=dt+rot(h,k)*ung;' ">
     </ajs>
   </div>
