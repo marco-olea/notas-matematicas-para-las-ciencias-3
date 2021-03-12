@@ -1270,11 +1270,11 @@
         <p>La divergencia es una operación sobre un campo vectorial que produce un campo escalar. En particular, la divergencia de un campo vectorial $\textbf{F}$ en un punto $P$ es una medida del grado en que un volumen infinitésimo alrededor de $P$ es una "fuente" (flechas apuntan hacia afuera) o un "sumidero" (flechas apuntan hacia adentro) para el flujo vectorial.</p>
 
         <div class="num_block" prefix="Definición" id="divergencia">
-          Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces la divergencia de $\textbf{F}$ es:
+          Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces la <b>divergencia</b> de $\textbf{F}$ es:
             \[
               div \textbf{ F} = P_x + Q_y = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}
             \]
-          Sea $\textbf{F} = \left\langle P,Q,R \right\rangle$ un campo vectorial en $\R^3$. Si existen $P_x$, $Q_y$ y $R_z$, entonces la divergencia de $\textbf{F}$ es:
+          Sea $\textbf{F} = \left\langle P,Q,R \right\rangle$ un campo vectorial en $\R^3$. Si existen $P_x$, $Q_y$ y $R_z$, entonces la <b>divergencia</b> de $\textbf{F}$ es:
             \[
               div \textbf{ F} = P_x + Q_y + R_z = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
             \]
@@ -1316,11 +1316,11 @@
         <p>El rotacional es una operación sobre un campo vectorial que produce otro un campo vectorial. En particular, el rotacional de un campo vectorial $\textbf{F}$ en un punto $P$ es un vector que mide la tendencia de $\textbf{F}$ a causar rotación alrededor del eje que apunta en la dirección de este vector. La magnitud del vector indica qué tan rápidamente es esa rotación.</p>
 
         <div class="num_block" prefix="Definición" id="rotacional">
-          Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces el rotacional de $\textbf{F}$ es:
+          Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces el <b>rotacional</b> de $\textbf{F}$ es:
             \[
               rot \textbf{ F} = (Q_x - P_y)\textbf{k} = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\textbf{k}
             \]
-          Sea $\textbf{F} = \left\langle P,Q,R \right\rangle$ un campo vectorial en $\R^3$. Si existen $P_x$, $Q_y$ y $R_z$, entonces el rotacional de $\textbf{F}$ es:
+          Sea $\textbf{F} = \left\langle P,Q,R \right\rangle$ un campo vectorial en $\R^3$. Si existen $P_x$, $Q_y$ y $R_z$, entonces el <b>rotacional</b> de $\textbf{F}$ es:
             \[
               \begin{aligned}
                 rot \textbf{ F} 
@@ -1368,12 +1368,90 @@
 
       <!--  -->
       <div class="page">
-        
+        <h2 id="sec_c2_diferenciación">Diferenciación.</h2>
+
+        <p>En esta sección veremos cómo derivar e integrar funciones con valores vectoriales y la interpretación gráfica de estas operaciones.</p>
+
+        <h3>Derivadas de funciones con valores vectoriales</h3>
+
+        <p>Recordemos que la derivada de una función con valores reales es la pendiente de una recta tangente. Para las funciones con valores vectoriales la derivada tiene una interpretación similar: el resultado es un vector tangente a la curva de la función en un punto.</p>
+
+        <div id="derivada_funcion_valores_vectoriales" class="num_block" prefix="Definición">
+          Sea $\textbf{r}$ una función con valores vectoriales. La <b>derivada</b> de $\textbf{r}(t)$ es:
+            \[
+              \textbf{r}'(t) = \lim_{\Delta t \rightarrow 0} \frac{\textbf{r}(t + \Delta t) - \textbf{r}(t)}{\Delta t}
+            \]
+          Si el límite existe, decimos que $\textbf{r}$ es <b>diferenciable</b> en $t$. Si $\textbf{r}$ es diferenciable para todo $t \in (a,b)$, entonces $\textbf{r}$ es diferenciable sobre el intervalo abierto $(a,b)$. Si $\textbf{r}$ es diferenciable sobre $(a,b)$ y además existen los siguientes dos límites:
+            \[
+              \textbf{r}'(a) = \lim_{\Delta t \rightarrow 0^+} \frac{\textbf{r}(a + \Delta t) - \textbf{r}(a)}{\Delta t},\ \textbf{r}'(b) = \lim_{\Delta t \rightarrow 0^-} \frac{\textbf{r}(b + \Delta t) - \textbf{r}(b)}{\Delta t}
+            \]
+          Entonces $\textbf{r}$ es diferenciable sobre el intervalo cerrado $[a,b]$.
+        </div>
+
+        <p style="text-align-last:justify;">El cálculo de la derivada de una función con valores vectoriales también se puede realizar simplemente obteniendo las derivadas de cada componente, ya sea que la función esté en dos o tres dimensiones. La prueba de esto se sigue directamente de la</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <h2 id="sec_c2_diferenciación">Diferenciación.</h2>
+        <figure id="ejemplo_derivada_funcion_valores_vectoriales">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/ejemplo_derivada_funcion_valores_vectoriales.html"></div>
+          <figcaption>La curva $\textbf{r}(t) = \langle cos(t),sin(t),t \rangle$. La línea roja representa el vector $\frac{1}{\Delta t} (\textbf{r}(t + \Delta t) - \textbf{r}(t))$. Observa que el vector $\textbf{r}(t + \Delta t) - \textbf{r}(t)$ es secante a la curva, pero conforme $\Delta t$ tiende a cero, se aproxima al vector tangente a la curva $\textbf{r}'(t)$.</figcaption>
+        </figure>
+
+        <p>definición anterior.</p>
+
+        <div class="num_block" prefix="Teorema" id="diferenciacion_funcion_valores_vectoriales">
+          Sean $f$, $g$ y $h$ funciones reales diferenciables. <br>
+          Si $\textbf{r}(t) = \langle f(t),g(t) \rangle$, entonces:
+            \[
+              \textbf{r}'(t) = \langle f'(t),g'(t) \rangle
+            \]
+          Si $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, entonces:
+            \[
+              \textbf{r}'(t) = \langle f'(t),g'(t),h'(t) \rangle
+            \]
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h3>Propiedades de las derivadas de funciones con valores vectoriales</h3>
+
+        <div class="num_block" prefix="Teorema" id="propiedades_derivada_funcion_valores_vectoriales">
+          Sean $\textbf{r}$ y $\textbf{s}$ funciones con valores vectoriales diferenciables. Sea $f: \R \rightarrow \R$ una función diferenciable. Entonces:
+        </div>
+
+        <ol>
+          <li>La suma $\textbf{r}(t) + \textbf{s}(t)$ es diferenciable y</li>
+        </ol>
+
+        <p>\[
+              \frac{d}{dt} [\textbf{r}(t) + \textbf{s}(t)] = \textbf{r}'(t) + \textbf{s}'(t)
+            \]</p>
+
+        <figure id="propiedades_derivada_funcion_valores_vectoriales_1">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_1.html"></div>
+          <figcaption>Las curvas $\textbf{r}(t) = \langle t^2/4,t/2,t \rangle$ (azul), $\textbf{s}(t) = \langle t,t^{3/2},1-sin(t) \rangle$ (verde) y $(\textbf{r} + \textbf{s})(t)$ (naranja).</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <ol start="2">
+          <li>Si $c \in \R$ es un escalar, entonces $c\textbf{r}(t)$ es diferenciable y 
+            \[
+              \frac{d}{dt} [c\textbf{r}(t)] = c\textbf{r}'(t)
+            \]</li>
+        </ol>
+
+        <figure>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_2.html"></div>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
       </div>
 
       <!--  -->
