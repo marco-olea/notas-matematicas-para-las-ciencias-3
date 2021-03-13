@@ -1395,7 +1395,7 @@
       <div class="page">
         <figure id="ejemplo_derivada_funcion_valores_vectoriales">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/ejemplo_derivada_funcion_valores_vectoriales.html"></div>
-          <figcaption>La curva $\textbf{r}(t) = \langle cos(t),sin(t),t \rangle$. La línea roja representa el vector $\frac{1}{\Delta t} (\textbf{r}(t + \Delta t) - \textbf{r}(t))$. Observa que el vector $\textbf{r}(t + \Delta t) - \textbf{r}(t)$ es secante a la curva, pero conforme $\Delta t$ tiende a cero, se aproxima al vector tangente a la curva $\textbf{r}'(t)$.</figcaption>
+          <figcaption>La curva $\textbf{r}(t) = \langle cos(t),sin(t),t \rangle$. La línea roja representa el vector $\frac{1}{\Delta t} (\textbf{r}(t_0 + \Delta t) - \textbf{r}(t_0))$. Observa que $\textbf{r}(t_0 + \Delta t) - \textbf{r}(t_0)$ es secante a la curva, pero conforme $\Delta t$ tiende a cero, se aproxima al vector tangente a la curva $\textbf{r}'(t_0)$.</figcaption>
         </figure>
 
         <p>definición anterior.</p>
@@ -1422,36 +1422,35 @@
         </div>
 
         <ol>
-          <li>La suma $\textbf{r}(t) + \textbf{s}(t)$ es diferenciable y</li>
+          <li>Si $c \in \R$ es un escalar, entonces $c\textbf{r}(t)$ es diferenciable y</li>
         </ol>
 
-        <p>\[
-              \frac{d}{dt} [\textbf{r}(t) + \textbf{s}(t)] = \textbf{r}'(t) + \textbf{s}'(t)
-            \]</p>
+        <p>
+          \[
+            \frac{d}{dt} [c\textbf{r}(t)] = c\textbf{r}'(t)
+          \]</p>
 
         <figure id="propiedades_derivada_funcion_valores_vectoriales_1">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_1.html"></div>
-          <figcaption>Las curvas $\textbf{r}(t) = \langle t^2/4,t/2,t \rangle$ (azul), $\textbf{s}(t) = \langle t,t^{3/2},1-sin(t) \rangle$ (verde) y $(\textbf{r} + \textbf{s})(t)$ (naranja).</figcaption>
+          <figcaption>La curva $\textbf{r}(t) = \langle sin(t),\frac{t^2}{4},\frac{t}{2} \rangle$ en azul, con $t \in [0,6]$.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
         <ol start="2">
-          <li>Si $c \in \R$ es un escalar, entonces $c\textbf{r}(t)$ es diferenciable y 
-            \[
-              \frac{d}{dt} [c\textbf{r}(t)] = c\textbf{r}'(t)
-            \]</li>
+          <li>La suma $\textbf{r}(t) + \textbf{s}(t)$ es diferenciable y</li>
         </ol>
 
-        <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_2.html"></div>
-        </figure>
-      </div>
+        <p>
+          \[
+            \frac{d}{dt} [\textbf{r}(t) + \textbf{s}(t)] = \textbf{r}'(t) + \textbf{s}'(t)
+          \]</p>
 
-      <!--  -->
-      <div class="page">
-        
+        <figure id="propiedades_derivada_funcion_valores_vectoriales_2">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_2.html"></div>
+          <figcaption>Las curvas $\textbf{r}(t) = \langle t^2/4,t/2,t \rangle$ en azul, $\textbf{s}(t) = \langle t,t^{3/2},1-sin(t) \rangle$ en verde y $\textbf{r}(t) + \textbf{s}(t)$ en naranja. Los vectores $\textbf{r}(t_0)$ y $\textbf{s}(t_0)$ se encuentran en sus respectivas curvas y se vuelven a trazar en el origen para formar un paralelogramo cuya diagonal es su suma $\textbf{r}'(t_0) + \textbf{s}'(t_0)$ (por definición de suma de vectores). Este vector siempre será igual a $\frac{d}{dt} [\textbf{r}(t_0) + \textbf{s}(t_0)]$.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
@@ -1468,6 +1467,21 @@
 
         <h2 id="sec_c3_curvas_orientación">Curvas. Orientación.</h2>
 
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c3_la_integral_de_trayectoria">La integral de trayectoria.</h2>
 
         <h2 id="sec_c3_integrales_de_linea">Integrales de línea (trabajo, circulación).</h2>
@@ -1481,6 +1495,25 @@
         <h2 id="sec_c3_integral_de_superficie">Integral de superficie (flujo a través de una superficie).</h2>
 
         <h2 id="sec_c3_aplicaciones">Aplicaciones.</h2>
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
 
       </div>
 
