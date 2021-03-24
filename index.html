@@ -1467,12 +1467,99 @@
 
         <h2 id="sec_c3_curvas_orientación">Curvas. Orientación.</h2>
 
+        <p>En esta sección veremos cómo calcular la longitud de arco y cómo reparametrizar funciones de valores vectoriales con respecto a la longitud de arco. Analizaremos el concepto de curvatura y el significado de los vectores normales y binormales de una curva.</p>
 
+        <h3>Longitud de arco</h3>
+
+        <div class="num_block" prefix="Teorema" id="longitud_arco">
+          Sea $C$ una curva planar definida por la función diferenciable $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
+            \[
+              s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
+            \]
+          Sea $C$ una curva espacial definida por la función diferenciable $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
+            \[
+              s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2 + [h'(t)^2]} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
+            \]
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>El requerimiento de que $\textbf{r}(t)$ sea diferenciable (<ref ref_id="derivada_funcion_valores_vectoriales"></ref>) con una derivada distinta de cero garantiza que la curva no tenga cúspides ni esquinas.</p>
 
+        <h3>Parametrización por longitud de arco</h3>
+
+        <p>Supongamos que $\textbf{r}(t)$ es una función diferenciable con valores vectoriales que representa la posición de una partícula en el espacio, con respecto al tiempo $t$. Entonces la función de longitud de arco de $\textbf{r}$ mide la distancia recorrida por la misma partícula, también en función del tiempo. Dado que dicha función $s(t)$ mide la distancia, $s'(t)$ mide la velocidad de la partícula en algún momento dado.</p>
+
+        <div class="num_block" prefix="Teorema" id="funcion_longitud_arco">
+          Sea $\textbf{r}(t)$ una función diferenciable que describe una curva, para $t \geq a$. La función de longitud de arco de $\textbf{r}$ es:
+            \[
+              s(t) = \int^t_a \Vert \textbf{r}'(u) \Vert du
+            \]
+          Más aún, la longitud de arco es creciente, por lo que $s'(t) = \Vert \textbf{r}'(t) \Vert \geq 0$ para todo $t \geq a$.
+        </div>
+
+        <p>Este teorema se utiliza para construir una parametrización por longitud de arco de una curva. Supongamos que dado $\textbf{r}(t)$ se ha calculado la función de longitud de arco $s(t)$, y este se puede reescribir de tal forma que $t$ esté en términos de $s$. Al sustituir esta expresión de $t$ en $\textbf{r}(t)$ y su dominio, la curva quedará descrita en términos de $s$, por lo que ahora la distancia recorrida en la curva de $s = 0$ a $s = s_0$ es $s_0$. Esta es la parametrización por longitud de arco de $\textbf{r}(t)$.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Ejemplo: Sea $\textbf{r}(t) = \langle 3cos(t), 3sin(t), 4t \rangle$, con $t \in [-4\pi, 0]$, como se muestra en la <ref ref_id="reparametrizacion_longitud_arco"></ref>. Se desea encontrar la parametrización por longitud de arco. Primero se debe calcular la función de longitud de arco como se indica en el <ref ref_id="funcion_longitud_arco"></ref>.
+          \[
+            \begin{aligned}
+              s(t) 
+                &= \int^t_{-4\pi} \Vert \textbf{r}'(u) \Vert du \\
+                &= \int^t_{-4\pi} \Vert \langle -3sin(t),3cos(t),4 \rangle \Vert du \\
+                &= \int^t_{-4\pi} 5du = 5t + 20\pi
+            \end{aligned}
+          \]</p>
+
+        <p>Luego se reescribe el resultado anterior de tal forma que $t$ esté en términos de $s$:
+          \[
+            t = \frac{s}{5} - 4\pi
+          \]
+        </p>
+
+        <p>Ahora se sustituye la variable $t$ en $\textbf{r}(t)$ con esta expresión para obtener:
+          \[
+            \textbf{r}(s) = \left\langle 3cos(\frac{s}{5} - 4\pi),4sin(\frac{s}{5} - 4\pi),4(\frac{s}{5} - 4\pi) \right\rangle
+          \]
+        </p>
+
+        <p>Por último se debe sustituir la misma expresión en las cotas originales. Dado que $t \in [-4\pi,0]$, entonces:
+          \[
+            \begin{aligned}
+              t \geq 4\pi 
+                &\Rightarrow \frac{s}{5} - 4\pi \geq -4\pi \\
+                &\Rightarrow \frac{s}{5} \geq 0 \\
+                &\Rightarrow s \geq 0
+            \end{aligned}
+          \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="reparametrizacion_longitud_arco">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/reparametrizacion_longitud_arco.html"></div>
+          <figcaption>En azul se muestra la curva $\textbf{r}(t) = \langle 3cos(t), 3sin(t), 4t \rangle$, definida para $t \in [-4\pi, 0]$. La parametrización por longitud de arco $\textbf{r}(s)$, en rojo, es idéntica a la curva original, pero aquí se muestran separadas para visualizar mejor el ejemplo. Observa que $t_0 = s_0$ no implica que $\textbf{r}(t_0) = \textbf{r}(s_0)$. Pulsa el botón para asignarle un valor a $s_0$ de tal forma que $\textbf{r}(t_0) = \textbf{r}(s_0)$.</figcaption>
+        </figure>
+
+        <p>
+          \[
+              \begin{aligned}
+                t \leq 0
+                  &\Rightarrow \frac{s}{5} - 4\pi \leq 0 \\
+                  &\Rightarrow \frac{s}{5} \leq 4\pi \\
+                  &\Rightarrow s \leq 20\pi
+              \end{aligned}
+            \]</p>
+
+        <p>Esta es la parametrización por longitud de arco de $\textbf{r}(t)$.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h3>Curvatura</h3>
       </div>
 
       <!--  -->

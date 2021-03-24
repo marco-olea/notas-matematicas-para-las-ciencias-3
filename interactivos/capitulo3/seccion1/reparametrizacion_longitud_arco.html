@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Reparametrización por longitud de arco</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='24' O.x='-30' O.y='-300' ">
+      <param name="C_01" value="id='t0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₀' expresión='(0,0,150,40)' valor='(b-a)/2' min='a' max='b' visible='sí' ">
+      <param name="C_02" value="id='s0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='s₀' expresión='(0,0,150,40)' valor='(d-c)/2' incr='0.3' min='c' max='d' visible='sí' ">
+      <param name="C_03" value="id='btn' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='Igualar r(t₀) y r(s₀)' expresión='(0,0,150,40)' color='000000' color-int='f0f8ff' fuente puntos='19' acción='calcular' parámetro='s0=5*t0+20pi' ">
+      <param name="A_01" value="id='a' expresión='-4*pi' tipo='variable' info='límite inferior para r(t)' ">
+      <param name="A_02" value="id='b' expresión='0' tipo='variable' info='límite superior para r(t)' ">
+      <param name="A_03" value="id='c' expresión='0' tipo='variable' info='límite inferior para r(s)' ">
+      <param name="A_04" value="id='d' expresión='5*(b-a)' tipo='variable' info='límite superior para r(s)' ">
+      <param name="A_05" value="id='r' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='r[0]=&squot;3*cos(t)&squot;;r[1]=&squot;3*sin(t)&squot;;r[2]=&squot;4*t&squot;' tipo='vector' info='curva' ">
+      <param name="A_06" value="id='r1(t)' algoritmo='no' expresión='_Eval_(r[0])' tipo='función' ">
+      <param name="A_07" value="id='r2(t)' algoritmo='no' expresión='_Eval_(r[1])' tipo='función' ">
+      <param name="A_08" value="id='r3(t)' algoritmo='no' expresión='_Eval_(r[2])' tipo='función' ">
+      <param name="A_09" value="id='_r' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='_r[0]=&squot;4+3*cos(s/5+a)&squot;;_r[1]=&squot;4+3*sin(s/5+a)&squot;;_r[2]=&squot;4+4*(s/5+a)&squot;' tipo='vector' info='reparametrización de r' ">
+      <param name="A_10" value="id='_r1(s)' algoritmo='no' expresión='_Eval_(_r[0])' tipo='función' ">
+      <param name="A_11" value="id='_r2(s)' algoritmo='no' expresión='_Eval_(_r[1])' tipo='función' ">
+      <param name="A_12" value="id='_r3(s)' algoritmo='no' expresión='_Eval_(_r[2])' tipo='función' ">
+      <param name="A_13" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=50;E1.rot.z=-5' ">
+      <param name="A_14" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='curva' color='0000ff' expresión='x=r1(a+u*(b-a)) y=r2(a+u*(b-a)) z=r3(a+u*(b-a))' cortar='sí' ancho='2' Nu='50' info='r(t)' ">
+      <param name="S_02" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(r1(a),r2(a),r3(a))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f0\fs40 \cf1{\*\mjaformula\i\b r\b0\i0\i (t)\i0}\cf0 }' decimales='2' ancho='0' offset_dist='16' offset_angle='270' info='r(t) texto' ">
+      <param name="S_03" value="espacio='E1' tipo='curva' color='ff0000' expresión='x=_r1(c+u*(d-c)) y=_r2(c+u*(d-c)) z=_r3(c+u*(d-c))' cortar='sí' ancho='2' Nu='50' info='r(s)' ">
+      <param name="S_04" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(_r1(d),_r2(d),_r3(d))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;\red255\green0\blue0;}\cf0\f0\fs40 \cf1{\*\mjaformula\cf2\i\b r\b0\i0\i (s)\i0}\cf0 }' decimales='2' ancho='0' offset_dist='16' offset_angle='90' info='r(s) texto' ">
+      <param name="S_05" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(r1(t0),r2(t0),r3(t0))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 \i{\*\mjaformula\i\b r\b0\i0\i (t\i0{\subix\i 0\i0}\i )\i0}\i0 }' decimales='2' ancho='3' offset_dist='16' offset_angle='90' info='r(t₀)' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(_r1(s0),_r2(s0),_r3(s0))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 \i{\*\mjaformula\i\b r\b0\i0\i (s\i0{\subix\i 0\i0}\i )\i0}\i0 }' decimales='2' ancho='3' offset_dist='16' offset_angle='270' info='r(s₀)' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
