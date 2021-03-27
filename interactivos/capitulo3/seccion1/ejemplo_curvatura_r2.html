@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ejemplo de curvatura en &#8477;&#178;</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' O.x='-24' red='no' red10='no' eje-x='x' eje-y='y' ">
+      <param name="C_01" value="id='t0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₀' expresión='(0,0,150,40)' min='0' max='th_lim' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='a' expresión='1' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='0.32' tipo='variable' ">
+      <param name="A_03" value="id='th_lim' expresión='9/2*pi' tipo='variable' ">
+      <param name="A_04" value="id='f' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='3' expresión='f[0,0]=&squot;(a+b*t)*cos(t)&squot;;f[0,1]=&squot;(a+b*t)*sin(t)&squot;;;f[1,0]=&squot;b*cos(t)-sin(t)*(a+b*t)&squot;;f[1,1]=&squot;b*sin(t)+cos(t)*(a+b*t)&squot;;;f[2,0]=&squot;-2*b*sin(t)-cos(t)*(a+b*t)&squot;;f[2,1]=&squot;2*b*cos(t)-sin(t)*(a+b*t)&squot;' tipo='matriz' info='filas: 0=función original; 1=primera derivada; 2=segunda derivada' ">
+      <param name="A_05" value="id='x1(t)' algoritmo='no' expresión='_Eval_(f[0,0])' tipo='función' ">
+      <param name="A_06" value="id='x2(t)' algoritmo='no' expresión='_Eval_(f[0,1])' tipo='función' ">
+      <param name="A_07" value="id='_x1(t)' algoritmo='no' expresión='_Eval_(f[1,0])' tipo='función' ">
+      <param name="A_08" value="id='_x2(t)' algoritmo='no' expresión='_Eval_(f[1,1])' tipo='función' ">
+      <param name="A_09" value="id='__x1(t)' algoritmo='no' expresión='_Eval_(f[2,0])' tipo='función' ">
+      <param name="A_10" value="id='__x2(t)' algoritmo='no' expresión='_Eval_(f[2,1])' tipo='función' ">
+      <param name="A_11" value="id='k(t)' algoritmo='no' expresión='(_x1(t)*__x2(t)-__x1(t)*_x2(t))/sqrt((_x1(t)^2+_x2(t)^2)^3)' tipo='función' info='curvatura' ">
+      <param name="A_12" value="id='R(t)' algoritmo='no' expresión='abs(1/k(t))' tipo='función' info='radio de curvatura' ">
+      <param name="A_13" value="id='Q_x(t)' algoritmo='no' expresión='(a+b*t)*cos(t)-_x2(t)/(k(t)*sqrt(_x1(t)^2+_x2(t)^2))' tipo='función' info='centro de curvatura => x' ">
+      <param name="A_14" value="id='Q_y(t)' algoritmo='no' expresión='(a+b*t)*sin(t)+_x1(t)/(k(t)*sqrt(_x1(t)^2+_x2(t)^2))' tipo='función' info='centro de curvatura => y' ">
+      <param name="A_15" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_16" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='((a+b*t)*cos(t), (a+b*t)*sin(t))' parámetro='t' t.intervalo='[0,th_lim]' t.pasos='90' ancho='2' info='r(t)' ">
+      <param name="G_02" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='(Q_x(t0),Q_y(t0))' tamaño='2' info='centro de curvatura' ">
+      <param name="G_03" value="espacio='E1' tipo='arco' color='008000' coord_abs='no' centro='(Q_x(t0),Q_y(t0))' radio='R(t0)' inicio='0' fin='360' ancho='1' info='circulo osculador' ">
+      <param name="G_04" value="espacio='E1' tipo='segmento' color='ff0000' coord_abs='no' expresión='(Q_x(t0),Q_y(t0)) (x1(t0),x2(t0))' tamaño='0' ancho='1' info='radio de curvatura' ">
+      <param name="G_05" value="espacio='E1' tipo='texto' color='000000' coord_abs='sí' expresión='(20,20)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50\i{\*\mjaformula\i κ = \i0\i{\expr k(t0)\decimals 2\fixed0}\i0}\i0\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='curvatura' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>La orientación definida para &#8477;&#178; es ambigua en &#8477;&#179;</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="700" height="525">
+      <param name="tamaño" value="700x525">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' O.x='-150' O.y='175' fijo='sí'">
+      <param name="E_02" value="tipo='R2' id='E2' x='20' y='20' ancho='75' alto='75' dibujar-si='!ccw' fijo='sí' imagen='cw.svg' despl_imagen='expand.' red='no' red10='no' ejes='no' info='cw' ">
+      <param name="E_03" value="tipo='R2' id='E3' x='20' y='20' ancho='75' alto='75' dibujar-si='ccw' fijo='sí' imagen='ccw.svg' despl_imagen='expand.' red='no' red10='no' ejes='no' info='ccw' ">
+      <param name="C_01" value="id='btn' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='Cambiar perspectiva' expresión='(0,0,150,40)' valor='!btn' color='000000' color-int='f0f8ff' fuente puntos='19' acción='animar' ">
+      <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=90;E1.rot.z=90;;ccw=1' ">
+      <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='000000' expresión='(0,0,0)(8,0,0)' ancho='3' Nu='1' info='(1,0,0)' ">
+      <param name="S_02" value="espacio='E1' tipo='triángulo' color='000000' color_reverso='000000' expresión='(0,0.2,0)(0.2,0,0)(0,-0.2,0)' posini='(8,0,0)' modelo='color' info='(1,0,0) flecha' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(8,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f0\fs40 \cf0\fs60\i{\*\mjaformula\i (1,0,0)\i0}\i0\fs40 }' decimales='2' ancho='0' offset_dist='30' offset_angle='315' info='(1,0,0) texto' ">
+      <param name="S_04" value="espacio='E1' tipo='segmento' color='000000' expresión='(0,0,0)(0,8,0)' ancho='3' Nu='1' info='(0,1,0)' ">
+      <param name="S_05" value="espacio='E1' tipo='triángulo' color='000000' color_reverso='000000' expresión='(-0.2,0,0)(0,0.2,0)(0.2,0,0)' posini='(0,8,0)' modelo='color' info='(0,1,0) flecha' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,8,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f0\fs40 \cf0\fs60\i{\*\mjaformula\i (0,1,0)\i0}\i0\fs40 }' decimales='2' ancho='0' offset_dist='30' offset_angle='135' info='(0,1,0) texto' ">
+      <param name="S_07" value="espacio='E1' tipo='curva' color='000000' expresión='x=5cos(u*pi/2) y=5sen(u*pi/2) z=0' ancho='1' Nu='20' info='ángulo' ">
+      <param name="S_08" value="espacio='E1' tipo='triángulo' color='000000' color_reverso='000000' expresión='(0,0.2,0)(0,-0.2,0)(-0.2,0,0)' posini='(0.2,5,0)' modelo='color' info='(0,1,0) flecha' ">
+      <param name="S_09" value="espacio='E1' tipo='punto' color='000000' color_reverso='6090a0' expresión='(5cos(pi/4),5sin(pi/4),0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f0\fs40 \cf0\fs60\i{\*\mjaformula\i +\i0}\i0\fs40 }' decimales='2' ancho='0' offset_dist='20' offset_angle='ccw?45:135' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='no' repetir='no' inicio='i=0;j=0;' hacer='// roty 90 => -90 o viceversa ;E1.rot.y=E1.rot.y+(i<180?(btn==0?2.5:-2.5):0);;// rotz 90 => -90 o viceversa ;E1.rot.z=E1.rot.z+(i<180?(btn==0?2.5:-2.5):0);;// Ox -150 => 175 o viceversa ;E1.Ox=E1.Ox+(j<325?(btn==0?-5:5):0);;i=i+2.5;j=j+5;;ccw=((i<180)||(j<325))?ccw:!ccw;' mientras='(i<180)||(j<325)' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
