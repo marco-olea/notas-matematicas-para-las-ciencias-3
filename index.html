@@ -1509,7 +1509,7 @@
             \begin{aligned}
               s(t) 
                 &= \int^t_{-4\pi} \Vert \textbf{r}'(u) \Vert du \\
-                &= \int^t_{-4\pi} \Vert \langle -3sin(t),3cos(t),4 \rangle \Vert du \\
+                &= \int^t_{-4\pi} \Vert \langle -3sin(u),3cos(u),4 \rangle \Vert du \\
                 &= \int^t_{-4\pi} 5du = 5t + 20\pi
             \end{aligned}
           \]</p>
@@ -1561,7 +1561,7 @@
       <div class="page">
         <h3>Curvatura</h3>
 
-        <p>La curvatura es una medida de qué tanto una curva planar se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenido en un solo plano. La curvatura de una línea recta es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
+        <p>La curvatura es una medida de qué tanto una curva planar se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenido en un solo plano. La curvatura de una línea recta y de un plano es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
 
         <div class="num_block" prefix="Definición" id="curvatura">
           Sea $C$ una curva definida por la función diferenciable $\textbf{r}(s)$, donde $s$ es el parámetro de longitud de arco. La <b>curvatura</b> en $s$ es:
@@ -1655,19 +1655,67 @@
 
       <!--  -->
       <div class="page">
-        <h2 id="sec_c3_la_integral_de_trayectoria">La integral de trayectoria.</h2>
+        <h2 id="sec_c3_la_integral_de_trayectoria">La integral de línea.</h2>
 
-        <p></p>
+        <p>En esta sección veremos cómo evaluar integrales cuyo dominio de integración no es un intervalo $[a,b]$, sino una curva general. Para esto se requerirá utilizar un tipo de integral nuevo, llamado integral de línea.</p>
+
+        <h3>Integral de línea escalar</h3>
+
+        <p>Sea $C$ una curva planar o espacial dada por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Queremos encontrar el área bajo la curva $C$ a lo largo de $f$. Para esto dividiremos el intervalo $[a,b]$ en $n$ subintervalos $[t_{i-1},t_i]$ para $1 \leq i \leq n$, donde $t_0 = a$ y $t_n = b$. Todos los subintervalos tendrán el mismo tamaño $\Delta t = \frac{b - a}{n}$. Los puntos $\textbf{r}(t_0) \text{, } \textbf{r}(t_1) \text{, … , } \textbf{r}(t_n)$ dividen a $C$ en $n$ pedazos cuyas longitudes son $\Delta s_1 \text{, } \Delta s_2 \text{, … , } \Delta s_n$. Sea $t^*_i$ un valor arbitrario en el intervalo $[t_{i-1},t_i]$, para $1 \leq i \leq n$. El producto $f(\textbf{r}(t^*_1)) \Delta s_1$ se aproxima al área de la cara con base $\Delta s_1$ y altura $f(\textbf{r}(t^*_1))$. Se sigue que la siguiente suma se aproxima al área bajo la curva $C$ a lo largo de $f$:
+          \[
+            \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Delta s_i
+          \]</p>
+
+        <p style="text-align-last:justify;">Nota que esto es una generalización de la suma de Riemann visto anteriormente. Observa además que los $n$ pedazos en que se divide la curva $C$ no necesariamente tienen la misma longitud, es decir, $\Delta s_1 \text{, } \Delta s_2 \text{, … , } \Delta s_n$ podrían ser todos diferentes. Pero conforme $n$ tiende a infinito, estas longitudes se aproximan tanto</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <div class="num_block" prefix="Definición" id="integral_linea_escalar">
+          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. La <b>integral de línea escalar</b> de $f$ a lo largo de $C$ es:
+            \[
+              \int_C fds = \lim_{n \rightarrow \infty} \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Delta s_i
+            \]
+        </div>
 
+        <p style="text-align-last:justify;">Nuevamente aparece a variable $s$ que representa la longitud de arco. Esto puede complicar el cálculo de la integral de línea escalar, por lo que será útil convertir $\int_C fds$ a una integral cuya variable de</p>
+
+        <figure id="ejemplo_integral_linea_escalar">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_escalar.html"></div>
+          <figcaption>La curva planar $\textbf{r}(t) = \langle t,t^3-2t \rangle$ y la función $f(x,y) = \frac{x^2-y^2}{8} + 1$. Da clic en las casillas de arriba para dibujar o borrar distintos elementos de la figura.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <p>integración sea $t$. Esto se hace notando que conforme $\Delta t$ se aproxima a cero, los pedazos de curva con longitud $\Delta s_i$ empiezan a asemejar a líneas rectas, en cuyo caso su longitud sería $\Vert \textbf{r}(t_{i+1}) - \textbf{r}(t_i) \Vert$, de donde:
+          \[
+            \begin{aligned}
+              \Delta s_i \approx \Vert \textbf{r}(t_{i+1}) - \textbf{r}(t_i) \Vert
+                &= \Vert \textbf{r}(t_i + \Delta t) - \textbf{r}(t_i) \Vert \\
+                &= \Vert \Delta t \frac{\textbf{r}(t_i + \Delta t) - \textbf{r}(t_i)}{\Delta t} \Vert \\
+                &= \Vert \Delta t \ \textbf{r}'(t_i) \Vert \\
+                &= |\Delta t| \ \Vert \textbf{r}'(t_i) \Vert = \Vert \textbf{r}'(t_i) \Vert \Delta t
+            \end{aligned}
+          \]</p>
+
+        <p>Sustituyendo este valor en la suma de la <ref ref_id="integral_linea_escalar"></ref> nos da:
+          \[
+            \lim_{n \rightarrow \infty} \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Delta s_i = \lim_{n \rightarrow \infty} \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Vert \textbf{r}'(t_i) \Vert \Delta t
+          \]</p>
+
+        <p>Esto converge a la integral dada en el siguiente teorema.</p>
+
+        <div class="num_block" prefix="Teorema" id="integral_linea_escalar_t">
+          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Entonces:
+            \[
+              \int_C fds = \int^b_a f(\textbf{r}(t)) \Vert \textbf{r}'(t) \Vert dt
+            \]
+        </div>
+
+        <h3>Integral de línea vectorial</h3>
+
+        <p>ex</p>
       </div>
 
       <!--  -->
