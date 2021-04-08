@@ -1715,17 +1715,46 @@
 
         <h3>Integral de línea vectorial</h3>
 
-        <p>ex</p>
+        <p>Sea $C$ una curva definida por la función diferenciable $\texbf{r}(t)$ y sea $\textbf{F}$ un campo vectorial que representa la fuerza sobre una partícula. Para calcular el trabajo ejercido por $\textbf{F}$ para mover la</p>
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <p>partícula a lo largo de $C$ se utilizan las integrales de línea vectoriales.</p>
+
+        <div class="num_block" prefix="Definición" id="integral_linea_vectorial">
+          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. La <b>integral de línea vectorial</b> de $\textbf{F}$ a lo largo de $C$ es:
+            \[
+              \int_C \textbf{F} \cdot \textbf{T} ds = \lim_{n \rightarrow \infty} \sum^n_{i=1} \textbf{F}(\textbf{r}(t^*_i)) \cdot \textbf{T}(t^*_i) \Delta s_i
+            \]
+        </div>
+
+        <p>La deducción de la ecuación anterior es muy similar a la de las integrales de línea escalares, pero en vez de integrar una función escalar cualquiera, se integra $\textbf{F} \cdot \textbf{T} ds$, donde $\cdot$ denota el producto punto. Esto es porque el trabajo realizado por el campo vectorial $\textbf{F}$ para mover la partícula del punto $\textbf{r}(t_1)$ al punto $\textbf{r}(t_2)$, con $a \leq t_1 < t_2 \leq b$, es $\textbf{F}(\textbf{r}(t_2)) \cdot (\Delta s\ \textbf{T}(\textbf{r}(t_2)))$, donde $\Delta s$ es la longitud del arco entre los dos puntos.</p>
+
+        <p>Al igual que con las integrales de línea escalares, debemos expresar la integral en términos de $t$ para facilitar su evaluación. Ya vimos que $\Delta s_i = \Vert \textbf{r}'(t_i) \Vert \Delta t$. Como $\textbf{T}(t_i) = \frac{\textbf{r}'(t_i)}{\Vert \textbf{r}'(t_i) \Vert}$, entonces la suma de la definición anterior converge a la integral dada en el siguiente teorema.</p>
+
+        <div class="num_block" prefix="Teorema" id="integral_linea_vectorial_t">
+          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. Entonces:
+            \[
+              \int_C \textbf{F} \cdot \textbf{T} ds = \int^b_a \textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t) dt
+            \]
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <figure id="ejemplo_integral_linea_vectorial_r2">
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r2.html"></div>
+          <figcaption>.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="ejemplo_integral_linea_vectorial_r2">
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r3.html"></div>
+          <figcaption>.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
