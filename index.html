@@ -1280,7 +1280,7 @@
             \]
         </div>
 
-        <p style="text-align-last:justify;">En la <ref ref_id="ejemplo_divergencia"></ref> se tienen los campos vectoriales $\textbf{F}_{\textbf{1}} = \left\langle x,y \right\rangle$, $\textbf{F}_{\textbf{2}} = \left\langle -x,-y \right\rangle$ y $\textbf{F}_{\textbf{3}} = \left\langle 1,2 \right\rangle$, etiquetados como "positiva",</p>
+        <p style="text-align-last:justify;">En la <ref ref_id="ejemplo_divergencia_r2"></ref> se tienen los campos vectoriales $\textbf{F}_{\textbf{1}} = \left\langle x,y \right\rangle$, $\textbf{F}_{\textbf{2}} = \left\langle -x,-y \right\rangle$ y $\textbf{F}_{\textbf{3}} = \left\langle 1,2 \right\rangle$, etiquetados como "positiva",</p>
       </div>
 
       <!--  -->
@@ -1759,10 +1759,137 @@
 
       <!--  -->
       <div class="page">
-        <h2 id="sec_c3_integrales_de_linea">Integrales de línea (trabajo, circulación).</h2>
+        <h2 id="sec_c3_integrales_de_linea">Aplicaciones de la integral de línea.</h2>
 
+        <p>Las integrales de línea tienen muchas distintas aplicaciones como calcular la masa de un cable, el área de una superficie, el trabajo realizado sobre una partícula mientras recorre un campo de fuerza o la tasa de flujo de un fluido a lo largo de una curva. En esta sección se presentarán algunos de estos ejemplos.</p>
+
+        <h3>Masa de un cable</h3>
+
+        <p style="text-align-last:justify;">Sea $C$ una curva planar que modela un cable. Su densidad lineal (masa por unidad de longitud) está dada por una función continua</p>
+
+        <figure id="ejemplo_masa_cable">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_masa_cable.html"></div>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>$\rho (x,y)$. Como la masa es igual a densidad por longitud, entonces podemos aproximar la masa de un pedazo pequeño del cable con $\rho (x^*,y^*) \Delta s$, donde $\Delta s$ es la longitud de dicho pedazo y $(x^*,y^*)$ es un punto dentro de él. Por tanto, la masa total del cable se calcula con la integral de línea escalar $\int_C \rho (x,y) ds$.</p>
+
+        <h3>Trabajo</h3>
+
+        <p style="text-align-last:justify;">El trabajo fue la motivación para definir la integral de línea vectorial y, por tanto, esa es una de sus principales aplicaciones. Consideremos un objeto que se mueve a lo largo de una curva $C$ y un campo vectorial $\textbf{F}$ que representa un campo de fuerza.</p>
+
+        <figure id="ejemplo_masa_cable">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_trabajo.html"></div>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p style="text-align-last:justify;">Supongamos que $C$ tiene una parametrización $\textbf{r}(t)$ tal que la curva sólo se recorre una vez para $a \leq t \leq b$. El trabajo requerido para mover el objeto a lo largo de $C$ es $W = \int_C \textbf{F} \cdot \textbf{T} ds$, expresado frecuentemente como $\int_C \textbf{F} \cdot d\textbf{r}$ por la ecuación del <ref ref_id="integral_linea_vectorial_t"></ref>.</p>
+
+        <p style="text-align-last:justify;">Ahora notemos que el objeto puede viajar en dos direcciones, y el trabajo requerido por $\textbf{F}$ para moverlo depende de dicha dirección. Intuitivamente, esto es porque si escalas una montaña, la fuerza gravitacional del planeta realiza trabajo negativo sobre ti, pero al descender la montaña por la misma ruta se realiza trabajo positivo. Por lo tanto se debe especificar una dirección positiva para $C$, de tal forma que la dirección contraria será la negativa. Cambia la parametrización de la figura anterior de $\textbf{r}(t)$ a $\textbf{r}(a + b - t)$, esto genera una curva idéntica recorrida en la dirección contraria. Observa que el trabajo es el mismo pero cambia de signo.</p>
+
+        <h3>Flujo</h3>
+
+        <p>Sea $C$ una curva planar definida por la función diferenciable $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio incluye $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad. Queremos medir la tasa de cambio de masa del fluido que atraviesa la curva en un instante, es decir, la masa total del fluido que entra o sale de $C$ en un periodo de tiempo $\Delta t$ muy pequeño.</p>
+
+        <p style="text-align-last:justify;">Consideremos un pedazo pequeño de $C$ con longitud $\Delta s$ cuyo punto inicial es $\textbf{r}(t_i)$. Conforme $\Delta s$ tiende a cero, asemeja una línea recta y todas las partículas del fluido que la atraviesan se</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="ejemplo_flujo_infinitesimo">
+          <center>
+            <img src="images/capitulo3/seccion3/ejemplo_flujo_infinitesimo.png" width="80%">
+          </center>
+        </figure>
+
+        <p>mueven prácticamente en la misma dirección y con la misma velocidad. Durante el transcurso del tiempo $\Delta t$ el fluido que pasa por el pedazo forma un paralelogramo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de volumen, entonces el área del paralelogramo equivale a la masa del fluido que atraviesa la curva.</p>
+
+        <p style="text-align-last:justify;">Uno de los lados del paralelogramo claramente mide $\Delta s$. El otro lado representa el desplazamiento de una partícula que comenzó en el punto $\textbf{r}(t_i)$ y fue movido con velocidad $\textbf{F}(\textbf{r}(t_i))$ durante el tiempo $\Delta t$. Entonces la distancia $\Delta t\ \textbf{F}(\textbf{r}(t_i))$ es el otro lado del paralelogramo. La altura del paralelogramo es el producto punto de este último lado con un vector unitario normal a la curva en $t_i$. Por lo tanto, la masa que atraviesa a $C$ en el tiempo $\Delta t$ es $\Delta t (\textbf{F}(\textbf{r}(t_i)) \cdot \textbf{n}(t_i)) \Delta s$, donde $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$. Dividiendo este resultado</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>entre $\Delta t$ nos da la masa que atraviesa a $C$ en una unidad de tiempo. Si $\textbf{F} \cdot \textbf{n} \Delta s$ es la masa que atraviesa a un pedazo de $C$ de tamaño $\Delta s$, entonces la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{n} ds$ es la tasa de flujo a través de $C$.</p>
+
+        <figure id="ejemplo_flujo">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_flujo.html"></div>
+        </figure>
+
+        <h3>Circulación</h3>
+
+        <p style="text-align-last:justify;">Una <b>curva cerrada</b> es una curva para la cual existe una parametrización $\textbf{r}(t)$, $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$ y $\textbf{r}$ es inyectiva sobre el dominio $(a,b)$. A la integral de línea del campo vectorial $\textbf{F}$ a lo largo de una curva cerrada $C$ se le llama <b>circulación</b> de $\textbf{F}$ a lo largo de $C$ y se denota con el símbolo $\oint$.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Supongamos que $\textbf{F}$ representa la velocidad de un fluido. Nota que en una integral de línea vectorial, dado que el integrando es el producto punto de $\textbf{F}$ y $\textbf{T}$, entonces el valor de la integral se maximiza cuando estos dos vectores apuntan en la misma dirección, es cero si son ortogonales y se minimiza cuando apuntan en direcciones opuestas. Por tanto, la circulación $\oint_C \textbf{F} \cdot \textbf{T} ds$ es una medida de la tendencia del fluido a moverse en la dirección de $C$.</p>
+
+        <figure id="ejemplo_circulacion">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_circulacion.html"></div>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c3_parametrización_de_superficies">Parametrización de superficies. Orientación.</h2>
+      </div>
 
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c3_área_de_una_superficie">Área de una superficie.</h2>
 
         <h2 id="sec_c3_integral_de_funciones_reales_sobre_superficies">Integral de funciones reales sobre superficies (masa y carga total de una superficie).</h2>

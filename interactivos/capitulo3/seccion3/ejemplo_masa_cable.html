@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Calcular la masa de un cable</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
+      <param name="C_01" value="id='f_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='ρ(x,y)' expresión='(0,0,720,40)' valor='(x-y)/4+2' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='l' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' expresión='(720,0,80,40)' valor='4.5' min='1' discreto='sí' decimales='1' visible='no' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' info='lado del cuadrado sobre el cual se define f(x,y)' ">
+      <param name="C_03" value="id='r1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='r(t)' expresión='(0,560,266,40)' valor='e^t' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_04" value="id='r2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(266,560,134,40)' valor='-t' visible='sí' ">
+      <param name="C_05" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='a' expresión='(400,560,200,40)' valor='-7' max='b-0.01' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_06" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='b' expresión='(600,560,200,40)' valor='2' min='a+0.01' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='longitud_ejes' expresión='15' tipo='variable' ">
+      <param name="A_02" value="id='f(x,y)' algoritmo='no' expresión='_Eval_(f_texto)' tipo='función' info='x*y/4+1' ">
+      <param name="A_03" value="id='r1(t)' algoritmo='no' expresión='_Eval_(r1_texto)' tipo='función' ">
+      <param name="A_04" value="id='r2(t)' algoritmo='no' expresión='_Eval_(r2_texto)' tipo='función' ">
+      <param name="A_05" value="id='_r1(t)' algoritmo='no' expresión='(r1(t+0.0001)-r1(t))/0.0001' tipo='función' ">
+      <param name="A_06" value="id='_r2(t)' algoritmo='no' expresión='(r2(t+0.0001)-r2(t))/0.0001' tipo='función' ">
+      <param name="A_07" value="id='n' expresión='10*ceil(b-a)' tipo='variable' ">
+      <param name="A_08" value="id='dt' expresión='(b-a)/n' tipo='variable' ">
+      <param name="A_09" value="id='int_lin()' algoritmo='sí' expresión='0' local='i' inicio='i=0;suma=0' hacer='suma=suma+f(r1(a+dt*(i+0.5)),r2(a+dt*(i+0.5)))*sqrt(_r1(a+dt*(i+0.5))^2+_r2(a+dt*(i+0.5))^2)*dt;i=i+1' mientras='i<n' tipo='función' info='aproximación de la integral de línea (por suma)' ">
+      <param name="A_10" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=33;E1.rot.z=-23.5;' ">
+      <param name="A_11" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='int_lin()' ">
+      <param name="G_01" value="espacio='E2' tipo='segmento' color='20303a' coord_abs='no' expresión='(3,0)(197,0)' tamaño='3' ancho='1' ">
+      <param name="G_02" value="espacio='E2' tipo='texto' color='000000' coord_abs='no' expresión='(3,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i t\i0{\subix\i i-1\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_left' info='t_i-1' ">
+      <param name="G_03" value="espacio='E2' tipo='texto' color='000000' coord_abs='no' expresión='(197,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i t\i0{\subix\i i\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_right' info='t_i' ">
+      <param name="G_04" value="espacio='E2' tipo='segmento' color='000000' coord_abs='no' expresión='(E2.mouse_x>E2._w?E2._w:(E2.mouse_x<0?0:E2.mouse_x),-7.5) (E2.mouse_x>E2._w?E2._w:(E2.mouse_x<0?0:E2.mouse_x),7.5)' tamaño='0' ancho='2' info='t*i línea' ">
+      <param name="G_05" value="espacio='E2' tipo='texto' color='000000' coord_abs='no' expresión='(E2.mouse_x>E2._w?E2._w:(E2.mouse_x<0?0:E2.mouse_x),10)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i t\i0{\subix\i i\i0}{\supix\i *\i0}}\i0 }' ancho='1' align='a_left' anchor='a_bottom_center' info='t*i' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='000000' expresión='(0,0,0) (s==0?longitud_ejes:0,s==1?longitud_ejes,s==2?longitud_ejes)' familia='s' s.intervalo='[0,2]' s.pasos='2' cortar='sí' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='curva' color='ff0000' expresión='x=r1(a+u*(b-a)) y=r2(a+u*(b-a)) z=0' cortar='sí' ancho='2' Nu='7*ceil(abs(b-a))' info='r(t)' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='ff0000' color_reverso='ff0000' expresión='(r1(a+0.5*(b-a)),r2(a+0.5*(b-a)),0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;}\f0\fs40 \fs50\i{\*\mjaformula\cf0\i\b r\b0\i0\i (t)\i0}\i0\cf0\fs40 }' decimales='2' ancho='0' offset_dist='20' offset_angle='270' info='r(t) texto' ">
+      <param name="S_04" value="espacio='E1' tipo='superficie' color='40ffafaf' color_reverso='40ffafaf' expresión='x=r1(a+u*(b-a)) y=r2(a+u*(b-a)) z=v*f(x,y)' cortar='sí' modelo='color' Nu='7*ceil(abs(b-a))' Nv='1' info='integral de línea' ">
+      <param name="S_05" value="espacio='E1' tipo='superficie' color='400000ff' color_reverso='40eeffaa' expresión='x=r1(a+0.5*(b-a))-l+u*(2l);y=r2(a+0.5*(b-a))-l+v*(2l);z=f(x,y)' cortar='sí' modelo='metal' Nu='10' Nv='20' info='f(x,y)' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' color='ff0000' color_reverso='ff0000' expresión='(r1(a+0.5*(b-a))-l,r2(a+0.5*(b-a))+l,f(r1(a+0.5*(b-a))-l,r2(a+0.5*(b-a))+l))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\i{\*\mjaformula\i ρ(x,y)\i0}\i0\cf0 }' decimales='2' ancho='0' offset_dist='40' offset_angle='90' info='f(x,y) texto' ">
+      <param name="S_07" value="espacio='E1' tipo='texto' color='000000' expresión='[20,60]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs50 masa {\*\mjaformula\i =\i0{\integral{\from\i C\i0}{\to}{\what\i ρ(x,y)ds\i0}}\i ≈ \i0\i{\expr suma\decimals 2\fixed1}\i0}}' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='integral de línea' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

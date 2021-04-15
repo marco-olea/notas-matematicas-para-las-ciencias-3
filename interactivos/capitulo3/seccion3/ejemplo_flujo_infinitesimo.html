@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="700" height="525">
+      <param name="tamaño" value="700x525">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' escala='60' O.x='-30' O.y='125' red='no' red10='no' ejes='no' ">
+      <param name="A_01" value="id='f(x)' algoritmo='no' expresión='sqrt(x+4)-2' tipo='función' ">
+      <param name="A_02" value="id='_f(x)' algoritmo='no' expresión='(f(x+0.0001)-f(x))/0.0001' tipo='función' ">
+      <param name="A_03" value="id='a' expresión='-3.5' tipo='variable' ">
+      <param name="A_04" value="id='b' expresión='5' tipo='variable' ">
+      <param name="A_05" value="id='mag(x,y)' algoritmo='no' expresión='sqrt(x^2+y^2)' tipo='función' ">
+      <param name="A_06" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_07" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' color='ff0000' coord_abs='no' expresión='(t,f(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='40' ancho='2' info='Δs' ">
+      <param name="G_02" value="espacio='E1' tipo='curva' color='000000' coord_abs='no' expresión='(t,f(t)-0.5)' parámetro='t' t.intervalo='[a+1.5,a+6.5]' t.pasos='40' ancho='1' lineDash='dot' info='Δs línea' ">
+      <param name="G_03" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='((s==0?a+1.5:a+6.5),(s==0?f(a+1.5):f(a+6.5))-0.5)' familia='s' s.intervalo='[0,1]' s.pasos='1' tamaño='2' info='Δs puntos' ">
+      <param name="G_04" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='((a+b)/2,f((a+b)/2)-0.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50\i{\*\mjaformula\i Δs\i0}\i0\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='Δs texto' ">
+      <param name="G_05" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(a+1.5,f(a+1.5)) (-2+a+1.5,3+f(a+1.5))' ancho='1' punta='2' flecha='0000ff' info='Δt*F 1' ">
+      <param name="G_06" value="espacio='E1' tipo='texto' color='0000ff' coord_abs='no' expresión='(-2+a+1.5,3+f(a+1.5))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;}\cf0\f0\fs40 \fs50{\*\mjaformula\i Δt \i0\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (t\i0{\subix\i i\i0}\i ))\i0}\fs40 }' ancho='1' align='a_left' anchor='a_bottom_center' info='Δt*F 1 texto' ">
+      <param name="G_07" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(a+6.5,f(a+6.5)) (-2+a+6.5,3+f(a+6.5))' ancho='1' punta='2' flecha='0000ff' info='Δt*F 2' ">
+      <param name="G_08" value="espacio='E1' tipo='segmento' color='0000ff' coord_abs='no' expresión='(-2+a+1.5,3+f(a+1.5)) (-2+a+6.5,3+f(a+6.5))' tamaño='0' ancho='1' info='conecta Δt*F 1 con Δt*F 2' ">
+      <param name="G_09" value="espacio='E1' tipo='relleno' color='00b0ff' coord_abs='no' expresión='(-1,1)' info='relleno' ">
+      <param name="G_10" value="espacio='E1' tipo='flecha' color='008000' coord_abs='no' expresión='(a+6.5,f(a+6.5)) (a+6.5-1.7*f(a+6.5),f(a+6.5)+1.7*(a+6.5))' ancho='1' punta='2' flecha='008000' info='n' ">
+      <param name="G_11" value="espacio='E1' tipo='texto' color='008000' coord_abs='no' expresión='(a+6.5-1.7*f(a+6.5),f(a+6.5)+1.7*(a+6.5))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green128\blue0;}\cf0\f0\fs40 \fs50{\*\mjaformula\i\b n\b0\i0\i (t\i0{\subix\i i\i0}\i )\i0}\fs40 }' ancho='1' align='a_left' anchor='a_bottom_left' info='n texto' ">
+      <param name="G_12" value="espacio='E1' tipo='segmento' color='20303a' coord_abs='no' expresión='(-2+a+6.5,3+f(a+6.5)) (a+6.5-f(a+6.5)/mag(-f(a+6.5),a+6.5)*mag(-2,3),f(a+6.5)+(a+6.5)/mag(-f(a+6.5),a+6.5)*mag(-2,3))' tamaño='0' ancho='1' lineDash='dash' info='altura' ">
+      <param name="G_13" value="espacio='E1' tipo='segmento' color='000000' coord_abs='no' expresión='(a+7,f(a+6.5)+0.1) (a+7-f(a+6.5)/mag(-f(a+6.5),a+6.5)*mag(-2,3),f(a+6.5)+(a+6.5)/mag(-f(a+6.5),a+6.5)*mag(-2,3)+0.1)' tamaño='2' ancho='1' lineDash='dot' info='altura línea' ">
+      <param name="G_14" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(3.2,2.6)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 \fs50{\*\mjaformula\i Δt (\i0\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (t\i0{\subix\i i\i0}\i ))·\i0\i\b n\b0\i0\i (t\i0{\subix\i i\i0}\i ))\i0}\fs40 }' ancho='1' align='a_left' anchor='a_center_left' info='altura texto' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

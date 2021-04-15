@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Calcular la circulación</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' border_width='1' ">
+      <param name="C_01" value="id='F1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='F(x,y)' expresión='(0,0,480,40)' valor='(x-y)/5' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='F2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(480,0,240,40)' valor='x/5' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_03" value="id='l' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' expresión='(720,0,80,40)' valor='6' min='1' discreto='sí' decimales='1' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='r1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='r(t)' expresión='(0,560,266,40)' valor='(t+5)*cos(t)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_05" value="id='r2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(266,560,134,40)' valor='2*sin(t)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_06" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='a' expresión='(400,560,200,40)' valor='pi/2' max='b-0.01' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_07" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='b' expresión='(600,560,200,40)' valor='5pi/2' min='a+0.01' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='_a' expresión='r1((a+b)/2)-l' tipo='variable' ">
+      <param name="A_02" value="id='_b' expresión='r1((a+b)/2)+l' tipo='variable' ">
+      <param name="A_03" value="id='_c' expresión='r2((a+b)/2)-l' tipo='variable' ">
+      <param name="A_04" value="id='_d' expresión='r2((a+b)/2)+l' tipo='variable' ">
+      <param name="A_05" value="id='xn' expresión='_b-_a' tipo='variable' ">
+      <param name="A_06" value="id='yn' expresión='_d-_c' tipo='variable' ">
+      <param name="A_07" value="id='dx' expresión='(_b-_a)/xn' tipo='variable' ">
+      <param name="A_08" value="id='dy' expresión='(_d-_c)/yn' tipo='variable' ">
+      <param name="A_09" value="id='X(s)' algoritmo='no' expresión='_a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_10" value="id='Y(s)' algoritmo='no' expresión='_c+dy*floor(s/(xn+1))' tipo='función' ">
+      <param name="A_11" value="id='__' expresión='0' tipo='variable' info='arriba de esta variable están las definiciones necesarias para dibujar el campo vectorial' ">
+      <param name="A_12" value="id='F1(x,y)' algoritmo='no' expresión='_Eval_(F1_texto)' tipo='función' ">
+      <param name="A_13" value="id='F2(x,y)' algoritmo='no' expresión='_Eval_(F2_texto)' tipo='función' ">
+      <param name="A_14" value="id='r1(t)' algoritmo='no' expresión='_Eval_(r1_texto)' tipo='función' ">
+      <param name="A_15" value="id='r2(t)' algoritmo='no' expresión='_Eval_(r2_texto)' tipo='función' ">
+      <param name="A_16" value="id='_r1(t)' algoritmo='no' expresión='(r1(t+0.0001)-r1(t))/0.0001' tipo='función' ">
+      <param name="A_17" value="id='_r2(t)' algoritmo='no' expresión='(r2(t+0.0001)-r2(t))/0.0001' tipo='función' ">
+      <param name="A_18" value="id='n' expresión='20*ceil(b-a)' tipo='variable' ">
+      <param name="A_19" value="id='dt' expresión='(b-a)/n' tipo='variable' ">
+      <param name="A_20" value="id='circulacion()' algoritmo='sí' expresión='0' local='i' inicio='i=0;suma=0' hacer='suma=suma+(F1(r1(a+dt*(i+0.5)),r2(a+dt*(i+0.5)))*_r1(a+dt*(i+0.5))+F2(r1(a+dt*(i+0.5)),r2(a+dt*(i+0.5)))*_r2(a+dt*(i+0.5)))*dt;i=i+1' mientras='i<n' tipo='función' ">
+      <param name="A_21" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_22" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='circulacion()' ">
+      <param name="G_01" value="espacio='E1' tipo='flecha' color='400000ff' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+F1(X(s),Y(s)),Y(s)+F2(X(s),Y(s)))' familia='s' s.intervalo='[0,xn*yn+xn+yn]' s.pasos='xn*yn+xn+yn' ancho='1' punta='1' flecha='400000ff' info='F(x,y)' ">
+      <param name="G_02" value="espacio='E1' tipo='curva' color='ff0000' coord_abs='no' expresión='(r1(t),r2(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='10*ceil(b-a)' ancho='2' info='r(t)' ">
+      <param name="G_03" value="espacio='E1' tipo='texto' color='000000' coord_abs='sí' expresión='(20,60)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs50 circulación {\*\mjaformula\i = ∮\i0{\subix\i C\i0}\i  \i0\i\b F\b0\i0\i ·\i0\i\b T\b0\i0\i ds ≈ \i0\i{\expr suma\decimals 2\fixed1}\i0}}' ancho='1' align='a_left' anchor='a_top_left' info='circulación texto' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
