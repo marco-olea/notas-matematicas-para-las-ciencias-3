@@ -466,7 +466,7 @@
 
       <!--  -->
       <div class="page">
-        <p>Pero si la región $D$ está acotada por curvas suaves y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
+        <p>Pero si la región $D$ está acotada por curvas  s y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
 
         <div class="num_block" prefix="Teorema" id="fubini_fuerte">
           <b><i>Teorema de Fubini (Fuerte)</i></b>
@@ -1469,41 +1469,49 @@
 
         <p>En esta sección veremos cómo calcular la longitud de arco y cómo reparametrizar funciones de valores vectoriales con respecto a la longitud de arco. Analizaremos el concepto de curvatura y el significado de los vectores normales y binormales de una curva.</p>
 
-        <h3>Longitud de arco</h3>
+        <h3>Regularidad y suavidad</h3>
 
-        <div class="num_block" prefix="Teorema" id="longitud_arco">
-          Sea $C$ una curva planar definida por la función diferenciable $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
-            \[
-              s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
-            \]
-          Sea $C$ una curva espacial definida por la función diferenciable $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
-            \[
-              s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2 + [h'(t)^2]} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
-            \]
+        <div class="num_block" prefix="Definición" id="curva_regular_y_suave">
+          Sea $\textbf{r}(t)$ una parametrización de una curva, con $a \leq t \leq b$. <br>
+          Si $\textbf{r}'(t) \not = 0$ para todo $t \in [a,b]$, entonces la curva es <b>regular</b>. <br>
+          Si $\textbf{r}'(t)$ es continuo y además $\textbf{r}'(t) \not = 0$ para todo $t \in [a,b]$, entonces la curva es <b>suave</b>.
         </div>
+
+        <p>La regularidad es una condición que garantiza que una parametrización realmente describe una curva. Por ejemplo, la función $\textbf{r}(t) = \langle 1,1 \rangle$ para cualquier dominio es una parametrización válida, pero su imagen es un único punto y no una curva. La suavidad es una condición que garantiza que la curva no tenga cúspides ni esquinas.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>El requerimiento de que $\textbf{r}(t)$ sea diferenciable (<ref ref_id="derivada_funcion_valores_vectoriales"></ref>) con una derivada distinta de cero garantiza que la curva no tenga cúspides ni esquinas.</p>
+        <h3>Longitud de arco</h3>
+
+        <div class="num_block" prefix="Teorema" id="longitud_arco">
+          Sea $C$ una curva planar suave definida por la función $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
+            \[
+              s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
+            \]
+          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
+            \[
+              s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2 + [h'(t)^2]} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
+            \]
+        </div>
 
         <h3>Parametrización por longitud de arco</h3>
 
-        <p>Supongamos que $\textbf{r}(t)$ es una función diferenciable con valores vectoriales que representa la posición de una partícula en el espacio, con respecto al tiempo $t$. Entonces la función de longitud de arco de $\textbf{r}$ mide la distancia recorrida por la misma partícula, también en función del tiempo. Dado que dicha función $s(t)$ mide la distancia, $s'(t)$ mide la velocidad de la partícula en algún momento dado.</p>
+        <p>Supongamos que $\textbf{r}(t)$ es una parametrización de una curva suave y representa la posición de una partícula en el espacio, con respecto al tiempo $t$. Entonces la parametrización por longitud de arco de $\textbf{r}$ es una función $s(t)$ que mide la distancia recorrida por la misma partícula, también en función del tiempo.</p>
 
         <div class="num_block" prefix="Teorema" id="funcion_longitud_arco">
-          Sea $\textbf{r}(t)$ una función diferenciable que describe una curva, para $t \geq a$. La función de longitud de arco de $\textbf{r}$ es:
+          Sea $\textbf{r}(t)$ una función que describe una curva suave, para $t \geq a$. La función de longitud de arco de $\textbf{r}$ es:
             \[
               s(t) = \int^t_a \Vert \textbf{r}'(u) \Vert du
             \]
           Más aún, la longitud de arco es creciente, por lo que $s'(t) = \Vert \textbf{r}'(t) \Vert \geq 0$ para todo $t \geq a$.
         </div>
-
-        <p>Este teorema se utiliza para construir una parametrización por longitud de arco de una curva. Supongamos que dado $\textbf{r}(t)$ se ha calculado la función de longitud de arco $s(t)$, y este se puede reescribir de tal forma que $t$ esté en términos de $s$. Al sustituir esta expresión de $t$ en $\textbf{r}(t)$ y su dominio, la curva quedará descrita en términos de $s$, por lo que ahora la distancia recorrida en la curva de $s = 0$ a $s = s_0$ es $s_0$. Esta es la parametrización por longitud de arco de $\textbf{r}(t)$.</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>Este teorema se utiliza para construir una parametrización por longitud de arco de una curva. Supongamos que dado $\textbf{r}(t)$ se ha calculado la función de longitud de arco $s(t)$, y este se puede reescribir de tal forma que $t$ esté en términos de $s$. Al sustituir esta expresión de $t$ en $\textbf{r}(t)$ y su dominio, la curva quedará descrita en términos de $s$, por lo que ahora la distancia recorrida en la curva de $s = 0$ a $s = s_0$ es $s_0$. Esta es la parametrización por longitud de arco de $\textbf{r}(t)$.</p>
+
         <p>Ejemplo: Sea $\textbf{r}(t) = \langle 3cos(t), 3sin(t), 4t \rangle$, con $t \in [-4\pi, 0]$, como se muestra en la <ref ref_id="reparametrizacion_longitud_arco"></ref>. Se desea encontrar la parametrización por longitud de arco. Primero se debe calcular la función de longitud de arco como se indica en el <ref ref_id="funcion_longitud_arco"></ref>.
           \[
             \begin{aligned}
@@ -1525,6 +1533,14 @@
             \textbf{r}(s) = \left\langle 3cos(\frac{s}{5} - 4\pi),4sin(\frac{s}{5} - 4\pi),4(\frac{s}{5} - 4\pi) \right\rangle
           \]
         </p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="reparametrizacion_longitud_arco">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/reparametrizacion_longitud_arco.html"></div>
+          <figcaption>En azul se muestra la curva $\textbf{r}(t) = \langle 3cos(t), 3sin(t), 4t \rangle$, definida para $t \in [-4\pi, 0]$. La parametrización por longitud de arco $\textbf{r}(s)$, en rojo, es idéntica a la curva original, pero aquí se muestran separadas para visualizar mejor el ejemplo. Observa que $t_0 = s_0$ no implica que $\textbf{r}(t_0) = \textbf{r}(s_0)$. Pulsa el botón para asignarle un valor a $s_0$ de tal forma que $\textbf{r}(t_0) = \textbf{r}(s_0)$.</figcaption>
+        </figure>
 
         <p>Por último se debe sustituir la misma expresión en las cotas originales. Dado que $t \in [-4\pi,0]$, entonces:
           \[
@@ -1539,87 +1555,82 @@
 
       <!--  -->
       <div class="page">
-        <figure id="reparametrizacion_longitud_arco">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/reparametrizacion_longitud_arco.html"></div>
-          <figcaption>En azul se muestra la curva $\textbf{r}(t) = \langle 3cos(t), 3sin(t), 4t \rangle$, definida para $t \in [-4\pi, 0]$. La parametrización por longitud de arco $\textbf{r}(s)$, en rojo, es idéntica a la curva original, pero aquí se muestran separadas para visualizar mejor el ejemplo. Observa que $t_0 = s_0$ no implica que $\textbf{r}(t_0) = \textbf{r}(s_0)$. Pulsa el botón para asignarle un valor a $s_0$ de tal forma que $\textbf{r}(t_0) = \textbf{r}(s_0)$.</figcaption>
-        </figure>
-
         <p>
           \[
-              \begin{aligned}
-                t \leq 0
-                  &\Rightarrow \frac{s}{5} - 4\pi \leq 0 \\
-                  &\Rightarrow \frac{s}{5} \leq 4\pi \\
-                  &\Rightarrow s \leq 20\pi
-              \end{aligned}
-            \]</p>
+            \begin{aligned}
+              t \leq 0
+                &\Rightarrow \frac{s}{5} - 4\pi \leq 0 \\
+                &\Rightarrow \frac{s}{5} \leq 4\pi \\
+                &\Rightarrow s \leq 20\pi
+            \end{aligned}
+          \]</p>
 
         <p>Esta es la parametrización por longitud de arco de $\textbf{r}(t)$.</p>
-      </div>
 
-      <!--  -->
-      <div class="page">
         <h3>Curvatura</h3>
 
         <p>La curvatura es una medida de qué tanto una curva planar se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenido en un solo plano. La curvatura de una línea recta y de un plano es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
 
         <div class="num_block" prefix="Definición" id="curvatura">
-          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(s)$, donde $s$ es el parámetro de longitud de arco. La <b>curvatura</b> en $s$ es:
+          Sea $C$ una curva suave definida por la función $\textbf{r}(s)$, donde $s$ es el parámetro de longitud de arco. La <b>curvatura</b> en $s$ es:
             \[
               \kappa = \left\Vert \frac{d\textbf{T}(s)}{ds} \right\Vert = \Vert \textbf{T}'(s) \Vert
             \]
           Donde $\textbf{T}(s)$ representa el vector tangente unitario a $\textbf{r}(s)$, es decir, $\textbf{T}(s) = \frac{\textbf{r}'(s)}{\Vert \textbf{r}'(s) \Vert}$. Además, el radio del círculo osculador en $s$ se conoce como el <b>radio de curvatura</b>, y su centro es el <b>centro de curvatura</b>.
         </div>
-
-        <p>Encontrar la curvatura usando la definición anterior puede resultar tedioso puesto que se requiere reparametrizar $\textbf{r}$ por longitud de arco, luego calcular $\textbf{T}(s)$ y finalmente derivar esto último. Pero existe un método más fácil.</p>
-
-        <div class="num_block" prefix="Teorema" id="curvatura_simplificado" style="text-align-last:justify;">
-          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$. Supongamos que en todo su dominio $\textbf{r}(t)$ es diferenciable dos veces y la primera derivada nunca es el vector
-        </div>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>cero. Entonces la curvatura en $t$ es:
-          \[
-            \kappa = \frac{\Vert \textbf{r}'(t) \times \textbf{r}''(t) \Vert}{\Vert \textbf{r}'(t) \Vert^3}
-          \]</p>
-
         <figure id="ejemplo_curvatura_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r2.html"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle 1 + \frac{3}{10}t cos(t), 1 + \frac{3}{10}t sin(t) \rangle$ en azul. También se muestra el círculo osculador (verde), el centro de curvatura (negro) y el radio de curvatura (rojo).</figcaption>
         </figure>
 
-        <h3>Orientación</h3>
+        <p>Encontrar la curvatura usando la definición anterior puede resultar tedioso puesto que se requiere reparametrizar $\textbf{r}$ por longitud de arco, luego calcular $\textbf{T}(s)$ y finalmente derivar esto último. El siguiente teorema proporciona un método más fácil que solamente involucra el parámetro $t$.</p>
 
-        <p style="text-align-last:justify;">En $\R^2$ la orientación se define por medio de un par ordenado de vectores linealmente independientes $(v,w)$, de tal forma que un ángulo menor que $\pi$ que comienza en $v$ y termina en $w$ es la</p>
+        <div class="num_block" prefix="Teorema" id="curvatura_simplificado">
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$ diferenciable dos veces en todo su dominio. Entonces la curvatura en $t$ es:
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>
+          \[
+            \kappa = \frac{\Vert \textbf{r}'(t) \times \textbf{r}''(t) \Vert}{\Vert \textbf{r}'(t) \Vert^3}
+          \]</p>
+
+        <h3>Orientación</h3>
+
+        <p>En $\R^2$ la orientación se define por medio de un par ordenado de vectores linealmente independientes $(v,w)$, de tal forma que un ángulo menor que $\pi$ que comienza en $v$ y termina en $w$ es la dirección positiva.</p>
+
+        <p style="text-align-last:justify;">En el plano cartesiano se utiliza la orientación estándar como se</p>
+
         <figure id="orientacion_estandar_r2">
           <center>
-            <img src="images/capitulo3/seccion1/orientacion_r2.svg" width="80%">
+            <img src="images/capitulo3/seccion1/orientacion_r2.svg" width="95%">
           </center>
           <figcaption>El par ordenado de vectores $((1,0),(0,1))$ define la orientación convencional del plano cartesiano.</figcaption>
         </figure>
-
-        <p>dirección positiva.</p>
-
-        <p>En el plano cartesiano se utiliza la orientación estándar como se muestra en la <ref ref_id="orientacion_estandar_r2"></ref>. Pero esto es solamente una convención, se podría definir como positiva la dirección contraria y obtener una nueva orientación.</p>
-
-        <p>Ahora, al considerar espacios de tres dimensiones, surge un problema con esta definición porque el ángulo entre dos vectores puede ser tanto positivo como negativo, dependiendo de la perspectiva del "observador". Por tanto, definiremos dos vectores que, junto con el vector tangente unitario que ya se ha mencionado, conforman un conjunto consistente de tres vectores que describen la orientación de un punto en el espacio.</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>muestra en la <ref ref_id="orientacion_estandar_r2"></ref>. Pero esto es solamente una convención, se podría definir como positiva la dirección contraria y obtener una nueva orientación.</p>
+
+        <p>Ahora, al considerar espacios de tres dimensiones, surge un problema con esta definición porque el ángulo entre dos vectores puede ser tanto positivo como negativo, dependiendo de la perspectiva del "observador". Por tanto, definiremos dos vectores que, junto con el vector tangente unitario que ya se ha mencionado, conforman un conjunto consistente de tres vectores que describen la orientación de un punto en el espacio.</p>
+
         <figure id="orientacion_ambigua_r3">
           <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/orientacion_ambigua_r3.html"></div>
           <figcaption>Dos vectores en $\R^3$ no son suficientes para una definición consistente de orientación.</figcaption>
         </figure>
+      </div>
 
+      <!--  -->
+      <div class="page">
         <div class="num_block" prefix="Definición" id="vectores_normal_binormal">
-          Sea $C$ una curva espacial definida por la función diferenciable $\textbf{r}(t)$ sobre un intervalo abierto. Sea $\textbf{T}(t) = \frac{\textbf{r}'(t)}{\Vert \textbf{r}'(t) \Vert}$ el vector tangente unitario a $\textbf{r}(t)$ y supongamos que $\textbf{T}'(t) \not = 0$. <br>
+          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t)$ sobre un intervalo abierto. Sea $\textbf{T}(t) = \frac{\textbf{r}'(t)}{\Vert \textbf{r}'(t) \Vert}$ el vector tangente unitario a $\textbf{r}(t)$ y supongamos que $\textbf{T}'(t) \not = 0$. <br>
           El <b>vector normal unitario</b> es:
             \[
               \textbf{N}(t) = \frac{\textbf{T}'(t)}{\Vert \textbf{T}'(t) \Vert}
@@ -1629,28 +1640,28 @@
               \textbf{B}(t) = \textbf{T}(t) \times \textbf{N}(t)
             \]
         </div>
-      </div>
 
-      <!--  -->
-      <div class="page">
         <figure id="orientacion_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/orientacion_r3.html"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. Puedes cambiar las cotas y las funciones pero se debe cumplir $\textbf{T}'(t) \not = 0$. Nota los vectores ortogonales $\textbf{T}(t_0)$ (negro), $\textbf{N}(t_0)$ (rojo) y $\textbf{B}(t_0)$ (verde).</figcaption>
         </figure>
-
-        <p>Si la curva $\textbf{r}(t)$ representa la posición de un objeto en el espacio con respecto al tiempo, el vector $\textbf{T}(t)$ representa la tasa de cambio con la que el objeto varía su posición. El vector $\textbf{N}(t)$ está relacionado con la curvatura; indica qué tan rápidamente la trayectoria del objeto deja de ser una línea. El vector $\textbf{B}(t)$ indica qué tan rápidamente el objeto se sale del plano en el que está su trayectoria.</p>
-
-        <p style="text-align-last:justify;">Con los vectores anteriores también podemos visualizar el concepto de curvatura en $\R^3$, ya que el círculo osculador en $t$ se</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>encuentra en el plano generado por $\textbf{T}(t)$ y $\textbf{N}(t)$. En particular, el centro de curvatura es el vector $R \cdot \textbf{N}(t)$, donde $R$ es el radio de curvatura.</p>
+        <p>Si la curva $\textbf{r}(t)$ representa la posición de un objeto en el espacio con respecto al tiempo, el vector $\textbf{T}(t)$ representa la tasa de cambio con la que el objeto varía su posición. El vector $\textbf{N}(t)$ está relacionado con la curvatura; indica qué tan rápidamente la trayectoria del objeto deja de ser una línea. El vector $\textbf{B}(t)$ indica qué tan rápidamente el objeto se sale del plano en el que está su trayectoria.</p>
+
+        <p style="text-align-last:justify;">Con los vectores anteriores también podemos visualizar el concepto de curvatura en $\R^3$, ya que el círculo osculador en $t$ se</p>
 
         <figure id="orientacion_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r3.html"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle (1+t)cos(t),(1+t)sin(t),t \rangle$, con $t \in [-2\pi,3\pi]$. En magenta se muestra el círculo osculador y en turquesa el radio de curvatura. Los vectores $\textbf{T}(t_0)$, $\textbf{N}(t_0)$ y $\textbf{B}(t_0)$ tienen los mismos colores que en la <ref ref_id="orientacion_r3"></ref>.</figcaption>
         </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>encuentra en el plano generado por $\textbf{T}(t)$ y $\textbf{N}(t)$. En particular, el centro de curvatura es el vector $R \cdot \textbf{N}(t)$, donde $R$ es el radio de curvatura.</p>
       </div>
 
       <!--  -->
@@ -1661,7 +1672,7 @@
 
         <h3>Integral de línea escalar</h3>
 
-        <p>Sea $C$ una curva planar o espacial dada por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Queremos encontrar el área bajo la curva $C$ a lo largo de $f$. Para esto dividiremos el intervalo $[a,b]$ en $n$ subintervalos $[t_{i-1},t_i]$ para $1 \leq i \leq n$, donde $t_0 = a$ y $t_n = b$. Todos los subintervalos tendrán el mismo tamaño $\Delta t = \frac{b - a}{n}$. Los puntos $\textbf{r}(t_0) \text{, } \textbf{r}(t_1) \text{, … , } \textbf{r}(t_n)$ dividen a $C$ en $n$ pedazos cuyas longitudes son $\Delta s_1 \text{, } \Delta s_2 \text{, … , } \Delta s_n$. Sea $t^*_i$ un valor arbitrario en el intervalo $[t_{i-1},t_i]$, para $1 \leq i \leq n$. El producto $f(\textbf{r}(t^*_1)) \Delta s_1$ se aproxima al área de la cara con base $\Delta s_1$ y altura $f(\textbf{r}(t^*_1))$. Se sigue que la siguiente suma se aproxima al área bajo la curva $C$ a lo largo de $f$:
+        <p>Sea $C$ una curva suave planar o espacial dada por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Queremos encontrar el área bajo la curva $C$ a lo largo de $f$. Para esto dividiremos el intervalo $[a,b]$ en $n$ subintervalos $[t_{i-1},t_i]$ para $1 \leq i \leq n$, donde $t_0 = a$ y $t_n = b$. Todos los subintervalos tendrán el mismo tamaño $\Delta t = \frac{b - a}{n}$. Los puntos $\textbf{r}(t_0) \text{, } \textbf{r}(t_1) \text{, … , } \textbf{r}(t_n)$ dividen a $C$ en $n$ pedazos cuyas longitudes son $\Delta s_1 \text{, } \Delta s_2 \text{, … , } \Delta s_n$. Sea $t^*_i$ un valor arbitrario en el intervalo $[t_{i-1},t_i]$, para $1 \leq i \leq n$. El producto $f(\textbf{r}(t^*_1)) \Delta s_1$ se aproxima al área de la cara con base $\Delta s_1$ y altura $f(\textbf{r}(t^*_1))$. Se sigue que la siguiente suma se aproxima al área bajo la curva $C$ a lo largo de $f$:
           \[
             \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Delta s_i
           \]</p>
@@ -1672,13 +1683,13 @@
       <!--  -->
       <div class="page">
         <div class="num_block" prefix="Definición" id="integral_linea_escalar">
-          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. La <b>integral de línea escalar</b> de $f$ a lo largo de $C$ es:
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. La <b>integral de línea escalar</b> de $f$ a lo largo de $C$ es:
             \[
               \int_C fds = \lim_{n \rightarrow \infty} \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Delta s_i
             \]
         </div>
 
-        <p style="text-align-last:justify;">Nuevamente aparece a variable $s$ que representa la longitud de arco. Esto puede complicar el cálculo de la integral de línea escalar, por lo que será útil convertir $\int_C fds$ a una integral cuya variable de</p>
+        <p style="text-align-last:justify;">Nuevamente aparece la variable $s$ que representa la longitud de arco. Esto puede complicar el cálculo de la integral de línea escalar, por lo que será útil convertir $\int_C fds$ a una integral cuya variable de</p>
 
         <figure id="ejemplo_integral_linea_escalar">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_escalar.html"></div>
@@ -1707,7 +1718,7 @@
         <p>Esto converge a la integral dada en el siguiente teorema.</p>
 
         <div class="num_block" prefix="Teorema" id="integral_linea_escalar_t">
-          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Entonces:
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Entonces:
             \[
               \int_C fds = \int^b_a f(\textbf{r}(t)) \Vert \textbf{r}'(t) \Vert dt
             \]
@@ -1715,15 +1726,15 @@
 
         <h3>Integral de línea vectorial</h3>
 
-        <p>Sea $C$ una curva definida por la función diferenciable $\texbf{r}(t)$ y sea $\textbf{F}$ un campo vectorial que representa la fuerza sobre una partícula. Para calcular el trabajo ejercido por $\textbf{F}$ para mover la</p>
+        <p style="text-align-last:justify;">Sea $C$ una curva suave definida por la función $\textbf{r}(t)$ y sea $\textbf{F}$ un campo vectorial que representa la fuerza sobre una partícula. Para calcular el trabajo ejercido por $\textbf{F}$ para mover la partícula a lo largo</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>partícula a lo largo de $C$ se utilizan las integrales de línea vectoriales.</p>
+        <p>de $C$ se utilizan las integrales de línea vectoriales.</p>
 
         <div class="num_block" prefix="Definición" id="integral_linea_vectorial">
-          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. La <b>integral de línea vectorial</b> de $\textbf{F}$ a lo largo de $C$ es:
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. La <b>integral de línea vectorial</b> de $\textbf{F}$ a lo largo de $C$ es:
             \[
               \int_C \textbf{F} \cdot \textbf{T} ds = \lim_{n \rightarrow \infty} \sum^n_{i=1} \textbf{F}(\textbf{r}(t^*_i)) \cdot \textbf{T}(t^*_i) \Delta s_i
             \]
@@ -1734,7 +1745,7 @@
         <p>Al igual que con las integrales de línea escalares, debemos expresar la integral en términos de $t$ para facilitar su evaluación. Ya vimos que $\Delta s_i = \Vert \textbf{r}'(t_i) \Vert \Delta t$. Como $\textbf{T}(t_i) = \frac{\textbf{r}'(t_i)}{\Vert \textbf{r}'(t_i) \Vert}$, entonces la suma de la definición anterior converge a la integral dada en el siguiente teorema.</p>
 
         <div class="num_block" prefix="Teorema" id="integral_linea_vectorial_t">
-          Sea $C$ una curva definida por la función diferenciable $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. Entonces:
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. Entonces:
             \[
               \int_C \textbf{F} \cdot \textbf{T} ds = \int^b_a \textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t) dt
             \]
@@ -1793,7 +1804,7 @@
 
         <h3>Flujo</h3>
 
-        <p>Sea $C$ una curva planar definida por la función diferenciable $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio incluye $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad. Queremos medir la tasa de cambio de masa del fluido que atraviesa la curva en un instante, es decir, la masa total del fluido que entra o sale de $C$ en un periodo de tiempo $\Delta t$ muy pequeño.</p>
+        <p>Sea $C$ una curva planar suave definida por la función $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio incluye $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad. Queremos medir la tasa de cambio de masa del fluido que atraviesa la curva en un instante, es decir, la masa total del fluido que entra o sale de $C$ en un periodo de tiempo $\Delta t$ muy pequeño.</p>
 
         <p style="text-align-last:justify;">Consideremos un pedazo pequeño de $C$ con longitud $\Delta s$ cuyo punto inicial es $\textbf{r}(t_i)$. Conforme $\Delta s$ tiende a cero, asemeja una línea recta y todas las partículas del fluido que la atraviesan se</p>
       </div>
