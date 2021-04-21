@@ -1847,61 +1847,106 @@
       <!--  -->
       <div class="page">
         <h2 id="sec_c3_parametrización_de_superficies">Parametrización de superficies. Orientación.</h2>
+
+        <p>En esta sección se generalizará el concepto de funciones que describen curvas a un nuevo tipo de parametrización que permite describir superficies generales.</p>
+
+        <h3>Superficie parametrizada</h3>
+
+        <p>Una superficie tiene una dimensión adicional al de una curva, y por tanto se requieren dos variables para construir una función que la describa.</p>
+
+        <div class="num_block" prefix="Definición" id="superficie_parametrizada">
+          Una <b>superficie parametrizada</b> o <b>paramétrica</b> es una expresión de la siguiente forma:
+            \[
+              \textbf{r}(u,v) = \langle x(u,v), y(u,v), z(u,v) \rangle
+            \]
+          Donde $x$, $y$ y $z$ son funciones escalares y los parámetros $u$ y $v$ varían sobre una región denominada el <b>espacio</b> o <b>dominio de parámetros</b>. Este es el conjunto de puntos para los cuales $\textbf{r}$ está definida.
+        </div>
+
+        <p>Ahora debemos generalizar los conceptos de regularidad y suavidad (<ref ref_id="curva_regular_y_suave"></ref>) para tener condiciones que garanticen que una parametrización dada sea realmente una superficie, y que no tenga cúspides ni esquinas. Por ejemplo, la parametrización $\textbf{r}(u,v) = \langle 1,1,1 \rangle$ es simplemente un punto, y la parametrización $\textbf{r}(u,v) = \langle cos(u), sin(v), 0 \rangle$ con $u,v \in [0,2\pi]$ es un círculo en el plano $xy$.</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <figure id="ejemplo_superficie_parametrizada">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_superficie_parametrizada.html"></div>
+          <figcaption>Una superficie paramétrica. El dominio de los parámetros $u$ y $v$ puede ser cualquier región general, pero por simplicidad, aquí sólo se permite ajustar la región rectangular $[u_{min}, u_{max}] \times [v_{min}, v_{max}]$.</figcaption>
+        </figure>
 
+        <div class="num_block" prefix="Definición" id="superficie_parametrizada">
+          Sea $\textbf{r}(u,v)$ una parametrización. <br> 
+          Si los vectores tangentes $\textbf{r}_u = \frac{\partial \textbf{r}}{\partial u}$ y $\textbf{r}_v = \frac{\partial \textbf{r}}{\partial v}$ son linealmente independientes para cualquier punto $(u,v)$ en el dominio de parámetros, entonces la superficie es <b>regular</b>. <bibref ref_id="W001">1</bibref> <br>
+          Si $\textbf{r}_u \times \textbf{r}_v \not = 0$ para cualquier punto $(u,v)$ en el dominio de parámetros, entonces la superficie es <b>suave</b>. <bibref ref_id="W002">1</bibref>
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
+        <figure id="ejemplo_superficie_parametrizada">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_superficie_regular_y_suave.html"></div>
+          <figcaption>Ejemplos de superficies suaves y no suaves. El vector $\textbf{r}_u \times \textbf{r}_v$ desaparece cuando es igual a cero, y esto implica que la superficie no es regular ni suave.</figcaption>
+        </figure>
 
+        <h3>Orientación</h3>
+        <p>En la sección anterior se mencionó que el cálculo del trabajo, es decir, el uso de integrales de línea vectoriales, requiere de una orientación de la curva a lo largo de la cual se está integrando. De igual manera, más adelante cuando se definan integrales sobre superficies, se requerirá tener una noción de orientación de superficies.</p>
+
+        <p style="text-align-last:justify;">Consideremos un punto $(x,y,z)$ en una superficie $S$. El vector</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>normal al plano tangente a $S$ en $(x,y,z)$ también es normal a $S$. Denotemos a este vector como $\textbf{N}$. Nota que otro vector normal a la superficie en el mismo punto es $-\textbf{N}$. Si para todo punto en $S$ es posible escoger un vector normal de tal forma que, al mover dicho vector continuamente sobre $S$ hasta regresarlo al punto original la elección de vector sea consistente, entonces $S$ es <b>orientable</b>. La elección de vector define la <b>orientación</b> de $S$.</p>
 
+        <div class="num_block" prefix="Definición" id="orientacion_superficie">
+          Sea $\textbf{r}(u,v)$ la parametrización de una superficie $S$ suave y orientable. Para cualquier punto $(x,y,z)$ en $S$, los vectores $\textbf{r}_u$ y $\textbf{r}_v$ se encuentran en el plano tangente a $S$ en $(x,y,z)$, por lo que $\textbf{r}_u \times \textbf{r}_v$ es normal a $S$ en el mismo punto. Por tanto, el siguiente vector normal unitario define una orientación de la superficie:
+            \[
+              \textbf{N} = \frac{\textbf{r}_u \times \textbf{r}_v}{\Vert \textbf{r}_u \times \textbf{r}_v \Vert}
+            \]
+        </div>
+
+        <p>Mientras que en el caso de las curvas la orientación se puede ver como ir "hacia adelante" o "hacia atrás", una superficie orientada nos dice si la orientación es "hacia arriba" o "hacia abajo", o en el caso de superficies como la esfera, "hacia adentro" o "hacia afuera". Además, en todas las curvas se puede elegir una dirección, por lo que todas las curvas se pueden considerar como orientadas. No todas las superficies son orientables. El ejemplo más importante de esto es la banda de Möbius: si posicionas un vector normal en la superficie y lo haces recorrer toda la banda, cuando el vector regrese al punto de partida estará apuntando en la dirección contraria.</p>
       </div>
 
       <!--  -->
       <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
+        <figure id="ejemplo_orientacion_superficie">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_orientacion_superficie.html"></div>
+          <figcaption>Selecciona las distintas opciones y mueve el vector normal unitario (verde) para determinar cuáles superficies son orientables.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
       <div class="page">
         <h2 id="sec_c3_área_de_una_superficie">Área de una superficie.</h2>
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
 
         <h2 id="sec_c3_integral_de_funciones_reales_sobre_superficies">Integral de funciones reales sobre superficies (masa y carga total de una superficie).</h2>
 
@@ -1956,6 +2001,18 @@
       <!------------------------------------------------------------>
       <div class="page">
         <h1 class="chap_name" id="cap_bibliografia" prefix="">Bibliografía</h1>
+
+        <bibitem id="HS001">
+          Herman, E & Strang, G. (2016). Calculus Volume 3. Texas, USA: OpenStax.
+        </bibitem>
+
+        <bibitem id="W001">
+          Weisstein, Eric W. "Regular Parameterization." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/RegularParameterization.html
+        </bibitem>
+
+        <bibitem id="W002">
+          Weisstein, Eric W. "Smooth Surface." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/SmoothSurface.html
+        </bibitem>
       </div>
 
       <!--  -->

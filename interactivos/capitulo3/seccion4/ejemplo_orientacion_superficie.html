@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Orientabilidad y orientación de una superficie</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
+      <param name="C_01" value="id='op' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='Superficie:' expresión='(0,0,400,40)' visible='no' opciones='Banda de Möbius, Botella de Klein, Toro, Esfera, Cilindro' ">
+      <param name="C_02" value="id='ver_n' tipo='checkbox' región='interior' espacio='E1' nombre='N' expresión='(400,0,200,40)' valor='1' radio_group='op_normal' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
+      <param name="C_03" value="id='ver_-n' tipo='checkbox' región='interior' espacio='E1' nombre='-N' expresión='(600,0,200,40)' radio_group='op_normal' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
+      <param name="C_04" value="id='u0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='u₀' expresión='(0,0,150,40)' valor='(ua+ub)/2' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='v0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='v₀' expresión='(0,0,150,40)' valor='(va+vb)/2' min='(op==4)||(op==0)?va:&squot;&squot;' max='(op==4)||(op==0)?vb:&squot;&squot;' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='Nuv' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='4' expresión='Nuv[0,0]=30;Nuv[0,1]=1;;Nuv[1,0]=30;Nuv[1,1]=10;;Nuv[2,0]=30;Nuv[2,1]=15;;Nuv[3,0]=15;Nuv[3,1]=15;;Nuv[4,0]=20;Nuv[4,1]=1;' tipo='matriz' info='número de intervalos en los que se parte el intervalo unitario [0,1] para los parámetros u y v' ">
+      <param name="A_02" value="id='r_lim' matriz='sí' evaluar='una-sola-vez' columnas='4' filas='5' expresión='r_lim[0,0]=0;r_lim[0,1]=2pi;r_lim[0,2]=-1;r_lim[0,3]=1;;r_lim[1,0]=0;r_lim[1,1]=pi;r_lim[1,2]=0;r_lim[1,3]=2pi;;r_lim[2,0]=0;r_lim[2,1]=2pi;r_lim[2,2]=0;r_lim[2,3]=2pi;;r_lim[3,0]=0;r_lim[3,1]=pi;r_lim[3,2]=0;r_lim[3,3]=2pi;;r_lim[4,0]=0;r_lim[4,1]=2pi;r_lim[4,2]=0;r_lim[4,3]=3' tipo='matriz' info='opciones de límites de r(u,v): 0=ua,1=ub,2=va,3vb' ">
+      <param name="A_03" value="id='ua' expresión='r_lim[op,0]' tipo='variable' ">
+      <param name="A_04" value="id='ub' expresión='r_lim[op,1]' tipo='variable' ">
+      <param name="A_05" value="id='va' expresión='r_lim[op,2]' tipo='variable' ">
+      <param name="A_06" value="id='vb' expresión='r_lim[op,3]' tipo='variable' ">
+      <param name="A_07" value="id='r_func' matriz='sí' evaluar='una-sola-vez' columnas='3' filas='5' expresión='r_func[0,0]=&squot;(2-v*sin(u/2))*sin(u)&squot;;r_func[0,1]=&squot;(2-v*sin(u/2))*cos(u)&squot;;r_func[0,2]=&squot;v*cos(u/2)&squot;;;r_func[1,0]=&squot;-2/15*cos(u)*(3*cos(v)-30*sin(u)+90*cos(u)^4*sin(u)-60*cos(u)^6*sin(u)+5*cos(u)*cos(v)*sin(u))&squot;;r_func[1,1]=&squot;-1/15*sin(u)*(3*cos(v)-3*cos(u)^2*cos(v)-48*cos(u)^4*cos(v)+48*cos(u)^6*cos(v)-60*sin(u)+5*cos(u)*cos(v)*sin(u)-5*cos(u)^3*cos(v)*sin(u)-80*cos(u)^5*cos(v)*sin(u)+80*cos(u)^7*cos(v)*sin(u))&squot;;r_func[1,2]=&squot;2/15*(3+5*cos(u)*sin(u))*sin(v)&squot;;;r_func[2,0]=&squot;(3+1.5*cos(v))*cos(u)&squot;;r_func[2,1]=&squot;(3+1.5*cos(v))*sin(u)&squot;;r_func[2,2]=&squot;1.5*sin(v)&squot;;;r_func[3,0]=&squot;2*sin(u)*cos(v)&squot;;r_func[3,1]=&squot;2*sin(u)*sin(v)&squot;;r_func[3,2]=&squot;2*cos(u)&squot;;;r_func[4,0]=&squot;2*cos(u)&squot;;r_func[4,1]=&squot;2*sin(u)&squot;;r_func[4,2]=&squot;v&squot;' tipo='matriz' info='opciones de r(u,v): 0=r1,1=r2,2=r3' ">
+      <param name="A_08" value="id='r1(u,v)' algoritmo='no' expresión='_Eval_(r_func[op,0])' tipo='función' ">
+      <param name="A_09" value="id='r2(u,v)' algoritmo='no' expresión='_Eval_(r_func[op,1])' tipo='función' ">
+      <param name="A_10" value="id='r3(u,v)' algoritmo='no' expresión='_Eval_(r_func[op,2])' tipo='función' ">
+      <param name="A_11" value="id='_r1u(u,v)' algoritmo='no' expresión='(r1(u+0.0001,v)-r1(u,v))/0.0001' tipo='función' info='parcial de r1 respecto a u' ">
+      <param name="A_12" value="id='_r2u(u,v)' algoritmo='no' expresión='(r2(u+0.0001,v)-r2(u,v))/0.0001' tipo='función' info='parcial de r2 respecto a u' ">
+      <param name="A_13" value="id='_r3u(u,v)' algoritmo='no' expresión='(r3(u+0.0001,v)-r3(u,v))/0.0001' tipo='función' info='parcial de r3 respecto a u' ">
+      <param name="A_14" value="id='_r1v(u,v)' algoritmo='no' expresión='(r1(u,v+0.0001)-r1(u,v))/0.0001' tipo='función' info='parcial de r1 respecto a v' ">
+      <param name="A_15" value="id='_r2v(u,v)' algoritmo='no' expresión='(r2(u,v+0.0001)-r2(u,v))/0.0001' tipo='función' info='parcial de r2 respecto a v' ">
+      <param name="A_16" value="id='_r3v(u,v)' algoritmo='no' expresión='(r3(u,v+0.0001)-r3(u,v))/0.0001' tipo='función' info='parcial de r3 respecto a v' ">
+      <param name="A_17" value="id='pc1' expresión='_r2u(u0,v0)*_r3v(u0,v0)-_r3u(u0,v0)*_r2v(u0,v0)' tipo='variable' info='primera componente de rᵤ x rᵥ' ">
+      <param name="A_18" value="id='pc2' expresión='_r3u(u0,v0)*_r1v(u0,v0)-_r1u(u0,v0)*_r3v(u0,v0)' tipo='variable' info='segunda componente de rᵤ x rᵥ' ">
+      <param name="A_19" value="id='pc3' expresión='_r1u(u0,v0)*_r2v(u0,v0)-_r2u(u0,v0)*_r1v(u0,v0)' tipo='variable' info='tercera componente de rᵤ x rᵥ' ">
+      <param name="A_20" value="id='N1' expresión='pc1/sqrt(pc1^2+pc2^2+pc3^2)' tipo='variable' ">
+      <param name="A_21" value="id='N2' expresión='pc2/sqrt(pc1^2+pc2^2+pc3^2)' tipo='variable' ">
+      <param name="A_22" value="id='N3' expresión='pc3/sqrt(pc1^2+pc2^2+pc3^2)' tipo='variable' ">
+      <param name="A_23" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=30;E1.rot.z=-45' ">
+      <param name="A_24" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='superficie' color='700000ff' color_reverso='700000ff' expresión='x=r1(ua+u*(ub-ua),va+v*(vb-va));y=r2(ua+u*(ub-ua),va+v*(vb-va));z=r3(ua+u*(ub-ua),va+v*(vb-va))' cortar='sí' modelo='metal' Nu='Nuv[op,0]' Nv='Nuv[op,1]' info='r(u,v)' ">
+      <param name="S_02" value="espacio='E1' tipo='segmento' color='008000' expresión='(r1(u0,v0),r2(u0,v0),r3(u0,v0)) (r1(u0,v0)+(ver_n?1:-1)*N1,r2(u0,v0)+(ver_n?1:-1)*N2,r3(u0,v0)+(ver_n?1:-1)*N3)' cortar='sí' ancho='2' Nu='1' info='N' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
