@@ -688,12 +688,12 @@
         \]</p>
 
         <p>Ahora, notemos que:
-        \[
-          r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica que}
-        \]
-        \[
-          \textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0) \approx \Delta u \textbf{r}_u
-        \]</p>
+          \[
+            r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica que}
+          \]
+          \[
+            \textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0) \approx \Delta u \textbf{r}_u
+          \]</p>
 
         <p>Análogamente:
         \[
@@ -1894,7 +1894,7 @@
 
       <!--  -->
       <div class="page">
-        <p>normal al plano tangente a $S$ en $(x,y,z)$ también es normal a $S$. Denotemos a este vector como $\textbf{N}$. Nota que otro vector normal a la superficie en el mismo punto es $-\textbf{N}$. Si para todo punto en $S$ es posible escoger un vector normal de tal forma que, al mover dicho vector continuamente sobre $S$ hasta regresarlo al punto original la elección de vector sea consistente, entonces $S$ es <b>orientable</b>. La elección de vector define la <b>orientación</b> de $S$.</p>
+        <p>normal al plano tangente a $S$ en $(x,y,z)$ también es normal a $S$. Denotemos a este vector como $\textbf{N}$. Nota que otro vector normal a la superficie en el mismo punto es $-\textbf{N}$. Si para todo punto en $S$ es posible escoger un vector normal de tal forma que, si se mueve dicho vector continuamente sobre $S$ hasta regresarlo al punto original y la elección de vector es consistente, entonces $S$ es <b>orientable</b>. La elección de vector define la <b>orientación</b> de $S$.</p>
 
         <div class="num_block" prefix="Definición" id="orientacion_superficie">
           Sea $\textbf{r}(u,v)$ la parametrización de una superficie $S$ suave y orientable. Para cualquier punto $(x,y,z)$ en $S$, los vectores $\textbf{r}_u$ y $\textbf{r}_v$ se encuentran en el plano tangente a $S$ en $(x,y,z)$, por lo que $\textbf{r}_u \times \textbf{r}_v$ es normal a $S$ en el mismo punto. Por tanto, el siguiente vector normal unitario define una orientación de la superficie:
@@ -1903,7 +1903,7 @@
             \]
         </div>
 
-        <p>Mientras que en el caso de las curvas la orientación se puede ver como ir "hacia adelante" o "hacia atrás", una superficie orientada nos dice si la orientación es "hacia arriba" o "hacia abajo", o en el caso de superficies como la esfera, "hacia adentro" o "hacia afuera". Además, en todas las curvas se puede elegir una dirección, por lo que todas las curvas se pueden considerar como orientadas. No todas las superficies son orientables. El ejemplo más importante de esto es la banda de Möbius: si posicionas un vector normal en la superficie y lo haces recorrer toda la banda, cuando el vector regrese al punto de partida estará apuntando en la dirección contraria.</p>
+        <p>Mientras que en el caso de las curvas la orientación se puede ver como ir "hacia adelante" o "hacia atrás", una superficie orientada nos dice si la orientación es "hacia arriba" o "hacia abajo", o en el caso de superficies como la esfera, "hacia adentro" o "hacia afuera". Además, en todas las curvas se puede elegir una dirección, por lo que todas las curvas se pueden considerar como orientadas. No todas las superficies son orientables. El ejemplo más importante de esto es la banda de Möbius: si posicionas un vector normal en la superficie y lo haces recorrer toda la banda, cuando el vector regrese al punto de partida estará apuntando en la dirección contraria, es decir, la elección de vector no es consistente.</p>
       </div>
 
       <!--  -->
@@ -1917,16 +1917,63 @@
       <!--  -->
       <div class="page">
         <h2 id="sec_c3_área_de_una_superficie">Área de una superficie.</h2>
+
+        <p>Sea $S$ una superficie con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$, que por simplicidad supondremos que es una región rectangular. Supongamos además que las derivadas parciales de las componentes de $\textbf{r}$ existen y son continuas. Observa en la <ref ref_id="area_superficie_1"></ref> cómo $\textbf{r}$ transforma la región $D$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a la superficie $S$. Sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen en $S$ es $\textbf{r}(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva $\textbf{r}(u,v_0)$ y el vector tangente a este curva en el punto $\textbf{r}(u_0,v_0)$ es $\textbf{r}_u(u_0,v_0)$. Análogamente, la imagen de la línea $u = u_0$ es la curva $\textbf{r}(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es $\textbf{r}_v(u_0,v_0)$. Ahora, nota que:
+          \[
+            r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \text{ implica que}
+          \]
+          \[
+            \lim_{\Delta u \rightarrow 0} \textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0) \approx \lim_{\Delta u \rightarrow 0} \Delta u \textbf{r}_u
+          \]</p>
+
+        <p>Análogamente:
+          \[
+            r_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u, v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \text{ implica que}
+          \]
+          \[
+            \lim_{\Delta v \rightarrow 0} \textbf{r}(u, v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \lim_{\Delta v \rightarrow 0} \Delta v \textbf{r}_v
+          \]</p>
+
+        <p style="text-align-last:justify;">Esto nos permite aproximar el área de superficie de $S$ calculando el área del paralelogramo formado por los lados $\Delta u \textbf{r}_u$ y $\Delta v \textbf{r}_v$:</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <figure id="area_superficie_1">
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion4/area_superficie_1.html"></div>
+          <figcaption>Mueve el cursor dentro de $D$ para ver cómo se mapea a un punto de $S$. Conforme $\Delta u$ y $\Delta v$ tienden a cero, los vectores rojos empiezan a medir aproximadamente lo mismo que los verdes.</figcaption>
+        </figure>
 
+        <p>
+          \[
+            \text{área} \approx \Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \Vert = \Vert \textbf{r}_u \times \textbf{r}_v \Vert \Delta u \Delta v
+          \]</p>
+
+        <p>Ahora observa en la <ref ref_id="area_superficie_2"></ref> que dividimos la región $D$ en el plano $uv$ en $m \cdot n$ subrectángulos $D_{ij}$ tales que los pedazos $S_{ij}$ en el espacio son las imágenes de $D_{ij}$ bajo la parametrización $\textbf{r}(u,v)$. Como $\text{área} \approx \Vert \textbf{r}_u \times \textbf{r}_v \Vert \Delta u \Delta v$, entonces el área de los paralelogramos usados para aproximar el área de $S_{ij}$ es:
+          \[
+            \Delta S_{ij} \approx \Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v
+          \]
+        Variando $i$ y $j$ y usando la aproximación anterior nos da el área de superficie de una superficie parametrizada:
+          \[
+            \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} \Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v
+          \]</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <figure id="area_superficie_2">
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion4/area_superficie_2.html"></div>
+          <figcaption>Haz clic en un subrectángulo $D_{ij}$ para ver su imagen $S_{ij}$ en la superficie $S$. Observa que conforme aumentan $m$ y $n$, los pedazos $S_{ij}$ empiezan a asemejar paralelogramos, por lo que podemos aproximar su área con $\Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v$, y la suma del área de todos estos pedazos se aproxima al área de superficie de $S$.</figcaption>
+        </figure>
 
+        <p>Esto converge a la integral dada en el siguiente teorema.</p>
+
+        <div class="num_block" prefix="Teorema" id="area_superficie">
+          Sea $\textbf{r}(u,v)$ la parametrización de una superficie suave $S$, cuyo dominio de parámetros es $D$. Si $\textbf{r}$ es inyectiva (la superficie no es trazada dos veces por la parametrización), entonces el área de superficie de $S$ es:
+            \[
+              \iint_D \Vert \textbf{r}_u \times \textbf{r}_v \Vert dudv
+            \]
+        </div>
       </div>
 
       <!--  -->

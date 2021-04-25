@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="400">
+      <param name="tamaño" value="800x400">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' ancho='45%' fijo='sí' O.x='-5' O.y='-45' red='no' red10='no' ejes='no' info='izquierda' ">
+      <param name="E_02" value="tipo='R3' R3='sí' id='E2' x='55%' ancho='45%' escala='40' O.x='-10' info='derecha' ">
+      <param name="E_03" value="tipo='R2' id='E3' x='45%' ancho='10%' fijo='sí' red='no' red10='no' ejes='no' info='flecha' ">
+      <param name="C_01" value="id='ver_S' tipo='checkbox' región='interior' espacio='E2' nombre='Ver S' expresión='(0,0,135,40)' valor='1' acción='calcular' parámetro='ver_paralelogramos=(ver_S==0)&&(ver_paralelogramos==0)?1:ver_paralelogramos' position='a_right' ">
+      <param name="C_02" value="id='ver_paralelogramos' tipo='checkbox' región='interior' espacio='E2' nombre='Ver paralelogramos' expresión='(135,0,225,40)' valor='1' acción='calcular' parámetro='ver_S=(ver_S==0)&&(ver_paralelogramos==0)?1:ver_S' position='a_right' ">
+      <param name="C_03" value="id='m' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='m' expresión='(0,0,150,40)' valor='1' incr='1' min='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=sel[1]<n?sel[1]:n-1' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='n' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='n' expresión='(0,0,150,40)' valor='1' incr='1' min='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=sel[1]<n?sel[1]:n-1' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='ua' expresión='-2.5' tipo='variable' ">
+      <param name="A_02" value="id='ub' expresión='3.7' tipo='variable' ">
+      <param name="A_03" value="id='du' expresión='(ub-ua)/m' tipo='variable' info='Δu' ">
+      <param name="A_04" value="id='va' expresión='-2.5' tipo='variable' ">
+      <param name="A_05" value="id='vb' expresión='2.5' tipo='variable' ">
+      <param name="A_06" value="id='dv' expresión='(vb-va)/n' tipo='variable' info='Δv' ">
+      <param name="A_07" value="id='apuntador_dentro_de_S' expresión='(E1.mouse_x>=ua-0.1)&&(E1.mouse_x<=ub+0.1)&&(E1.mouse_y>=va-0.1)&&(E1.mouse_y<=vb+0.1)' tipo='variable' info='Indica si el ratón está dentro del rectángulo S' ">
+      <param name="A_08" value="id='r1(u,v)' algoritmo='no' expresión='u' tipo='función' ">
+      <param name="A_09" value="id='r2(u,v)' algoritmo='no' expresión='v' tipo='función' ">
+      <param name="A_10" value="id='r3(u,v)' algoritmo='no' expresión='(u^2-v^2)/4' tipo='función' ">
+      <param name="A_11" value="id='_r1u(u,v)' algoritmo='no' expresión='1' tipo='función' ">
+      <param name="A_12" value="id='_r2u(u,v)' algoritmo='no' expresión='0' tipo='función' ">
+      <param name="A_13" value="id='_r3u(u,v)' algoritmo='no' expresión='u/2' tipo='función' ">
+      <param name="A_14" value="id='_r1v(u,v)' algoritmo='no' expresión='0' tipo='función' ">
+      <param name="A_15" value="id='_r2v(u,v)' algoritmo='no' expresión='1' tipo='función' ">
+      <param name="A_16" value="id='_r3v(u,v)' algoritmo='no' expresión='v/2' tipo='función' ">
+      <param name="A_17" value="id='sel' vector='sí' evaluar='una-sola-vez' tamaño='2' expresión='sel[0]=floor(m/2);sel[1]=floor(n/2)' tipo='vector' info='Indica el Sᵢⱼ seleccionado por el usuario' ">
+      <param name="A_18" value="id='uu(s)' algoritmo='no' expresión='ua+du*(s%m)' tipo='función' info='Coordenada del punto inferior izquierdo' ">
+      <param name="A_19" value="id='vv(s)' algoritmo='no' expresión='va+dv*floor(s/m)' tipo='función' info='Coordenada del punto inferior izquierdo' ">
+      <param name="A_20" value="id='mostrar_textos' expresión='(m<=10)&&(n<=10)' tipo='variable' ">
+      <param name="A_21" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.rot.y=30;E2.rot.z=130;;E1.mouse_x=ua-1;E1.mouse_y=va-1' ">
+      <param name="A_22" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="A_23" value="id='E1_mouse_click' evento='sí' condición='E1.mouse_clicked&&apuntador_dentro_de_S' acción='calcular' parámetro='sel[0]=floor(m*(E1.mouse_x-ua)/(ub-ua));sel[1]=floor(n*(E1.mouse_y-va)/(vb-va))' ejecución='alternar' info='Cambiar Sᵢⱼ' ">
+      <param name="G_01" value="espacio='E1' tipo='rectángulo' fondo='sí' color='ff8000' coord_abs='no' expresión='(ua,va,ub-ua,vb-va)' relleno='a0ff8000' ancho='2' border_radius='3' info='D' ">
+      <param name="G_02" value="espacio='E1' tipo='segmento' color='ff8000' coord_abs='no' expresión='(s<=m?(ua+du*s):ua,s<=m?va:va+dv*(s-m)) (s<=m?(ua+du*s):ub,s<=m?vb:va+dv*(s-m))' familia='s' s.intervalo='[0,m+n]' s.pasos='m+n' tamaño='0' ancho='1' info='D divisores' ">
+      <param name="G_03" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='((ua+ub)/2,vb)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i D\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_bottom_center' info='D texto' ">
+      <param name="G_04" value="espacio='E3' tipo='flecha' fondo='sí' color='20303a' coord_abs='no' expresión='(-0.5,0)(0.5,0)' ancho='1' punta='3' flecha='000000' ">
+      <param name="G_05" value="espacio='E3' tipo='texto' fondo='sí' color='20303a' coord_abs='no' expresión='(0,0.2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i\b r\b0\i0\i (u,v)\i0}\i0\cf1\fs40 }' ancho='1' cursiva='sí' font_family='Serif' align='a_left' anchor='a_bottom_center' info='r' ">
+      <param name="G_06" value="espacio='E1' tipo='rectángulo' color='ff8000' dibujar-si='mostrar_textos' coord_abs='no' expresión='(ua+du*sel[0],va+dv*sel[1],du,dv)' relleno='50ff8000' ancho='1' info='Dᵢⱼ' ">
+      <param name="G_07" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='mostrar_textos' coord_abs='no' expresión='(ua+du*(sel[0]+0.5),va+dv*(sel[1]+0.5))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1{\*\mjaformula\i D\i0{\subix\i ij\i0}}\cf0 }' ancho='1' align='a_left' anchor='a_center_center' info='Dᵢⱼ texto' ">
+      <param name="G_08" value="espacio='E1' tipo='punto' color='20303a' dibujar-si='mostrar_textos' coord_abs='no' expresión='(ua+du*sel[0],va+dv*sel[1])' tamaño='3' info='(uᵢⱼ,vᵢⱼ)' ">
+      <param name="G_09" value="espacio='E1' tipo='flecha' color='000000' dibujar-si='mostrar_textos' coord_abs='no' expresión='((ua+ub)/2,va-1) (ua+du*sel[0],va+dv*sel[1]-0.1)' ancho='1' punta='2' flecha='000000' info='(uᵢⱼ,vᵢⱼ) flecha' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='mostrar_textos' coord_abs='no' expresión='((ua+ub)/2,va-1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i (u\i0{\subix\i ij\i0}\i ,v\i0{\subix\i ij\i0}\i )\i0}\i0\cf1\fs40 }' ancho='1' align='a_left' anchor='a_top_center' info='(uᵢⱼ,vᵢⱼ) texto' ">
+      <param name="G_11" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='mostrar_textos' coord_abs='no' expresión='(ua+du*(sel[0]+0.5),va+dv*sel[1])' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i Δu\i0}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='Δu texto' ">
+      <param name="G_12" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='mostrar_textos' coord_abs='no' expresión='(ua+du*sel[0],va+dv*(sel[1]+0.5))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i Δv\i0}\i0 }' ancho='1' align='a_left' anchor='a_center_right' info='Δv texto' ">
+      <param name="S_01" value="espacio='E2' tipo='cara' color='a0ff0000' color_reverso='a0ff0000' dibujar-si='ver_paralelogramos' expresión='(r1(uu(s),vv(s)),r2(uu(s),vv(s)),r3(uu(s),vv(s))) (r1(uu(s),vv(s))+du*_r1u(uu(s),vv(s)),r2(uu(s),vv(s))+du*_r2u(uu(s),vv(s)),r3(uu(s),vv(s))+du*_r3u(uu(s),vv(s))) (r1(uu(s),vv(s))+du*_r1u(uu(s),vv(s))+dv*_r1v(uu(s),vv(s)),r2(uu(s),vv(s))+du*_r2u(uu(s),vv(s))+dv*_r2v(uu(s),vv(s)),r3(uu(s),vv(s))+du*_r3u(uu(s),vv(s))+dv*_r3v(uu(s),vv(s))) (r1(uu(s),vv(s))+dv*_r1v(uu(s),vv(s)),r2(uu(s),vv(s))+dv*_r2v(uu(s),vv(s)),r3(uu(s),vv(s))+dv*_r3v(uu(s),vv(s)))' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' cortar='sí' modelo='color' info='paralelogramos' ">
+      <param name="S_02" value="espacio='E2' tipo='superficie' color='400000ff' color_reverso='40eeffaa' dibujar-si='ver_S' expresión='x=r1(ua+u*(ub-ua),va+v*(vb-va));y=r2(ua+u*(ub-ua),va+v*(vb-va));z=r3(ua+u*(ub-ua),va+v*(vb-va))' cortar='sí' modelo='metal' Nu='15' Nv='15' info='S' ">
+      <param name="S_03" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' dibujar-si='ver_S' expresión='(r1(ua,va+0.8*(vb-va)),r2(ua,va+0.8*(vb-va)),r3(ua,va+0.8*(vb-va)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs60{\*\mjaformula\i S\i0}\cf0\fs40 }' decimales='2' ancho='0' offset_dist='15' offset_angle='90' info='S texto' ">
+      <param name="S_04" value="espacio='E2' tipo='curva' color='000000' dibujar-si='ver_S&&mostrar_textos' expresión='x=r1(ua+du*(u+sel[0]),va+dv*(sel[1]+(s==0?0:1)));y=r2(ua+du*(u+sel[0]),va+dv*(sel[1]+(s==0?0:1)));z=r3(ua+du*(u+sel[0]),va+dv*(sel[1]+(s==0?0:1)))' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='2' Nu='ceil(15/m)' info='Sᵢⱼ 1' ">
+      <param name="S_05" value="espacio='E2' tipo='curva' color='000000' dibujar-si='ver_S&&mostrar_textos' expresión='x=r1(ua+du*(sel[0]+(s==0?0:1)),va+dv*(u+sel[1]));y=r2(ua+du*(sel[0]+(s==0?0:1)),va+dv*(u+sel[1]));z=r3(ua+du*(sel[0]+(s==0?0:1)),va+dv*(u+sel[1]))' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='2' Nu='ceil(15/n)' info='Sᵢⱼ 2' ">
+      <param name="S_06" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' dibujar-si='ver_S&&mostrar_textos' expresión='(r1(ua+du*(sel[0]+0.5),va+dv*(sel[1]+0.5)),r2(ua+du*(sel[0]+0.5),va+dv*(sel[1]+0.5)),r3(ua+du*(sel[0]+0.5),va+dv*(sel[1]+0.5)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs40 \cf0\i{\*\mjaformula\i S\i0{\subix\i ij\i0}}\i0\cf1 }' decimales='2' ancho='0' offset_dist='0' offset_angle='0' info='Sᵢⱼ' ">
+      <param name="S_07" value="espacio='E2' tipo='punto' color='000000' color_reverso='000000' dibujar-si='ver_S&&mostrar_textos' expresión='(r1(ua+du*sel[0],va+dv*sel[1]),r2(ua+du*sel[0],va+dv*sel[1]),r3(ua+du*sel[0],va+dv*sel[1]))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i\b r\b0\i0\i (u\i0{\subix\i ij\i0}\i ,v\i0{\subix\i ij\i0}\i )\i0}\i0 }' decimales='2' ancho='3' offset_dist='0' offset_angle='0' info='r(uᵢⱼ,vᵢⱼ)' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
