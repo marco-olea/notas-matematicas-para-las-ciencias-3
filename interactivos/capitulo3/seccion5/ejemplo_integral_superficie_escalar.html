@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ejempo de una integral de superficie escalar</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="1080">
+      <param name="tamaño" value="800x1080">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' alto='500' escala='40' red='no' red10='no' números='sí' eje-x='u' eje-y='v' ">
+      <param name="E_02" value="tipo='R3' R3='sí' id='E2' y='500' alto='580' ">
+      <param name="C_01" value="id='g1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='g₁(u)' expresión='(0,0,400,40)' valor='2*sin(u)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='g2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='g₂(u)' expresión='(400,0,400,40)' valor='sqrt(36-u^2)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_03" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='a' expresión='(0,40,400,40)' max='b' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='b' expresión='(400,40,400,40)' valor='6' min='a' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='m' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='m' expresión='(0,460,400,40)' valor='1' incr='1' min='1' discreto='sí' decimales='0' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_06" value="id='n' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='n' expresión='(400,460,400,40)' valor='1' incr='1' min='1' discreto='sí' decimales='0' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_07" value="id='op' tipo='numérico' interfaz='menú' región='interior' espacio='E2' nombre='Ejemplos' expresión='(200,0,400,40)' visible='no' opciones='Genérico (1),Genérico (2),Cilindro,Cono,Hiperboloide,Toro,Banda de Möbius' ">
+      <param name="C_08" value="id='r1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' nombre='r(u,v)' expresión='(0,540,400,40)' valor='u' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_09" value="id='r2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(400,540,200,40)' valor='v' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_10" value="id='r3_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(600,540,200,40)' valor='(u^2-v^2)/4' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="A_01" value="id='g1(u)' algoritmo='no' expresión='_Eval_(g1_texto)' tipo='función' info='límite inferior de D' ">
+      <param name="A_02" value="id='g2(u)' algoritmo='no' expresión='_Eval_(g2_texto)' tipo='función' info='límite superior de D' ">
+      <param name="A_03" value="id='pasos' expresión='4*ceil(b-a)' tipo='variable' info='número de subintervalos en que se dividen las curvas g1,g2,r(u,g1),r(u,g2)' ">
+      <param name="A_04" value="id='pasos2' expresión='4*ceil(g2(a)-g1(a))' tipo='variable' info='número de subintervalos en que se divide la curva r(u=a,v)' ">
+      <param name="A_05" value="id='pasos3' expresión='4*ceil(g2(b)-g1(b))' tipo='variable' info='número de subintervalos en que se divide la curva r(u=b,v)' ">
+      <param name="A_06" value="id='du' expresión='(b-a)/pasos' tipo='variable' info='distancia entre cada &quot;paso&quot;' ">
+      <param name="A_07" value="id='r1(u,v)' algoritmo='no' expresión='_Eval_(r1_texto)' tipo='función' ">
+      <param name="A_08" value="id='r2(u,v)' algoritmo='no' expresión='_Eval_(r2_texto)' tipo='función' ">
+      <param name="A_09" value="id='r3(u,v)' algoritmo='no' expresión='_Eval_(r3_texto)' tipo='función' ">
+      <param name="A_10" value="id='X(s)' algoritmo='no' expresión='a+du*(s%pasos)' tipo='función' info='x1 del segmento #s que conforma una curva divisora' ">
+      <param name="A_11" value="id='Y(s)' algoritmo='no' expresión='g1(a+du*(s%pasos))+(1+floor(s/pasos))/n*(g2(a+du*(s%pasos))-g1(a+du*(s%pasos)))' tipo='función' info='y1 del segmento #s que conforma una curva divisora' ">
+      <param name="A_12" value="id='XX(s)' algoritmo='no' expresión='a+du*(s%pasos+1)' tipo='función' info='x2 del segmento #s que conforma una curva divisora' ">
+      <param name="A_13" value="id='YY(s)' algoritmo='no' expresión='g1(a+du*(s%pasos+1))+(1+floor(s/pasos))/n*(g2(a+du*(s%pasos+1))-g1(a+du*(s%pasos+1)))' tipo='función' info='y2 del segmento #s que conforma una curva divisora' ">
+      <param name="A_14" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_15" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="A_16" value="id='op0' evento='sí' condición='op==0' acción='calcular' parámetro='E1.Ox=-120;E1.Oy=100;E1.escala=40;E2.rot.y=102;E2.rot.z=90;E2.escala=38;E2.Ox=-100;E2.Oy=0;;a=0;b=6;g1_texto=&squot;2*sin(u)&squot;;g2_texto=&squot;sqrt(36-u^2)&squot;;r1_texto=&squot;u&squot;;r2_texto=&squot;v&squot;;r3_texto=&squot;(u^2-v^2)/4&squot;' ejecución='alternar' info='genérico 1' ">
+      <param name="A_17" value="id='op1' evento='sí' condición='op==1' acción='calcular' parámetro='E1.Ox=0;E1.Oy=20;E1.escala=58;E2.rot.y=178;E2.rot.z=97;E2.escala=52;E2.Ox=0;E2.Oy=0;;a=-2.8;b=2.8;g1_texto=&squot;-sqrt(4*(1-u^2/9))&squot;;g2_texto=&squot;sqrt(4*(1-u^2/9))&squot;;r1_texto=&squot;u-v&squot;;r2_texto=&squot;v^2/4&squot;;r3_texto=&squot;u^3/8&squot;' ejecución='alternar' info='genérico 2' ">
+      <param name="A_18" value="id='op2' evento='sí' condición='op==2' acción='calcular' parámetro='E1.Ox=-170;E1.Oy=170;E1.escala=58;E2.rot.y=40;E2.rot.z=0;E2.escala=52;E2.Ox=0;E2.Oy=70;;a=0;b=2pi;g1_texto=&squot;0&squot;;g2_texto=&squot;5&squot;;r1_texto=&squot;2*cos(u)&squot;;r2_texto=&squot;2*sin(u)&squot;;r3_texto=&squot;v&squot;' ejecución='alternar' info='cilindro' ">
+      <param name="A_19" value="id='op3' evento='sí' condición='op==3' acción='calcular' parámetro='E1.Ox=-140;E1.Oy=170;E1.escala=48;E2.rot.y=0;E2.rot.z=0;E2.escala=40;E2.Ox=0;E2.Oy=100;;a=0;b=2pi;g1_texto=&squot;0&squot;;g2_texto=&squot;2pi&squot;;r1_texto=&squot;u*cos(v)&squot;;r2_texto=&squot;u*sin(v)&squot;;r3_texto=&squot;u&squot;' ejecución='alternar' info='cono' ">
+      <param name="A_20" value="id='op4' evento='sí' condición='op==4' acción='calcular' parámetro='E1.Ox=0;E1.Oy=175;E1.escala=48;E2.rot.y=0;E2.rot.z=0;E2.escala=48;E2.Ox=0;E2.Oy=0;;a=-3;b=3;g1_texto=&squot;0&squot;;g2_texto=&squot;2pi&squot;;r1_texto=&squot;sqrt(1/4+u^2)*cos(v)&squot;;r2_texto=&squot;sqrt(1/4+u^2)*sin(v)&squot;;r3_texto=&squot;u&squot;' ejecución='alternar' info='hiperboloide' ">
+      <param name="A_21" value="id='op5' evento='sí' condición='op==5' acción='calcular' parámetro='E1.Ox=-140;E1.Oy=170;E1.escala=48;E2.rot.y=0;E2.rot.z=0;E2.escala=48;E2.Ox=0;E2.Oy=0;;a=0;b=2pi;g1_texto=&squot;0&squot;;g2_texto=&squot;2pi&squot;;r1_texto=&squot;(3+1.5*cos(v))*cos(u)&squot;;r2_texto=&squot;(3+1.5*cos(v))*sin(u)&squot;;r3_texto=&squot;1.5*sin(v)&squot;' ejecución='alternar' info='toro' ">
+      <param name="A_22" value="id='op6' evento='sí' condición='op==6' acción='calcular' parámetro='E1.Ox=-215;E1.Oy=20;E1.escala=70;E2.rot.y=0;E2.rot.z=0;E2.escala=60;E2.Ox=0;E2.Oy=0;;a=0;b=2pi;g1_texto=&squot;-1&squot;;g2_texto=&squot;1&squot;;r1_texto=&squot;(2-v*sin(u/2))*sin(u)&squot;;r2_texto=&squot;(2-v*sin(u/2))*cos(u)&squot;;r3_texto=&squot;v*cos(u/2)&squot;' ejecución='alternar' info='banda' ">
+      <param name="G_01" value="espacio='E1' tipo='segmento' color='ff8000' coord_abs='no' expresión='(a,g1(a)) (a,g2(a))' tamaño='0' ancho='2' info='u=a' ">
+      <param name="G_02" value="espacio='E1' tipo='segmento' color='ff8000' coord_abs='no' expresión='(b,g1(b)) (b,g2(b))' tamaño='0' ancho='2' info='u=b' ">
+      <param name="G_03" value="espacio='E1' tipo='curva' color='ff8000' coord_abs='no' expresión='(t,g1(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='pasos' ancho='2' info='g1(u)' ">
+      <param name="G_04" value="espacio='E1' tipo='curva' color='ff8000' coord_abs='no' expresión='(t,g2(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='pasos' ancho='2' info='g2(u)' ">
+      <param name="G_05" value="espacio='E1' tipo='segmento' color='ff8000' coord_abs='no' expresión='(X(s),Y(s)) (XX(s),YY(s))' familia='s' s.intervalo='[0,(n-1)*pasos-1]' s.pasos='(n-1)*pasos-1' tamaño='0' ancho='1' info='divisores 1' ">
+      <param name="G_06" value="espacio='E1' tipo='segmento' color='ff8000' coord_abs='no' expresión='(a+s*(b-a)/m,g1(a+s*(b-a)/m)) (a+s*(b-a)/m,g2(a+s*(b-a)/m))' familia='s' s.intervalo='[1,m-1]' s.pasos='m-2' tamaño='0' ancho='1' info='divisores 2' ">
+      <param name="G_07" value="espacio='E1' tipo='relleno' color='a0ff8000' dibujar-si='(m==1)&&(n==1)' coord_abs='no' expresión='((a+b)/2,(g1((a+b)/2)+g2((a+b)/2))/2)' ">
+      <param name="S_01" value="espacio='E2' tipo='superficie' color='a00000ff' color_reverso='a00000ff' dibujar-si='(m==1)&&(n==1)' expresión='x=r1(a+u*(b-a),g1(a+u*(b-a))+v*(g2(a+u*(b-a))-g1(a+u*(b-a))));y=r2(a+u*(b-a),g1(a+u*(b-a))+v*(g2(a+u*(b-a))-g1(a+u*(b-a))));z=r3(a+u*(b-a),g1(a+u*(b-a))+v*(g2(a+u*(b-a))-g1(a+u*(b-a))))' modelo='color' Nu='pasos' Nv='max(pasos2,pasos3)' info='S' ">
+      <param name="S_02" value="espacio='E2' tipo='curva' color='0000ff' expresión='x=r1(a+u*(b-a),s==0?g1(a+u*(b-a)):g2(a+u*(b-a)));y=r2(a+u*(b-a),s==0?g1(a+u*(b-a)):g2(a+u*(b-a)));z=r3(a+u*(b-a),s==0?g1(a+u*(b-a)):g2(a+u*(b-a)))' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='2' Nu='pasos' info='contornos de S 1' ">
+      <param name="S_03" value="espacio='E2' tipo='curva' color='0000ff' expresión='x=r1(s==0?a:b,g1(s==0?a:b)+u*(g2(s==0?a:b)-g1(s==0?a:b)));y=r2(s==0?a:b,g1(s==0?a:b)+u*(g2(s==0?a:b)-g1(s==0?a:b)));z=r3(s==0?a:b,g1(s==0?a:b)+u*(g2(s==0?a:b)-g1(s==0?a:b)))' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='2' Nu='s==0?pasos2:pasos3' info='contornos de S 2' ">
+      <param name="S_04" value="espacio='E2' tipo='segmento' color='0000ff' expresión='(r1(X(s),Y(s)),r2(X(s),Y(s)),r3(X(s),Y(s))) (r1(XX(s),YY(s)),r2(XX(s),YY(s)),r3(XX(s),YY(s)))' familia='s' s.intervalo='[0,(n-1)*pasos-1]' s.pasos='(n-1)*pasos-1' ancho='1' Nu='1' info='divisores 1' ">
+      <param name="S_05" value="espacio='E2' tipo='curva' color='0000ff' expresión='x=r1(a+s*(b-a)/m,g1(a+s*(b-a)/m)+u*(g2(a+s*(b-a)/m)-g1(a+s*(b-a)/m)));y=r2(a+s*(b-a)/m,g1(a+s*(b-a)/m)+u*(g2(a+s*(b-a)/m)-g1(a+s*(b-a)/m)));z=r3(a+s*(b-a)/m,g1(a+s*(b-a)/m)+u*(g2(a+s*(b-a)/m)-g1(a+s*(b-a)/m)))' familia='s' s.intervalo='[1,m-1]' s.pasos='m-2' ancho='1' Nu='3*ceil(g2(a+s*(b-a)/m)-g1(a+s*(b-a)/m))' info='divisores 2' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

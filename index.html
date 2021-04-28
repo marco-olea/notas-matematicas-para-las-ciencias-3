@@ -1918,7 +1918,7 @@
       <div class="page">
         <h2 id="sec_c3_área_de_una_superficie">Área de una superficie.</h2>
 
-        <p>Sea $S$ una superficie con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$, que por simplicidad supondremos que es una región rectangular. Supongamos además que las derivadas parciales de las componentes de $\textbf{r}$ existen y son continuas. Observa en la <ref ref_id="area_superficie_1"></ref> cómo $\textbf{r}$ transforma la región $D$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a la superficie $S$. Sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen en $S$ es $\textbf{r}(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva $\textbf{r}(u,v_0)$ y el vector tangente a este curva en el punto $\textbf{r}(u_0,v_0)$ es $\textbf{r}_u(u_0,v_0)$. Análogamente, la imagen de la línea $u = u_0$ es la curva $\textbf{r}(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es $\textbf{r}_v(u_0,v_0)$. Ahora, nota que:
+        <p>Sea $S$ una superficie con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$, que por simplicidad supondremos que es una región rectangular. Supongamos además que las derivadas parciales de las componentes de $\textbf{r}$ existen y son continuas. Observa en la <ref ref_id="area_superficie_1"></ref> cómo $\textbf{r}$ transforma la región $D$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a la superficie $S$. Sin pérdida de generalidad, sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen en $S$ es $\textbf{r}(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva $\textbf{r}(u,v_0)$ y el vector tangente a este curva en el punto $\textbf{r}(u_0,v_0)$ es $\textbf{r}_u(u_0,v_0)$. Análogamente, la imagen de la línea $u = u_0$ es la curva $\textbf{r}(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es $\textbf{r}_v(u_0,v_0)$. Ahora, nota que:
           \[
             r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \text{ implica que}
           \]
@@ -1971,19 +1971,81 @@
         <div class="num_block" prefix="Teorema" id="area_superficie">
           Sea $\textbf{r}(u,v)$ la parametrización de una superficie suave $S$, cuyo dominio de parámetros es $D$. Si $\textbf{r}$ es inyectiva (la superficie no es trazada dos veces por la parametrización), entonces el área de superficie de $S$ es:
             \[
-              \iint_D \Vert \textbf{r}_u \times \textbf{r}_v \Vert dudv
+              \iint\limits_D \Vert \textbf{r}_u \times \textbf{r}_v \Vert dudv
             \]
         </div>
+
+        <p style="text-align-last:justify;">El procedimiento anterior es análogo para cualquier dominio $D$ que no sea rectangular. El objetivo es partir el dominio en pedazos y elegir puntos arbitrarios dentro de ellos. La forma que tiene cada pedazo y los puntos elegidos se vuelven irrelevantes conforme los</p>
       </div>
 
       <!--  -->
       <div class="page">
-
+        <p>pedazos se hacen más pequeños.</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <h2 id="sec_c3_integral_de_funciones_reales_sobre_superficies">Integral de funciones reales sobre superficies.</h2>
 
+        <p>Anteriormente vimos cómo calcular la integral de una función escalar sobre una curva. En esta sección generalizaremos ese concepto para calcular integrales de funciones reales sobre superficies parametrizadas. El proceso es análogo pero en una dimensión superior.</p>
+
+        <p>Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$ que, al igual que en la sección anterior, supondremos que es una región rectangular para simplificar la notación, aunque en el resultado final la forma de $D$ será completamente irrelevante. Sea $f(x,y,z)$ una función escalar cuyo dominio contiene a $S$. Dividimos la región $D$ en $m \cdot n$ subrectángulos $D_{ij}$ de $\Delta u$ por $\Delta v$ unidades. Esta división, a su vez, divide a $S$ en $m \cdot n$ pedazos $S_{ij}$. Escogemos un punto arbitrario $(u_{ij},v_{ij})$ dentro de cada $D_{ij}$, de tal forma que su imagen $\textbf{r}(u_{ij},v_{ij})$ está dentro de $S_{ij}$. Entonces el volumen del paraleletopo (generalización del paralelepípedo en $n$ dimensiones) con base $S_{ij}$ y altura $f(\textbf{r}(u_{ij},v_{ij}))$ es:
+          \[
+            f(\textbf{r}(u_{ij},v_{ij})) \Delta S_{ij}
+          \]
+        </p>
+
+        <p>Donde $\Delta S_{ij}$ es el área de superficie del pedazo $S_{ij}$. Sumando los volúmenes de todos los paraleletopos nos da la siguiente suma de Riemann:
+          \[
+            \sum^m_{i=1} \sum^n_{j=1} f(\textbf{r}(u_{ij},v_{ij})) \Delta S_{ij}
+          \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Haciendo a $m$ y $n$ tender a infinito nos define la integral de superficie de una función escalar.</p>
+
+        <div class="num_block" prefix="Definición" id="integral_superficie_escalar">
+          Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$. Sea $f: \R^3 \rightarrow \R$ una función escalar cuyo dominio contiene a $S$. La <b>integral de superficie escalar</b> de $f$ sobre $S$ es:
+            \[
+              \iint\limits_S fdS = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(\textbf{r}(u_{ij},v_{ij})) \Delta S_{ij}
+            \]
+        </div>
+
+        <p>En la sección anterior vimos que conforme $\Delta u$ y $\Delta v$ tienden a cero:
+          \[
+            \Delta S_{ij} \approx \Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v
+          \]</p>
+
+        <p>Por lo que $\iint\limits_S fdS$ se aproxima a:
+          \[
+            \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(\textbf{r}(u_{ij},v_{ij})) \Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v
+          \]</p>
+
+        <p>Esto converge a la integral dada en el siguiente teorema.</p>
+
+        <div class="num_block" prefix="Teorema" id="integral_superficie_escalar_uv">
+          Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$. Sea $f: \R^3 \rightarrow \R$ una función escalar cuyo dominio contiene a $S$. Entonces:
+            \[
+              \iint\limits_S fdS = \iint\limits_D f(\textbf{r}(u,v) \Vert \textbf{r}_u \times \textbf{r}_v \Vert dudv
+            \]
+        </div>
+
+        <p style="text-align-last:justify;">Así como la integral de línea escalar de una función $f: \R^2 \rightarrow \R$ a lo largo de una curva planar $C$ se puede interpretar como el área</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>bajo la curva $f(C)$, la integral de superficie escalar de una función $f: \R^3 \rightarrow \R$ sobre una superficie $S$ representa el volumen bajo la hipersuperficie (generalización de una superficie) $f(S)$.</p>
+        
+        <p>En la siguiente figura se muestra en naranja una región general $D$, cuyo límite inferior es $g_1(u)$ y límite superior es $g_2(u)$; ambas funciones están definidas en el intervalo $[a,b]$. Las líneas $u = a$ y $u = b$ conforman los límites izquierda y derecha de $D$, respectivamente. Para el correcto funcionamiento de la figura, sólo introduce funciones tales que $g_1(u) \leq g_2(u)$ para todo $u \in [a,b]$. En azul se muestra la superficie $S$ con parametrización $\textbf{r}(u,v)$, cuyo dominio de parámetros contiene a $D$. Utiliza el menú de ejemplos para asignar valores predeterminados. Incrementa los valores de $m$ y $n$ para ver más divisiones y pedazos $D_{ij}$ y $S_{ij}$. En cada pedazo $S_{ij}$ se escoge un punto arbitrario $(x,y,z)$ y se evalúa en $f$ para obtener el volumen del paraleletopo con base $S_{ij}$ y altura $f(x,y,z)$. No se puede mostrar la función $f$ ya que, al tener como dominio a $\R^3$ y codominio $\R$, su gráfica vive en un espacio de cuatro dimensiones.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="ejemplo_integral_superficie_escalar">
+          <div class="interactive" width="800" height="1080" src="interactivos/capitulo3/seccion5/ejemplo_integral_superficie_escalar.html"></div>
+        </figure>
       </div>
 
       <!--  -->
@@ -1995,11 +2057,13 @@
       <div class="page">
         
 
-        <h2 id="sec_c3_integral_de_funciones_reales_sobre_superficies">Integral de funciones reales sobre superficies (masa y carga total de una superficie).</h2>
+        
 
-        <h2 id="sec_c3_integral_de_superficie">Integral de superficie (flujo a través de una superficie).</h2>
+        <h2 id="sec_c3_integral_de_superficie">Integral de campos vectoriales sobre superficies.</h2>
 
         <h2 id="sec_c3_aplicaciones">Aplicaciones.</h2>
+
+        1masa y carga total de una superficie   2flujo a traveś de ua superficie
       </div>
 
       <!--  -->
