@@ -1398,7 +1398,7 @@
           <figcaption>La curva $\textbf{r}(t) = \langle cos(t),sin(t),t \rangle$. La línea roja representa el vector $\frac{1}{\Delta t} (\textbf{r}(t_0 + \Delta t) - \textbf{r}(t_0))$. Observa que $\textbf{r}(t_0 + \Delta t) - \textbf{r}(t_0)$ es secante a la curva, pero conforme $\Delta t$ tiende a cero, se aproxima al vector tangente a la curva $\textbf{r}'(t_0)$.</figcaption>
         </figure>
 
-        <p>definición anterior.</p>
+        <p>definición anterior y la definición de límite.</p>
 
         <div class="num_block" prefix="Teorema" id="diferenciacion_funcion_valores_vectoriales">
           Sean $f$, $g$ y $h$ funciones reales diferenciables. <br>
@@ -1740,7 +1740,7 @@
             \]
         </div>
 
-        <p>La deducción de la ecuación anterior es muy similar a la de las integrales de línea escalares, pero en vez de integrar una función escalar cualquiera, se integra $\textbf{F} \cdot \textbf{T} ds$, donde $\cdot$ denota el producto punto. Esto es porque el trabajo realizado por el campo vectorial $\textbf{F}$ para mover la partícula del punto $\textbf{r}(t_1)$ al punto $\textbf{r}(t_2)$, con $a \leq t_1 < t_2 \leq b$, es $\textbf{F}(\textbf{r}(t_2)) \cdot (\Delta s\ \textbf{T}(\textbf{r}(t_2)))$, donde $\Delta s$ es la longitud del arco entre los dos puntos.</p>
+        <p>La deducción de la ecuación anterior es muy similar a la de las integrales de línea escalares, pero en vez de integrar una función escalar cualquiera, se integra $\textbf{F} \cdot \textbf{T}$, donde $\cdot$ denota el producto punto. Esto es porque el trabajo realizado por el campo vectorial $\textbf{F}$ para mover la partícula del punto $\textbf{r}(t_1)$ al punto $\textbf{r}(t_2)$, con $a \leq t_1 < t_2 \leq b$, es $\textbf{F}(\textbf{r}(t_2)) \cdot (\Delta s\ \textbf{T}(\textbf{r}(t_2)))$, donde $\Delta s$ es la longitud del arco entre los dos puntos.</p>
 
         <p>Al igual que con las integrales de línea escalares, debemos expresar la integral en términos de $t$ para facilitar su evaluación. Ya vimos que $\Delta s_i = \Vert \textbf{r}'(t_i) \Vert \Delta t$. Como $\textbf{T}(t_i) = \frac{\textbf{r}'(t_i)}{\Vert \textbf{r}'(t_i) \Vert}$, entonces la suma de la definición anterior converge a la integral dada en el siguiente teorema.</p>
 
@@ -1764,7 +1764,7 @@
       <div class="page">
         <figure id="ejemplo_integral_linea_vectorial_r3">
           <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r3.html"></div>
-          <figcaption>El campo vectorial $\textbf{F}(x,y,z) = \langle x, -z, y \rangle$, cuyo dominio incluye la curva $C$ definida por $\textbf{r}(t) = \langle cos(t), sin(t), t \rangle$. Al igual que en la figura anterior, el área bajo al curva $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$ es la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{T} ds$.</figcaption>
+          <figcaption>El campo vectorial $\textbf{F}(x,y,z) = \langle x, -z, y \rangle$, cuyo dominio incluye la curva $C$ definida por $\textbf{r}(t) = \langle cos(t), sin(t), t \rangle$. Al igual que en la figura anterior, la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{T} ds$ es el área bajo al curva $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$.</figcaption>
         </figure>
       </div>
 
@@ -1940,7 +1940,7 @@
       <!--  -->
       <div class="page">
         <figure id="area_superficie_1">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion4/area_superficie_1.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_1.html"></div>
           <figcaption>Mueve el cursor dentro de $D$ para ver cómo se mapea a un punto de $S$. Conforme $\Delta u$ y $\Delta v$ tienden a cero, los vectores rojos empiezan a medir aproximadamente lo mismo que los verdes.</figcaption>
         </figure>
 
@@ -1962,7 +1962,7 @@
       <!--  -->
       <div class="page">
         <figure id="area_superficie_2">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion4/area_superficie_2.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_2.html"></div>
           <figcaption>Haz clic en un subrectángulo $D_{ij}$ para ver su imagen $S_{ij}$ en la superficie $S$. Observa que conforme aumentan $m$ y $n$, los pedazos $S_{ij}$ empiezan a asemejar paralelogramos, por lo que podemos aproximar su área con $\Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v$, y la suma del área de todos estos pedazos se aproxima al área de superficie de $S$.</figcaption>
         </figure>
 
@@ -1987,7 +1987,7 @@
       <div class="page">
         <h2 id="sec_c3_integral_de_funciones_reales_sobre_superficies">Integral de funciones reales sobre superficies.</h2>
 
-        <p>Anteriormente vimos cómo calcular la integral de una función escalar sobre una curva. En esta sección generalizaremos ese concepto para calcular integrales de funciones reales sobre superficies parametrizadas. El proceso es análogo pero en una dimensión superior.</p>
+        <p>Anteriormente vimos cómo calcular la integral de una función escalar a lo largo de una curva. En esta sección generalizaremos ese concepto para calcular integrales de funciones reales sobre superficies parametrizadas. El proceso es análogo pero en una dimensión superior.</p>
 
         <p>Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$ que, al igual que en la sección anterior, supondremos que es una región rectangular para simplificar la notación, aunque en el resultado final la forma de $D$ será completamente irrelevante. Sea $f(x,y,z)$ una función escalar cuyo dominio contiene a $S$. Dividimos la región $D$ en $m \cdot n$ subrectángulos $D_{ij}$ de $\Delta u$ por $\Delta v$ unidades. Esta división, a su vez, divide a $S$ en $m \cdot n$ pedazos $S_{ij}$. Escogemos un punto arbitrario $(u_{ij},v_{ij})$ dentro de cada $D_{ij}$, de tal forma que su imagen $\textbf{r}(u_{ij},v_{ij})$ está dentro de $S_{ij}$. Entonces el volumen del paraleletopo (generalización del paralelepípedo en $n$ dimensiones) con base $S_{ij}$ y altura $f(\textbf{r}(u_{ij},v_{ij}))$ es:
           \[
@@ -2027,7 +2027,7 @@
         <div class="num_block" prefix="Teorema" id="integral_superficie_escalar_uv">
           Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$. Sea $f: \R^3 \rightarrow \R$ una función escalar cuyo dominio contiene a $S$. Entonces:
             \[
-              \iint\limits_S fdS = \iint\limits_D f(\textbf{r}(u,v) \Vert \textbf{r}_u \times \textbf{r}_v \Vert dudv
+              \iint\limits_S fdS = \iint\limits_D f(\textbf{r}(u,v)) \Vert \textbf{r}_u \times \textbf{r}_v \Vert dudv
             \]
         </div>
 
@@ -2044,26 +2044,70 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_integral_superficie_escalar">
-          <div class="interactive" width="800" height="1080" src="interactivos/capitulo3/seccion5/ejemplo_integral_superficie_escalar.html"></div>
+          <div class="interactive" width="800" height="1080" src="interactivos/capitulo3/seccion6/ejemplo_integral_superficie_escalar.html"></div>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
+        <h2 id="sec_c3_integral_de_superficie">Integral de campos vectoriales sobre superficies.</h2>
 
+        <p>Anteriormente vimos cómo calcular la integral de un campo vectorial a lo largo de una curva. En esta sección generalizaremos ese concepto para calcular integrales de campos vectoriales sobre superficies parametrizadas. El proceso es análogo pero en una dimensión superior.</p>
+
+        <div class="num_block" prefix="Definición" id="integral_superficie_vectorial">
+          Sea $S$ una superficie suave y orientada con vector normal unitario $\textbf{N}$. Sea $\textbf{F}$ un campo vectorial en $\R^3$ cuyo dominio contiene a $S$. La <b>integral de superficie vectorial</b> de $\textbf{F}$ sobre $S$ es:
+            \[
+              \iint\limits_S \textbf{F} \cdot \textbf{N} dS = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} \textbf{F}(\textbf{r}(u_{ij},v_{ij})) \cdot \textbf{N}(u_{ij},v_{ij}) \Delta S_{ij}
+            \]
+        </div>
+
+        <p>La deducción de la ecuación anterior es muy similar a la de las integrales de superficie escalares, pero en vez de integrar una función escalar cualquiera, se integra $\textbf{F} \cdot \textbf{N}$, donde $\cdot$ denota el producto punto. La motivación de esta definición es el cálculo de la masa de un fluido que fluye a través de una superficie; esto se explica más detalladamente en la siguiente sección.</p>
+
+        <p>Para facilitar la evaluación de la expresión, recordemos que:
+          \[
+            \textbf{N}(u,v) = \frac{\textbf{r}_u(u,v) \times \textbf{r}_v(u,v)}{\Vert \textbf{r}_u(u,v) \times \textbf{r}_v(u,v) \Vert}\ \text{ y }
+          \]
+          \[
+            \Delta S_{ij} \approx \Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v
+          \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Por lo que la suma anterior converge a la integral dada en el siguiente teorema.</p>
+
+        <div class="num_block" prefix="Teorema" id="integral_superficie_vectorial_uv">
+          Sea $S$ una superficie suave y orientada definida sobre una región $D$, con vector normal unitario $\textbf{N}$. Sea $\textbf{F}$ un camop vectorial en $\R^3$ cuyo dominio contiene a $S$. Entonces:
+            \[
+              \iint\limits_S \textbf{F} \cdot \textbf{N} dS = \iint\limits_D \textbf{F}(\textbf{r}(u,v)) \cdot (\textbf{r}_u \times \textbf{r}_v) dudv
+            \]
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="ejemplo_integral_superficie_vectorial">
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion7/ejemplo_integral_superficie_vectorial.html"></div>
+          <figcaption>El campo vectorial $\textbf{F} = \langle x,-z,y \rangle$, cuyo dominio contiene la paraboloide $S$ definida por $\textbf{r}(u,v) = \langle ucos(v), usin(v), 9 - u^2$. La barra verde representa el integrando $\textbf{F}(\textbf{r}(u,v)) \cdot \textbf{N}(u,v)$ evaluado en $(u_0,v_0)$. El volumen bajo la superficie que traza es la integral de superficie vectorial.</figcaption>
+        </figure>
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h2 id="sec_c3_aplicaciones">Aplicaciones.</h2>
+
+        1masa y carga total de una superficie   2flujo a traveś de ua superficie
       </div>
 
       <!--  -->
       <div class="page">
         
+      </div>
 
+      <!--  -->
+      <div class="page">
         
-
-        <h2 id="sec_c3_integral_de_superficie">Integral de campos vectoriales sobre superficies.</h2>
-
-        <h2 id="sec_c3_aplicaciones">Aplicaciones.</h2>
-
-        1masa y carga total de una superficie   2flujo a traveś de ua superficie
       </div>
 
       <!--  -->

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ejemplo de integral de superficie vectorial</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="1000">
+      <param name="tamaño" value="800x1000">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' alto='55%' escala='42' O.y='150' border_width='1' ">
+      <param name="E_02" value="tipo='R3' R3='sí' id='E2' y='55%' ancho='70%' alto='45%' escala='52' ">
+      <param name="E_03" value="tipo='R3' R3='sí' id='E3' x='70%' y='55%' ancho='30%' alto='45%' escala='102' border_width='1' ">
+      <param name="C_01" value="id='u0' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='u₀' expresión='(200,509,200,40)' valor='ua' min='ua' max='ub' visible='sí' acción='calcular' parámetro='fin=fin||((u0>=ub-0.01)&&(v0>=vb-0.01))' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='v0' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='v₀' expresión='(400,509,200,40)' valor='va' incr='0.15' min='va' max='vb' visible='sí' acción='calcular' parámetro='fin=fin||((u0>=ub-0.01)&&(v0>=vb-0.01))' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='a' expresión='-2' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='2' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='-2' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='2.5' tipo='variable' ">
+      <param name="A_05" value="id='e' expresión='0' tipo='variable' ">
+      <param name="A_06" value="id='f' expresión='8' tipo='variable' ">
+      <param name="A_07" value="id='xn' expresión='4' tipo='variable' ">
+      <param name="A_08" value="id='yn' expresión='3' tipo='variable' ">
+      <param name="A_09" value="id='zn' expresión='5' tipo='variable' ">
+      <param name="A_10" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
+      <param name="A_11" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
+      <param name="A_12" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
+      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_16" value="id='__' expresión='0' tipo='variable' info='arriba de esta variable están las definiciones necesarias para dibujar el campo vectorial' ">
+      <param name="A_17" value="id='F1(x,y,z)' algoritmo='no' expresión='x/4' tipo='función' ">
+      <param name="A_18" value="id='F2(x,y,z)' algoritmo='no' expresión='-z/4' tipo='función' ">
+      <param name="A_19" value="id='F3(x,y,z)' algoritmo='no' expresión='y/4' tipo='función' ">
+      <param name="A_20" value="id='ua' expresión='0' tipo='variable' ">
+      <param name="A_21" value="id='ub' expresión='3' tipo='variable' ">
+      <param name="A_22" value="id='va' expresión='0' tipo='variable' ">
+      <param name="A_23" value="id='vb' expresión='2pi' tipo='variable' ">
+      <param name="A_24" value="id='r1(u,v)' algoritmo='no' expresión='u*cos(v)' tipo='función' ">
+      <param name="A_25" value="id='r2(u,v)' algoritmo='no' expresión='u*sin(v)' tipo='función' ">
+      <param name="A_26" value="id='r3(u,v)' algoritmo='no' expresión='9-u^2' tipo='función' ">
+      <param name="A_27" value="id='_r1u(u,v)' algoritmo='no' expresión='cos(v)' tipo='función' ">
+      <param name="A_28" value="id='_r2u(u,v)' algoritmo='no' expresión='sin(v)' tipo='función' ">
+      <param name="A_29" value="id='_r3u(u,v)' algoritmo='no' expresión='-2*u' tipo='función' ">
+      <param name="A_30" value="id='_r1v(u,v)' algoritmo='no' expresión='-u*sin(v)' tipo='función' ">
+      <param name="A_31" value="id='_r2v(u,v)' algoritmo='no' expresión='u*cos(v)' tipo='función' ">
+      <param name="A_32" value="id='_r3v(u,v)' algoritmo='no' expresión='0' tipo='función' ">
+      <param name="A_33" value="id='N1(u,v)' algoritmo='no' expresión='_r2u(u,v)*_r3v(u,v)-_r3u(u,v)*_r2v(u,v)' tipo='función' ">
+      <param name="A_34" value="id='N2(u,v)' algoritmo='no' expresión='_r3u(u,v)*_r1v(u,v)-_r1u(u,v)*_r3v(u,v)' tipo='función' ">
+      <param name="A_35" value="id='N3(u,v)' algoritmo='no' expresión='_r1u(u,v)*_r2v(u,v)-_r2u(u,v)*_r1v(u,v)' tipo='función' ">
+      <param name="A_36" value="id='pp(u,v)' algoritmo='no' expresión='F1(r1(u,v),r2(u,v),r3(u,v))*N1(u,v)+F2(r1(u,v),r2(u,v),r3(u,v))*N2(u,v)+F3(r1(u,v),r2(u,v),r3(u,v))*N3(u,v)' tipo='función' info='producto punto F(r(u,v))*N(u,v)' ">
+      <param name="A_37" value="id='mag_N' expresión='sqrt(N1(u0,v0)^2+N2(u0,v0)^2+N3(u0,v0)^2)' tipo='variable' info='magnitud del vector N(u0,v0)' ">
+      <param name="A_38" value="id='k' expresión='0.25' tipo='variable' info='factor por el cual escalar vectores grandes (N,pp)' ">
+      <param name="A_39" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-5;;E2.rot.y=18.25;E2.rot.z=-62.25;;E3.rot.y=10;E3.rot.z=-45;;fin=0' ">
+      <param name="A_40" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='0000ff' expresión='(X(s),Y(s),Z(s)) (X(s)+F1(X(s),Y(s),Z(s)),Y(s)+F2(X(s),Y(s),Z(s)),Z(s)+F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='7' info='F(x,y,z)' ">
+      <param name="S_02" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' expresión='(X(s)+F1(X(s),Y(s),Z(s)),Y(s)+F2(X(s),Y(s),Z(s)),Z(s)+F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1' offset_dist='10' offset_angle='270' info='F(x,y,z)' ">
+      <param name="S_03" value="espacio='E1' tipo='texto' color='eeffaa' expresión='[200,200]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red238\green255\blue170;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i\b F\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='F(x,y,z) texto' ">
+      <param name="S_04" value="espacio='E1' tipo='segmento' color='cccc00' expresión='(r1(u0,v0),r2(u0,v0),r3(u0,v0)) (r1(u0,v0)+k*N1(u0,v0),r2(u0,v0)+k*N2(u0,v0),r3(u0,v0)+k*N3(u0,v0))' ancho='2' Nu='1' info='N(u₀,v₀)' ">
+      <param name="S_05" value="espacio='E3' tipo='segmento' color='808080' expresión='(0,0,0) (s==0?0.5:0,s==1?0.5:0,s==2?0.5:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_06" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0.5,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red128\green128\blue128;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i x\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='8' offset_angle='270' info='x' ">
+      <param name="S_07" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,0.5,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red128\green128\blue128;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i y\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='6' offset_angle='270' info='y' ">
+      <param name="S_08" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,0,0.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red128\green128\blue128;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i z\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='13' offset_angle='90' info='z' ">
+      <param name="S_09" value="espacio='E3' tipo='segmento' color='0000ff' expresión='(0,0,0) (k*F1(r1(u0,v0),r2(u0,v0),r3(u0,v0)),k*F2(r1(u0,v0),r2(u0,v0),r3(u0,v0)),k*F3(r1(u0,v0),r2(u0,v0),r3(u0,v0)))' ancho='2' Nu='1' info='F(r(u₀,v₀))' ">
+      <param name="S_10" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(k*F1(r1(u0,v0),r2(u0,v0),r3(u0,v0)),k*F2(r1(u0,v0),r2(u0,v0),r3(u0,v0)),k*F3(r1(u0,v0),r2(u0,v0),r3(u0,v0)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs30{\*\mjaformula\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (u\i0{\subix\i 0\i0}\i ,v\i0{\subix\i 0\i0}\i ))\i0}\cf0\fs40 }' decimales='2' ancho='0' offset_dist='13' offset_angle='90' info='F(r(u₀,v₀)) texto' ">
+      <param name="S_11" value="espacio='E3' tipo='segmento' color='cccc00' expresión='(0,0,0) (k*N1(u0,v0),k* N2(u0,v0),k*N3(u0,v0))' ancho='2' Nu='1' info='N(u₀,v₀)' ">
+      <param name="S_12" value="espacio='E1' tipo='superficie' color='a0ff0000' color_reverso='a0ff0000' expresión='x=r1(ua+u*(ub-ua),va+v*(vb-va));y=r2(ua+u*(ub-ua),va+v*(vb-va));z=r3(ua+u*(ub-ua),va+v*(vb-va))' modelo='metal' Nu='15' Nv='20' info='r(u,v)' ">
+      <param name="S_13" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(k*N1(u0,v0),k*N2(u0,v0),k*N3(u0,v0))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red204\green204\blue0;}\cf0\f0\fs40 \cf1\fs30{\*\mjaformula\i\b N\b0\i0\i (u\i0{\subix 0}\i ,v\i0{\subix\i 0\i0}\i )\i0}\cf0\fs40 }' decimales='2' ancho='0' offset_dist='13' offset_angle='90' info='N(u₀,v₀) texto' ">
+      <param name="S_14" value="espacio='E3' tipo='segmento' color='008000' expresión='(0,0,0) (k*pp(u0,v0)*N1(u0,v0)/mag_N,k*pp(u0,v0)*N2(u0,v0)/mag_N,k*pp(u0,v0)*N3(u0,v0)/mag_N' ancho='1' Nu='1' info='producto punto' ">
+      <param name="S_15" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(r1(ua,va),r2(ua,va),r3(ua,va))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;}\cf0\f0\fs50\b r\b0 (u,v)}' decimales='2' ancho='0' offset_dist='15' offset_angle='90' info='r(t) texto' ">
+      <param name="S_16" value="espacio='E2' tipo='segmento' color='000000' expresión='(0,0,0)(s==0?10:0,s==1?10:0,s==2?10:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='7' info='ejes' ">
+      <param name="S_17" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(ub+2,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i u\i0}\i0\cf1\fs40 }' decimales='2' ancho='1' offset_dist='10' offset_angle='90' info='u' ">
+      <param name="S_18" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,vb+0.8,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i v\i0}\i0\cf1\fs40 }' decimales='2' ancho='1' offset_dist='10' offset_angle='90' info='v' ">
+      <param name="S_19" value="espacio='E2' tipo='punto' color='000000' color_reverso='6090a0' expresión='(-0.2,-0.2,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue0;}\cf0\f0\fs40 \cf1{\*\mjaformula\i 0\i0}\cf0 }' decimales='2' ancho='0' offset_dist='0' offset_angle='0' info='ua,va' ">
+      <param name="S_20" value="espacio='E2' tipo='punto' color='000000' color_reverso='6090a0' expresión='(ub,-0.2,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue0;}\cf0\f0\fs40 \cf1{\*\mjaformula\i 3\i0}\cf0 }' decimales='2' ancho='0' offset_dist='0' offset_angle='0' info='ub' ">
+      <param name="S_21" value="espacio='E2' tipo='punto' color='000000' color_reverso='6090a0' expresión='(-0.2,vb,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue0;}\cf0\f0\fs40 \cf1{\*\mjaformula\i 2π\i0}\cf0 }' decimales='2' ancho='0' offset_dist='0' offset_angle='0' info='vb' ">
+      <param name="S_22" value="espacio='E2' tipo='superficie' color='4000ff00' color_reverso='4000ff00' dibujar-si='0' expresión='x=s==0?u0:ua+u*(u0-ua);y=s==1?va:(s==2?v0:va+u*(v0-va));z=v*k*pp(x,y)' familia='s' s.intervalo='[0,2]' s.pasos='2' cortar='sí' modelo='color' Nu='s==0?4*ceil(v0+0.01):10' Nv='1' info='caras' ">
+      <param name="S_23" value="espacio='E2' tipo='superficie' color='80008000' color_reverso='80008000' expresión='x=ua+u*(u0-ua);y=va+v*(v0-va);z=k*pp(x,y)' cortar='sí' modelo='metal' Nu='10' Nv='4*ceil(v0+0.01)' info='F·N' ">
+      <param name="S_24" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' dibujar-si='fin' expresión='(ub,0,k*pp(ub,0))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green128\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\i{\*\mjaformula\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (u,v))·\i0\i\b N\b0\i0\i (u,v)\i0}\i0\cf1 }' decimales='2' ancho='1' offset_dist='10' offset_angle='90' info='F·N texto' ">
+      <param name="S_25" value="espacio='E2' tipo='segmento' color='008000' expresión='(u0,v0,0)(u0,v0,k*pp(u0,v0))' ancho='2' Nu='1' info='pp(u₀,v₀)' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
