@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Flujo  a través de una superficie</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="600" height="450">
+      <param name="tamaño" value="600x450">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='0' ">
+      <param name="C_01" value="id='repetir' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='►' expresión='(0,0,150,40)' color='000000' color-int='f0f8ff' fuente puntos='19' acción='animar' ">
+      <param name="C_02" value="id='parar' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='◼' expresión='(0,0,150,40)' color='222222' color-int='f0f8ff' fuente puntos='19' acción='inicio' ">
+      <param name="A_01" value="id='a' expresión='-1' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='1' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='-2' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='0' tipo='variable' ">
+      <param name="A_05" value="id='e' expresión='-2' tipo='variable' ">
+      <param name="A_06" value="id='f' expresión='0.5' tipo='variable' ">
+      <param name="A_07" value="id='xn' expresión='3' tipo='variable' ">
+      <param name="A_08" value="id='yn' expresión='4' tipo='variable' ">
+      <param name="A_09" value="id='zn' expresión='4' tipo='variable' ">
+      <param name="A_10" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
+      <param name="A_11" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
+      <param name="A_12" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
+      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_16" value="id='__' expresión='0' tipo='variable' info='arriba de esta variable están las definiciones necesarias para dibujar el campo vectorial' ">
+      <param name="A_17" value="id='ua' expresión='-2' tipo='variable' ">
+      <param name="A_18" value="id='ub' expresión='2' tipo='variable' ">
+      <param name="A_19" value="id='va' expresión='-2' tipo='variable' ">
+      <param name="A_20" value="id='vb' expresión='2' tipo='variable' ">
+      <param name="A_21" value="id='du' expresión='(ub-ua)/7' tipo='variable' ">
+      <param name="A_22" value="id='dv' expresión='(vb-va)/10' tipo='variable' ">
+      <param name="A_23" value="id='r1(u,v)' algoritmo='no' expresión='u' tipo='función' ">
+      <param name="A_24" value="id='r2(u,v)' algoritmo='no' expresión='v' tipo='función' ">
+      <param name="A_25" value="id='r3(u,v)' algoritmo='no' expresión='(-u^2-v^2)/4' tipo='función' ">
+      <param name="A_26" value="id='_r1u(u,v)' algoritmo='no' expresión='(r1(u+0.0001,v)-r1(u,v))/0.0001' tipo='función' ">
+      <param name="A_27" value="id='_r2u(u,v)' algoritmo='no' expresión='(r2(u+0.0001,v)-r2(u,v))/0.0001' tipo='función' ">
+      <param name="A_28" value="id='_r3u(u,v)' algoritmo='no' expresión='(r3(u+0.0001,v)-r3(u,v))/0.0001' tipo='función' ">
+      <param name="A_29" value="id='_r1v(u,v)' algoritmo='no' expresión='(r1(u,v+0.0001)-r1(u,v))/0.0001' tipo='función' ">
+      <param name="A_30" value="id='_r2v(u,v)' algoritmo='no' expresión='(r2(u,v+0.0001)-r2(u,v))/0.0001' tipo='función' ">
+      <param name="A_31" value="id='_r3v(u,v)' algoritmo='no' expresión='(r3(u,v+0.0001)-r3(u,v))/0.0001' tipo='función' ">
+      <param name="A_32" value="id='N1(u,v)' algoritmo='no' expresión='0.6*(_r2u(u,v)*_r3v(u,v)-_r3u(u,v)*_r2v(u,v))' tipo='función' info='primera componente del vector normal en (u,v)' ">
+      <param name="A_33" value="id='N2(u,v)' algoritmo='no' expresión='0.6*(_r3u(u,v)*_r1v(u,v)-_r1u(u,v)*_r3v(u,v))' tipo='función' info='segunda componente del vector normal en (u,v)' ">
+      <param name="A_34" value="id='N3(u,v)' algoritmo='no' expresión='0.6*(_r1u(u,v)*_r2v(u,v)-_r2u(u,v)*_r1v(u,v))' tipo='función' info='tercera componente del vector normal en (u,v)' ">
+      <param name="A_35" value="id='F1' expresión='0.125' tipo='variable' info='primera componente del campo vectorial constante' ">
+      <param name="A_36" value="id='F2' expresión='0.25' tipo='variable' info='segunda componente del campo vectorial constante' ">
+      <param name="A_37" value="id='F3' expresión='0.375' tipo='variable' info='tercera componente del campo vectorial constante' ">
+      <param name="A_38" value="id='U(s)' algoritmo='no' expresión='ua+(s<=1?3:4)*du' tipo='función' info='determina una de las 4 esquinas de Sᵢⱼ según s' ">
+      <param name="A_39" value="id='V(s)' algoritmo='no' expresión='va+((s==0)||(s==3)?2:3)*dv' tipo='función' info='determina una de las 4 esquinas de Sᵢⱼ según s' ">
+      <param name="A_40" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=-4.5;E1.rot.z=110;E1.escala=82;E1.Oy=-100' ">
+      <param name="A_41" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='0000ff' dibujar-si='k<1' expresión='(X(s),Y(s),Z(s)) (X(s)+F1,Y(s)+F2,Z(s)+F3)' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='1' info='F(x,y,z)' ">
+      <param name="S_02" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' dibujar-si='k<1' expresión='(X(s)+F1,Y(s)+F2,Z(s)+F3)' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1' offset_dist='10' offset_angle='270' info='F(x,y,z) puntos' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' dibujar-si='k>=1' expresión='(r1(U(1),V(1))+F1,r2(U(1),V(1))+F2,r3(U(1),V(1))+F3)' cortar='sí' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green128\blue0;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (u\i0{\supix\i *\i0}\i ,v\i0{\supix\i *\i0}\i ))\i0}\cf0\fs40 }' decimales='2' ancho='2' offset_dist='60' offset_angle='200' info='F(r(u*,v*)) texto' ">
+      <param name="S_04" value="espacio='E1' tipo='superficie' color='40ff0000' color_reverso='40eeffaa' expresión='x=r1(ua+u*(ub-ua),va+v*(vb-va));y=r2(ua+u*(ub-ua),va+v*(vb-va));z=r3(ua+u*(ub-ua),va+v*(vb-va))' cortar='sí' modelo='metal' Nu='7' Nv='10' info='S' ">
+      <param name="S_05" value="espacio='E1' tipo='segmento' color='000000' expresión='(r1(U(s),V(s)),r2(U(s),V(s)),r3(U(s),V(s))) (r1(U((s+1)%4),V((s+1)%4)),r2(U((s+1)%4),V((s+1)%4)),r3(U((s+1)%4),V((s+1)%4)))' familia='s' s.intervalo='[0,3]' s.pasos='3' ancho='1' Nu='1' info='ΔS' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(r1(U(0)+du/2,V(0)+dv/2),r2(U(0)+du/2,V(0)+dv/2),r3(U(0)+du/2,V(0)+dv/2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\cf0\f0\fs50 \i{\*\mjaformula\i ΔS\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='0' offset_angle='0' info='ΔS texto' ">
+      <param name="S_07" value="espacio='E1' tipo='segmento' color='0000ff' dibujar-si='k>0' expresión='(r1(U(s),V(s)),r2(U(s),V(s)),r3(U(s),V(s))) (r1(U(s),V(s))+k*F1,r2(U(s),V(s))+k*F2,r3(U(s),V(s))+k*F3)' familia='s' s.intervalo='[0,3]' s.pasos='3' cortar='sí' ancho='2' Nu='1' info='aristas 1' ">
+      <param name="S_08" value="espacio='E1' tipo='segmento' color='0000ff' dibujar-si='k>0' expresión='(r1(U(s),V(s))+k*F1,r2(U(s),V(s))+k*F2,r3(U(s),V(s))+k*F3) (r1(U((s+1)%4),V((s+1)%4))+k*F1,r2(U((s+1)%4),V((s+1)%4))+k*F2,r3(U((s+1)%4),V((s+1)%4))+k*F3)' familia='s' s.intervalo='[0,3]' s.pasos='3' cortar='sí' ancho='2' Nu='1' info='aristas 2' ">
+      <param name="S_09" value="espacio='E1' tipo='cara' color='a00000ff' color_reverso='a00000ff' dibujar-si='k>0' expresión='(r1(U(s),V(s)),r2(U(s),V(s)),r3(U(s),V(s))) (r1(U(s),V(s))+k*F1,r2(U(s),V(s))+k*F2,r3(U(s),V(s))+k*F3) (r1(U((s+1)%4),V((s+1)%4))+k*F1,r2(U((s+1)%4),V((s+1)%4))+k*F2,r3(U((s+1)%4),V((s+1)%4))+k*F3) (r1(U((s+1)%4),V((s+1)%4)),r2(U((s+1)%4),V((s+1)%4)),r3(U((s+1)%4),V((s+1)%4)))' familia='s' s.intervalo='[0,3]' s.pasos='3' modelo='color' info='caras' ">
+      <param name="S_10" value="espacio='E1' tipo='cara' color='a00000ff' color_reverso='a00000ff' dibujar-si='k>0' expresión='(r1(U(0),V(0))+k*F1,r2(U(0),V(0))+k*F2,r3(U(0),V(0))+k*F3) (r1(U(1),V(1))+k*F1,r2(U(1),V(1))+k*F2,r3(U(1),V(1))+k*F3) (r1(U(2),V(2))+k*F1,r2(U(2),V(2))+k*F2,r3(U(2),V(2))+k*F3) (r1(U(3),V(3))+k*F1,r2(U(3),V(3))+k*F2,r3(U(3),V(3))+k*F3)' modelo='color' info='base' ">
+      <param name="S_11" value="espacio='E1' tipo='segmento' color='008000' dibujar-si='k>=1' expresión='(r1(U(3),V(3)),r2(U(3),V(3)),r3(U(3),V(3))) (r1(U(3),V(3))+N1(U(3),V(3)),r2(U(3),V(3))+N2(U(3),V(3)),r3(U(3),V(3))+N3(U(3),V(3)))' ancho='2' Nu='1' info='N' ">
+      <param name="S_12" value="espacio='E1' tipo='punto' color='008000' color_reverso='008000' dibujar-si='k>=1' expresión='(r1(U(3),V(3))+N1(U(3),V(3)),r2(U(3),V(3))+N2(U(3),V(3)),r3(U(3),V(3))+N3(U(3),V(3)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50\i{\*\mjaformula\i\b N\b0\i0\i (u\i0{\supix\i *\i0}\i ,v\i0{\supix\i *\i0}\i )\i0}\i0\fs40 }' decimales='2' ancho='2' offset_dist='30' offset_angle='135' info='N texto' ">
+      <param name="S_13" value="espacio='E1' tipo='segmento' color='000000' dibujar-si='k>=1' expresión='(r1(U(3),V(3))+0.0251,r2(U(3),V(3))-0.1055,r3(U(3),V(3))+0.1759) (r1(U(3),V(3))+F1,r2(U(3),V(3))+F2,r3(U(3),V(3))+F3)' ancho='1' Nu='7' info='altura ' ">
+      <param name="S_14" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' dibujar-si='k>=1' expresión='(r1(U(3),V(3))+0.0251,r2(U(3),V(3))-0.1055,r3(U(3),V(3))+0.1759)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 {\*\mjaformula\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (u\i0{\supix\i *\i0}\i ,v\i0{\supix\i *\i0}\i ))·\i0\i\b N\b0\i0\i (u\i0{\supix\i *\i0}\i ,v\i0{\supix\i *\i0}\i )\i0}}' decimales='2' ancho='0' offset_dist='70' offset_angle='340' info='altura texto' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='no' repetir='no' inicio='E1.rot.y=-4.5;E1.rot.z=110;E1.escala=82;E1.Ox=0;E1.Oy=-100;k=0' hacer='roty=E1.rot.y;rotz=E1.rot.z;scl=E1.escala;Ox=E1.Ox;Oy=E1.Oy;;E1.rot.y=(roty>=4.5)?roty:roty+1;E1.rot.z=(rotz>=111)?rotz:rotz+1;E1.escala=(scl>=275)?scl:scl+2.5;E1.Ox=(Ox<=-170)?Ox:Ox-2.5;E1.Oy=(Oy>=-90)?Oy:Oy+1;;continuar=(E1.rot.y>=4.5)&&(E1.rot.z>=111)&&(E1.escala>=275)&&(E1.Ox<=-170)&&(E1.Oy>=-90);;k=continuar?k+0.02:0' mientras='k<1' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
