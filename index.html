@@ -1811,20 +1811,18 @@
 
       <!--  -->
       <div class="page">
-        <figure id="ejemplo_flujo_infinitesimo">
-          <center>
-            <img src="images/capitulo3/seccion3/ejemplo_flujo_infinitesimo.png" width="80%">
-          </center>
+        <figure id="explicacion_flujo_r2">
+          <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion3/explicacion_flujo_r2.html"></div>
         </figure>
 
         <p>tanto, si elegimos un punto arbitrario $\textbf{r}(t^*)$ dentro del pedazo, entonces todas las partículas en su vecindad tendrán el vector de velocidad $\textbf{F}(\textbf{r}(u^*,v^*))$. Durante de la unidad de tiempo, el fluido que pasa por el pedazo forma un paralelogramo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de área, entonces la masa del fluido que atraviesa la superficie equivale al área del paralelogramo.</p>
 
-        <p style="text-align-last:justify;">Uno de los lados del paralelogramo claramente mide $\Delta s$. El otro lado representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(t^*)$. Entonces dicho lado es el vector $\textbf{F}(\textbf{r}(t^*))$. La altura del paralelogramo es el producto punto de este último lado con un vector unitario normal a la curva en $t^*$. En consecuencia, la masa que atraviesa el pedazo de $C$ en una unidad de tiempo es $(\textbf{F}(\textbf{r}(t^*)) \cdot \textbf{n}(t^*)) \Delta s$, donde $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$.</p>
+        <p style="text-align-last:justify;">Uno de los lados del paralelogramo claramente mide $\Delta s$. El otro lado representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(t^*)$. Entonces dicho lado es el vector $\textbf{F}(\textbf{r}(t^*))$. La altura del paralelogramo es el producto punto de este último lado con un vector unitario normal a la curva en $t^*$. En consecuencia, la</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Por lo tanto, dado que la masa que fluye a través de un pedazo de $C$ con longitud $\Delta s$ es $\textbf{F} \cdot \textbf{n} \Delta s$, entonces la tasa de flujo con la cual el fluido fluye a través de $C$ es la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{n} ds$.</p>
+        <p>masa que atraviesa el pedazo de $C$ en una unidad de tiempo es $(\textbf{F}(\textbf{r}(t^*)) \cdot \textbf{n}(t^*)) \Delta s$, donde $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $C$ con longitud $\Delta s$ es igual a $\textbf{F} \cdot \textbf{n} \Delta s$, entonces la tasa de flujo con la cual el fluido fluye a través de $C$ es la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{n} ds$.</p>
 
         <figure id="ejemplo_flujo_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_flujo_r2.html"></div>
@@ -1832,11 +1830,13 @@
 
         <h3>Circulación</h3>
 
-        <p style="text-align-last:justify;">Una <b>curva cerrada</b> es una curva para la cual existe una parametrización $\textbf{r}(t)$, $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$ y $\textbf{r}$ es inyectiva sobre el dominio $(a,b)$. A la integral de línea del campo vectorial $\textbf{F}$ a lo largo de una curva cerrada $C$ se le llama <b>circulación</b> de $\textbf{F}$ a lo largo de $C$ y se denota con el símbolo $\oint$.</p>
+        <p style="text-align-last:justify;">Una <b>curva cerrada</b> es una curva para la cual existe una parametrización $\textbf{r}(t)$, $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$ y $\textbf{r}$ es inyectiva sobre el dominio $(a,b)$. A la integral de línea del campo</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>vectorial $\textbf{F}$ a lo largo de una curva cerrada $C$ se le llama <b>circulación</b> de $\textbf{F}$ a lo largo de $C$ y se denota con el símbolo $\oint$.</p>
+
         <p>Supongamos que $\textbf{F}$ representa la velocidad de un fluido. Nota que en una integral de línea vectorial, dado que el integrando es el producto punto de $\textbf{F}$ y $\textbf{T}$, entonces el valor de la integral se maximiza cuando estos dos vectores apuntan en la misma dirección, es cero si son ortogonales y se minimiza cuando apuntan en direcciones opuestas. Por tanto, la circulación $\oint_C \textbf{F} \cdot \textbf{T} ds$ es una medida de la tendencia del fluido a moverse en la dirección de $C$.</p>
 
         <figure id="ejemplo_circulacion">

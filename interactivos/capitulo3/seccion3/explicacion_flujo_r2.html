@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Flujo a través de una curva</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="600" height="450">
+      <param name="tamaño" value="600x450">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' fijo='sí' escala='80' O.x='-245' O.y='-30' red='no' red10='no' ejes='no' ">
+      <param name="C_01" value="id='repetir' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='►' expresión='(0,0,150,40)' color='000000' color-int='f0f8ff' fuente puntos='19' acción='animar' ">
+      <param name="C_02" value="id='parar' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='◼' expresión='(0,0,150,40)' color='000000' color-int='f0f8ff' fuente puntos='19' acción='inicio' ">
+      <param name="A_01" value="id='a' expresión='0.25' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='5' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='-3' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='1' tipo='variable' ">
+      <param name="A_05" value="id='xn' expresión='5' tipo='variable' ">
+      <param name="A_06" value="id='yn' expresión='6' tipo='variable' ">
+      <param name="A_07" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
+      <param name="A_08" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
+      <param name="A_09" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_10" value="id='Y(s)' algoritmo='no' expresión='c+dy*floor(s/(xn+1))' tipo='función' ">
+      <param name="A_11" value="id='F1' expresión='0.3' tipo='variable' ">
+      <param name="A_12" value="id='F2' expresión='0.2' tipo='variable' ">
+      <param name="A_13" value="id='__' expresión='0' tipo='variable' info='arriba de esta variable están las definiciones necesarias para dibujar el campo vectorial' ">
+      <param name="A_14" value="id='ta' expresión='0' tipo='variable' ">
+      <param name="A_15" value="id='tb' expresión='5' tipo='variable' ">
+      <param name="A_16" value="id='r1(t)' algoritmo='no' expresión='t^2/4' tipo='función' ">
+      <param name="A_17" value="id='r2(t)' algoritmo='no' expresión='cos(t)' tipo='función' ">
+      <param name="A_18" value="id='_r1(t)' algoritmo='no' expresión='(r1(t+0.0001)-r1(t))/0.0001' tipo='función' ">
+      <param name="A_19" value="id='_r2(t)' algoritmo='no' expresión='(r2(t+0.0001)-r2(t))/0.0001' tipo='función' ">
+      <param name="A_20" value="id='n1(t)' algoritmo='no' expresión='-_r2(t)/sqrt(_r1(t)^2+_r2(t)^2)' tipo='función' ">
+      <param name="A_21" value="id='n2(t)' algoritmo='no' expresión='_r1(t)/sqrt(_r1(t)^2+_r2(t)^2)' tipo='función' ">
+      <param name="A_22" value="id='pp' expresión='F1*n1(2)+F2*n2(2)' tipo='variable' info='producto punto de n(2) con F(r(2))' ">
+      <param name="A_23" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_24" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='flecha' color='400000ff' dibujar-si='k<1' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+F1,Y(s)+F2)' familia='s' s.intervalo='[0,xn*yn+xn+yn]' s.pasos='xn*yn+xn+yn' ancho='1' punta='2' flecha='400000ff' info='F(x,y)' ">
+      <param name="G_02" value="espacio='E1' tipo='curva' color='ff0000' coord_abs='no' expresión='(r1(t),r2(t))' parámetro='t' t.intervalo='[ta,tb]' t.pasos='30' ancho='2' info='r(t)' ">
+      <param name="G_03" value="espacio='E1' tipo='curva' color='000000' coord_abs='no' expresión='(r1(t),r2(t))' parámetro='t' t.intervalo='[2,2.25]' t.pasos='5' ancho='2' info='Δs' ">
+      <param name="G_04" value="espacio='E1' tipo='segmento' color='000000' coord_abs='no' expresión='(r1(2)-0.025,r2(2)-0.025) (r1(2.25)-0.025,r2(2.25)-0.025)' tamaño='2' ancho='1' lineDash='dot' info='Δs línea' ">
+      <param name="G_05" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='((r1(2)+r1(2.25)-0.05)/2, (r2(2)+r2(2.25)-0.05)/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i Δs\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_top_right' info='Δs texto' ">
+      <param name="G_06" value="espacio='E1' tipo='flecha' color='0000ff' dibujar-si='k>0' coord_abs='no' expresión='(r1(s==0?2:2.25),r2(s==0?2:2.25)) (r1(s==0?2:2.25)+k*F1,r2(s==0?2:2.25)+k*F2)' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='1' punta='2' flecha='0000ff' info='aristas' ">
+      <param name="G_07" value="espacio='E1' tipo='polígono' color='ff0000ff' dibujar-si='k>0' coord_abs='no' expresión='(r1(2),r2(2)) (r1(2)+k*F1,r2(2)+k*F2) (r1(2.25)+k*F1,r2(2.25)+k*F2) (r1(2.25),r2(2.25))' relleno='a00000ff' ancho='1' info='cara' ">
+      <param name="G_08" value="espacio='E1' tipo='texto' color='0000ff' dibujar-si='k>=1' coord_abs='no' expresión='((2*r1(2.25)+F1)/2, (2*r2(2.25)+F2)/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;}\f0\fs40 \fs50\i{\*\mjaformula\cf0\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (t\i0{\supix\i *\i0}\i ))\i0}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='F(r(t*)) texto' ">
+      <param name="G_09" value="espacio='E1' tipo='flecha' color='008000' dibujar-si='k>=1' coord_abs='no' expresión='(r1(2),r2(2)) (r1(2)+0.5*n1(2),r2(2)+0.5*n2(2))' ancho='1' punta='2' flecha='008000' info='n' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='k>=1' coord_abs='no' expresión='(r1(2)+0.5*n1(2),r2(2)+0.5*n2(2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green128\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b n\b0\i0\i (t\i0{\supix\i *\i0}\i )\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='n texto' ">
+      <param name="G_11" value="espacio='E1' tipo='segmento' color='000000' dibujar-si='k>=1' coord_abs='no' expresión='(r1(2)+pp*n1(2),r2(2)+pp*n2(2)) (r1(2)+F1,r2(2)+F2)' tamaño='0' ancho='1' lineDash='dot' info='altura' ">
+      <param name="G_12" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='k>=1' coord_abs='no' expresión='(r1(2)+pp*n1(2),r2(2)+pp*n2(2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i (\i0\i\b F\b0\i0\i (\i0\i\b r\b0\i0\i (t\i0{\supix\i *\i0}\i ))·\i0\i\b n\b0\i0\i (t\i0{\supix\i *\i0}\i ))\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_bottom_right' info='altura texto' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='no' repetir='no' inicio='E1.Ox=-245;E1.Oy=-30;E1.escala=80;k=0' hacer='Ox=E1.Ox;Oy=E1.Oy;scl=E1.escala;;E1.Ox=(Ox<=-720)?Ox:Ox-5;E1.Oy=(Oy<=-225)?Oy:Oy-4;E1.escala=(scl>=570)?scl:scl+5;;continuar=(Ox<=-720)&&(Oy<=-225)&&(scl>=570);;k=continuar?k+0.02:0' mientras='k<1' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
