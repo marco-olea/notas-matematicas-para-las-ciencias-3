@@ -31,13 +31,13 @@
       <param name="A_02" value="id='f(t)' algoritmo='no' expresión='_Eval_(f_texto)' tipo='función' ">
       <param name="A_03" value="id='g(t)' algoritmo='no' expresión='_Eval_(g_texto)' tipo='función' ">
       <param name="A_04" value="id='h(t)' algoritmo='no' expresión='_Eval_(h_texto)' tipo='función' ">
-      <param name="A_05" value="id='num_pasos_2d' expresión='20' tipo='variable' ">
-      <param name="A_06" value="id='num_pasos_3d' expresión='30' tipo='variable' ">
+      <param name="A_05" value="id='num_pasos_2d' expresión='3*ceil(b-a+0.01)' tipo='variable' ">
+      <param name="A_06" value="id='num_pasos_3d' expresión='3*ceil(b-a+0.01)' ">
       <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.rot.y=30;E2.rot.z=-42.5' ">
       <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='curva' fondo='no' color='0000ff' coord_abs='no' expresión='(f(t),g(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='num_pasos_2d' ancho='1' visible='no' editable='no' lineDash='solid' ">
-      <param name="S_01" value="espacio='E2' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
-      <param name="S_02" value="espacio='E2' tipo='curva' fondo='no' color='0000ff' expresión='x=f(a+u*(b-a));y=g(a+u*(b-a));z=h(a+u*(b-a))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='num_pasos_3d' info='curva espacial' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' fondo='no' color='0000ff' coord_abs='no' expresión='(f(t),g(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='num_pasos_2d' ancho='2' visible='no' editable='no' lineDash='solid' ">
+      <param name="S_01" value="espacio='E2' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E2' tipo='curva' fondo='no' color='0000ff' expresión='x=f(a+u*(b-a));y=g(a+u*(b-a));z=h(a+u*(b-a))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='2' Nu='num_pasos_3d' info='curva espacial' ">
     </ajs>
   </div>
 
