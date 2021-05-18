@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Tipos de regiones</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' dibujar-si='ver_r2' fijo='sí' red='no' red10='no' ">
+      <param name="E_02" value="tipo='R3' R3='sí' id='E2' dibujar-si='ver_r3' ">
+      <param name="C_01" value="id='ver_r2' tipo='checkbox' región='norte' espacio='E1' nombre='ℝ²' expresión='(0,0,150,40)' valor='1' radio_group='opcion' position='a_right' ">
+      <param name="C_02" value="id='ver_r3' tipo='checkbox' región='norte' espacio='E1' nombre='ℝ³' expresión='(0,0,150,40)' radio_group='opcion' position='a_right' ">
+      <param name="C_03" value="id='r' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='Radio' expresión='(0,520,800,40)' valor='1' min='0' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='r0' tipo='numérico' interfaz='pulsador' región='interior' espacio='E2' nombre='Radio' expresión='(0,520,400,40)' valor='2.6' min='0' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='z0' tipo='numérico' interfaz='pulsador' región='interior' espacio='E2' nombre='Altura' expresión='(400,520,400,40)' valor='1' visible='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.rot.y=30;E2.rot.z=-45' ">
+      <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="A_03" value="id='mouse_clicked' evento='sí' condición='E1.mouse_clicked' acción='calcular' parámetro='x0=E1.mouse_x;y0=E1.mouse_y' ejecución='alternar' ">
+      <param name="G_01" value="espacio='E1' tipo='arco' color='000000' dibujar-si='r>0' coord_abs='no' centro='(E1.mouse_x,E1.mouse_y)' radio='r' inicio='0' fin='360' ancho='1' info='círculo' ">
+      <param name="G_02" value="espacio='E1' tipo='punto' color='000000' dibujar-si='r==0' coord_abs='no' expresión='(E1.mouse_x,E1.mouse_y)' tamaño='2' info='punto' ">
+      <param name="G_03" value="espacio='E1' tipo='curva' fondo='sí' color='0000ff' coord_abs='no' expresión='(-4+3.5cos(t),2.5+2.5sin(t))' parámetro='t' t.intervalo='[0,2pi]' t.pasos='30' relleno='a00000ff' ancho='2' info='simplemente conexo' ">
+      <param name="G_04" value="espacio='E1' tipo='curva' fondo='sí' color='008000' coord_abs='no' expresión='(4+3.5cos(t),1+2.5sin(t))' parámetro='t' t.intervalo='[0,2pi]' t.pasos='30' relleno='a0008000' ancho='2' info='conexo ' ">
+      <param name="G_05" value="espacio='E1' tipo='polígono' fondo='sí' color='008000' coord_abs='no' expresión='(2,2) (3.5,2) (3.5,1) (2,1) (2,2)' relleno='ffffff' ancho='2' info='hueco del conexo ' ">
+      <param name="G_06" value="espacio='E1' tipo='curva' fondo='sí' color='008000' coord_abs='no' expresión='(5+0.5cos(t),0.75sin(t))' parámetro='t' t.intervalo='[0,2pi]' t.pasos='20' relleno='ffffff' ancho='2' info='hueco del conexo ' ">
+      <param name="G_07" value="espacio='E1' tipo='polígono' color='ff0000' coord_abs='no' expresión='(-3.5,-2.5) (-5,-2.5) (-5,-1.5) (-6.5,-1.5) (-6.5,-4) (-5,-4) (-5,-3) (-3.5,-3)' relleno='a0ff0000' ancho='2' info='disconexo' ">
+      <param name="G_08" value="espacio='E1' tipo='polígono' color='ff0000' coord_abs='no' expresión='(-3,-2.5) (-1.5,-2.5) (-1.5,-1.5) (0,-1.5) (0,-4) (-1.5,-4) (-1.5,-3) (-3,-3)' relleno='a0ff0000' ancho='2' info='disconexo' ">
+      <param name="S_01" value="espacio='E2' tipo='segmento' color='000000' expresión='(0,0,0) (s==0?10:0,s==1?10:0,s==2?10:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E2' tipo='curva' color='000000' dibujar-si='r>0' expresión='x=1.5+r0*cos(u*2pi);y=-3.25+r0*sin(u*2pi);z=z0' ancho='2' Nu='20*ceil(r)' info='círculo 1' ">
+      <param name="S_03" value="espacio='E2' tipo='curva' color='000000' dibujar-si='r>0' expresión='x=-3.5+r0*cos(u*2pi);y=1.5+r0*sin(u*2pi);z=z0' ancho='2' Nu='20*ceil(r)' info='círculo 2' ">
+      <param name="S_04" value="espacio='E2' tipo='esfera' color='400000ff' color_reverso='40eeffaa' expresión='Esfera' posini='(1.5,-3.25,1)' modelo='metal' ancho='5.2' Nu='15' Nv='20' info='simplemente conexo' ">
+      <param name="S_05" value="espacio='E2' tipo='superficie' color='40008000' color_reverso='40eeffaa' expresión='x=-3.5+(2.5+cos(v*2pi))*0.75cos(u*2pi) ;y=1.5+(2.5+cos(v*2pi))*0.75sin(u*2pi)  ;z=1+sin(v*2pi)' modelo='metal' Nu='25' Nv='15' info='conexo' ">
+      <param name="S_06" value="espacio='E2' tipo='cubo' color='40ff0000' color_reverso='40eeffaa' expresión='Cubo' rotini='(0,0,45)' posini='(4,2,0)' modelo='metal' ancho='3' info='disconexo' ">
+      <param name="S_07" value="espacio='E2' tipo='cubo' color='40ff0000' color_reverso='40eeffaa' expresión='Cubo' rotini='(0,0,45)' posini='(2,4,0)' modelo='metal' ancho='3' info='disconexo' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Tipos de curvas</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' ancho='50%' alto='50%' dibujar-si='ver_r2' fijo='sí' escala='30' O.y='-70' red='no' red10='no' ejes='no' info='cerrada pero no simple' ">
+      <param name="E_02" value="tipo='R2' id='E2' x='50%' ancho='50%' alto='50%' dibujar-si='ver_r2' fijo='sí' O.y='-5' red='no' red10='no' ejes='no' info='cerrada simple' ">
+      <param name="E_03" value="tipo='R2' id='E3' y='50%' ancho='50%' alto='50%' dibujar-si='ver_r2' fijo='sí' O.x='-75' red='no' red10='no' ejes='no' info='no cerrada pero simple' ">
+      <param name="E_04" value="tipo='R2' id='E4' x='50%' y='50%' ancho='50%' alto='50%' dibujar-si='ver_r2' fijo='sí' O.x='35' O.y='10' red='no' red10='no' ejes='no' info='ni cerrada y ni simple' ">
+      <param name="E_05" value="tipo='R3' R3='sí' id='E5' ancho='50%' alto='50%' dibujar-si='ver_r3' escala='30' O.x='60' info='cerrada pero no simple' ">
+      <param name="E_06" value="tipo='R3' R3='sí' id='E6' x='50%' ancho='50%' alto='50%' dibujar-si='ver_r3' escala='40' info='cerrada simple' ">
+      <param name="E_07" value="tipo='R3' R3='sí' id='E7' y='50%' ancho='50%' alto='50%' dibujar-si='ver_r3' escala='40' O.x='-100' O.y='20' info='no cerrada pero simple' ">
+      <param name="E_08" value="tipo='R3' R3='sí' id='E8' x='50%' y='50%' ancho='50%' alto='50%' dibujar-si='ver_r3' escala='40' O.x='35' info='no cerrada pero simple' ">
+      <param name="C_01" value="id='ver_r2' tipo='checkbox' región='norte' espacio='E1' nombre='ℝ²' expresión='(0,0,150,40)' valor='1' radio_group='opcion' position='a_right' ">
+      <param name="C_02" value="id='ver_r3' tipo='checkbox' región='norte' espacio='E1' nombre='ℝ³' expresión='(0,0,150,40)' radio_group='opcion' position='a_right' ">
+      <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E5.rot.y=50;E5.rot.z=20;;E6.rot.y=40;E6.rot.z=-50;;E7.rot.y=100;E7.rot.z=120;;E8.rot.y=90;E8.rot.z=110' ">
+      <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E3' tipo='texto' color='000000' coord_abs='sí' expresión='(200,280)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}\f0\fs40 No cerrada pero simple}' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="G_02" value="espacio='E3' tipo='curva' color='0000ff' coord_abs='no' expresión='(cos(t),2sin(t))' parámetro='t' t.intervalo='[pi/2,pi]' t.pasos='8' ancho='2' info='curva 1' ">
+      <param name="G_03" value="espacio='E3' tipo='curva' color='0000ff' coord_abs='no' expresión='(4cos(t),2sin(t))' parámetro='t' t.intervalo='[0,pi/2]' t.pasos='10' ancho='2' info='curva 2' ">
+      <param name="G_04" value="espacio='E3' tipo='curva' color='0000ff' coord_abs='no' expresión='(4cos(t),4sin(t))' parámetro='t' t.intervalo='[29pi/16,2pi]' t.pasos='10' ancho='2' info='curva 3' ">
+      <param name="G_05" value="espacio='E2' tipo='texto' color='000000' coord_abs='sí' expresión='(200,280)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 Cerrada simple}' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="G_06" value="espacio='E2' tipo='curva' color='0000ff' coord_abs='no' expresión='(3cos(t),1+sin(t))' parámetro='t' t.intervalo='[0,pi]' t.pasos='15' ancho='2' info='curva 1' ">
+      <param name="G_07" value="espacio='E2' tipo='curva' color='0000ff' coord_abs='no' expresión='(3cos(t),-1+sin(t))' parámetro='t' t.intervalo='[pi,2pi]' t.pasos='15' ancho='2' info='curva 2' ">
+      <param name="G_08" value="espacio='E2' tipo='curva' color='0000ff' coord_abs='no' expresión='(3+cos(t),sin(t))' parámetro='t' t.intervalo='[pi/2,3pi/2]' t.pasos='14' ancho='2' info='curva 3' ">
+      <param name="G_09" value="espacio='E2' tipo='curva' color='0000ff' coord_abs='no' expresión='(-3+cos(t),sin(t))' parámetro='t' t.intervalo='[3pi/2,5pi/2]' t.pasos='14' ancho='2' info='curva 4' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' color='000000' coord_abs='sí' expresión='(200,280)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 Cerrada pero no simple}' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="G_11" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='(cos(t),2sin(t))' parámetro='t' t.intervalo='[pi/2,3pi/2]' t.pasos='15' ancho='2' info='curva 1' ">
+      <param name="G_12" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='(2cos(t),2sin(t))' parámetro='t' t.intervalo='[3pi/2,5pi/2]' t.pasos='18' ancho='2' info='curva 2' ">
+      <param name="G_13" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='(cos(t),-4+2sin(t))' parámetro='t' t.intervalo='[3pi/2,5pi/2]' t.pasos='15' ancho='2' info='curva 3' ">
+      <param name="G_14" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='(2cos(t),-4+2sin(t))' parámetro='t' t.intervalo='[pi/2,3pi/2]' t.pasos='18' ancho='2' info='curva 4' ">
+      <param name="G_15" value="espacio='E4' tipo='texto' color='000000' coord_abs='sí' expresión='(200,280)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 Ni cerrada ni simple}' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="G_16" value="espacio='E4' tipo='curva' color='0000ff' coord_abs='no' expresión='(3.5cos(t),1.5sin(t))' parámetro='t' t.intervalo='[3pi/2,7pi/4]' t.pasos='8' ancho='2' info='curva 1' ">
+      <param name="G_17" value="espacio='E4' tipo='curva' color='0000ff' coord_abs='no' expresión='(2cos(t),0.5+2sin(t))' parámetro='t' t.intervalo='[0,3pi/2]' t.pasos='30' ancho='2' info='curva 2' ">
+      <param name="G_18" value="espacio='E4' tipo='curva' color='0000ff' coord_abs='no' expresión='(-1+3cos(t),0.5+sin(t))' parámetro='t' t.intervalo='[pi,2pi]' t.pasos='25' ancho='2' info='curva 3' ">
+      <param name="S_01" value="espacio='E5' tipo='texto' color='000000' expresión='[200,280]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 Cerrada pero no simple}' decimales='2' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="S_02" value="espacio='E5' tipo='curva' color='0000ff' expresión='a=pi/2;b=3pi/2;x=cos(a+u*(b-a));y=2sin(a+u*(b-a));z=u*pi' ancho='2' Nu='12' info='curva 1' ">
+      <param name="S_03" value="espacio='E5' tipo='curva' color='0000ff' expresión='a=3pi/2;b=5pi/2;x=2cos(a+u*(b-a));y=2sin(a+u*(b-a));z=pi*(1-u)' ancho='2' Nu='12' info='curva 2' ">
+      <param name="S_04" value="espacio='E5' tipo='curva' color='0000ff' expresión='a=3pi/2;b=5pi/2;x=cos(a+u*(b-a));y=-4+2sin(a+u*(b-a));z=u*pi' ancho='2' Nu='12' info='curva 3' ">
+      <param name="S_05" value="espacio='E5' tipo='curva' color='0000ff' expresión='a=pi/2;b=3pi/2;x=2cos(a+u*(b-a));y=-4+2sin(a+u*(b-a));z=pi*(1-u)' ancho='2' Nu='12' info='curva 4' ">
+      <param name="S_06" value="espacio='E6' tipo='texto' color='000000' expresión='[200,280]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 Cerrada simple}' decimales='2' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="S_07" value="espacio='E6' tipo='curva' color='0000ff' expresión='a=0;b=pi;x=3cos(a+u*(b-a));y=1+sin(a+u*(b-a));z=u*pi' ancho='2' Nu='12' info='curva 1' ">
+      <param name="S_08" value="espacio='E6' tipo='curva' color='0000ff' expresión='a=pi;b=2pi;x=3cos(a+u*(b-a));y=-1+sin(a+u*(b-a));z=u*pi' ancho='2' Nu='12' info='curva 2' ">
+      <param name="S_09" value="espacio='E6' tipo='curva' color='0000ff' expresión='a=pi/2;b=3pi/2;x=3+cos(a+u*(b-a));y=sin(a+u*(b-a));z=u*pi' ancho='2' Nu='12' info='curva 3' ">
+      <param name="S_10" value="espacio='E6' tipo='curva' color='0000ff' expresión='a=3pi/2;b=5pi/2;x=-3+cos(a+u*(b-a));y=sin(a+u*(b-a));z=u*pi' ancho='2' Nu='12' info='curva 4' ">
+      <param name="S_11" value="espacio='E7' tipo='texto' color='000000' expresión='[200,280]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}\f0\fs40 No cerrada pero simple}' decimales='2' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="S_12" value="espacio='E7' tipo='curva' color='0000ff' expresión='a=pi/2;b=pi;x=cos(a+u*(b-a));y=2sin(a+u*(b-a));z=u*pi' ancho='2' Nu='8' info='curva 1' ">
+      <param name="S_13" value="espacio='E7' tipo='curva' color='0000ff' expresión='a=0;b=pi/2;x=4cos(a+u*(b-a));y=2sin(a+u*(b-a));z=pi*(1-u)' ancho='2' Nu='12' info='curva 2' ">
+      <param name="S_14" value="espacio='E7' tipo='curva' color='0000ff' expresión='a=29pi/16;b=2pi;x=4cos(a+u*(b-a));y=4sin(a+u*(b-a));z=pi*(2-u)' ancho='2' Nu='8' info='curva 3' ">
+      <param name="S_15" value="espacio='E8' tipo='texto' color='000000' expresión='[200,280]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Arial;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 Ni cerrada ni simple}' decimales='2' ancho='1' align='a_left' anchor='a_bottom_center' info='texto' ">
+      <param name="S_16" value="espacio='E8' tipo='curva' color='0000ff' expresión='a=3pi/2;b=7pi/4;x=3.5cos(a+u*(b-a));y=1.5sin(a+u*(b-a));z=pi+u' ancho='2' Nu='8' info='curva 1' ">
+      <param name="S_17" value="espacio='E8' tipo='curva' color='0000ff' expresión='a=0;b=3pi/2;x=2cos(a+u*(b-a));y=0.5+2sin(a+u*(b-a));z=u*pi' ancho='2' Nu='30' info='curva 2' ">
+      <param name="S_18" value="espacio='E8' tipo='curva' color='0000ff' expresión='a=pi;b=2pi;x=-1+3cos(a+u*(b-a));y=0.5+sin(a+u*(b-a));z=1.34pi*(1-u)' ancho='2' Nu='25' info='curva 3' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

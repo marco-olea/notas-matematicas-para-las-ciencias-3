@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ejemplo de un campo vectorial independiente de trayectoria</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="1000">
+      <param name="tamaño" value="800x1000">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' alto='60%' fijo='sí' escala='52' O.x='-195' O.y='160' red='no' red10='no' ejes='000000' eje-x='x' eje-y='y' border_width='1' ">
+      <param name="E_02" value="tipo='R3' R3='sí' id='E2' y='60%' ancho='50%' alto='40%' escala='38' O.x='-120' O.y='100' border_width='1' ">
+      <param name="E_03" value="tipo='R3' R3='sí' id='E3' x='50%' y='60%' ancho='50%' alto='40%' escala='38' O.x='-120' O.y='100' border_width='1' ">
+      <param name="C_01" value="id='s0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₀' expresión='(250,509,300,40)' valor='sa' incr='0.05' min='sa' max='sb' decimales='5' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='r0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₁' expresión='(250,509,300,40)' valor='ra' incr='0.05' min='ra' max='rb' decimales='5' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='a' expresión='-5' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='12' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='-3' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='9' tipo='variable' ">
+      <param name="A_05" value="id='xn' expresión='12' tipo='variable' ">
+      <param name="A_06" value="id='yn' expresión='12' tipo='variable' ">
+      <param name="A_07" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
+      <param name="A_08" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
+      <param name="A_09" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_10" value="id='Y(s)' algoritmo='no' expresión='c+dy*floor(s/(xn+1))' tipo='función' ">
+      <param name="A_11" value="id='F1(x,y)' algoritmo='no' expresión='-y/10' tipo='función' ">
+      <param name="A_12" value="id='F2(x,y)' algoritmo='no' expresión='(2y-x)/10' tipo='función' ">
+      <param name="A_13" value="id='__' expresión='0' tipo='variable' info='arriba de esta variable están las definiciones necesarias para dibujar el campo vectorial' ">
+      <param name="A_14" value="id='k' expresión='1' tipo='variable' info='factor para reducir el tamaño de algunos vectores como r&squot;(t)' ">
+      <param name="A_15" value="id='f(x,y)' algoritmo='no' expresión='y^2-x*y' tipo='función' info='función potencial' ">
+      <param name="A_16" value="id='ra' expresión='0' tipo='variable' ">
+      <param name="A_17" value="id='rb' expresión='2pi' tipo='variable' ">
+      <param name="A_18" value="id='r1(t)' algoritmo='no' expresión='-t^2+2pi*t' tipo='función' ">
+      <param name="A_19" value="id='r2(t)' algoritmo='no' expresión='t' tipo='función' ">
+      <param name="A_20" value="id='_r1(t)' algoritmo='no' expresión='(r1(t+0.0001)-r1(t))/0.0001' tipo='función' ">
+      <param name="A_21" value="id='_r2(t)' algoritmo='no' expresión='(r2(t+0.0001)-r2(t))/0.0001' tipo='función' ">
+      <param name="A_22" value="id='Tr1(t)' algoritmo='no' expresión='_r1(t)/sqrt(_r1(t)^2+_r2(t)^2)' tipo='función' info='r&squot;(t)/|r&squot;(t)|' ">
+      <param name="A_23" value="id='Tr2(t)' algoritmo='no' expresión='_r2(t)/sqrt(_r1(t)^2+_r2(t)^2)' tipo='función' info='r&squot;(t)/|r&squot;(t)|' ">
+      <param name="A_24" value="id='ppr(t)' algoritmo='no' expresión='F1(r1(t),r2(t))*_r1(t)+F2(r1(t),r2(t))*_r2(t)' tipo='función' info='F(r(t))•r&squot;(t)' ">
+      <param name="A_25" value="id='sa' expresión='0' tipo='variable' ">
+      <param name="A_26" value="id='sb' expresión='2pi' tipo='variable' ">
+      <param name="A_27" value="id='s1(t)' algoritmo='no' expresión='3sin(t)' tipo='función' ">
+      <param name="A_28" value="id='s2(t)' algoritmo='no' expresión='t' tipo='función' ">
+      <param name="A_29" value="id='_s1(t)' algoritmo='no' expresión='(s1(t+0.0001)-s1(t))/0.0001' tipo='función' ">
+      <param name="A_30" value="id='_s2(t)' algoritmo='no' expresión='(s2(t+0.0001)-s2(t))/0.0001' tipo='función' ">
+      <param name="A_31" value="id='Ts1(t)' algoritmo='no' expresión='_s1(t)/sqrt(_s1(t)^2+_s2(t)^2)' tipo='función' info='s&squot;(t)/|s&squot;(t)|' ">
+      <param name="A_32" value="id='Ts2(t)' algoritmo='no' expresión='_s2(t)/sqrt(_s1(t)^2+_s2(t)^2)' tipo='función' info='s&squot;(t)/|s&squot;(t)|' ">
+      <param name="A_33" value="id='pps(t)' algoritmo='no' expresión='F1(s1(t),s2(t))*_s1(t)+F2(s1(t),s2(t))*_s2(t)' tipo='función' info='F(s(t))•s&squot;(t)' ">
+      <param name="A_34" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.rot.z=90;E2.rot.y=90;;E3.rot.y=90;E3.rot.z=90' ">
+      <param name="A_35" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='flecha' color='400000ff' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+F1(X(s),Y(s)),Y(s)+F2(X(s),Y(s)))' familia='s' s.intervalo='[0,xn*yn+xn+yn]' s.pasos='xn*yn+xn+yn' ancho='1' punta='1' flecha='400000ff' info='F(x,y)' ">
+      <param name="G_02" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(-7,0.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i\b F\b0\i0}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_center_right' info='F(x,y) texto' ">
+      <param name="G_03" value="espacio='E1' tipo='curva' color='ff0000' coord_abs='no' expresión='(r1(t),r2(t))' parámetro='t' t.intervalo='[ra,rb]' t.pasos='30' ancho='2' info='r(t)' ">
+      <param name="G_04" value="espacio='E1' tipo='texto' color='ff0000' coord_abs='no' expresión='(r1((ra+rb)/2),r2((ra+rb)/2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;}\cf0\f0\fs40 \fs50{\*\mjaformula\i\b r\b0\i0{\subix\i\b 1\b0\i0}\i (t)\i0}\fs40 }' ancho='1' align='a_left' anchor='a_bottom_left' info='r(t) texto' ">
+      <param name="G_05" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(r1(r0),r2(r0)) (r1(r0)+F1(r1(r0),r2(r0)),r2(r0)+F2(r1(r0),r2(r0)))' ancho='1' punta='2' flecha='0000ff' info='F(r(t₀))' ">
+      <param name="G_06" value="espacio='E1' tipo='flecha' color='cccc00' coord_abs='no' expresión='(r1(r0),r2(r0)) (r1(r0)+k*_r1(r0),r2(r0)+k*_r2(r0))' ancho='1' punta='2' flecha='cccc00' info='r&squot;(t₀)' ">
+      <param name="G_07" value="espacio='E1' tipo='segmento' color='008000' coord_abs='no' expresión='(r1(r0),r2(r0)) (r1(r0)+ppr(r0)*Tr1(r0),r2(r0)+ppr(r0)*Tr2(r0))' tamaño='0' ancho='2' info='F(r(t₀))•r&squot;(t₀)' ">
+      <param name="G_08" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='(r1(r0),r2(r0))' tamaño='3' info='r(t₀)' ">
+      <param name="G_09" value="espacio='E1' tipo='curva' color='ff00ff' coord_abs='no' expresión='(s1(t),s2(t))' parámetro='t' t.intervalo='[sa,sb]' t.pasos='30' ancho='2' info='s(t)' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' color='ff00ff' coord_abs='no' expresión='(s1((sa+sb)/2),s2((sa+sb)/2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red255\green0\blue255;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b r\b0\i0{\subix\i\b 0\b0\i0}\i (t)\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_top_right' info='s(t) texto' ">
+      <param name="G_11" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(s1(s0),s2(s0)) (s1(s0)+F1(s1(s0),s2(s0)),s2(s0)+F2(s1(s0),s2(s0)))' ancho='1' punta='2' flecha='0000ff' info='F(s(t₀))' ">
+      <param name="G_12" value="espacio='E1' tipo='flecha' color='cccc00' coord_abs='no' expresión='(s1(s0),s2(s0)) (s1(s0)+k*_s1(s0),s2(s0)+k*_s2(s0))' ancho='1' punta='2' flecha='cccc00' info='s&squot;(t₀)' ">
+      <param name="G_13" value="espacio='E1' tipo='segmento' color='000000' coord_abs='no' expresión='(s1(s0),s2(s0)) (s1(s0)+pps(s0)*Ts1(s0),s2(s0)+pps(s0)*Ts2(s0))' tamaño='0' ancho='2' info='F(s(t₀))•s&squot;(t₀)' ">
+      <param name="G_14" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='(s1(s0),s2(s0))' tamaño='3' info='s(t₀)' ">
+      <param name="S_01" value="espacio='E3' tipo='segmento' color='000000' expresión='(s==0?-15:0,s==1?-15:0,0) (s==0?15:0,s==1?15:0,0)' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(ra,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red255\green0\blue0;}\f0\fs40 \cf0\i{\*\mjaformula\i a\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='10' offset_angle='270' info='a' ">
+      <param name="S_03" value="espacio='E3' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(rb,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red255\green0\blue0;}\f0\fs40 \cf0\i{\*\mjaformula\i b\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='10' offset_angle='270' info='b' ">
+      <param name="S_04" value="espacio='E3' tipo='curva' color='008000' expresión='x=ra+u*(r0-ra) y=k*ppr(x) z=0' ancho='2' Nu='3*ceil(r0-ra+0.01)' info='F(r(t))•r&squot;(t)' ">
+      <param name="S_05" value="espacio='E3' tipo='superficie' color='a0008000' color_reverso='a0008000' expresión='x=ra+u*(r0-ra);y=v*k*ppr(x);z=0' modelo='color' Nu='3*ceil(r0-ra+0.01)' Nv='1' info='área' ">
+      <param name="S_06" value="espacio='E3' tipo='texto' color='008000' expresión='[165,190]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green128\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b F\b0\i0\i (\i0\i\b r\b0\i0{\subix\i 1\i0}\i (t))·\i0\i\b r\b0\i0{\subix\i 1\i0}\i &squot;(t)\i0}\cf0\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_center_center' info='F(r(t))•r&squot;(t) texto' ">
+      <param name="S_07" value="espacio='E3' tipo='texto' color='00c000' expresión='[190,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green160\blue0;\red255\green0\blue0;}\cf0\f0\fs40 área bajo la curva = {\*\mjaformula\i{\expr f(r1(r0),r2(r0))-f(r1(ra),r2(ra))\decimals 2\fixed1}\i0}\cf1 }' decimales='2' ancho='1' align='a_left' anchor='a_center_center' info='área texto' ">
+      <param name="S_08" value="espacio='E2' tipo='segmento' color='000000' expresión='(s==0?-15:0,s==1?-15:0,0) (s==0?15:0,s==1?15:0,0)' familia='s' s.intervalo='[0,1]' s.pasos='1' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_09" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(sa,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red255\green0\blue0;}\f0\fs40 \cf0\i{\*\mjaformula\i a\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='10' offset_angle='270' info='a' ">
+      <param name="S_10" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(sb,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red255\green0\blue0;}\f0\fs40 \cf0\i{\*\mjaformula\i b\i0}\i0\cf1 }' decimales='2' ancho='0' offset_dist='10' offset_angle='270' info='b' ">
+      <param name="S_11" value="espacio='E2' tipo='curva' color='000000' expresión='x=sa+u*(s0-sa) y=k*pps(x) z=0' ancho='2' Nu='4*ceil(s0-sa+0.01)' info='F(s(t))•s&squot;(t)' ">
+      <param name="S_12" value="espacio='E2' tipo='superficie' color='a0000000' color_reverso='a0000000' expresión='x=sa+u*(s0-sa);y=v*k*pps(x);z=0' modelo='color' Nu='4*ceil(s0-sa+0.01)' Nv='1' info='área' ">
+      <param name="S_13" value="espacio='E2' tipo='texto' color='008000' expresión='[165,190]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b F\b0\i0\i (\i0\i\b r\b0\i0{\subix\i 0\i0}\i (t))·\i0\i\b r\b0\i0{\subix\i 0\i0}\i &squot;(t)\i0}\cf0\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_center_center' info='F(s(t))•s&squot;(t) texto' ">
+      <param name="S_14" value="espacio='E2' tipo='texto' color='00c000' expresión='[190,50]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red255\green0\blue0;}\cf0\f0\fs40 área bajo la curva = {\*\mjaformula\i{\expr f(s1(s0),s2(s0))-f(s1(sa),s2(sa))\decimals 2\fixed1}\i0}\cf1 }' decimales='2' ancho='1' align='a_left' anchor='a_center_center' info='área texto' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
