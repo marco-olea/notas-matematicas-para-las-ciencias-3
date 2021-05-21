@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Teorema de Green en regiones generales</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' dibujar-si='ver_D1D2' fijo='sí' O.y='90' red='no' red10='no' ejes='000000' eje-x='x' eje-y='y' info='D₁∪D₂' ">
+      <param name="E_02" value="tipo='R2' id='E2' dibujar-si='ver_D' fijo='sí' O.y='90' red='no' red10='no' ejes='000000' eje-x='x' eje-y='y' info='D' ">
+      <param name="C_01" value="id='ver_D' tipo='checkbox' región='norte' espacio='E1' nombre='D' expresión='(0,0,150,40)' valor='1' radio_group='opcion' font_family='Serif' cursiva='sí' position='a_right' ">
+      <param name="C_02" value="id='ver_D1D2' tipo='checkbox' región='norte' espacio='E1' nombre='D₁ ∪ D₂' expresión='(0,0,150,40)' radio_group='opcion' font_family='Serif' cursiva='sí' position='a_right' ">
+      <param name="A_01" value="id='a' vector='sí' evaluar='una-sola-vez' tamaño='15' expresión='a[0]=0;a[1]=-6;a[2]=0;a[3]=-1;a[4]=0;a[5]=4;;a[6]=pi;a[7]=4;a[8]=pi;a[9]=-1;a[10]=pi;a[11]=-6;;a[12]=0;a[13]=0;a[14]=0' tipo='vector' info='intervalos de las curvas (límite inferior)' ">
+      <param name="A_02" value="id='b' vector='sí' evaluar='una-sola-vez' tamaño='15' expresión='b[0]=pi;b[1]=-4;b[2]=pi;b[3]=1;b[4]=pi;b[5]=6;;b[6]=2pi;b[7]=6;b[8]=2pi;b[9]=1;b[10]=2pi;b[11]=-4;;b[12]=2pi;b[13]=2pi;b[14]=2pi' tipo='vector' info='intervalos de las curvas (límite superior)' ">
+      <param name="A_03" value="id='pasos' vector='sí' evaluar='una-sola-vez' tamaño='15' expresión='pasos[0]=25;pasos[1]=1;pasos[2]=20;pasos[3]=1;pasos[4]=20;pasos[5]=1;;pasos[6]=25;pasos[7]=1;pasos[8]=20;pasos[9]=1;pasos[10]=20;pasos[11]=1;;pasos[12]=50;pasos[13]=40;pasos[14]=40;' tipo='vector' info='pasos para dibujar las curvas' ">
+      <param name="A_04" value="id='r' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='15' expresión='r[0,0]=&squot;6cos(t)&squot;;r[0,1]=&squot;3sin(t)+3&squot;;r[1,0]=&squot;t&squot;;r[1,1]=&squot;3&squot;;r[2,0]=&squot;1.5cos(pi-t)-2.5&squot;;r[2,1]=&squot;1.5sin(pi-t)+3&squot;;r[3,0]=&squot;t&squot;;r[3,1]=&squot;3&squot;;r[4,0]=&squot;1.5cos(pi-t)+2.5&squot;;r[4,1]=&squot;1.5sin(pi-t)+3&squot;;r[5,0]=&squot;t&squot;;r[5,1]=&squot;3&squot;;;r[6,0]=&squot;6cos(t)&squot;;r[6,1]=&squot;3sin(t)+1&squot;;r[7,0]=&squot;10-t&squot;;r[7,1]=&squot;1&squot;;r[8,0]=&squot;1.5cos(pi-t)+2.5&squot;;r[8,1]=&squot;1.5sin(pi-t)+1&squot;;r[9,0]=&squot;-t&squot;;r[9,1]=&squot;1&squot;;r[10,0]=&squot;1.5cos(pi-t)-2.5&squot;;r[10,1]=&squot;1.5sin(pi-t)+1&squot;;r[11,0]=&squot;-10-t&squot;;r[11,1]=&squot;1&squot;;;r[12,0]=&squot;6cos(t)&squot;;r[12,1]=&squot;3sin(t)+2&squot;;r[13,0]=&squot;1.5cos(2pi-t)+2.5&squot;;r[13,1]=&squot;1.5sin(2pi-t)+2&squot;;r[14,0]=&squot;1.5cos(2pi-t)-2.5&squot;;r[14,1]=&squot;1.5sin(2pi-t)+2&squot;;;;;;' tipo='matriz' info='curvas que conforman la curva grande' ">
+      <param name="A_05" value="id='r1(s,t)' algoritmo='no' expresión='_Eval_(r[s,0])' tipo='función' info='curva #s' ">
+      <param name="A_06" value="id='r2(s,t)' algoritmo='no' expresión='_Eval_(r[s,1])' tipo='función' info='curva #s' ">
+      <param name="A_07" value="id='_r1(s,t)' algoritmo='no' expresión='(r1(s,t+0.0001)-r1(s,t))/0.0001' tipo='función' info='tangente de la curva #s' ">
+      <param name="A_08" value="id='_r2(s,t)' algoritmo='no' expresión='(r2(s,t+0.0001)-r2(s,t))/0.0001' tipo='función' info='tangente de la curva #s' ">
+      <param name="A_09" value="id='T1(s,t)' algoritmo='no' expresión='_r1(s,t)/sqrt(_r1(s,t)^2+_r2(s,t)^2)' tipo='función' info='tangente unitario de la curva #s' ">
+      <param name="A_10" value="id='T2(s,t)' algoritmo='no' expresión='_r2(s,t)/sqrt(_r1(s,t)^2+_r2(s,t)^2)' tipo='función' info='tangente unitario de la curva actual i' ">
+      <param name="A_11" value="id='dt(s)' algoritmo='no' expresión='(b[s]-a[s])/50' tipo='función' info='Δt de la curva #s' ">
+      <param name="A_12" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_13" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' fondo='sí' color='0000ff' coord_abs='no' expresión='(_Eval_(r[s,0]), _Eval_(r[s,1]))' familia='s' s.intervalo='[0,11]' s.pasos='11' parámetro='t' t.intervalo='[a[s],b[s]]' t.pasos='pasos[s]' ancho='2' info='curvas' ">
+      <param name="G_02" value="espacio='E1' tipo='relleno' fondo='sí' color='a00000ff' coord_abs='no' expresión='(s==0?-3:(s==1?3:(s==2?-5:(s==3?-1:(s==4?-1:(s==5?1:(s==6?1:5)))))), s==0?5:(s==1?5:(s==2?0.5:(s==3?0.5:(s==4?-1:(s==5?0.5:(s==6?-1:0.5)))))))' familia='s' s.intervalo='[0,7]' s.pasos='7' info='relleno' ">
+      <param name="G_03" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(r1(i,ti),r2(i,ti)) (r1(i,ti)+0.15*T1(i,ti),r2(i,ti)+0.15*T2(i,ti))' ancho='2' punta='5' flecha='0000ff' info='flecha i' ">
+      <param name="G_04" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(r1(j,tj),r2(j,tj)) (r1(j,tj)+0.15*T1(j,tj),r2(j,tj)+0.15*T2(j,tj))' ancho='2' punta='5' flecha='0000ff' info='flecha j' ">
+      <param name="G_05" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(-5.75,4)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i C\i0{\subix\i 1\i0}}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_bottom_right' info='C₁' ">
+      <param name="G_06" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(5.75,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i C\i0{\subix\i 2\i0}}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='C₂' ">
+      <param name="G_07" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(0,4.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i D\i0{\subix\i 1\i0}}\i0\fs40 }' ancho='1' align='a_left' anchor='a_center_center' info='D₁' ">
+      <param name="G_08" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(0,-0.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i D\i0{\subix\i 2\i0}}\i0\fs40 }' ancho='1' align='a_left' anchor='a_center_center' info='D₂' ">
+      <param name="G_09" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(0,6)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 1\i0}}\i0 }' ancho='1' align='a_left' anchor='a_bottom_center' info='P₁' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(-5,3)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 2\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='P₂' ">
+      <param name="G_11" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(-2.5,4.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 3\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='P₃' ">
+      <param name="G_12" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(0,3)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 4\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='P₄' ">
+      <param name="G_13" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(2.5,4.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 5\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='P₅' ">
+      <param name="G_14" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(5,3)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 6\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='P₆' ">
+      <param name="G_15" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(2.5,-0.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 7\i0}}\i0 }' ancho='1' align='a_left' anchor='a_bottom_center' info='P₇' ">
+      <param name="G_16" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(-2.5,-0.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 8\i0}}\i0 }' ancho='1' align='a_left' anchor='a_bottom_center' info='P₈' ">
+      <param name="G_17" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(0,-2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \i{\*\mjaformula\i P\i0{\subix\i 9\i0}}\i0 }' ancho='1' align='a_left' anchor='a_top_center' info='P₉' ">
+      <param name="G_18" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(-5,1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 {\*\mjaformula\i −P\i0{\subix\i 2\i0}}}' ancho='1' align='a_left' anchor='a_bottom_center' info='-P₂' ">
+      <param name="G_19" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(0,1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 {\*\mjaformula\i −P\i0{\subix\i 4\i0}}}' ancho='1' align='a_left' anchor='a_bottom_center' info='-P₄' ">
+      <param name="G_20" value="espacio='E1' tipo='texto' color='000000' coord_abs='no' expresión='(5,1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 {\*\mjaformula\i −P\i0{\subix\i 6\i0}}}' ancho='1' align='a_left' anchor='a_bottom_center' info='-P₆' ">
+      <param name="G_21" value="espacio='E2' tipo='curva' fondo='sí' color='0000ff' coord_abs='no' expresión='(_Eval_(r[s+12,0]), _Eval_(r[s+12,1]))' familia='s' s.intervalo='[0,2]' s.pasos='2' parámetro='t' t.intervalo='[a[s+12],b[s+12]]' t.pasos='pasos[s+12]' ancho='2' info='curvas' ">
+      <param name="G_22" value="espacio='E2' tipo='relleno' fondo='sí' color='a00000ff' coord_abs='no' expresión='(s<=1?-1:1, s%2==0?0.5:-0.5)' familia='s' s.intervalo='[0,3]' s.pasos='3' info='relleno' ">
+      <param name="G_23" value="espacio='E2' tipo='flecha' color='0000ff' coord_abs='no' expresión='(r1(12,tk),r2(12,tk)) (r1(12,tk)+0.15*T1(12,tk),r2(12,tk)+0.15*T2(12,tk))' ancho='2' punta='5' flecha='0000ff' info='flecha k' ">
+      <param name="G_24" value="espacio='E2' tipo='flecha' color='0000ff' coord_abs='no' expresión='(r1(13,tl),r2(13,tl)) (r1(13,tl)+0.15*T1(13,tl),r2(13,tl)+0.15*T2(13,tl))' ancho='2' punta='5' flecha='0000ff' info='flecha l' ">
+      <param name="G_25" value="espacio='E2' tipo='flecha' color='0000ff' coord_abs='no' expresión='(r1(14,tm),r2(14,tm)) (r1(14,tm)+0.15*T1(14,tm),r2(14,tm)+0.15*T2(14,tm))' ancho='2' punta='5' flecha='0000ff' info='flecha m' ">
+      <param name="G_26" value="espacio='E2' tipo='texto' color='20303a' coord_abs='no' expresión='(1,-1)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i C\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='C₁' ">
+      <param name="G_27" value="espacio='E2' tipo='texto' color='20303a' coord_abs='no' expresión='(0,2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs40 \fs50{\*\mjaformula\i D\i0}\fs40 }' ancho='1' align='a_left' anchor='a_center_center' info='D₁' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='no' inicio='i=0;ti=a[0];j=6;tj=a[6];tk=a[12];tl=(a[13]+b[13])/2;tm=a[14]' hacer='siguiente_i=ti+dt(i)>b[i]    // determina si se pasará a la siguiente curva;i=siguiente_i?(i+1)%6:i;ti=siguiente_i?a[i]:ti+dt(i);;siguiente_j=tj+dt(j)>b[j]    ;j=siguiente_j?(j+1)%6+6:j;tj=siguiente_j?a[j]:tj+dt(j);;tk=tk+dt(12)/3;tk=(tk>b[12])?a[12]:tk;;tl=tl+dt(13)/2;tl=(tl>b[13])?a[13]:tl;;tm=tm+dt(14)/2;tm=(tm>b[14])?a[14]:tm' mientras='1' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Convención de orientación para el teorema de Green</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' fijo='sí' O.x='120' O.y='-70' red='no' red10='no' ejes='000000' eje-x='x' eje-y='y' ">
+      <param name="A_01" value="id='a' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='a[0]=-3pi/2;a[1]=pi/2;a[2]=-3pi/2;a[3]=-9pi/4;' tipo='vector' info='intervalos de las curvas (límite inferior)' ">
+      <param name="A_02" value="id='b' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='b[0]=3pi/2;b[1]=3pi/2;b[2]=(3sqrt(2)+3pi-6)/2;b[3]=0;' tipo='vector' info='intervalos de las curvas (límite superior)' ">
+      <param name="A_03" value="id='pasos' vector='sí' evaluar='una-sola-vez' tamaño='4' expresión='pasos[0]=35;pasos[1]=25;pasos[2]=1;pasos[3]=25;' tipo='vector' info='pasos para dibujar las curvas' ">
+      <param name="A_04" value="id='r' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='4' expresión='r[0,0]=&squot;-t&squot;;r[0,1]=&squot;2sin(-t)+2&squot;;;r[1,0]=&squot;5cos(t)-3pi/2&squot;;r[1,1]=&squot;5sin(t)-1&squot;;;r[2,0]=&squot;t&squot;;r[2,1]=&squot;(4-3pi/2)/(sqrt(2)+2pi-2)*t-6+(12pi-9/2*pi^2)/(2sqrt(2)+4pi-4)&squot;;;r[3,0]=&squot;3cos(t)+3pi/2-3&squot;;r[3,1]=&squot;t&squot;;;;' tipo='matriz' info='curvas que conforman la curva grande' ">
+      <param name="A_05" value="id='ri1(t)' algoritmo='no' expresión='_Eval_(r[i,0])' tipo='función' info='curva actual i' ">
+      <param name="A_06" value="id='ri2(t)' algoritmo='no' expresión='_Eval_(r[i,1])' tipo='función' info='curva actual i' ">
+      <param name="A_07" value="id='_ri1(t)' algoritmo='no' expresión='(ri1(t+0.0001)-ri1(t))/0.0001' tipo='función' info='tangente de la curva actual i' ">
+      <param name="A_08" value="id='_ri2(t)' algoritmo='no' expresión='(ri2(t+0.0001)-ri2(t))/0.0001' tipo='función' info='tangente de la curva actual i' ">
+      <param name="A_09" value="id='Ti1(t)' algoritmo='no' expresión='_ri1(t)/sqrt(_ri1(t)^2+_ri2(t)^2)' tipo='función' info='tangente unitario de la curva actual i' ">
+      <param name="A_10" value="id='Ti2(t)' algoritmo='no' expresión='_ri2(t)/sqrt(_ri1(t)^2+_ri2(t)^2)' tipo='función' info='tangente unitario de la curva actual i' ">
+      <param name="A_11" value="id='dti' expresión='(b[i]-a[i])/100' tipo='variable' ">
+      <param name="A_12" value="id='rj1(t)' algoritmo='no' expresión='_Eval_(r[j,0])' tipo='función' info='curva actual j' ">
+      <param name="A_13" value="id='rj2(t)' algoritmo='no' expresión='_Eval_(r[j,1])' tipo='función' info='curva actual j' ">
+      <param name="A_14" value="id='_rj1(t)' algoritmo='no' expresión='(rj1(t+0.0001)-rj1(t))/0.0001' tipo='función' info='tangente de la curva actual j' ">
+      <param name="A_15" value="id='_rj2(t)' algoritmo='no' expresión='(rj2(t+0.0001)-rj2(t))/0.0001' tipo='función' info='tangente de la curva actual j' ">
+      <param name="A_16" value="id='Tj1(t)' algoritmo='no' expresión='_rj1(t)/sqrt(_rj1(t)^2+_rj2(t)^2)' tipo='función' info='tangente unitario de la curva actual j' ">
+      <param name="A_17" value="id='Tj2(t)' algoritmo='no' expresión='_rj2(t)/sqrt(_rj1(t)^2+_rj2(t)^2)' tipo='función' info='tangente unitario de la curva actual j' ">
+      <param name="A_18" value="id='dtj' expresión='(b[j]-a[j])/100' tipo='variable' ">
+      <param name="A_19" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_20" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' fondo='sí' color='0000ff' coord_abs='no' expresión='(_Eval_(r[s,0]), _Eval_(r[s,1]))' familia='s' s.intervalo='[0,3]' s.pasos='3' parámetro='t' t.intervalo='[a[s],b[s]]' t.pasos='pasos[s]' ancho='2' info='r(t)' ">
+      <param name="G_02" value="espacio='E1' tipo='relleno' fondo='sí' color='a00000ff' coord_abs='no' expresión='(s<=1?-4:(s==5?-0.5:1),s==0?1:(s==1?-1:(s==2?1:(s==3?-1:(s==4?-6:0.5)))))' familia='s' s.intervalo='[0,5]' s.pasos='5' info='relleno' ">
+      <param name="G_03" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(ri1(ti),ri2(ti)) (ri1(ti)+0.15*Ti1(ti),ri2(ti)+0.15*Ti2(ti))' ancho='2' punta='5' flecha='0000ff' info='flecha i' ">
+      <param name="G_04" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(rj1(tj),rj2(tj)) (rj1(tj)+0.15*Tj1(tj),rj2(tj)+0.15*Tj2(tj))' ancho='2' punta='5' flecha='0000ff' info='flecha j' ">
+      <param name="G_05" value="espacio='E1' tipo='texto' fondo='sí' color='20303a' coord_abs='no' expresión='(1,-1.9)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red32\green48\blue58;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i C\i0}\i0\cf1\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='C texto' ">
+      <param name="G_06" value="espacio='E1' tipo='texto' fondo='sí' color='20303a' coord_abs='no' expresión='(-4,-2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i D\i0}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_center_center' info='D texto' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='no' inicio='i=0;ti=a[0];j=2;tj=a[2]' hacer='siguiente_i=ti+dti>b[i]    // determina si se pasará a la siguiente curva;i=siguiente_i?(i+1)%4:i;ti=siguiente_i?a[i]:ti+dti;;siguiente_j=tj+dtj>b[j]    ;j=siguiente_j?(j+1)%4:j;tj=siguiente_j?a[j]:tj+dtj;' mientras='1' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

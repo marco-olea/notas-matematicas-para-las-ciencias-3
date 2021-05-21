@@ -2423,8 +2423,16 @@
       <div class="page">
         <h2 id="sec_c4_teorema_de_green">Teorema de Green.</h2>
 
-        <p>El teorema de Green relaciona una integral de línea a lo largo de una curva cerrada simple $C$ con una integral doble sobre la región $D$ acotada por $C$. La región $D$ consiste en todos los puntos dentro de y sobre $C$, es decir, $C \subset D$. En el planteamiento del teorema de Green se usa la convención de que la orientación positiva de $C$ consiste en un solo recorrido de $C$ en el sentido contrario al de las manecillas del reloj, de tal forma que, cuando un punto recorre la curva, la región que acota siempre está a la izquierda del punto.</p>
+        <p>El teorema de Green relaciona una integral de línea a lo largo de una curva cerrada simple $C$ con una integral doble sobre la región $D$ acotada por $C$. La región $D$ consiste en todos los puntos dentro de y sobre $C$, es decir, $C \subset D$. En el planteamiento del teorema de Green se usa la convención de que la orientación positiva de $C$ consiste en un recorrido de $C$ en el sentido contrario al de las manecillas del reloj, de tal forma que, cuando un punto recorre la curva, la región que acota siempre está a la izquierda del punto.</p>
 
+        <figure id="convencion_para_teorema_green">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/convencion_para_teorema_green.html"></div>
+          <figcaption>La orientación de curvas utilizada por convención para el teorema de Green.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
         <div class="num_block" prefix="Teorema" id="teorema_green_forma_tangente">
           <b><i>Teorema de Green (Forma Tangente)</i></b>
           <p>Sea $C$ una curva cerrada simple, suave, planar y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
@@ -2433,13 +2441,10 @@
             \]</p>
         </div>
 
-        <p>A esta versión del teorema de Green a veces se le llama la <i>forma tangente</i> del teorema de Green por el primer miembro de la ecuación. Recuerda que $\textbf{T}$ es el vector tangente unitario a $C$ y además $\oint_C \textbf{F} \cdot \textbf{T} ds = \oint_C \textbf{F} \cdot d\textbf{r}$. Este teorema establece que la circulación de $\textbf{F}$ a lo largo de $C$ es igual al volumen del sólido bajo la función $Q_x - P_y$, definida sobre la región $D$.</p>
+        <p>A esta versión del teorema de Green a veces se le llama la <i>forma tangente</i> del teorema de Green por el primer miembro de la ecuación. Recuerda que $\textbf{T}$ es el vector tangente unitario a $C$ y además $\oint_C \textbf{F} \cdot \textbf{T} ds = \oint_C \textbf{F} \cdot d\textbf{r}$.</p>
 
         <p>De manera muy similar, existe otra versión del teorema de Green que utiliza el vector normal $\textbf{n}$ en vez del vector tangente $\textbf{T}$.</p>
-      </div>
 
-      <!--  -->
-      <div class="page">
         <div class="num_block" prefix="Teorema" id="teorema_green_forma_normal">
           <b><i>Teorema de Green (Forma Normal)</i></b>
           <p>Sea $C$ una curva cerrada simple, suave, planar y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
@@ -2448,14 +2453,32 @@
             \]</p>
         </div>
 
-        <p>A esta versión del teorema de Green a veces se le llama la <i>forma normal</i> del teorema de Green por el primer miembro de la ecuación. Recuerda que para una curva planar $\textbf{r}(t)$, $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$. Este teorema establece que el flujo de $\textbf{F}$ a través de $C$ es igual al volumen del sólido bajo la función $P_x + Q_y$, definida sobre la región $D$.</p>
-
-        <p>Hasta ahora sólamente se han mostrado ejemplos con regiones simplemente conexas, pero el teorema de Green también aplica para regiones que no son simplemente conexas. Consideremos una región $D$ acotada por una curva cerrada simple $C$ con orientación positiva. Supongamos que $D$ tienen una cantidad finita de huecos, cada uno delimitado por una curva con orientación negativa, así como se muestra en la <b>Figura 10.16</b>. Dividimos a $D$ en dos regiones $D_1$ y $D_2$, acotadas por las curvas $C_1$ y $C_2$, respectivamente, de tal forma que $D = D_1 \cup D_2$ y ni $D_1$ ni $D_2$ tienen huecos. Las regiones $D_1$ y $D_2$ resultan ser simplemente conexas y las curvas $C_1$ y $C_2$ tienen orientación positiva. Si $\textbf{F}$ es un campo vectorial cuyo dominio contiene a $D$, entonces el teorema de Green establece que:</p>
+        <p>A esta versión del teorema de Green a veces se le llama la <i>forma normal</i> del teorema de Green por la función $\textbf{n}$. Recuerda que para una curva planar $\textbf{r}(t)$, $\textbf{n}(t)$ devuelve un vector unitario normal a la curva en $t$.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>
+        <figure id="ejemplo_teorema_green">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/ejemplo_teorema_green.html"></div>
+          <figcaption>El campo vectorial $\textbf{F}(x,y) = \langle x^4 + y^3 - 4y, x^3 - y^4 + 6y \rangle$ cuyo dominio contiene la región $D$ delimitada por la curva $C$. En su forma tangente, el teorema de Green establece que la circulación de $\textbf{F}$ a lo largo de $C$ es igual al volumen del sólido sobre $D$ acotado por $Q_x - P_y$. En su forma normal, el teorema de Green establece que el flujo de $\textbf{F}$ a través de $C$ es igual al volumen del sólido sobre $D$ acotado por $P_x + Q_y$.</figcaption>
+        </figure>
+
+        <p style="text-align-last:justify;">Hasta ahora sólamente se han mostrado ejemplos con regiones simplemente conexas, pero el teorema de Green también aplica para regiones que no son simplemente conexas. Consideremos una región $D$ acotada por una curva cerrada simple $C$ con orientación positiva. Supongamos que $D$ tienen una cantidad finita de huecos, cada uno delimitado por una curva con orientación negativa, así como se muestra en la <ref ref_id="teorema_green_regiones_generales"></ref>. Dividimos a $D$ en dos</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>regiones $D_1$ y $D_2$, acotadas por las curvas $C_1$ y $C_2$, respectivamente, de tal forma que $D = D_1 \cup D_2$ y ni $D_1$ ni $D_2$ tienen huecos. Cada una de las regiones $D_1$ y $D_2$ resulta ser simplemente conexa. Ambas $C_1$ y $C_2$ están orientadas positivamente y tienen cotas comunes. Al evaluar una integral de línea vectorial a lo largo de estas curvas, dichas cotas comunes se cancelan ya que están definidas por la misma curva pero con orientación contraria, por lo que las integrales tienen el mismo valor absoluto pero con signo opuesto.</p>
+
+        <figure id="teorema_green_regiones_generales">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/teorema_green_regiones_generales.html"></div>
+          <figcaption>Aplicación del teorema de Green en una región que tiene dos huecos y no es simplemente conexa. Observa que las cotas comunes se cancelan, ya que $\int_{P_2} \textbf{F} \cdot d\textbf{r} = -\int_{-P_2} \textbf{F} \cdot d\textbf{r}$, $\int_{P_4} \textbf{F} \cdot d\textbf{r} = -\int_{-P_4} \textbf{F} \cdot d\textbf{r}$ y $\int_{P_6} \textbf{F} \cdot d\textbf{r} = -\int_{-P_6} \textbf{F} \cdot d\textbf{r}$.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Si $\textbf{F}$ es un campo vectorial cuyo dominio contiene a $D$, entonces el teorema de Green establece que:
           \[
             \begin{aligned}
               \oint_C \textbf{F} \cdot d\textbf{r} &= \oint_{C_1} \textbf{F} \cdot d\textbf{r} + \oint_{C_2} \textbf{F} \cdot d\textbf{r} \\
@@ -2469,30 +2492,28 @@
 
       <!--  -->
       <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-
         <h2 id="sec_c4_teorema_de_stokes">Teorema de Stokes.</h2>
 
+        <p>El teorema de Stokes, al igual que el Teorema Fundamental para Integrales de Línea y el teorema de Green, es una generalización del Teorema Fundamental del Cálculo a dimensiones superiores. Este teorema reduce una integral doble sobre una superficie $S$ a una integral de línea a lo largo del límite de $S$.</p>
+
+        <p>Sea $S$ una superficie suave y orientada con vector normal unitario $\textbf{N}$, y sea $C$ la curva cerrada simple que limita a $S$. En el planteamiento del teorema de Stokes se usa la convención de que la orientación positiva de $C$ consiste en un recorrido de $C$ con $\textbf{N}$ apuntando hacia arriba, de tal forma que, cuando un punto recorre la curva, la superficie siempre está a la izquierda del punto.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <div class="num_block" prefix="Teorema" id="teorema_stokes">
+          <b><i>Teorema de Stokes</i></b>
+          <p>Sea $S$ una superficie suave, orientada y definida sobre una región que está delimitada por una curva cerrada simple $C$ con orientación positiva. Sea $\textbf{F}$ un campo vectorial. Si las derivadas parciales de las componentes de $\textbf{F}$ en $S$ existen y son continuas, entonces:
+            \[
+              \oint_C \textbf{F} \cdot d\textbf{r} = \iint\limits_S \text{rot } \textbf{F} \cdot dS
+            \]</p>
+        </div>
+
+        <p>El teorema de Stokes establece que el flujo de un campo vectorial $\text{rot } \textbf{F}$ a través de una superficie $S$ depende solamente de los valores de $\textbf{F}$ a lo largo del límite de $S$. Esto es muy similar al Teorema Fundamental del Cálculo si consideramos al operador $\text{rot}$ (<ref ref_id="rotacional"></ref>) como una "derivada", en cuyo caso $\textbf{F}$ sería la "antiderivada" de $\text{rot } \textbf{F}$.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c4_teorema_de_gauss">Teorema de Gauss.</h2>
 
         <h2 id="sec_c4_aplicaciones">Aplicaciones.</h2>
