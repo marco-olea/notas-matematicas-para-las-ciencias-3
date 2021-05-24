@@ -2082,6 +2082,8 @@
               \iint\limits_S \textbf{F} \cdot \textbf{N} dS = \iint\limits_D \textbf{F}(\textbf{r}(u,v)) \cdot (\textbf{r}_u \times \textbf{r}_v) dudv
             \]
         </div>
+
+        <p>La integral de superficie vectorial $\iint\limits_S \textbf{F} \cdot \textbf{N} dS$ suele expresarse simplemente como $\iint\limits_S \textbf{F} \cdot dS$.</p>
       </div>
 
       <!--  -->
@@ -2496,11 +2498,18 @@
 
         <p>El teorema de Stokes, al igual que el Teorema Fundamental para Integrales de Línea y el teorema de Green, es una generalización del Teorema Fundamental del Cálculo a dimensiones superiores. Este teorema reduce una integral doble sobre una superficie $S$ a una integral de línea a lo largo del límite de $S$.</p>
 
-        <p>Sea $S$ una superficie suave y orientada con vector normal unitario $\textbf{N}$, y sea $C$ la curva cerrada simple que limita a $S$. En el planteamiento del teorema de Stokes se usa la convención de que la orientación positiva de $C$ consiste en un recorrido de $C$ con $\textbf{N}$ apuntando hacia arriba, de tal forma que, cuando un punto recorre la curva, la superficie siempre está a la izquierda del punto.</p>
+        <p style="text-align-last:justify;">Sea $S$ una superficie suave y orientada con vector normal unitario</p>
+
+        <figure id="convencion_para_teorema_stokes">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/convencion_para_teorema_stokes.html"></div>
+          <figcaption>La orientación de curvas utilizada por convención para el teorema de Stokes. En azul se muestra la superficie $S$ y en rojo su límite $C$. Selecciona $\textbf{N}$ o $-\textbf{N}$ para cambiar la elección de vector normal unitario.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>$\textbf{N}$, y sea $C$ la curva cerrada simple que limita a $S$. En el planteamiento del teorema de Stokes se usa la convención de que la orientación positiva de $C$ consiste en un recorrido de $C$ con $\textbf{N}$ apuntando hacia arriba, de tal forma que, cuando un punto recorre la curva, la superficie siempre está a la izquierda del punto. Esto se muestra en la <ref ref_id="convencion_para_teorema_stokes"></ref>.</p>
+
         <div class="num_block" prefix="Teorema" id="teorema_stokes">
           <b><i>Teorema de Stokes</i></b>
           <p>Sea $S$ una superficie suave, orientada y definida sobre una región que está delimitada por una curva cerrada simple $C$ con orientación positiva. Sea $\textbf{F}$ un campo vectorial. Si las derivadas parciales de las componentes de $\textbf{F}$ en $S$ existen y son continuas, entonces:
@@ -2510,6 +2519,33 @@
         </div>
 
         <p>El teorema de Stokes establece que el flujo de un campo vectorial $\text{rot } \textbf{F}$ a través de una superficie $S$ depende solamente de los valores de $\textbf{F}$ a lo largo del límite de $S$. Esto es muy similar al Teorema Fundamental del Cálculo si consideramos al operador $\text{rot}$ (<ref ref_id="rotacional"></ref>) como una "derivada", en cuyo caso $\textbf{F}$ sería la "antiderivada" de $\text{rot } \textbf{F}$.</p>
+
+        <p>Ahora, supongamos que $S$ es una región contenida completamente en el plano $xy$ orientada hacia arriba. Entonces el vector normal unitario es $\textbf{k}$ y:
+          \[
+            \int_C \textbf{F} \cdot d\textbf{r} = \iint\limits_S \text{rot } \textbf{F} \cdot dS 
+          \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>
+          \[
+            \begin{aligned}
+              &= \iint\limits_S \text{rot } \textbf{F} \cdot \textbf{N} dS \\
+              &= \iint\limits_S \langle R_y - Q_z, P_z - R_x, Q_x - P_y \rangle \cdot \textbf{k} dA \\
+              &= \iint\limits_S (Q_x - P_y) dA
+            \end{aligned}
+          \]</p>
+
+        <figure id="ejemplo_teorema_green">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/ejemplo_teorema_stokes.html"></div>
+          <figcaption>Un campo vectorial $\textbf{F}(x,y,z)$ cuyo dominio contiene la superficie $S$ delimitada por la curva $C$. Observa que la región $D$ es la proyección de $S$ sobre el plano $xy$, y la curva $C'$ es la proyección de $C$ sobre el mismo plano. El teorema de Stokes establece que el flujo de $\textbf{F}$ a través de $C$ es igual al flujo de $\text{rot } \textbf{F}$ a través de $S$.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Observa que esta es la forma tangente del teorema de Green, lo cual muestra que el teorema de Green es un caso especial del teorema de Stokes.</p>
       </div>
 
       <!--  -->

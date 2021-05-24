@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Convención de orientación para el teorema de Green</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='42.5' O.x='-30' O.y='90' ">
+      <param name="C_01" value="id='op' tipo='checkbox' región='norte' espacio='E1' nombre='N' expresión='(0,0,150,40)' valor='1' radio_group='opcion' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
+      <param name="C_02" value="id='op2' tipo='checkbox' región='norte' espacio='E1' nombre='-N' expresión='(0,0,150,40)' radio_group='opcion' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
+      <param name="A_01" value="id='θa' expresión='0' tipo='variable' info='intervalo en que está definida h' ">
+      <param name="A_02" value="id='θb' expresión='2pi' tipo='variable' info='intervalo en que está definida h' ">
+      <param name="A_03" value="id='dθ' expresión='(θb-θa)/250' tipo='variable' info='intervalo en que está definida h' ">
+      <param name="A_04" value="id='h(θ)' algoritmo='no' expresión='2+6cos(θ)^2' tipo='función' info='función que define una región polar' ">
+      <param name="A_05" value="id='r1(u,v)' algoritmo='no' expresión='u' tipo='función' info='superficie paramétrica' ">
+      <param name="A_06" value="id='r2(u,v)' algoritmo='no' expresión='v' tipo='función' info='superficie paramétrica' ">
+      <param name="A_07" value="id='r3(u,v)' algoritmo='no' expresión='(u^2+v^2)/8' tipo='función' info='superficie paramétrica' ">
+      <param name="A_08" value="id='_r1u(u,v)' algoritmo='no' expresión='(r1(u+0.0001,v)-r1(u,v))/0.0001' tipo='función' info='parcial respecto a u' ">
+      <param name="A_09" value="id='_r2u(u,v)' algoritmo='no' expresión='(r2(u+0.0001,v)-r2(u,v))/0.0001' tipo='función' info='parcial respecto a u' ">
+      <param name="A_10" value="id='_r3u(u,v)' algoritmo='no' expresión='(r3(u+0.0001,v)-r3(u,v))/0.0001' tipo='función' info='parcial respecto a u' ">
+      <param name="A_11" value="id='_r1v(u,v)' algoritmo='no' expresión='(r1(u,v+0.0001)-r1(u,v))/0.0001' tipo='función' info='parcial respecto a v' ">
+      <param name="A_12" value="id='_r2v(u,v)' algoritmo='no' expresión='(r2(u,v+0.0001)-r2(u,v))/0.0001' tipo='función' info='parcial respecto a v' ">
+      <param name="A_13" value="id='_r3v(u,v)' algoritmo='no' expresión='(r3(u,v+0.0001)-r3(u,v))/0.0001' tipo='función' info='parcial respecto a v' ">
+      <param name="A_14" value="id='n1(u,v)' algoritmo='no' expresión='_r2u(u,v)*_r3v(u,v)-_r3u(u,v)*_r2v(u,v)' tipo='función' info='normal' ">
+      <param name="A_15" value="id='n2(u,v)' algoritmo='no' expresión='_r3u(u,v)*_r1v(u,v)-_r1u(u,v)*_r3v(u,v)' tipo='función' info='normal' ">
+      <param name="A_16" value="id='n3(u,v)' algoritmo='no' expresión='_r1u(u,v)*_r2v(u,v)-_r2u(u,v)*_r1v(u,v)' tipo='función' info='normal' ">
+      <param name="A_17" value="id='mag(u,v)' algoritmo='no' expresión='sqrt(n1(u,v)^2+n2(u,v)^2+n3(u,v)^2)' tipo='función' info='magnitud del normal en (u,v)' ">
+      <param name="A_18" value="id='N1(u,v)' algoritmo='no' expresión='(op==1?1:-1)*n1(u,v)/mag(u,v)' tipo='función' info='normal unitario' ">
+      <param name="A_19" value="id='N2(u,v)' algoritmo='no' expresión='(op==1?1:-1)*n2(u,v)/mag(u,v)' tipo='función' info='normal unitario' ">
+      <param name="A_20" value="id='N3(u,v)' algoritmo='no' expresión='(op==1?1:-1)*n3(u,v)/mag(u,v)' tipo='función' info='normal unitario' ">
+      <param name="A_21" value="id='U(s)' algoritmo='no' expresión='h(s)/2*cos(s)' tipo='función' info='para dibujar los normales' ">
+      <param name="A_22" value="id='V(s)' algoritmo='no' expresión='h(s)/2*sin(s)' tipo='función' info='para dibujar los normales' ">
+      <param name="A_23" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=60;E1.rot.z=45' ">
+      <param name="A_24" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='superficie' color='40eeffaa' color_reverso='400000ff' expresión='t=θa+u*(θb-θa);r=v*h(t);;uu=r*cos(t);vv=r*sin(t);;x=r1(uu,vv);y=r2(uu,vv);z=r3(uu,vv)' modelo='metal' Nu='50' Nv='7' info='S' ">
+      <param name="S_02" value="espacio='E1' tipo='curva' color='ff0000' expresión='t=θa+u*(θb-θa);r=h(t);;uu=r*cos(t);vv=r*sin(t);;x=r1(uu,vv);y=r2(uu,vv);z=r3(uu,vv)' ancho='2' Nu='50' info='límite de S' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(r1(ui,vi), r2(ui,vi), r3(ui,vi))' decimales='2' ancho='3' offset_dist='10' offset_angle='270' info='punto i' ">
+      <param name="S_04" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(r1(uj,vj), r2(uj,vj), r3(uj,vj))' decimales='2' ancho='3' offset_dist='10' offset_angle='270' info='punto j' ">
+      <param name="S_05" value="espacio='E1' tipo='segmento' color='008000' expresión='(r1(U(s),V(s)),r2(U(s),V(s)),r3(U(s),V(s))) (r1(U(s),V(s))+2N1(U(s),V(s)),r2(U(s),V(s))+2N2(U(s),V(s)),r3(U(s),V(s))+2N3(U(s),V(s)))' familia='s' s.intervalo='[0,3pi/2]' s.pasos='3' ancho='3' Nu='1' info='normales ' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='no' inicio='ti=θa;tj=(θa+θb)/2' hacer='ti=ti+dθ;ti=(ti>θb)?θa:ti;ui=op==1?h(ti)*cos(ti):h(θa+θb-ti)*cos(θa+θb-ti);vi=op==1?h(ti)*sin(ti):h(θa+θb-ti)*sin(θa+θb-ti);;tj=tj+dθ;tj=(tj>θb)?θa:tj;uj=op==1?h(tj)*cos(tj):h(θa+θb-tj)*cos(θa+θb-tj);vj=op==1?h(tj)*sin(tj):h(θa+θb-tj)*sin(θa+θb-tj)' mientras='1' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
