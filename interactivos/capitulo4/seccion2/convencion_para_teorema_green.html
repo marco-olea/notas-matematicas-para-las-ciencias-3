@@ -19,10 +19,10 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R2' id='E1' fijo='sí' O.x='120' O.y='-70' red='no' red10='no' ejes='000000' eje-x='x' eje-y='y' ">
-      <param name="A_01" value="id='a' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='a[0]=-3pi/2;a[1]=pi/2;a[2]=-3pi/2;a[3]=-9pi/4;' tipo='vector' info='intervalos de las curvas (límite inferior)' ">
-      <param name="A_02" value="id='b' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='b[0]=3pi/2;b[1]=3pi/2;b[2]=(3sqrt(2)+3pi-6)/2;b[3]=0;' tipo='vector' info='intervalos de las curvas (límite superior)' ">
+      <param name="A_01" value="id='a' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='a[0]=-3pi/2;a[1]=pi/2;a[2]=-3pi/2;a[3]=-6;' tipo='vector' info='intervalos de las curvas (límite inferior)' ">
+      <param name="A_02" value="id='b' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='b[0]=3pi/2;b[1]=3pi/2;b[2]=4.59289984;b[3]=0;' tipo='vector' info='intervalos de las curvas (límite superior)' ">
       <param name="A_03" value="id='pasos' vector='sí' evaluar='una-sola-vez' tamaño='4' expresión='pasos[0]=35;pasos[1]=25;pasos[2]=1;pasos[3]=25;' tipo='vector' info='pasos para dibujar las curvas' ">
-      <param name="A_04" value="id='r' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='4' expresión='r[0,0]=&squot;-t&squot;;r[0,1]=&squot;2sin(-t)+2&squot;;;r[1,0]=&squot;5cos(t)-3pi/2&squot;;r[1,1]=&squot;5sin(t)-1&squot;;;r[2,0]=&squot;t&squot;;r[2,1]=&squot;(4-3pi/2)/(sqrt(2)+2pi-2)*t-6+(12pi-9/2*pi^2)/(2sqrt(2)+4pi-4)&squot;;;r[3,0]=&squot;3cos(t)+3pi/2-3&squot;;r[3,1]=&squot;t&squot;;;;' tipo='matriz' info='curvas que conforman la curva grande' ">
+      <param name="A_04" value="id='r' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='4' expresión='r[0,0]=&squot;-t&squot;;r[0,1]=&squot;2sin(-t)+2&squot;;;r[1,0]=&squot;5cos(t)-3pi/2&squot;;r[1,1]=&squot;5sin(t)-1&squot;;;r[2,0]=&squot;t&squot;;r[2,1]=&squot;-6&squot;;;r[3,0]=&squot;3cos(t)+3pi/2-3&squot;;r[3,1]=&squot;t&squot;;;;' tipo='matriz' info='curvas que conforman la curva grande' ">
       <param name="A_05" value="id='ri1(t)' algoritmo='no' expresión='_Eval_(r[i,0])' tipo='función' info='curva actual i' ">
       <param name="A_06" value="id='ri2(t)' algoritmo='no' expresión='_Eval_(r[i,1])' tipo='función' info='curva actual i' ">
       <param name="A_07" value="id='_ri1(t)' algoritmo='no' expresión='(ri1(t+0.0001)-ri1(t))/0.0001' tipo='función' info='tangente de la curva actual i' ">
@@ -40,7 +40,7 @@
       <param name="A_19" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
       <param name="A_20" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
       <param name="G_01" value="espacio='E1' tipo='curva' fondo='sí' color='0000ff' coord_abs='no' expresión='(_Eval_(r[s,0]), _Eval_(r[s,1]))' familia='s' s.intervalo='[0,3]' s.pasos='3' parámetro='t' t.intervalo='[a[s],b[s]]' t.pasos='pasos[s]' ancho='2' info='r(t)' ">
-      <param name="G_02" value="espacio='E1' tipo='relleno' fondo='sí' color='a00000ff' coord_abs='no' expresión='(s<=1?-4:(s==5?-0.5:1),s==0?1:(s==1?-1:(s==2?1:(s==3?-1:(s==4?-6:0.5)))))' familia='s' s.intervalo='[0,5]' s.pasos='5' info='relleno' ">
+      <param name="G_02" value="espacio='E1' tipo='relleno' fondo='sí' color='a00000ff' coord_abs='no' expresión='(s==0?-3:(s==1?-0.5:(s==2?1:(s==3?-3:1))), s==0?0.5:(s==1?0.5:(s==2?1:(s==3?-1:(s==4?-1:-5)))))' familia='s' s.intervalo='[0,5]' s.pasos='5' info='relleno' ">
       <param name="G_03" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(ri1(ti),ri2(ti)) (ri1(ti)+0.15*Ti1(ti),ri2(ti)+0.15*Ti2(ti))' ancho='2' punta='5' flecha='0000ff' info='flecha i' ">
       <param name="G_04" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(rj1(tj),rj2(tj)) (rj1(tj)+0.15*Tj1(tj),rj2(tj)+0.15*Tj2(tj))' ancho='2' punta='5' flecha='0000ff' info='flecha j' ">
       <param name="G_05" value="espacio='E1' tipo='texto' fondo='sí' color='20303a' coord_abs='no' expresión='(1,-1.9)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red32\green48\blue58;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i C\i0}\i0\cf1\fs40 }' ancho='1' align='a_left' anchor='a_top_left' info='C texto' ">
