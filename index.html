@@ -2439,11 +2439,11 @@
           <b><i>Teorema de Green (Forma Tangente)</i></b>
           <p>Sea $C$ una curva cerrada simple, suave, planar y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
             \[
-              \oint_C \textbf{F} \cdot \textbf{T} ds = \oint_C Pdx + Qdy = \iint\limits_D (Q_x - P_y)dA
+              \iint\limits_D (Q_x - P_y)dA = \oint_C \textbf{F} \cdot \textbf{T} ds
             \]</p>
         </div>
 
-        <p>A esta versión del teorema de Green a veces se le llama la <i>forma tangente</i> del teorema de Green por el primer miembro de la ecuación. Recuerda que $\textbf{T}$ es el vector tangente unitario a $C$ y además $\oint_C \textbf{F} \cdot \textbf{T} ds = \oint_C \textbf{F} \cdot d\textbf{r}$.</p>
+        <p>A esta versión del teorema de Green a veces se le llama la <i>forma tangente</i> del teorema de Green por el segundo miembro de la ecuación. Recuerda que $\textbf{T}$ es el vector tangente unitario a $C$ y además $\oint_C \textbf{F} \cdot \textbf{T} ds = \oint_C \textbf{F} \cdot d\textbf{r}$.</p>
 
         <p>De manera muy similar, existe otra versión del teorema de Green que utiliza el vector normal $\textbf{n}$ en vez del vector tangente $\textbf{T}$.</p>
 
@@ -2451,7 +2451,7 @@
           <b><i>Teorema de Green (Forma Normal)</i></b>
           <p>Sea $C$ una curva cerrada simple, suave, planar y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
             \[
-              \oint_C \textbf{F} \cdot \textbf{n} ds = \oint_C -Qdx + Pdy = \iint\limits_D (P_x + Q_y)dA
+              \iint\limits_D (P_x + Q_y)dA = \oint_C \textbf{F} \cdot \textbf{n} ds
             \]</p>
         </div>
 
@@ -2462,7 +2462,7 @@
       <div class="page">
         <figure id="ejemplo_teorema_green">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/ejemplo_teorema_green.html"></div>
-          <figcaption>El campo vectorial $\textbf{F}(x,y) = \langle x^4 + y^3 - 4y, x^3 - y^4 + 6y \rangle$ cuyo dominio contiene la región $D$ delimitada por la curva $C$. En su forma tangente, el teorema de Green establece que la circulación de $\textbf{F}$ a lo largo de $C$ es igual al volumen del sólido sobre $D$ acotado por $Q_x - P_y$. En su forma normal, el teorema de Green establece que el flujo de $\textbf{F}$ a través de $C$ es igual al volumen del sólido sobre $D$ acotado por $P_x + Q_y$.</figcaption>
+          <figcaption>Un campo vectorial $\textbf{F} = \langle P,Q \rangle$ cuyo dominio contiene la región $D$ delimitada por la curva $C$. En su forma tangente, el teorema de Green establece que el volumen del sólido sobre $D$ acotado por $Q_x - P_y$ es igual a la circulación de $\textbf{F}$ a lo largo de $C$. En su forma normal, el teorema de Green establece que el volumen del sólido sobre $D$ acotado por $P_x + Q_y$ es igual al flujo de $\textbf{F}$ a través de $C$.</figcaption>
         </figure>
 
         <p style="text-align-last:justify;">Hasta ahora sólamente se han mostrado ejemplos con regiones simplemente conexas, pero el teorema de Green también aplica para regiones que no son simplemente conexas. Consideremos una región $D$ acotada por una curva cerrada simple $C$ con orientación positiva. Supongamos que $D$ tienen una cantidad finita de huecos, cada uno delimitado por una curva con orientación negativa, así como se muestra en la <ref ref_id="teorema_green_regiones_generales"></ref>. Dividimos a $D$ en dos</p>
@@ -2483,9 +2483,9 @@
         <p>Si $\textbf{F}$ es un campo vectorial cuyo dominio contiene a $D$, entonces el teorema de Green establece que:
           \[
             \begin{aligned}
-              \oint_C \textbf{F} \cdot d\textbf{r} &= \oint_{C_1} \textbf{F} \cdot d\textbf{r} + \oint_{C_2} \textbf{F} \cdot d\textbf{r} \\
-                                                   &= \iint\limits_{D_1} (Q_x - P_y)dA + \iint\limits_{D_2} (Q_x - P_y)dA \\
-                                                   &= \iint\limits_D (Q_x - P_y)dA
+              \iint\limits_D (Q_x - P_y)dA &= \iint\limits_{D_1} (Q_x - P_y)dA + \iint\limits_{D_2} (Q_x - P_y)dA \\
+                                           &= \oint_{C_1} \textbf{F} \cdot d\textbf{r} + \oint_{C_2} \textbf{F} \cdot d\textbf{r} \\
+                                           &= \oint_C \textbf{F} \cdot d\textbf{r}
             \end{aligned}
           \]</p>
 
@@ -2514,7 +2514,7 @@
           <b><i>Teorema de Stokes</i></b>
           <p>Sea $S$ una superficie suave, orientada y definida sobre una región que está delimitada por una curva cerrada simple $C$ con orientación positiva. Sea $\textbf{F}$ un campo vectorial. Si las derivadas parciales de las componentes de $\textbf{F}$ en $S$ existen y son continuas, entonces:
             \[
-              \oint_C \textbf{F} \cdot d\textbf{r} = \iint\limits_S \text{rot } \textbf{F} \cdot dS
+              \iint\limits_S \text{rot } \textbf{F} \cdot dS = \oint_C \textbf{F} \cdot d\textbf{r}
             \]</p>
         </div>
 
@@ -2537,9 +2537,9 @@
             \end{aligned}
           \]</p>
 
-        <figure id="ejemplo_teorema_green">
+        <figure id="ejemplo_teorema_stokes">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/ejemplo_teorema_stokes.html"></div>
-          <figcaption>Un campo vectorial $\textbf{F}(x,y,z)$ cuyo dominio contiene la superficie $S$ delimitada por la curva $C$. Observa que la región $D$ es la proyección de $S$ sobre el plano $xy$, y la curva $C'$ es la proyección de $C$ sobre el mismo plano. El teorema de Stokes establece que el flujo de $\textbf{F}$ a través de $C$ es igual al flujo de $\text{rot } \textbf{F}$ a través de $S$.</figcaption>
+          <figcaption>Un campo vectorial $\textbf{F}(x,y,z)$ cuyo dominio contiene la superficie $S$ delimitada por la curva $C$. Observa que la región $D$ es la proyección de $S$ sobre el plano $xy$, y la curva $C'$ es la proyección de $C$ sobre el mismo plano. El teorema de Stokes establece que el flujo de $\text{rot } \textbf{F}$ a través de $S$ es igual al flujo de $\textbf{F}$ a través de $C$.</figcaption>
         </figure>
       </div>
 
@@ -2552,6 +2552,66 @@
       <div class="page">
         <h2 id="sec_c4_teorema_de_gauss">Teorema de Gauss.</h2>
 
+        <p>A lo largo de este capítulo se han varias generalizaciones del Teorema Fundamental del Cálculo. Todas relacionan la "derivada" de una entidad sobre su dominio con la integral de dicha entidad alrededor del límite del dominio. El teorema de la divergencia, también conocido como el teorema de Gauss, es el último teorema de este tipo que se presentará. Este teorema reduce una integral triple sobre un sólido $E$ a una integral doble sobre el límite de $E$.</p>
+
+        <div class="num_block" prefix="Teorema" id="teorema_stokes">
+          <b><i>Teorema de la Divergencia (Teorema de Gauss)</i></b>
+          <p>Sea $S$ una superficie suave, cerrada y orientada hacia afuera que encierra un sólido $E$ en el espacio. Sea $\textbf{F}$ un campo vectorial. Si las derivadas parciales de las componentes de $\textbf{F}$ en $E$ existen y son continuas, entonces:
+            \[
+              \iiint\limits_E \text{div } \textbf{F} dV = \iint\limits_S \textbf{F} \cdot dS
+            \]</p>
+        </div>
+
+        <p style="text-align-last:justify;">Así como la integral $\int$ parte una curva en segmentos con longitud infinitesimal y la integral doble $\iint$ divide una superficie en pedazos con área de superficie infinitesimal, la integral triple $\iiint$ es una integral de <b>volumen</b>. En este caso el objeto sobre el que trabaja es un sólido, y lo divide en fragmentos con volumen infinitesimal. Una suma de Riemann triple consistiría en escoger un punto arbitrario dentro de cada uno de esos fragmentos, evaluar la función $\text{div } \textbf{F}$ (<ref ref_id="divergencia"></ref>) en dichos puntos y sumar los resultados. Entonces, el teorema de Gauss afirma que la suma de todas las fuentes (los sumideros se pueden considerar como fuentes negativas) de un</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>campo vectorial $\textbf{F}$ dentro de un sólido $E$ es igual al flujo de $\textbf{F}$ a través de $S$.</p>
+
+        <figure id="ejemplo_teorema_gauss">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion4/ejemplo_teorema_gauss.html"></div>
+          <figcaption>El sólido $E$ y el campo vectorial $\textbf{F} = \langle -x, -y, z^2 \rangle$. La divergencia de este campo es $\frac{\partial (-x)}{\partial x} + \frac{\partial (-y)}{\partial y} + \frac{\partial (z^2)}{\partial z} = 2z - 2$, lo cual implica que es una fuente en $z > 1$ y un sumidero en $z < 1$. El teorema de Gauss establece que la suma de la divergencia (fuentes y sumideros) a lo largo de todo el sólido $E$ es igual al flujo de $\textbf{F}$ a través de la superficie roja encierra a $E$.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
         <h2 id="sec_c4_aplicaciones">Aplicaciones.</h2>
       </div>
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ejemplo del teorema de Stokes</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
+      <param name="C_01" value="id='op' tipo='numérico' interfaz='menú' región='norte' espacio='E1' nombre='E' expresión='(0,0,150,40)' valor='5' visible='no' opciones='Cubo,Tetraedro,Esfera,Elipsoide,Toro,Dodecaedro' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='ver_superficie' tipo='checkbox' región='norte' espacio='E1' nombre='Ver superficie' expresión='(0,0,150,40)' valor='1' position='a_right' ">
+      <param name="C_03" value="id='btn' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='►' expresión='(0,0,150,40)' color='000000' color-int='f0f8ff' fuente puntos='19' acción='animar' ">
+      <param name="A_01" value="id='ver_aristas' expresión='!ver_superficie' tipo='variable' ">
+      <param name="A_01" value="id='a' expresión='-6' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='6' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='-6' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='6' tipo='variable' ">
+      <param name="A_05" value="id='e' expresión='-4.5' tipo='variable' ">
+      <param name="A_06" value="id='f' expresión='4.5' tipo='variable' ">
+      <param name="A_07" value="id='xn' expresión='5' tipo='variable' ">
+      <param name="A_08" value="id='yn' expresión='5' tipo='variable' ">
+      <param name="A_09" value="id='zn' expresión='9' tipo='variable' ">
+      <param name="A_10" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
+      <param name="A_11" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
+      <param name="A_12" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
+      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_16" value="id='F1(x,y,z)' algoritmo='no' expresión='-3x/20' tipo='función' ">
+      <param name="A_17" value="id='F2(x,y,z)' algoritmo='no' expresión='-3y/20' tipo='función' ">
+      <param name="A_18" value="id='F3(x,y,z)' algoritmo='no' expresión='z^2/20' tipo='función' ">
+      <param name="A_19" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=15;E1.rot.z=-45;;k=1;;zz=900;xx=0;yy=0' ">
+      <param name="A_20" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='0000ff' dibujar-si='k>0' expresión='(X(s),Y(s),Z(s)) (X(s)+k*F1(X(s),Y(s),Z(s)),Y(s)+k*F2(X(s),Y(s),Z(s)),Z(s)+k*F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='1' info='F(x,y) líneas' ">
+      <param name="S_02" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' expresión='(X(s)+k*F1(X(s),Y(s),Z(s)),Y(s)+k*F2(X(s),Y(s),Z(s)),Z(s)+k*F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1' offset_dist='10' offset_angle='270' info='F(x,y) puntos' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' dibujar-si='k>=1' expresión='(6,0,3)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b F\b0\i0}\cf0\fs40 }' decimales='2' ancho='0' offset_dist='50' offset_angle='180' info='F(x,y) texto' ">
+      <param name="S_04" value="espacio='E1' tipo='cubo' color='(ff,00,00,ver_aristas?1:0.63)' color_reverso='(ff,00,00,ver_aristas?1:0.63)' dibujar-si='op==0' expresión='Cubo' aristas='000000' modelo='metal' ancho='8' info='op0' ">
+      <param name="S_05" value="espacio='E1' tipo='tetraedro' color='(ff,00,00,ver_aristas?1:0.63)' color_reverso='(ff,00,00,ver_aristas?1:0.63)' dibujar-si='op==1' expresión='Tetraedro' rotini='(0,0,-15)' aristas='000000' modelo='metal' ancho='8' info='op1' ">
+      <param name="S_06" value="espacio='E1' tipo='esfera' color='(ff,00,00,ver_aristas?1:0.63)' color_reverso='(ff,00,00,ver_aristas?1:0.63)' dibujar-si='op==2' expresión='Esfera' aristas='(00,00,00,ver_aristas?0:1)' modelo='metal' ancho='8' Nu='25' Nv='25' info='op2' ">
+      <param name="S_07" value="espacio='E1' tipo='elipsoide' color='(ff,00,00,ver_aristas?1:0.63)' color_reverso='(ff,00,00,ver_aristas?1:0.63)' dibujar-si='op==3' expresión='Elipsoide' rotini='(0,0,45)' aristas='(00,00,00,ver_aristas?0:1)' modelo='metal' ancho='7' largo='11' alto='6' Nu='15' Nv='25' info='op3' ">
+      <param name="S_08" value="espacio='E1' tipo='toro' color='(ff,00,00,ver_aristas?1:0.63)' color_reverso='(ff,00,00,ver_aristas?1:0.63)' dibujar-si='op==4' expresión='torus' aristas='(00,00,00,ver_aristas?0:1)' modelo='metal' R='4' r='1' Nu='15' Nv='25' info='op4' ">
+      <param name="S_09" value="espacio='E1' tipo='dodecaedro' color='(ff,00,00,ver_aristas?1:0.63)' color_reverso='(ff,00,00,ver_aristas?1:0.63)' dibujar-si='op==5' expresión='Dodecaedro' aristas='000000' modelo='metal' ancho='8' info='op5' ">
+      <param name="S_10" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(0,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs30\i{\*\mjaformula\i\b O\b0\i0}\i0\cf0\fs40 }' decimales='2' ancho='2' offset_dist='8' offset_angle='225' info='origen' ">
+      <param name="S_11" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(0,0,3)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs30{\*\mjaformula\i\b (0,0,1)\b0\i0}\cf0\fs40 }' decimales='2' ancho='1' offset_dist='8' offset_angle='225' info='&quot;(0,0,1)&quot;' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='no' repetir='no' inicio='k=0;inc=0.03;tiempo=-40;pausa=1000;terminar=0' hacer='tiempo=tiempo+40;;// Cuando transcurran &squot;pausa&squot; milisegundos,;// empieza a incrementar k hasta 1;k=tiempo<pausa?k:k+inc' mientras='k<1' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
