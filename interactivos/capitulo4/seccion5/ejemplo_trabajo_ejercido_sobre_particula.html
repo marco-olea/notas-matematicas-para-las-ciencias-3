@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Calcular el trabajo ejercido sobre una partícula</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
+      <param name="C_01" value="id='f_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='f(x,y,z)' expresión='(0,0,150,40)' valor='(x^2+y^2+z^2)/10' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='x0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x₀' expresión='(0,0,150,40)' visible='sí' acción='calcular' parámetro='calc_trayectorias()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='y0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y₀' expresión='(0,0,150,40)' visible='sí' acción='calcular' parámetro='calc_trayectorias()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='z0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='z₀' expresión='(0,0,150,40)' visible='sí' acción='calcular' parámetro='calc_trayectorias()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='x1' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x₁' expresión='(0,0,150,40)' valor='1' visible='sí' acción='calcular' parámetro='calc_trayectorias()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_06" value="id='y1' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y₁' expresión='(0,0,150,40)' valor='2' visible='sí' acción='calcular' parámetro='calc_trayectorias()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_07" value="id='z1' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='z₁' expresión='(0,0,150,40)' valor='3' visible='sí' acción='calcular' parámetro='calc_trayectorias()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='a' expresión='(x0<x1?x0:x1)-2' tipo='variable' ">
+      <param name="A_02" value="id='b' expresión='(x0>x1?x0:x1)+2' tipo='variable' ">
+      <param name="A_03" value="id='c' expresión='(y0<y1?y0:y1)-2' tipo='variable' ">
+      <param name="A_04" value="id='d' expresión='(y0>y1?y0:y1)+2' tipo='variable' ">
+      <param name="A_05" value="id='e' expresión='(z0<z1?z0:z1)-2' tipo='variable' ">
+      <param name="A_06" value="id='f' expresión='(z0>z1?z0:z1)+2' tipo='variable' ">
+      <param name="A_07" value="id='xn' expresión='5' tipo='variable' ">
+      <param name="A_08" value="id='yn' expresión='5' tipo='variable' ">
+      <param name="A_09" value="id='zn' expresión='5' tipo='variable' ">
+      <param name="A_10" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
+      <param name="A_11" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
+      <param name="A_12" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
+      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_16" value="id='f(x,y,z)' algoritmo='no' expresión='_Eval_(f_texto)' tipo='función' ">
+      <param name="A_17" value="id='F1(x,y,z)' algoritmo='no' expresión='(f(x+0.0001,y,z)-f(x,y,z))/0.0001' tipo='función' ">
+      <param name="A_18" value="id='F2(x,y,z)' algoritmo='no' expresión='(f(x,y+0.0001,z)-f(x,y,z))/0.0001' tipo='función' ">
+      <param name="A_19" value="id='F3(x,y,z)' algoritmo='no' expresión='(f(x,y,z+0.0001)-f(x,y,z))/0.0001' tipo='función' ">
+      <param name="A_20" value="id='calc_trayectorias()' algoritmo='sí' expresión='0' hacer='// vectores A=P₁-P₀ y B=(x₀+1,y₁+1,0)-P₀;A1=x1-x0;A2=y1-y0;A3=z1-z0;B1=1;B2=y1-y0+1;B3=-z0;;// vector n normal al plano generado por A y B;n1=A2*B3-A3*B2;n2=A3*B1-A1*B3;n3=A1*B2-A2*B1;;// vector C ortogonal a n y A;C1=n2*A3-n3*A2;C2=n3*A1-n1*A3;C3=n1*A2-n2*A1;;// normalizar A y C;mag_A=sqrt(A1^2+A2^2+A3^2);A1=A1/mag_A;A2=A2/mag_A;A3=A3/mag_A;mag_C=sqrt(C1^2+C2^2+C3^2);C1=C1/mag_C;C2=C2/mag_C;C3=C3/mag_C;;// punto medio entre P₀ y P₁;pm1=(x0+x1)/2;pm2=(y0+y1)/2;pm3=(z0+z1)/2;;// radio: distancia del punto medio a P₀;r=sqrt((pm1-x0)^2+(pm2-y0)^2+(pm3-z0)^2);' mientras='0' tipo='función' info='cálculos requeridos para dibujar las trayectorias' ">
+      <param name="A_21" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=15;E1.rot.z=-45;;calc_trayectorias()' ">
+      <param name="A_22" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='000000' expresión='(0,0,0) (s==0?8:0,s==1?8:0,s==2?5.5:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(8,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i\b x\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='10' offset_angle='0' info='x' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,8,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i\b y\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='10' offset_angle='180' info='y' ">
+      <param name="S_04" value="espacio='E1' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,0,5.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i\b z\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='10' offset_angle='180' info='z' ">
+      <param name="S_05" value="espacio='E1' tipo='curva' color='ff8000' expresión='uu=pi+u*pi;x=pm1+r*cos(uu)*A1+r*sin(uu)*C1;y=pm2+r*cos(uu)*A2+r*sin(uu)*C2;z=pm3+r*cos(uu)*A3+r*sin(uu)*C3' cortar='sí' ancho='2' Nu='8*ceil(r)' info='trayectoria 1' ">
+      <param name="S_06" value="espacio='E1' tipo='curva' color='ff00ff' expresión='uu=u*pi;x=pm1+r*cos(uu)*A1+r/3*sin(uu)*C1;y=pm2+r*cos(uu)*A2+r/3*sin(uu)*C2;z=pm3+r*cos(uu)*A3+r/3*sin(uu)*C3' cortar='sí' ancho='2' Nu='6*ceil(r)' info='trayectoria 2' ">
+      <param name="S_07" value="espacio='E1' tipo='curva' color='cccc00' expresión='uu=u*pi;x=pm1+r*cos(uu)*A1+3r*sin(uu)*C1;y=pm2+r*cos(uu)*A2+3r*sin(uu)*C2;z=pm3+r*cos(uu)*A3+3r*sin(uu)*C3' cortar='sí' ancho='2' Nu='10*ceil(r)' info='trayectoria 3' ">
+      <param name="S_08" value="espacio='E1' tipo='punto' color='008000' color_reverso='008000' expresión='(x0,y0,z0)' cortar='sí' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red0\green128\blue0;}\cf0\f0\fs40 \cf1\i{\*\mjaformula\i P\i0{\subix\i 0\i0}}\i0\cf0 }' decimales='2' ancho='5' offset_dist='20' offset_angle='270' info='P₀' ">
+      <param name="S_09" value="espacio='E1' tipo='punto' color='ff0000' color_reverso='ff0000' expresión='(x1,y1,z1)' cortar='sí' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;\red0\green0\blue0;}\f0\fs40 \i{\*\mjaformula\cf0\i P\i0{\subix\i 1\i0}}\i0\cf1 }' decimales='2' ancho='5' offset_dist='20' offset_angle='270' info='P₁' ">
+      <param name="S_10" value="espacio='E1' tipo='segmento' color='0000ff' expresión='(X(s),Y(s),Z(s)) (X(s)+F1(X(s),Y(s),Z(s)),Y(s)+F2(X(s),Y(s),Z(s)),Z(s)+F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='1' info='F(x,y,z) líneas' ">
+      <param name="S_11" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' expresión='(X(s)+F1(X(s),Y(s),Z(s)),Y(s)+F2(X(s),Y(s),Z(s)),Z(s)+F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1' offset_dist='10' offset_angle='270' info='F(x,y,z) puntos' ">
+      <param name="S_12" value="espacio='E1' tipo='texto' color='000000' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50\i{\*\mjaformula\i W = f(P\i0{\subix\i 1\i0}\i ) - f(P\i0{\subix\i 0\i0}\i ) = \i0\i{\expr f(x1,y1,z1)-f(x0,y0,z0)\decimals 2\fixed0}\i0}\i0\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>

@@ -2554,7 +2554,7 @@
 
         <p>A lo largo de este capítulo se han varias generalizaciones del Teorema Fundamental del Cálculo. Todas relacionan la "derivada" de una entidad sobre su dominio con la integral de dicha entidad alrededor del límite del dominio. El teorema de la divergencia, también conocido como el teorema de Gauss, es el último teorema de este tipo que se presentará. Este teorema reduce una integral triple sobre un sólido $E$ a una integral doble sobre el límite de $E$.</p>
 
-        <div class="num_block" prefix="Teorema" id="teorema_stokes">
+        <div class="num_block" prefix="Teorema" id="teorema_gauss">
           <b><i>Teorema de la Divergencia (Teorema de Gauss)</i></b>
           <p>Sea $S$ una superficie suave, cerrada y orientada hacia afuera que encierra un sólido $E$ en el espacio. Sea $\textbf{F}$ un campo vectorial. Si las derivadas parciales de las componentes de $\textbf{F}$ en $E$ existen y son continuas, entonces:
             \[
@@ -2577,42 +2577,77 @@
 
       <!--  -->
       <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
-        
-      </div>
-
-      <!--  -->
-      <div class="page">
         <h2 id="sec_c4_aplicaciones">Aplicaciones.</h2>
+
+        <p>En esta sección veremos algunas aplicaciones de los teoremas más importantes vistos a lo largo de este capítulo, específicamente:</p>
+
+        <ol>
+          <li>El Teorema Fundamental para Integrales de Línea:
+            \[
+              \int_C \nabla f \cdot d\textbf{r} = f(\textbf{r}(b)) - f(\textbf{r}(a))
+            \]</li>
+
+          <li>El teorema de Green:
+            \[
+              \iint\limits_D (Q_x - P_y)dA = \oint_C \textbf{F} \cdot d\textbf{r}
+            \]</li>
+
+          <li>El teorema de Stokes:
+            \[
+              \iint\limits_S \text{rot } \textbf{F} \cdot dS = \oint_C \textbf{F} \cdot d\textbf{r}
+            \]</li>
+
+          <li>El teorema de Gauss:
+            \[
+              \iiint\limits_E \text{div } \textbf{F} dV = \oiint\limits_S \textbf{F} \cdot dS
+            \]</li>
+        </ol>
+
+        <p>En general, todos estos teoremas sirven para simplificar drásticamente la evaluación de integrales, pero existen aplicaciones particulares como calcular el área de la región delimitada por una curva cerrada y calcular el flujo de calor que atraviesa un sólido.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <h3>Trabajo ejercido sobre una partícula</h3>
+
+        <p style="text-align-last:justify;">Sea $\textbf{F}$ un campo de fuerza (conservativo). Una partícula se mueve en el espacio partiendo del punto $P_0$ y termina su movimiento en un punto arbitrario $P_1$. Supongamos que este recorrido se puede modelar con una curva paramétrica suave. Para calcular el trabajo que ejerció $\textbf{F}$ sobre la partícula usando una integral de línea, podría resultar muy complicado parametrizar su trayectoria aunque sea</p>
+
+        <figure id="ejemplo_trabajo_ejercido_sobre_particula">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_trabajo_ejercido_sobre_particula.html"></div>
+          <figcaption>Utiliza los controles para cambiar el campo de fuerza $\nabla f(x,y,z)$, el punto de partida $P_0 = (x_0,y_0,z_0)$ y el punto de término $P_1 = (x_1,y_1,z_1)$ de la partícula. Se muestran tres distintas trayectorias que pudo haber tomado la partícula, pero el trabajo ejercido por $\nabla f$ no depende de ninguno de ellas.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>una curva suave. Pero gracias al <ref ref_id="teorema_fundamental_integrales_linea"></ref>, la trayectoria de la partícula es irrelevante, y el trabajo ejercido depende sólamente de la funcion potencial $f$ de $\textbf{F}$ evaluada en $P_0$ y $P_1$.</p>
+
+        <h3>Área de una región general en el plano</h3>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+        
+      </div>
+
+      <!--  -->
+      <div class="page">
+
       </div>
 
       <!--  -->
