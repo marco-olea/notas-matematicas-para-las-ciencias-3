@@ -845,7 +845,7 @@
         
         <p>Las integrales dobles nos pueden servir para calcular el área de una región general $D$ contenida en un plano. Simplemente integramos la función $f(x,y) = 1$.</p>
 
-        <div class="num_block" prefix="Definición">
+        <div class="num_block" prefix="Definición" id="area_region_planar">
           El <b>área</b> de una región $D$ contenida en un plano se define como $\iint\limits_D 1dA$.
         </div>
 
@@ -2620,19 +2620,51 @@
 
       <!--  -->
       <div class="page">
-        <p>una curva suave. Pero gracias al <ref ref_id="teorema_fundamental_integrales_linea"></ref>, la trayectoria de la partícula es irrelevante, y el trabajo ejercido depende sólamente de la funcion potencial $f$ de $\textbf{F}$ evaluada en $P_0$ y $P_1$.</p>
+        <p>una curva suave. Pero gracias al Teorema Fundamental para Integrales de Línea, la trayectoria de la partícula es irrelevante, y el trabajo ejercido depende sólamente de la funcion potencial $f$ de $\textbf{F}$ evaluada en $P_0$ y $P_1$.</p>
 
         <h3>Área de una región general en el plano</h3>
+
+        <p>Sea $C$ un astroide y sea $D$ la región que encierra $C$. El astroide se puede parametrizar de la siguiente manera:
+          \[
+            \textbf{r}(t) = \langle 3\cos(t) + \cos(3t), 3\sin(t) + \sin(3t) \rangle \text{, } t \in [0, 2\pi]
+          \]</p>
+          
+        <p>Queremos encontrar el área de $D$. Esto es equivalente a calcular la integral doble $\iint\limits_D dA$ (<ref ref_id="area_region_planar"></ref>). Para hacer este cálculo sin el teorema de Green, se requeriría partir a $D$ en dos regiones: la región que está arriba del eje $x$ y la que está debajo de ella. Al ser una región simétrica con respecto al eje $x$, basta con obtener el doble del área de la región superior. Posteriormente, se calcularía una integral doble tomando en cuenta que en coordenadas cartesianas, la ecuación de la cardioide es:
+          \[
+            (x^2 + y^2 - 16)^3 + 432x^2 y^2 = 0
+          \]</p>
+
+        <p>El resultado sería una integral no trivial de evaluar, pero este problema se puede simplificar con el teorema de Green. Consideremos el campo vectorial $\textbf{F}(x,y) = \langle y,2x \rangle$. Entonces, $Q_x = 2$, $P_y = 1$ y $Q_x - P_y = 1$. Por el teorema de Green:
+          \[
+            \iint\limits_D dA = \iint\limits_D (Q_x - P_y)dA
+          \]</p>
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <p>
+          \[
+            \begin{aligned}
+              &= \int_C \textbf{F} \cdot d\textbf{r} \\
+              &= \int^{2\pi}_0 \langle 3\sin(t) - \sin(3t), 6\cos(t) + 2\cos(3t) \rangle \\
+              & \hspace{3.5em} \cdot \langle -3\sin(t) - 3\sin(3t), 3\cos(t) - 3\cos(3t) \rangle\ dt \\
+              &= \int^{2\pi}_0 \left[ \frac{9}{2} \cos(2t) - 3\cos(4t) - \frac{3}{4}\cos(6t) + 3 \right] dt \\
+              &= \left[ \frac{9}{4} \sin(2t) - \frac{3}{4} \sin(4t) - \frac{3}{4} \sin(6t) + 3t \right]^{2\pi}_0 = 6\pi
+            \end{aligned}
+          \]</p>
+
+        <p>Por lo tanto, el área de este astroide es $6\pi$.</p>
+
+        <figure id="ejemplo_area_region_planar">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_area_region_planar.html"></div>
+        </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        
+        <p>El procedimiento anterior, dado cualquier campo vectorial donde $Q_x - P_y = 1$, funciona con cualquier curva planar cerrada.</p>
+
+        <h3>a</h3>
       </div>
 
       <!--  -->
