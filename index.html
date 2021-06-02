@@ -2733,12 +2733,47 @@
 
         <h3>Flujo de transferencia de calor a través de un sólido</h3>
 
-        <p style="text-align-last:justify;">La Ley de Fourier establece que el flujo de transferencia de calor por conducción es proporcional al gradiente negativo de la temperatura, es decir, $\textbf{F} = -k \nabla T$, donde $k$ es la constante de conductividad térmica medida en watts por metro-kelvin. Sea $E$ un cubo de lado unitario centrado en el origen.</p>
+        <p style="text-align-last:justify;">La Ley de Fourier establece que el flujo de transferencia de calor por conducción es proporcional al gradiente negativo de la temperatura, es decir, $\textbf{F} = -k \nabla T$, donde $k$ es la constante de conductividad térmica medida en watts por metro-kelvin. Sea $E$ un</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Si $T(x,y,z) = e^x + y^2z$ y $k = 1$, ¿cuál es el flujo neto de calor transferido hacia afuera del contorno $S$ de $E$?</p>
+        <p>cubo de lado unitario centrado en el punto $(\frac{3}{2}, \frac{1}{2}, \frac{1}{2})$. Si $T(x,y,z) = \ln(x) - \frac{1}{5}yz$ y $k = 1$, ¿cuál es el flujo neto de calor transferido hacia afuera del contorno $S$ de $E$?</p>
+
+        <p>Primero, tenemos que: 
+          \[
+            \textbf{F}(x,y,z) = -k \nabla T = -1 \langle \frac{1}{x}, -\frac{z}{5}, -\frac{y}{5} \rangle = \langle -\frac{1}{x}, \frac{z}{5}, \frac{y}{5} \rangle
+          \]</p>
+
+        <p>El problema pide calcular la integral $\oiint\limits_S \textbf{F} \cdot dS = -k \oiint\limits_S \nabla T \cdot dS$, lo cual requiere parametrizar cada una de las seis superficies que conforman el contorno del cubo. Pero notemos que:
+          \[
+            \text{div } \textbf{F} = P_x + Q_y + R_z = \frac{1}{x^2}
+          \]</p>
+
+        <p>Además, el cubo planteado se puede describir de la siguiente manera:
+          \[
+            E = \{ (x,y,z): 1 \leq x \leq 2,\ 0 \leq y \leq 1,\ 0 \leq z \leq 1 \}
+          \]</p>
+
+        <p>Entonces, por el teorema de la divergencia:
+          \[
+            \begin{aligned}
+              \oiint\limits_S \textbf{F} \cdot dS &= \iiint\limits_E \text{div } \textbf{F}dV \\
+                                                  &= \int^1_0 \int^1_0 \int^2_1 \frac{1}{x^2} dxdydz \\
+                                                  &= \frac{1}{2} \int^1_0 \int^1_0 dydz \\
+                                                  &= \frac{1}{2} \int^1_0 dz = \frac{1}{2}
+            \end{aligned}
+          \]</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Por lo tanto, el flujo de neto de calor transferido hacia afuera del contorno del cubo es $\frac{1}{2}$.</p>
+
+        <figure id="ejemplo_aplicacion_gauss">
+          <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_gauss.html"></div>
+          <figcaption>Utiliza los controles $a$, $b$, $g_1(x)$ y $g_2(x)$ para cambiar la región de Tipo I $D = \{ (x,y) \in \R^2: a \leq x \leq b,\ g_1(x) \leq y \leq g_2(x) \}$. La región $E$ que se dibujará es el sólido entre $h_1(D)$ y $h_2(D)$.</figcaption>
+        </figure>
       </div>
 
       <!--  -->
