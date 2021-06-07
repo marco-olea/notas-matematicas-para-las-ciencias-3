@@ -508,20 +508,20 @@
 
       <!--  -->
       <div class="page">
-        <h2 id="sec_c1_geometría_de_funciones_de_R2_en_R2">Geometría de las funciones de $\R^2$ en $\R^2$.</h2>
+        <h3>Integrales sobre regiones polares rectangulares</h3>
 
         <p>Las integrales dobles pueden ser más fáciles de calcular si se cambian de coordenadas rectangulares a coordenadas polares. Ahora explicaremos el concepto de una integral doble en una región rectangular definida con coordenadas polares.</p>
-
-        <h3>Integrales sobre regiones polares rectangulares</h3>
 
         <p>Cuando definimos la integral doble de una función continua sobre una región rectangular, dividimos dicha región en rectángulos más pequeños cuyos lados $\Delta x$ y $\Delta y$ eran paralelos a los ejes de las abscisas y ordenadas, y eran de tamaño constante (<ref ref_id="region_rectangular"></ref>). En coordenadas polares, trabajaremos con <b>rectángulos polares</b> cuyos lados $\Delta r$ y $\Delta \theta$ son de tamaño constante. Formalmente:
         \[
           R = \{(r, \theta): a \leq r \leq b, \alpha \leq \theta \leq \beta\}
         \]</p>
 
-        <p>Sea $f(r,\theta)$ ($f: \R^2 \rightarrow \R$) una función definida sobre un rectángulo polar $R$. Dividiremos el intervalo $[a, b]$ en $m$ subintervalos de tamaño $\Delta r = \frac{b - a}{m}$ y dividiremos el intervalo $[\alpha, \beta]$ en $n$ subintervalos de tamaño $\Delta \theta = \frac{\beta - \alpha}{n}$. Por lo tanto, los círculos $r_i$ para $1 \leq i \leq m$ y las semirectas $\theta_j$ para $1 \leq j \leq n$ dividen el rectángulo polar $R$ en $m \cdot n$ rectángulos polares $R_{ij}$ más pequeños.</p>
+        <p>Sea $f(r,\theta)$ (con $f: \R^2 \rightarrow \R$) una función definida sobre un rectángulo polar $R$. Dividiremos el intervalo $[a, b]$ en $m$ subintervalos de tamaño $\Delta r = \frac{b - a}{m}$ y dividiremos el intervalo $[\alpha, \beta]$ en $n$ subintervalos de tamaño $\Delta \theta = \frac{\beta - \alpha}{n}$. Por lo tanto, los círculos $r_i$ para $1 \leq i \leq m$ y las semirectas $\theta_j$ para $1 \leq j \leq n$ dividen el rectángulo polar $R$ en $m \cdot n$ rectángulos polares $R_{ij}$ más pequeños.</p>
 
         <p>Al igual que con las regiones rectangulares, nos interesa conocer el volumen del prisma con base $R_{ij}$ y altura $f(r^*_{ij}, \theta^*_{ij})$, por lo que debemos encontrar el área $\Delta A$ de cada $R_{ij}$.</p>
+
+        <p style="text-align-last:justify">Recordemos que para un círculo de radio $r$, la longitud $s$ de un arco delimitado por un ángulo central de $\theta$ radianes es $s = r \theta$. Observa en la <ref ref_id="rectangulo_polar"></ref> que $R_{ij}$ se parece a un trapecio de altura $\Delta r$,</p>
       </div>
 
       <!--  -->
@@ -531,24 +531,22 @@
           <figcaption>Un rectángulo polar $R$ dividido en $m \cdot n$ rectángulos polares $R_{ij}$.</figcaption>
         </figure>
 
-        <p>Recordemos que para un círculo de radio $r$, la longitud $s$ de un arco delimitado por un ángulo central de $\theta$ radianes es $s = r \theta$. Observa en la <ref ref_id="rectangulo_polar"></ref> que $R_{ij}$ se parece a un trapecio de altura $\Delta r$, base mayor $r_i \Delta \theta$ y base menor $r_{i-1} \Delta \theta$. Por tanto, el área del rectángulo polar $R_{ij}$ es:
-        \[
-          \begin{aligned}
-              \Delta A &= \frac{1}{2} \Delta r (r_{i-1}\Delta \theta + r_i \Delta \theta) \\
-              &= \frac{1}{2} (r_{i-1} + r_i) \Delta r \Delta \theta
-          \end{aligned}
-        \]</p>
+        <p>base mayor $r_i \Delta \theta$ y base menor $r_{i-1} \Delta \theta$. Por tanto, el área del rectángulo polar $R_{ij}$ es:
+          \[
+            \begin{aligned}
+                \Delta A &= \frac{1}{2} \Delta r (r_{i-1}\Delta \theta + r_i \Delta \theta) \\
+                &= \frac{1}{2} (r_{i-1} + r_i) \Delta r \Delta \theta
+            \end{aligned}
+          \]</p>
 
-        <p>Si definimos $r^*_{ij} = \frac{1}{2} (r_{i-1} + r_i)$, entonces $\Delta A = r^*_{ij} \Delta r \Delta \theta$. Por lo</p>
+        <p>Si definimos $r^*_{ij} = \frac{1}{2} (r_{i-1} + r_i)$, entonces $\Delta A = r^*_{ij} \Delta r \Delta \theta$. Por lo que, con $\theta^*_{ij} = \frac{1}{2} (\theta_{j-1} + \theta_j)$, el volumen del prisma sobre $R_{ij}$ es:
+          \[
+            f(r^*_{ij}, \theta^*_{ij}) \Delta A = f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
+          \]</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>que, con $\theta^*_{ij} = \frac{1}{2} (\theta_{j-1} + \theta_j)$, tenemos que el volumen del prisma sobre $R_{ij}$ es:
-        \[
-          f(r^*_{ij}, \theta^*_{ij}) \Delta A = f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
-        \]</p>
-
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_polares_rectangulares.html"></div>
           <figcaption>Una suma de Riemann doble sobre un rectángulo polar.</figcaption>
@@ -558,14 +556,16 @@
         \[
           \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
         \]</p>
+
+        <p>Al igual que con las regiones rectangulares, obtenemos mejores aproximaciones conforme aumentan $m$ y $n$, por lo que definimos el volumen polar de la siguiente manera:</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Al igual que con las regiones rectangulares, obtenemos mejores aproximaciones conforme aumentan $m$ y $n$, por lo que definimos el volumen polar de la siguiente manera:
-        \[
-          V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
-        \]</p>
+        <p>
+          \[
+            V = \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
+          \]</p>
 
         <div class="num_block" prefix="Definición">
           La integral doble de la función $f(r,\theta)$ sobre el rectángulo polar $R$ en el plano $r\theta$ es:
@@ -586,14 +586,16 @@
         <p>Observa que la expresión $dA$ se sutituye por $rdrd\theta$ al trabajar con coordenadas polares.</p>
 
         <p>Todas la propiedades enunciadas en el <ref ref_id="propiedades_integral"></ref> para las integrales dobles en coordenadas rectangulares también aplican para coordenadas polares.</p>
+
+        <h3>Integrales sobre regiones polares generales</h3>
+
+        <p style="text-align-last:justify">Para evaluar la integral doble de una función continua sobre una región polar general, describimos dos tipos de regiones</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <h3>Integrales sobre regiones polares generales</h3>
-
-        <p>Para evaluar la integral doble de una función continua sobre una región polar general, describimos dos tipos de regiones análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
-
+        <p>análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
+        
         <p>Dado que es más común escribir ecuaciones polares en términos de $\theta$ ($r = f(\theta)$), definimos una región polar general como se muestra en la <ref ref_id="polar_general_tipoii"></ref>, es decir:
         \[
           D = \{(r,\theta) : \alpha \leq \theta \leq \beta, h_1(\theta) \leq r \leq h_2(\theta)\}
@@ -630,26 +632,23 @@
 
       <!--  -->
       <div class="page">
-        <h2 id="sec_c1_teorema_de_cambio_de_variable">Teorema del cambio de variable.</h2>
+        <h2 id="sec_c1_geometría_de_funciones_de_R2_en_R2">Geometría de las funciones de $\R^2$ en $\R^2$.</h2>
 
-        <p>A continuación se hará un breve recordatorio del método de integración por sustitución:
-        \[
-          \int\limits^b_a f(x)dx = \int\limits^d_c f(g(u))g'(u)du
-        \]</p>
-
-        <p>Donde $x = g(u)$, $dx = g'(u)du$, $c = g(a)$ y $d = g(b)$. El propósito de esta sustitución es obtener una integral más simple y más fácil de resolver que la original.</p>
-
-        <p>En general, la función usada para cambiar las variables se le llama <b>transformación</b>.</p>
-
-        <h3>Transformaciones planares</h3>
+        <p>En esta sección se define una transformación en el plano, concepto de gran importancia para el teorema del cambio de variable.</p>
 
         <div class="num_block" prefix="Definición">
-          Sea $G \subseteq \R^2$ una región en un plano. Una <b>transformación planar</b> es una función $T$ que transforma $G$ en una región $R \subseteq \R^2$ en otro plano mediante un cambio de variables.
+          Sea $G \subseteq \R^2$ una región en un plano. Una <b>transformación en el plano</b> es una función $T$ que transforma $G$ en una región $R \subseteq \R^2$ en otro plano mediante un cambio de variables.
         </div>
 
-        <p>Un ejemplo de esto se muestra en la <ref ref_id="transformacion_planar"></ref>, donde el cambio de variables es $x = g(u,v)$ y $y = h(u,v)$, aunque a veces se escribe $x = x(u,v)$ y $y = y(u,v)$.</p>
+        <p>Un ejemplo de una transformación en el plano se muestra en la <ref ref_id="transformacion_planar"></ref>, donde el cambio de variables es $x = g(u,v)$ y $y = h(u,v)$, aunque a veces se escribe $x = x(u,v)$ y $y = y(u,v)$.</p>
 
         <p>Típicamente supondremos que cada una de estas funciones tienen primeras derivadas parciales continuas, esto es, que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son continuas.</p>
+
+        <div class="num_block" prefix="Definición">
+          Sea $T: G \rightarrow R$ una transformación, donde $G \subseteq \R^2$ es una región en el plano $uv$ y $R \subseteq \R^2$ es una región en otro plano. Decimos que $T$ es <b>inyectiva</b> si para todo $(u_1,v_1),(u_2,v_2) \in G$ tal que $(u_1,v_1) \not = (u_2,v_2)$, entonces $T(u_1,v_1) \not = T(u_2,v_2)$.
+        </div>
+
+        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son funciones identidad.</p>
       </div>
 
       <!--  -->
@@ -662,11 +661,16 @@
 
       <!--  -->
       <div class="page">
-        <div class="num_block" prefix="Definición">
-          Sea $T: G \rightarrow R$ una transformación, donde $G \subseteq \R^2$ es una región en el plano $uv$ y $R \subseteq \R^2$ es una región en otro plano. Decimos que $T$ es <b>inyectiva</b> si para todo $(u_1,v_1),(u_2,v_2) \in G$ tal que $(u_1,v_1) \not = (u_2,v_2)$, entonces $T(u_1,v_1) \not = T(u_2,v_2)$.
-        </div>
+        <h2 id="sec_c1_teorema_de_cambio_de_variable">Teorema del cambio de variable.</h2>
 
-        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son funciones identidad.</p>
+        <p>A continuación se hará un breve recordatorio del método de integración por sustitución:
+        \[
+          \int\limits^b_a f(x)dx = \int\limits^d_c f(g(u))g'(u)du
+        \]</p>
+
+        <p>Donde $x = g(u)$, $dx = g'(u)du$, $c = g(a)$ y $d = g(b)$. El propósito de esta sustitución es obtener una integral más simple y más fácil de resolver que la original.</p>
+
+        <p>En general, la función usada para cambiar las variables se le llama <b>transformación</b>.</p>
 
         <h3>Jacobiano</h3>
 
@@ -674,76 +678,80 @@
 
         <p>Observa en la <ref ref_id="jacobiano_explicacion"></ref> cómo $T$ transforma una región rectangular $S$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a una región $R$ en el plano $xy$.</p>
 
-        <p>Como $x = g(u,v)$ y $y = h(u,v)$, el vector de posición de la imagen del punto $(u,v)$ es $\textbf{r}(u,v) = g(u,v)\textbf{i} + h(u,v)\textbf{j}$. Sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen es $(x_0,y_0) = T(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva con función vectorial $r(u,v_0)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
-        \[
-          \textbf{r}_u = g_u(u_0,v_0)\textbf{i} + h_u(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial u}\textbf{i} + \frac{\partial y}{\partial u}\textbf{j}
-        \]</p>
+        <p style="text-align-last:justify">Como $x = g(u,v)$ y $y = h(u,v)$, el vector de posición de la imagen del punto $(u,v)$ es $\textbf{r}(u,v) = g(u,v)\textbf{i} + h(u,v)\textbf{j}$. Sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen es $(x_0,y_0) = T(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva con función vectorial $\textbf{r}(u,v_0)$ y el vector tangente a esta</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva $r(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
+        <p>curva en el punto $(x_0,y_0)$ es:
+          \[
+            \textbf{r}_u = g_u(u_0,v_0)\textbf{i} + h_u(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial u}\textbf{i} + \frac{\partial y}{\partial u}\textbf{j}
+          \]</p>
+
+        <p>Análogamente, la imagen de la línea $u = u_0$ es la curva $\textbf{r}(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es:
         \[
           \textbf{r}_v = g_v(u_0,v_0)\textbf{i} + h_v(u_0,v_0)\textbf{j} = \frac{\partial x}{\partial v}\textbf{i} + \frac{\partial y}{\partial v}\textbf{j}
         \]</p>
 
         <p>Ahora, notemos que:
           \[
-            r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica que}
+            \textbf{r}_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \ \text{implica que}
           \]
           \[
             \textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0) \approx \Delta u \textbf{r}_u
           \]</p>
 
         <p>Análogamente:
-        \[
-          r_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \ \text{implica que}
-        \]</p>
+          \[
+            \textbf{r}_v = \lim_{\Delta v \rightarrow 0} \frac{\textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0)}{\Delta v}\ \ \text{implica que}
+          \]
+          \[
+            \textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \Delta v \textbf{r}_v
+          \]</p>
 
+        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left\Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right\Vert = \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v$, donde el producto cruz (en su forma matricial con los vectores canónicos $\textbf{i}$, $\textbf{j}$ y $\textbf{k}$) es:</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
         <figure id="jacobiano_explicacion">
           <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html"></div>
           <figcaption>Mueve el cursor dentro de $S$ para ver cómo se mapea a un punto de $R$. Los vectores verdes miden aproximadamente lo mismo que los morados, por lo que el área de $R$ se aproxima al área del paralelogramo $(\Delta A \approx \Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \Vert)$.</figcaption>
         </figure>
-      </div>
-
-      <!--  -->
-      <div class="page">
-        <p>\[
-          \textbf{r}(u_0,v_0 + \Delta v) - \textbf{r}(u_0,v_0) \approx \Delta v \textbf{r}_v
-        \]</p>
-
-        <p>Esto nos permite aproximar el área $\Delta A$ de la imagen $R$ calculando el área del paralelogramo formado por los lados $\Delta v \textbf{r}_v$ y $\Delta u \textbf{r}_u$. Recordemos que el producto cruz entre dos vectores $a,b \in \R^3$ es un vector ortogonal a $a$ y $b$ cuya magnitud es el área del paralelogramo formado por $a$ y $b$. Por tanto, el área $\Delta A$ es aproximadamente $\left\Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \right\Vert = \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v$, donde el producto cruz (en su forma matricial con los vectores canónicos $\textbf{i}$, $\textbf{j}$ y $\textbf{k}$) es:</p>
 
         <p>
-        \[
-          \begin{aligned}
-            \textbf{r}_u \times \textbf{r}_v
-            = \left| \begin{array}{ccc}
-              \textbf{i} & \textbf{j} & \textbf{k} \\[5pt]
-              \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} & 0 \\[11pt]
-              \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v} & 0
-            \end{array} \right|
-            &= \left| \begin{array}{cc}
-              \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
-              \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
-            \end{array} \right| \textbf{k} \\
-            &= \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k}
-          \end{aligned}
-        \]</p>
+          \[
+            \begin{aligned}
+              \textbf{r}_u \times \textbf{r}_v = \left| \begin{array}{ccc}
+                                                          \textbf{i}                                 & \textbf{j}                                 & \textbf{k} \\[5pt]
+                                                          \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} & 0          \\[11pt]
+                                                          \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v} & 0
+                                                        \end{array} \right| &= \left| \begin{array}{cc}
+                                                                                        \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+                                                                                        \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+                                                                                      \end{array} \right| \textbf{k} \\
+                                                                            &= \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k}
+            \end{aligned}
+          \]</p>
 
         <p>De donde:
-        \[
-          \begin{aligned}
-            \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert 
-            &= \left\Vert \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k} \right\Vert \\
-            &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Vert \textbf{k} \Vert \\
-            &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right|
-          \end{aligned}
-        \]</p>
+          \[
+            \begin{aligned}
+              \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert &= \left\Vert \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k} \right\Vert \\
+                                                                      &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Vert \textbf{k} \Vert
+            \end{aligned}
+          \]</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>
+          \[
+            \begin{aligned}
+                                                                      &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right|
+            \end{aligned}
+          \]</p>
+
         <p>Por tanto:
         \[
           \Delta A \approx \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert \Delta u \Delta v = \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Delta u \Delta v
@@ -779,11 +787,13 @@
           \end{array} \right|
         \]</p>
 
-        <p>Por lo que la notación $J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|$ implica que el determinante Jacobiano se puede escribir con las parciales de $x$ en la primera fila y las parciales de $y$ en la segunda fila, o bien las parciales de $x$ en la primera columna y las parciales de $y$ en la segunda columna.</p>
+        <p style="text-align-last:justify">Por lo que la notación $J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|$ implica que el determinante Jacobiano se puede escribir con las parciales de $x$ en</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>la primera fila y las parciales de $y$ en la segunda fila, o bien las parciales de $x$ en la primera columna y las parciales de $y$ en la segunda columna.</p>
+
         <h3>Cambio de variables para integrales dobles</h3>
 
         <p>Recordemos la <ref ref_id="integral_doble"></ref> (integral doble) dada en la primera sección de este capítulo:
@@ -791,29 +801,33 @@
           \iint\limits_R f(x,y)dA = \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A
         \]</p>
 
-        <p>Ahora observa en la <ref ref_id="cambio_variables"></ref> que dividimos la región $S$ en el plano $uv$ en subrectángulos $S_{ij}$ tales que los subrectángulos $R_{ij}$ en el plano $xy$ son las imágenes de $S_{ij}$ bajo la transformación $T(u,v) = (x,y)$.</p>
+        <p style="text-align-last:justify">Ahora observa en la <ref ref_id="cambio_variables"></ref> que dividimos la región $S$ en el plano $uv$ en subrectángulos $S_{ij}$ tales que los subrectángulos $R_{ij}$</p>
 
         <figure id="cambio_variables">
           <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/cambio_variables.html"></div>
-          <figcaption>Haz clic en un subrectángulo $S_{ij}$ para ver su imagen $R_{ij}$ en la región $R$. Observa que conforme aumentan $m$ y $n$, la suma del área de todos los paralelogramos formados por los vectores tangentes a $\textbf{r}(u_i,v)$ y $\textbf{r}(u,v_j)$ en los puntos $(x_{ij},y_{ij})$ se va aproximando al área de $R$.</figcaption>
+          <figcaption>Selecciona un subrectángulo $S_{ij}$ para ver su imagen $R_{ij}$ en la región $R$. Observa que conforme aumentan $m$ y $n$, la suma del área de todos los paralelogramos formados por los vectores tangentes a $\textbf{r}(u_i,v)$ y $\textbf{r}(u,v_j)$ en los puntos $(x_{ij},y_{ij})$ se va aproximando al área de $R$.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Entonces la integral doble de $f$ sobre $R$ es:
-        \[
-          \begin{aligned}
-            \iint\limits_R &f(x,y)dA \\
-              &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A \\
-              &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(g(u_{ij},v_{ij}),h(u_{ij},v_{ij})) |J(u_{ij},v_{ij})| \Delta u \Delta v
-          \end{aligned}
-        \]</p>
+        <p>en el plano $xy$ son las imágenes de $S_{ij}$ bajo la transformación $T(u,v) = (x,y)$.</p>
 
-        <p>Nota que lo anterior es la suma de Riemann doble de la integral:
-        \[
-          \iint\limits_S f(g(u,v),h(u,v)) \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
-        \]</p>
+        <p>Entonces la integral doble de $f$ sobre $R$ es:
+          \[
+            \begin{aligned}
+              \iint\limits_R &f(x,y)dA \\
+                &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A \\
+                &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(g(u_{ij},v_{ij}),h(u_{ij},v_{ij})) |J(u_{ij},v_{ij})| \Delta u \Delta v
+            \end{aligned}
+          \]</p>
+
+        <p>Nota que lo anterior es la suma de Riemann doble de la integral:</p>
+
+        <p>
+          \[
+            \iint\limits_S f(g(u,v),h(u,v)) \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
+          \]</p>
 
         <p>Por lo que podemos concluir el siguiente teorema.</p>
 
@@ -824,15 +838,14 @@
             \iint\limits_R f(x,y)dA = \iint\limits_S f(g(u,v),h(u,v)) \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
           \]</p>
         </div>
-
-        <p>Con este teorema, podemos cambiar las variables $(x,y)$ a $(u,v)$ con la siguiente sustitución:</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>\[
-          dA = dxdy = \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
-        \]</p>
+        <p>Con este teorema, podemos cambiar las variables $(x,y)$ a $(u,v)$ con la siguiente sustitución:
+          \[
+            dA = dxdy = \left| \frac{\partial (x,y)}{\partial (u,v)} \right| dudv
+          \]</p>
 
         <p>Recordando que $x = g(u,v)$ y $y = h(u,v)$ y que se deben cambiar los límites de integración. Este cambio de variables puede facilitar mucho el cálculo de una integral doble.</p>
       </div>
