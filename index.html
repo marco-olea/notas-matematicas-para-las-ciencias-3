@@ -633,7 +633,7 @@
       <div class="page">
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_general.html"></div>
-          <figcaption>Una región polar general y el sólido que se encuentra entre este y una función continua $f(r,\theta)$.</figcaption>
+          <figcaption>Observa el sólido que se encuentra entre una región polar general y una función continua $f(r,\theta)$.</figcaption>
         </figure>
       </div>
 
@@ -655,7 +655,7 @@
           Sea $T: G \rightarrow R$ una transformación, donde $G \subseteq \R^2$ es una región en el plano $uv$ y $R \subseteq \R^2$ es una región en otro plano. Decimos que $T$ es <b>inyectiva</b> si para todo $(u_1,v_1),(u_2,v_2) \in G$ tal que $(u_1,v_1) \not = (u_2,v_2)$, entonces $T(u_1,v_1) \not = T(u_2,v_2)$.
         </div>
 
-        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son funciones identidad.</p>
+        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son la función identidad.</p>
       </div>
 
       <!--  -->
@@ -675,7 +675,7 @@
           \int\limits^b_a f(x)dx = \int\limits^d_c f(g(u))g'(u)du
         \]</p>
 
-        <p>Donde $x = g(u)$, $dx = g'(u)du$, $c = g(a)$ y $d = g(b)$. El propósito de esta sustitución es obtener una integral más simple y más fácil de resolver que la original.</p>
+        <p>Donde $x = g(u)$, $dx = g'(u)du$, $c = g(a)$ y $d = g(b)$. El propósito de esta sustitución es obtener una integral más simple y fácil de resolver que la original.</p>
 
         <p>En general, la función usada para cambiar las variables se le llama <b>transformación</b>.</p>
 
@@ -869,7 +869,7 @@
           El <b>área</b> de una región $D$ contenida en un plano se define como $\iint\limits_D 1dA$.
         </div>
 
-        <p>Para ilustrar esto, veamos un ejemplo de cómo calcular el área entre dos curvas polares. Consideremos las distintas regiones delimitadas por el círculo $r = 3\cos(\theta)$, la cardioide $r = 1 + \cos(\theta)$ y la recta $\theta = 0$, como se puede observar en la <ref ref_id="area_entre_curvas_polares"></ref>. Primero debemos encontrar los puntos de intersección. Igualando las primeras dos ecuaciones nos da:
+        <p>Para ilustrar esto, veamos un ejemplo de cómo calcular el área entre dos curvas polares. Consideremos las distintas regiones delimitadas por el círculo $r = 3\cos(\theta)$, la cardioide $r = 1 + \cos(\theta)$ y la recta $\theta = 0$, como se puede observar en la <ref ref_id="ejemplo_area_entre_curvas_polares"></ref>. Primero debemos encontrar los puntos de intersección. Igualando las primeras dos ecuaciones nos da:
         \[
           \begin{aligned}
             3\cos(\theta) = 1 + \cos(\theta) &\Rightarrow 2\cos(\theta) = 1 \\
@@ -882,8 +882,8 @@
 
       <!--  -->
       <div class="page">
-        <figure id="area_entre_curvas_polares">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/area_entre_curvas_polares.html"></div>
+        <figure id="ejemplo_area_entre_curvas_polares">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_area_entre_curvas_polares.html"></div>
           <figcaption>Haz clic en cualquiera de las cuatro regiones para activar o desactivarla y observa cómo se actualizan los límites de integración.</figcaption>
         </figure>
 
@@ -891,43 +891,60 @@
         
         <p>Como hemos visto anteriormente, podemos usar integrales dobles para encontrar el volumen de un sólido acotado por arriba por una función $f(x,y)$ sobre una región general $D$, siempre y cuando $f(x,y) \geq 0$ para todo $(x,y) \in D$.</p>
 
-        <p style="text-align-last:justify;">Ejemplo: Encontrar el volumen del sólido acotado por arriba por la función $f(x,y) = y - 2x + 5$ sobre la región $D$ descrita en la figura. Descomponemos a $D$ en una unión de tres regiones $D_1$, $D_2$ y $D_3$, donde $D_1 = \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\}$,</p>
+        <p>Ejemplo: Encontrar el volumen del sólido acotado por arriba por la función $f(x,y) = y - 2x + 5$ sobre la región $D$ descrita en la <ref ref_id="ejemplo_calcular_volumen"></ref>. Descomponemos a $D$ en una unión de tres regiones $D_1$, $D_2$ y $D_3$, donde:</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p style="text-align-last: justify;">$D_2 = \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\}$ y $D_3 = \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}$. Aquí $D_1$ es de Tipo I mientras que $D_2$ y $D_3$ son de Tipo II. Por tanto, el volumen es:
-        \[
-          \begin{aligned}
-            V & = \iint\limits_D (y - 2x + 5)dA \\
-              & = \iint\limits_{D_1} (y - 2x + 5)dA \\
-              &     \hspace{5em} + \iint\limits_{D_2} (y - 2x + 5)dA \\
-              &     \hspace{5em} + \iint\limits_{D_3} (y - 2x + 5)dA \\
-              & = \int\limits_{x=-2}^{x=0} \int\limits_{y=0}^{y=(x+2)^2} (y - 2x + 5)dydx \\
-              &     \hspace{5em} + \int\limits_{y=0}^{y=4} \int\limits_{x=0}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
-              &     \hspace{5em} + \int\limits_{y=-4}^{y=0} \int\limits_{x=-2}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
-              & = \frac{96}{5} + \frac{828}{35} + \frac{828}{35} \\
-              & = \frac{2328}{35}
-          \end{aligned}
-        \]</p>
+        <p>
+          \[
+            \begin{aligned}
+              D_1 &= \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\} \text{,} \\
+              D_2 &= \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\} \quad \text{y} \\
+              D_3 &= \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}
+            \end{aligned}
+          \]</p>
+
+        <p>Aquí, $D_1$ es de Tipo I mientras que $D_2$ y $D_3$ son de Tipo II. Por tanto, el volumen es:
+          \[
+            \begin{aligned}
+              V &= \iint\limits_D (y - 2x + 5)dA \\
+              V &= \iint\limits_{D_1} (y - 2x + 5)dA \\
+                &    \hspace{5em} + \iint\limits_{D_2} (y - 2x + 5)dA \\
+                &    \hspace{5em} + \iint\limits_{D_3} (y - 2x + 5)dA \\
+              V &= \int\limits_{x=-2}^{x=0} \int\limits_{y=0}^{y=(x+2)^2} (y - 2x + 5)dydx \\
+                &    \hspace{5em} + \int\limits_{y=0}^{y=4} \int\limits_{x=0}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
+                &    \hspace{5em} + \int\limits_{y=-4}^{y=0} \int\limits_{x=-2}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy
+            \end{aligned}
+          \]</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/volumen_ejemplo.html"></div>
+        <p>
+          \[
+            V = \frac{96}{5} + \frac{828}{35} + \frac{828}{35} = \frac{2328}{35}
+          \]</p>
+
+        <fig id="ejemplo_calcular_volumen">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_calcular_volumen.html"></div>
+          <figcaption>El sólido acotado por la función $f(x,y)$ y la región $D = D_1 \cup D_2 \cup D_3$.</figcaption>
+        </fig>
 
         <h3>Valor promedio</h3>
 
         <p>Recuerda la definición del valor promedio de una función de una variable en un intervalo $[a,b]$:
-        \[
-          f_\text{pro} = \frac{1}{a - b} \int^b_a f(x)dx
-        \]</p>
+          \[
+            f_\text{pro} = \frac{1}{a - b} \int^b_a f(x)dx
+          \]</p>
 
-        <p>De manera similar, podemos definir el valor promedio de una función de dos variables sobre una región general $D$, con la diferencia de que se divide entre un área en vez de dividir entre el tamaño de un intervalo.</p>
+        <p style="text-align-last:justify;">De manera similar, podemos definir el valor promedio de una</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>función de dos variables sobre una región general $D$, con la diferencia de que se divide entre un área en vez de dividir entre el tamaño de un intervalo.</p>
+
         <div class="num_block" prefix="Definición">
           Si $f(x,y)$ es integrable sobre una región $D$ contenida en un plano y tiene área $A(D) > 0$, entonces el <b>valor promedio</b> de $f$ se define como:
           \[
@@ -935,19 +952,20 @@
           \]
         </div>
 
-        <p>Ejemplo: Encontrar el valor promedio de la función $f(x,y) = \frac{xy}{2}$ sobre un triángulo cuyos vértices son $(1,1)$, $(6,1)$ y $(3,9)$. Primero debemos encontrar el área $A(D)$, donde $D$ es la región descrita en la siguiente figura:</p>
-
-        <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/valor_promedio_ejemplo.html"></div>
+        <fig id="ejemplo_valor_promedio">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_valor_promedio.html"></div>
+          <figcaption>El valor promedio de la función $f(x,y)$ definida sobre el triángulo cuyos vértices son $(1,1)$, $(6,1)$ y $(3,9)$.</figcaption>
+        </fig>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Considerando los puntos $(1,1)$ y $(3,9)$, tenemos que:
+        <p>Ejemplo: Encontrar el valor promedio de la función $f(x,y) = \frac{xy}{2}$ sobre un triángulo cuyos vértices son $(1,1)$, $(6,1)$ y $(3,9)$. Primero debemos encontrar el área $A(D)$, donde $D$ es la región mostrada en la <ref ref_id="ejemplo_valor_promedio"></ref>. Considerando los puntos $(1,1)$ y $(3,9)$, tenemos que:
         \[
           m = \frac{9 - 1}{3 - 1} = 4,\ \ b = 9 - 4 \cdot 3 = -3
         \]</p>
 
-        <p>Por lo que la ecuación de la línea que contiene los puntos $(1,1)$ y $(3,9)$ es:
+        <p>Por lo que la ecuación de la recta que contiene los puntos $(1,1)$ y $(3,9)$ es:
         \[
           y = mx + b \Rightarrow x = \frac{y-b}{m} \Rightarrow x = \frac{y+3}{4}
         \]</p>
@@ -964,17 +982,15 @@
 
         <h3>Cambio de variables</h3>
 
-        <p>A continuación se presenta una estrategia general para resolver problemas de cambios de variables.</p>
-
-        <ol>
-          <li style="text-align-last: justify;">Hacer un bosquejo en el plano $xy$ de la región descrita en el problema, y escribir las ecuaciones de las curvas que forman</li>
-        </ol>
+        <p style="text-align-last:justify;">A continuación se presenta una estrategia general para resolver</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>problemas de cambios de variables.</p>
+
         <ol>
-          <li style="list-style-type: none">su contorno.</li>
+          <li>Hacer un bosquejo en el plano $xy$ de la región descrita en el problema, y escribir las ecuaciones de las curvas que forman su contorno.</li>
           <li>Elegir las transformaciones $x = g(u,v)$ y $y = h(u,v)$ según la región o el integrando.</li>
           <li>Determinar los nuevos límites de integración en el plano $uv$.</li>
           <li>Calcular el Jacobiano $J(u,v)$.</li>
@@ -982,20 +998,24 @@
           <li>Reemplazar $dydx$ o $dxdy$ por $J(u,v)dudv$.</li>
         </ol>
 
-        <p>Ejemplo: Evaluar la integral $\iint\limits_R (x - y)e^{x^2 - y^2}dA$, donde $R$ es la región delimitada por las líneas $x + y = 1$ y $x + y = 3$ y por las curvas $x^2 - y^2 = -1$ y $x^2 - y^2 = 1$. Utilizaremos la estrategia anterior.</p>
+        <p>Ejemplo: Evaluar la integral $\iint\limits_R (x - y)e^{x^2 - y^2}dA$, donde $R$ es la región delimitada por las rectas $x + y = 1$ y $x + y = 3$ y por las curvas $x^2 - y^2 = -1$ y $x^2 - y^2 = 1$. Utilizaremos la estrategia anterior.</p>
 
         <ol>
           <li>En la siguiente figura se muestran las regiones:</li>
+          <li>Dado el integrando y las funciones que acotan la región $R$, podemos notar que los cambios de variables $u = x - y$ y $v = x + y$ serían muy útiles, ya que $uv = x^2 - y^2$. Con esto, resolviendo el sistema de ecuaciones, tenemos que $x = \frac{u + v}{2}$ y $y = \frac{v - u}{2}$, por lo que la transformación a utilizar es $T(u,v) = \left( \frac{u + v}{2}, \frac{v - u}{2} \right)$.</li>
+          <li style="text-align-last:justify;">Las rectas $x + y = 1$ y $x + y = 3$ se convierten en $v = 1$ y $v = 3$, respectivamente. A su vez, las curvas $x^2 - y^2 = 1$ y</li>
         </ol>
-
-        <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion6/cambio_variables_ejemplo.html"></div>
       </div>
 
       <!--  -->
       <div class="page">
-        <ol start="2">
-          <li>Dado el integrando y las funciones que acotan la región $R$, podemos notar que los cambios de variables $u = x - y$ y $v = x + y$ serían muy útiles, ya que $uv = x^2 - y^2$. Con esto, resolviendo el sistema de ecuaciones, tenemos que $x = \frac{u + v}{2}$ y $y = \frac{v - u}{2}$, por lo que la transformación a utilizar es $T(u,v) = \left( \frac{u + v}{2}, \frac{v - u}{2} \right)$.</li>
-          <li>Las líneas $x + y = 1$ y $x + y = 3$ se convierten en $v = 1$ y $v = 3$, respectivamente. Las curvas $x^2 - y^2 = 1$ y $x^2 - y^2 = -1$ se convierten en $u = \frac{1}{v}$ y $u = -\frac{1}{v}$, respectivamente.</li>
+        <fig id="ejemplo_cambio_variables">
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion6/ejemplo_cambio_variables.html"></div>
+          <figcaption>La región $R$ en el plano $xy$ y su transformación al plano $uv$.</figcaption>
+        </fig>
+
+        <ol>
+          <li value="3" style="list-style:none;">$x^2 - y^2 = -1$ se convierten en $u = \frac{1}{v}$ y $u = -\frac{1}{v}$.</li>
           <li>El Jacobiano para esta transformación es:
             \[
               J(u,v) = \frac{\partial (x,y)}{\partial (u,v)}
@@ -1008,19 +1028,15 @@
                 \displaystyle\frac{1}{2} & \displaystyle\frac{1}{2}
               \end{array} \right|
               = \frac{1}{2}
-            \]
-          </li>
+            \]</li>
           <li>El integrando se convierte en:
             \[
               (x - y)e^{x^2 - y^2} \Rightarrow ue^{uv}
-            \]
-          </li>
+            \]</li>
           <li>La integral se convierte en:
             \[
-              \iint\limits_R (x - y)e^{x^2 - y^2}dA = \frac{1}{2} \int\limits_{v = 1}^{v = 3} \int\limits_{u = -\frac{1}{v}}^{u = \frac{1}{v}} ue^{uv}dudv
-            \]
-            Evaluando esta integral da como resultado $\frac{2}{3e}$.
-          </li>
+              \iint\limits_R (x - y)e^{x^2 - y^2}dA = \frac{1}{2} \int\limits_{v = 1}^{v = 3} \int\limits_{u = -\frac{1}{v}}^{u = \frac{1}{v}} ue^{uv}dudv = \frac{2}{3e}
+            \]</li>
         </ol>
       </div>
 
@@ -1091,24 +1107,24 @@
 
         <p>Un campo vectorial es continuo si sus componentes son continuas.</p>
 
-        <p style="text-align-last:justify;">Ahora bien, representar un campo vectorial visualmente es complicado porque tanto su dominio como su rango viven en $\R^2$,</p>
+        <p style="text-align-last:justify;">Ahora bien, representar un campo vectorial visualmente es complicado porque tanto su dominio como su rango viven en $\R^2$, por lo que la gráfica pertenece a un espacio de cuatro dimensiones.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>por lo que la gráfica pertenece a un espacio de cuatro dimensiones. Como no se puede representar $\R^4$ visualmente, los campos vectoriales en $\R^2$ se dibujan en un plano. Esto es, si el punto $(a,b)$ está asociado al vector $\langle x,y \rangle$, entonces se dibuja $\langle x,y \rangle$ sobre $(a,b)\text{.}$ Se deben escoger los suficientes vectores para ver la forma general, pero no tantos que la gráfica deja de ser entendible.</p>
+        <p>Como no se puede representar $\R^4$ visualmente, los campos vectoriales en $\R^2$ se dibujan en un plano. Esto es, si el punto $(a,b)$ está asociado al vector $\langle x,y \rangle$, entonces se dibuja $\langle x,y \rangle$ sobre $(a,b)\text{.}$ Se deben escoger los suficientes vectores para ver la forma general, pero no tantos que la gráfica deje de ser entendible.</p>
 
         <figure id="ejemplo_campo_vectorial_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html"></div>
           <figcaption>Ejemplo de un campo vectorial $F(x,y) = \langle P(x,y), Q(x,y) \rangle$ en $\R^2$. Utiliza el control "Región" para manipular la región $D \subseteq \R^2$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
 
-        <p style="text-align-last:justify;">Existen dos tipos de campos vectoriales en $\R^2$: campos radiales y campos rotacionales. Los campos radiales modelan ciertos campos</p>
+        <p style="text-align-last:justify;">Existen dos tipos de campos vectoriales en $\R^2$: campos radiales y campos rotacionales. Los campos radiales modelan ciertos campos gravitacionales y de fuentes de energía, mientras que los campos</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>gravitacionales y de fuentes de energía, mientras que los campos rotacionales modelan el movimiento de un fluido en un vórtice.</p>
+        <p>rotacionales modelan el movimiento de un fluido en un vórtice.</p>
 
         <p>En un <b>campo radial</b>, todos los vectores apuntan directamente al origen o directamente en dirección contraria al origen. Es decir, el vector asociado al punto $(a,b)$ es perpendicular al círculo con centro en el origen que contiene a $(a,b)$ y todos los vectores en dicho círculo tienen la misma magnitud.</p>
 
@@ -1117,12 +1133,12 @@
           <figcaption>El campo radial $F(x,y) = -\frac{x}{4}\textbf{i} - \frac{y}{4}\textbf{j}$.</figcaption>
         </figure>
 
-        <p style="text-align-last:justify;">En un <b>campo rotacional</b>, todos los vectores apuntan en dirección a las manecillas de un reloj o en dirección contraria a las manecillas</p>
+        <p style="text-align-last:justify;">En un <b>campo rotacional</b>, todos los vectores apuntan en dirección a las manecillas del reloj o en dirección contraria a las manecillas del reloj, y su magnitud está en función de su distancia del origen.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>de un reloj, y su magnitud está en función de su distancia del origen. A diferencia de los campos radiales, en los campos rotacionales el vector asociado al punto $(a,b)$ es tangente (no perpendicular) al círculo con radio $r = \sqrt{x^2 + y^2}$.</p>
+        <p>A diferencia de los campos radiales, en los campos rotacionales el vector asociado al punto $(a,b)$ es tangente (no perpendicular) al círculo con radio $r = \sqrt{x^2 + y^2}$.</p>
 
         <figure id="ejemplo_campo_vectorial_rotacional">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_rotacional.html"></div>
@@ -1132,7 +1148,7 @@
         <p>Los ejemplos de la <ref ref_id="ejemplo_campo_vectorial_radial"></ref> y la <ref ref_id="ejemplo_campo_vectorial_rotacional"></ref> contienen vectores de distintas magnitudes, pero así como existen vectores unitarios pueden haber campos vectoriales unitarios.</p>
 
         <div class="num_block" prefix="Definición" id="campo_vectorial_unitario">
-          Un campo vectorial $\textbf{F}$ es <b>unitario</b> si la magnitud de todos los vectores en el campo es 1.
+          Un campo vectorial $\textbf{F}$ es <b>unitario</b> si la magnitud de todos los vectores en el campo es $1$.
         </div>
       </div>
 
@@ -1319,7 +1335,7 @@
       <div class="page">
         <p>por lo que la divergencia del campo es negativa. En la animación de $\textbf{F}_{\textbf{3}}$ parecen haber un número constante de puntos dentro de la región, porque entra y sale la misma cantidad de fluido. En este último campo la divergencia es cero.</p>
 
-        <p>Una aplicación física de la divergencia ocurre con los campos magnéticos. Un campo magnético es un campo vectorial que describe la influencia magnética sobre cargas y corrientes eléctricas. La ley de Gauss para el magnetismo indica que si $\textbf{B}$ es</p>
+        <p style="text-align-last:justify;">Una aplicación física de la divergencia ocurre con los campos magnéticos. Un campo magnético es un campo vectorial que describe la influencia magnética sobre cargas y corrientes eléctricas. La ley de Gauss para el magnetismo indica que si $\textbf{B}$ es</p>
 
         <figure id="ejemplo_divergencia_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r3.html"></div>
@@ -1333,7 +1349,7 @@
 
         <h3>Rotacional</h3>
 
-        <p>El rotacional es una operación sobre un campo vectorial que produce otro un campo vectorial. En particular, el rotacional de un campo vectorial $\textbf{F}$ en un punto $P$ es un vector que mide la tendencia de $\textbf{F}$ a causar rotación alrededor del eje que apunta en la dirección de este vector. La magnitud del vector indica qué tan rápidamente es esa rotación.</p>
+        <p>El rotacional es una operación sobre un campo vectorial que produce un campo vectorial. En particular, el rotacional de un campo vectorial $\textbf{F}$ en un punto $P$ es un vector que mide la tendencia de $\textbf{F}$ a causar rotación alrededor del eje que apunta en la dirección de este vector. La magnitud del vector indica qué tan rápidamente es esa rotación.</p>
 
         <div class="num_block" prefix="Definición" id="rotacional">
           Sea $\textbf{F} = \left\langle P,Q \right\rangle$ un campo vectorial en $\R^2$. Si existen $P_x$ y $Q_y$, entonces el <b>rotacional</b> de $\textbf{F}$ es:
@@ -1368,7 +1384,7 @@
 
       <!--  -->
       <div class="page">
-        <p>componente $x$ del vector rotacional indica la dirección y rapidez con la que gira la esfera con respecto al eje $x$, donde un valor positivo significa que gira en el sentido contrario a las manecillas de un reloj, suponiendo que el eje se observa desde el lado positivo hacia el negativo, tal como se muestra en la siguiente figura:</p>
+        <p>componente $x$ del vector rotacional indica la dirección y rapidez con la que gira la esfera con respecto al eje $x$, donde un valor positivo significa que gira en el sentido contrario a las manecillas del reloj, suponiendo que el eje se observa desde el lado positivo hacia el negativo, tal como se muestra en la siguiente figura:</p>
 
         <figure id="ejemplo_rotacional_r3">
           <div class="interactive" width="600" height="450" src="interactivos/capitulo2/seccion2/giros_respecto_a_ejes.html"></div>
