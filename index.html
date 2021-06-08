@@ -201,7 +201,7 @@
           <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$. Haz clic dentro de dichos rectángulos para cambiar los puntos $(x^*_{ij}, y^*_{ij})$.</figcaption>
         </figure>
 
-        <p style="text-align-last:justify;">Consideremos un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de este. El volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior,</p>
+        <p style="text-align-last:justify;">Consideremos un rectángulo $R_{ij}$ y un punto arbitrario $(x^*_{ij}, y^*_{ij})$ dentro de éste. El volumen del prisma rectangular con base $R_{ij}$ y altura $f(x^*_{ij}, y^*_{ij})$ es $f(x^*_{ij}, y^*_{ij}) \Delta A$. Tomando $m \cdot n$ puntos arbitrarios, cada uno dentro de un único rectángulo interior,</p>
       </div>
 
       <!--  -->
@@ -265,7 +265,7 @@
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_1.html"></div>
-          <figcaption>El volumen del sólido bajo $f(x,y)$ más el volumen del sólido bajo $g(x,y)$ es igual al volumen del sólido bajo $(f+g)(x,y)$.</figcaption>
+          <figcaption>El volumen del sólido bajo $f(x,y)$ más el volumen del sólido bajo $g(x,y)$ es igual al volumen del sólido bajo $f(x,y) + g(x,y)$.</figcaption>
         </figure>
       </div>
 
@@ -273,12 +273,14 @@
       <div class="page">
         <ol start="2">
           <li>Si $c \in \R$ es una constante, entonces $cf(x,y)$ es integrable y 
-          \[\iint\limits_R cf(x,y) dA = c \iint\limits_R f(x,y) dA\]
-          Esto es, el volumen del sólido bajo $cf(x,y)$ es igual a $c$ veces el volumen del sólido bajo $f(x,y)$.</li>
+            \[
+              \iint\limits_R cf(x,y) dA = c \iint\limits_R f(x,y) dA
+            \]</li>
         </ol>
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_2.html"></div>
+          <figcaption>El volumen del sólido bajo $cf(x,y)$ es igual a $c$ veces el volumen del sólido bajo $f(x,y)$.</figcaption>
         </figure>
       </div>
 
@@ -288,12 +290,12 @@
           <li>Sean $S$ y $T$ dos subregiones de $R$ tales que $R = S \cup T$ y $S \cap T = \emptyset$ excepto posiblemente en sus contornos. Entonces 
           \[
             \iint\limits_R f(x,y) dA = \iint\limits_S f(x,y) dA + \iint\limits_T f(x,y) dA
-          \]
-          Dicho de otra manera, el volumen del sólido entre $f(x,y)$ y $S$ más el volumen del sólido entre $f(x,y)$ y $T$ es igual al volumen del sólido entre $f(x,y)$ y $R$.</li>
+          \]</li>
         </ol>
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_3.html"></div>
+          <figcaption>El volumen del sólido entre $f(x,y)$ y $R$ es igual al volumen del sólido entre $f(x,y)$ y $S$ más el volumen del sólido entre $f(x,y)$ y $T$.</figcaption>
         </figure>
       </div>
 
@@ -306,7 +308,7 @@
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_4.html"></div>
-          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) < f(x,y)$, entonces el volumen del sólido bajo $g(x,y)$ podría ser menor al volumen del sólido bajo $f(x,y)$.</figcaption>
+          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) < f(x,y)$, entonces el volumen del sólido bajo $g(x,y)$ es menor al volumen del sólido bajo $f(x,y)$.</figcaption>
         </figure>
       </div>
 
@@ -315,11 +317,12 @@
         <ol start="5">
           <li>Sean $m,M \in \R$ tales que $m \leq f(x,y) \leq M$ para todo $(x, y) \in R$. Entonces 
           \[m \cdot A(R) \leq \iint\limits_R f(x,y) dA \leq M \cdot A(R)\]
-          Donde $A(R)$ es el área de $R$, por lo que $m \cdot A(R)$ es el volumen del prisma rectangular de base $R$ y altura $m$, y análogamente $M \cdot A(R)$ es volumen del prisma rectangular de base $R$ y altura $M$.</li>
+          Donde $A(R)$ es el área de $R$, por lo que $m \cdot A(R)$ es el volumen del prisma rectangular de base $R$ y altura $m$, y análogamente $M \cdot A(R)$ es el volumen del prisma rectangular de base $R$ y altura $M$.</li>
         </ol>
 
         <figure>
           <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_5.html"></div>
+          <figcaption>Observa el volumen del prisma rectangular de base $R$ y altura $m$, así como el volumen del prisma rectangular de base $R$ y altura $M$.</figcaption>
         </figure>
       </div>
 
