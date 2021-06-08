@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Curvas idénticas con orientaciones opuestas</title>
+  <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="800" height="600">
+      <param name="tamaño" value="800x600">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' red='no' red10='no' eje-x='x' eje-y='y' ">
+      <param name="C_01" value="id='t0' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='t₀' expresión='(532,520,268,40)' valor='(ta+tb)/2' min='ta' max='tb' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='ta' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='a' expresión='(0,520,266,40)' valor='-2' max='tb' visible='sí' acción='calcular' parámetro='long_arco()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='tb' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='b' expresión='(266,520,266,40)' valor='5' min='ta' visible='sí' parámetro='long_arco()' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='r1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='r(t)' expresión='(0,560,533,40)' valor='t^3/4-t^2-1' visible='sí' respuesta='krypto_j6m3utkkrroprqfjco1buhfsgduu2lnmki' font_family='Serif' cursiva='sí' ">
+      <param name="C_05" value="id='r2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(533,560,267,40)' valor='t-3/2' visible='sí' respuesta='krypto_i0m7pnn2seppvhfn72e5fg73f6uu6k6cad' ">
+      <param name="A_01" value="id='r1(t)' algoritmo='no' expresión='_Eval_(r1_texto)' tipo='función' ">
+      <param name="A_02" value="id='r2(t)' algoritmo='no' expresión='_Eval_(r2_texto)' tipo='función' ">
+      <param name="A_03" value="id='long_arco()' algoritmo='sí' expresión='0' local='i,n,dt' inicio='i=0;n=10;dt=(tb-ta)/n;suma=0' hacer='ti=ta+dt*(i+0.5);_r1=(r1(ti+0.0001)-r1(ti))/0.0001;_r2=(r2(ti+0.0001)-r2(ti))/0.0001;suma=suma+sqrt(_r1^2+_r2^2)*dt;;i=i+1' mientras='i<n' tipo='función' info='aproximación de la longitud de arco de r(t)' ">
+      <param name="A_04" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
+      <param name="A_05" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' inicio='long_arco()' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='(r1(t),r2(t))' parámetro='t' t.intervalo='[ta,tb]' t.pasos='ceil(suma)' ancho='2' info='r(t)' ">
+      <param name="G_02" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(r1((ta+tb)/2),r2((ta+tb)/2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue255;\red32\green48\blue58;}\f0\fs40 \cf0\fs50\i{\*\mjaformula\i\b r\b0\i0\i (t)\i0}\i0\cf1\fs40 }' ancho='1' align='a_left' anchor='a_center_right' info='r(t) texto' ">
+      <param name="G_03" value="espacio='E1' tipo='curva' color='ff0000' coord_abs='no' expresión='(r1(ta+tb-t)+2,r2(ta+tb-t)+2)' parámetro='t' t.intervalo='[ta,tb]' t.pasos='ceil(suma)' ancho='2' info='r(a+b-t)' ">
+      <param name="G_04" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='(r1(t0),r2(t0))' tamaño='3' info='r(t₀)' ">
+      <param name="G_05" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='(r1(ta+tb-t0)+2, r2(ta+tb-t0)+2)' tamaño='3' info='r(a+b-t₀)' ">
+      <param name="G_06" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='(r1(ta+tb-(ta+tb)/2)+2,r2(ta+tb-(ta+tb)/2)+2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red255\green0\blue0;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i\b r\b0\i0\i (a+b-t)\i0}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_center_left' info='r(a+b-t) texto' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
