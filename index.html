@@ -426,14 +426,18 @@
 
         <p>Ahora definiremos dos tipos de regiones generales acotadas.</p>
 
-        <div class="num_block" prefix="Definición" id="region_general_tipos">
-          <ol type="I">
-            <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
-            \[D = \{(x,y) \in \R^2: a \leq x \leq b, g_1(x) \leq y \leq g_2(x)\}\]</li>
+        <div class="num_block" prefix="Definición" id="region_general_tipo_i">
+          Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
+            \[
+              D = \{(x,y) \in \R^2: a \leq x \leq b,\ g_1(x) \leq y \leq g_2(x)\}
+            \]
+        </div>
 
-            <li>Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
-            \[D = \{(x,y) \in \R^2: c \leq y \leq d, h_1(y) \leq x \leq h_2(y)\}\]</li>
-          </ol>
+        <div class="num_block" prefix="Definición" id="region_general_tipo_ii">
+          Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
+            \[
+              D = \{(x,y) \in \R^2: c \leq y \leq d,\ h_1(y) \leq x \leq h_2(y)\}
+            \]
         </div>
       </div>
 
@@ -469,7 +473,7 @@
 
       <!--  -->
       <div class="page">
-        <p>Pero si la región $D$ está acotada por curvas  s y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
+        <p>Pero si la región $D$ está acotada por curvas y se puede describir como Tipo I, Tipo II o ambas, entonces no es necesario encontrar un rectángulo $R$ que contenga a $D$. Podemos simplemente utilizar el siguiente teorema:</p>
 
         <div class="num_block" prefix="Teorema" id="fubini_fuerte">
           <b><i>Teorema de Fubini (Fuerte)</i></b>
@@ -530,7 +534,7 @@
       <!--  -->
       <div class="page">
         <figure id="rectangulo_polar">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/rectangulo_polar.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/rectangulo_polar.html"></div>
           <figcaption>Un rectángulo polar $R$ dividido en $m \cdot n$ rectángulos polares $R_{ij}$.</figcaption>
         </figure>
 
@@ -550,8 +554,8 @@
 
       <!--  -->
       <div class="page">
-        <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_polares_rectangulares.html"></div>
+        <figure id="integral_sobre_polar_rectangular">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_rectangular.html"></div>
           <figcaption>Una suma de Riemann doble sobre un rectángulo polar.</figcaption>
         </figure>
 
@@ -597,9 +601,9 @@
 
       <!--  -->
       <div class="page">
-        <p>análogamente a como se hizo en la <ref ref_id="region_general_tipos"></ref>.</p>
+        <p>análogamente a como se hizo en la <ref ref_id="region_general_tipo_i"></ref> y la <ref ref_id="region_general_tipo_ii"></ref>.</p>
         
-        <p>Dado que es más común escribir ecuaciones polares en términos de $\theta$ ($r = f(\theta)$), definimos una región polar general como se muestra en la <ref ref_id="polar_general_tipoii"></ref>, es decir:
+        <p>Dado que es más común escribir ecuaciones polares en términos de $\theta$ ($r = f(\theta)$), definimos una región polar general como se muestra en la <ref ref_id="ejemplo_polar_general_tipoii"></ref>, es decir:
         \[
           D = \{(r,\theta) : \alpha \leq \theta \leq \beta, h_1(\theta) \leq r \leq h_2(\theta)\}
         \]</p>
@@ -614,21 +618,21 @@
 
       <!--  -->
       <div class="page">
-        <figure id="polar_general_tipoi">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion4/polar_general_tipoi.html"></div>
-          <figcaption>Ejemplo de una región de Tipo II. La parte sombreada sólo se mostrará si $h_1(\theta) \leq h_2(\theta)$ para todo $\alpha \leq \theta \leq \beta$.</figcaption>
+        <figure id="ejemplo_polar_general_tipoi">
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_polar_general_tipoi.html"></div>
+          <figcaption>Ejemplo de una región de Tipo I. La parte sombreada sólo se mostrará si $g_1(r) \leq g_2(r)$ para todo $a \leq r \leq b$.</figcaption>
         </figure>
 
-        <figure id="polar_general_tipoii">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion4/polar_general_tipoii.html"></div>
-          <figcaption>Ejemplo de una región de Tipo I. La parte sombreada sólo se mostrará si $g_1(r) \leq g_2(r)$ para todo $a \leq r \leq b$.</figcaption>
+        <figure id="ejemplo_polar_general_tipoii">
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_polar_general_tipoii.html"></div>
+          <figcaption>Ejemplo de una región de Tipo II. La parte sombreada sólo se mostrará si $h_1(\theta) \leq h_2(\theta)$ para todo $\alpha \leq \theta \leq \beta$.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion4/integral_polares_generales.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_general.html"></div>
           <figcaption>Una región polar general y el sólido que se encuentra entre este y una función continua $f(r,\theta)$.</figcaption>
         </figure>
       </div>
@@ -639,11 +643,11 @@
 
         <p>En esta sección se define una transformación en el plano, concepto de gran importancia para el teorema del cambio de variable.</p>
 
-        <div class="num_block" prefix="Definición">
+        <div class="num_block" prefix="Definición" id="transformacion_planar">
           Sea $G \subseteq \R^2$ una región en un plano. Una <b>transformación en el plano</b> es una función $T$ que transforma $G$ en una región $R \subseteq \R^2$ en otro plano mediante un cambio de variables.
         </div>
 
-        <p>Un ejemplo de una transformación en el plano se muestra en la <ref ref_id="transformacion_planar"></ref>, donde el cambio de variables es $x = g(u,v)$ y $y = h(u,v)$, aunque a veces se escribe $x = x(u,v)$ y $y = y(u,v)$.</p>
+        <p>Un ejemplo de una transformación en el plano se muestra en la <ref ref_id="ejemplo_transformacion_planar"></ref>, donde el cambio de variables es $x = g(u,v)$ y $y = h(u,v)$, aunque a veces se escribe $x = x(u,v)$ y $y = y(u,v)$.</p>
 
         <p>Típicamente supondremos que cada una de estas funciones tienen primeras derivadas parciales continuas, esto es, que $g_u$, $g_v$, $h_u$ y $h_v$ existen y son continuas.</p>
 
@@ -656,8 +660,8 @@
 
       <!--  -->
       <div class="page">
-        <figure id="transformacion_planar">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo1/seccion5/transformacion_planar.html"></div>
+        <figure id="ejemplo_transformacion_planar">
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo1/seccion4/ejemplo_transformacion_planar.html"></div>
           <figcaption>Una transformación de una región $G$ en el plano $uv$ a una región $R$ en el plano $xy$, mediante el cambio de variables $x = g(u,v)$ y $y = h(u,v)$, es decir, $T(u,v) = (g(u,v),h(u,v))$.</figcaption>
         </figure>
       </div>
