@@ -2245,38 +2245,44 @@
 
         <h2 id="sec_c4_campos_conservativos">Campos conservativos.</h2>
 
-        <p>En esta sección se abunda en el tema de campos gradientes o conservativos. Describiremos algunos tipos de curvas y regiones necesarios para definir los conceptos que se presentarán. Explicaremos cómo determinar si un campo vectorial es conservativo y en tal caso, encontrar su función potencial.</p>
+        <p>En esta sección se abunda en el tema de campos gradientes o conservativos. Describiremos algunos tipos de curvas y regiones necesaria para definir los conceptos que se presentan. Explicaremos cómo determinar si un campo vectorial es conservativo y en tal caso, encontrar su función potencial.</p>
 
         <h3>Curvas y regiones</h3>
 
         <p>A continuación se definen dos tipos de curvas, una de las cuales se mencionó anteriormente: las curvas cerradas y las curvas simples. Una curva cerrada empieza y termina en el mismo punto. Una curva es simple si no se cruza a sí misma.</p>
 
-        <div class="num_block" prefix="Definición" id="tipos_curvas">
-          Una curva $C$ es una <b>curva cerrada</b> si tiene una parametrización $\textbf{r}(t)$, con $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$. Una curva $C$ es una <b>curva simple</b> si tiene una parametrización $\textbf{r}(t)$, con $a \leq t \leq b$, tal que $\textbf{r}$ es inyectiva sobre el intervalo abierto $(a,b)$.
+        <div class="num_block" prefix="Definición" id="curva_cerrada">
+          Una curva $C$ es una <b>curva cerrada</b> si tiene una parametrización $\textbf{r}(t)$, con $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$.
         </div>
 
-        <p style="text-align-last:justify;">Una curva puede ser cerrada y simple a la vez. Una curva cerrada</p>
+        <br>
+
+        <div class="num_block" prefix="Definición" id="curva_simple">
+          Una curva $C$ es una <b>curva simple</b> si tiene una parametrización $\textbf{r}(t)$, con $a \leq t \leq b$, tal que $\textbf{r}$ es inyectiva sobre el intervalo abierto $(a,b)$.
+        </div>
       </div>
 
       <!--  -->
       <div class="page">
         <figure id="ejemplo_tipos_curvas">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion1/ejemplo_tipos_curvas.html"></div>
-          <figcaption>Tipos de curvas que pueden ser o no ser cerradas, y ser o no ser simples.</figcaption>
+          <figcaption>Tipos de curvas que pueden ser o no ser cerradas, y ser o no simples.</figcaption>
         </figure>
 
-        <p>simple puede funcionar como el borde de una región, y estas regiones serán de nuestro interés más adelante al desarrollar teoremas de campos conservativos. Ahora definiremos dos tipos de regiones: regiones conexas y regiones simplemente conexas. En una región conexa, entre cualquier par de puntos existe una trayectoria que está contenida completamente dentro de la región. Intuitivamente, una región simplemente conexa es una región sin huecos.</p>
-
-        <div class="num_block" prefix="Definición" id="tipos_regiones" style="text-align-last:justify;">
-          Una región $D$ es una <b>región conexa</b> si para cualesquiera dos puntos $P_1$ y $P_2$, existe una trayectoria de $P_1$ a
-        </div>
+        <p>Una curva puede ser cerrada y simple a la vez. Una curva cerrada simple puede funcionar como el borde de una región, y estas regiones serán de nuestro interés más adelante al desarrollar teoremas de campos conservativos. Ahora definiremos dos tipos de regiones: regiones conexas y regiones simplemente conexas. En una región conexa, entre cualquier par de puntos existe una trayectoria que está contenida completamente dentro de la región. Intuitivamente, una región simplemente conexa es una región sin huecos.</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>$P_2$ que está contenida completamente dentro de $D$. Una región $D$ es una <b>región simplemente conexa</b> si cualquier curva cerrada simple $C$ contenida en $D$ se puede contraer continuamente y permanecer completamente dentro de $D$.</p>
+        <div class="num_block" prefix="Definición" id="region_conexa">
+          Una región $D$ es una <b>región conexa</b> si para cualesquiera dos puntos $P_1$ y $P_2$, existe una trayectoria de $P_1$ a $P_2$ que está contenida completamente dentro de $D$.
+        </div>
 
-        <figure id="ejemplo_tipos_curvas">
+        <div class="num_block" prefix="Definición" id="region_simplemente_conexa">
+          Una región $D$ es una <b>región simplemente conexa</b> si cualquier curva cerrada simple $C$ contenida en $D$ se puede contraer continuamente y permanecer completamente dentro de $D$.
+        </div>
+
+        <figure id="ejemplo_tipos_regiones">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion1/ejemplo_tipos_regiones.html"></div>
           <figcaption>Una región simplemente conexa (azul), una región conexa pero no simplemente conexa (verde) y una región disconexa (rojo). En las regiones simplemente conexas cualquier curva cerrada simple (como un círculo) contenida completamente dentro de la superficie se puede contraer, permaneciendo en la región, hasta ser un punto. En las regiones no simplemente conexas (como el toro), existen curvas tales que al contraerlos se pueden salir de la región, sin embargo, al ser conexas, sigue existiendo una trayectoria entre cualquier par de puntos contenida dentro de la región.</figcaption>
         </figure>
@@ -2295,27 +2301,18 @@
 
         <div class="num_block" prefix="Teorema" id="teorema_fundamental_integrales_linea">
           <b><i>Teorema Fundamental para Integrales de Línea</i></b>
-          <p>Sea $C$ una curva suave con parametrización $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función cuyo dominio contiene a $C$ y supongamos que sus derivadas parciales de primer orden existen y son continuas. Entonces:
+          Sea $C$ una curva suave con parametrización $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función cuyo dominio contiene a $C$ y supongamos que sus derivadas parciales de primer orden existen y son continuas. Entonces:
             \[
               \int_C \nabla f \cdot d\textbf{r} = f(\textbf{r}(b)) - f(\textbf{r}(a))
             \]
-          </p>
         </div>
 
-        <p style="text-align-last:justify;">Con esto, evaluar la integral de línea de un campo conservativo se</p>
+        <p style="text-align-last:justify;">Con esto, evaluar la integral de línea de un campo conservativo se reduce a primero encontrar una función potencial y segundo,</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <figure id="ejemplo_teorema_fundamental_integrales_linea">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_teorema_fundamental_integrales_linea.html"></div>
-          <figcaption>El campo conservativo $\textbf{F}(x,y) = \langle y + 2, x \rangle$, cuya función potencial es $f(x,y) = xy + 2x$, definida sobre la curva $\textbf{r}(t) = \langle t^3 - 6t, t \rangle$ con $t \in [-2.9,2.9]$. El <ref ref_id="teorema_fundamental_integrales_linea"></ref> establece que $f$ en realidad es una función que representa el área bajo la curva $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$ entre $0$ y $t$.</figcaption>
-        </figure>
-      </div>
-
-      <!--  -->
-      <div class="page">
-        <p>reduce a primero encontrar una función potencial y segundo, calcular el valor de dicha función en los extremos de la curva y obtener su resta. Sin embargo, una diferencia importante entre el teorema anterior y el Teorema Fundamental del Cálculo es que una función continua de una sola variable siempre tiene una antiderivada, pero no todos los campos vectoriales continuos tienen funciones potenciales.</p>
+        <p>calcular el valor de dicha función en los extremos de la curva y obtener su resta. Sin embargo, una diferencia importante entre el teorema anterior y el Teorema Fundamental del Cálculo es que una función continua de una sola variable siempre tiene una antiderivada, pero no todos los campos vectoriales continuos tienen funciones potenciales.</p>
 
         <p>El Teorema Fundamental para Integrales de Línea tiene dos consecuencias importantes. La primera es que si $\textbf{F}$ es conservativo y $C$ es una curva cerrada, entonces la circulación de $\textbf{F}$ a lo largo de $C$ es cero. Esto es porque el punto inicial y el punto final son el mismo punto, lo cual implica que:</p>
 
@@ -2339,7 +2336,15 @@
 
       <!--  -->
       <div class="page">
-        <figure id="ejemplo_tipos_curvas">
+        <figure id="ejemplo_teorema_fundamental_integrales_linea">
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_teorema_fundamental_integrales_linea.html"></div>
+          <figcaption>El campo conservativo $\textbf{F}(x,y) = \langle y + 2, x \rangle$, cuya función potencial es $f(x,y) = xy + 2x$, definida sobre la curva $\textbf{r}(t) = \langle t^3 - 6t, t \rangle$ con $t \in [-2.9,2.9]$. El <ref ref_id="teorema_fundamental_integrales_linea"></ref> establece que $f$ en realidad es una función que representa el área bajo la curva $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$ entre $0$ y $t$.</figcaption>
+        </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="ejemplo_independencia_trayectoria">
           <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_independencia_trayectoria.html"></div>
           <figcaption>El campo conservativo $\textbf{F} = \nabla (y^2 - xy)$. Su dominio contiene las curvas $\textbf{r}_1(t) = \langle -t^2 + 2\pi t, t \rangle$ y $\textbf{r}_2(t) = \langle 3\sin(t), t \rangle$, definidas sobre el intervalo $[0, 2\pi]$. Abajo se calcula la integral de línea de $\textbf{F}$ a lo largo de $\textbf{r}_0$ en $[0,t_0]$ y a lo largo de $\textbf{r}_1$ en $[0,t_1]$. Por el <ref ref_id="campos_conservativos_son_independientes_trayectoria"></ref>, cuando $t_0 = 2\pi = t_1$, las integrales serán iguales.</figcaption>
         </figure>
@@ -2429,7 +2434,7 @@
               g(x,y,z) + h(y,z) = \int 2x y^3 z dx = x^2 y^3 z + h(y,z)
             \]</li>
 
-          <li>Obtén la derivada paracial de $g(x,y,z) + h(y,z)$ con respecto a $y$, esto resulta en la función $g_y(x,y,z) + h_y(y,z)$.
+          <li>Obtén la derivada parcial de $g(x,y,z) + h(y,z)$ con respecto a $y$, esto resulta en la función $g_y(x,y,z) + h_y(y,z)$.
             \[
               g_y(x,y,z) + h_y(y,z) = 3x^2 y^2 z + h_y(y,z)
             \]
@@ -2608,7 +2613,7 @@
 
         <figure id="ejemplo_teorema_stokes">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/ejemplo_teorema_stokes.html"></div>
-          <figcaption>Un campo vectorial $\textbf{F}(x,y,z)$ cuyo dominio contiene la superficie $S$ delimitada por la curva $C$. Observa que la región $D$ es la proyección de $S$ sobre el plano $xy$, y la curva $C'$ es la proyección de $C$ sobre el mismo plano. El teorema de Stokes establece que el flujo de $\text{rot } \textbf{F}$ a través de $S$ es igual al flujo de $\textbf{F}$ a través de $C$.</figcaption>
+          <figcaption>Un campo vectorial $\textbf{F}(x,y,z)$ cuyo dominio contiene la superficie $S$ delimitada por la curva $C$. Observa que la región $D$ es la proyección de $S$ sobre el plano $xy$, y la curva $C'$ es la proyección de $C$ sobre el mismo plano. El teorema de Stokes establece que el flujo de $\text{rot } \textbf{F}$ a través de $S$ es igual a la circulación de $\textbf{F}$ a lo largo de $C$.</figcaption>
         </figure>
       </div>
 
@@ -2621,7 +2626,7 @@
       <div class="page">
         <h2 id="sec_c4_teorema_de_gauss">Teorema de Gauss.</h2>
 
-        <p>A lo largo de este capítulo se han varias generalizaciones del Teorema Fundamental del Cálculo. Todas relacionan la "derivada" de una entidad sobre su dominio con la integral de dicha entidad alrededor del límite del dominio. El teorema de la divergencia, también conocido como el teorema de Gauss, es el último teorema de este tipo que se presentará. Este teorema reduce una integral triple sobre un sólido $E$ a una integral doble sobre el límite de $E$.</p>
+        <p>A lo largo de este capítulo se han visto varias generalizaciones del Teorema Fundamental del Cálculo. Todas relacionan la "derivada" de una entidad sobre su dominio con la integral de dicha entidad alrededor del límite del dominio. El teorema de la divergencia, también conocido como el teorema de Gauss, es el último teorema de este tipo que se presenta. Este teorema reduce una integral triple sobre un sólido $E$ a una integral doble sobre el límite de $E$.</p>
 
         <div class="num_block" prefix="Teorema" id="teorema_gauss">
           <b><i>Teorema de la Divergencia (Teorema de Gauss)</i></b>
@@ -2631,7 +2636,7 @@
             \]</p>
         </div>
 
-        <p style="text-align-last:justify;">Así como la integral $\int$ parte una curva en segmentos con longitud infinitesimal y la integral doble $\iint$ divide una superficie en pedazos con área de superficie infinitesimal, la integral triple $\iiint$ es una integral de <b>volumen</b>. En este caso el objeto sobre el que trabaja es un sólido, y lo divide en fragmentos con volumen infinitesimal. Una suma de Riemann triple consistiría en escoger un punto arbitrario dentro de cada uno de esos fragmentos, evaluar la función $\text{div } \textbf{F}$ (<ref ref_id="divergencia"></ref>) en dichos puntos y sumar los resultados. Entonces, el teorema de Gauss afirma que la suma de todas las fuentes (los sumideros se pueden considerar como fuentes negativas) de un</p>
+        <p style="text-align-last:justify;">Así como la integral $\int$ parte una curva en segmentos con longitud infinitesimal y la integral doble $\iint$ divide una superficie en pedazos con área de superficie infinitesimal, la integral triple $\iiint$ es una integral de <i>volumen</i>. En este caso el objeto sobre el que trabaja es un sólido, y lo divide en fragmentos con volumen infinitesimal. Una suma de Riemann triple consiste en escoger un punto arbitrario dentro de cada uno de esos fragmentos, evaluar la función $\text{div } \textbf{F}$ (<ref ref_id="divergencia"></ref>) en dichos puntos y sumar los resultados. Entonces, el teorema de Gauss afirma que la suma de todas las fuentes (los sumideros se pueden considerar como fuentes negativas) de un</p>
       </div>
 
       <!--  -->
@@ -2679,7 +2684,7 @@
       <div class="page">
         <h3>Trabajo ejercido sobre una partícula</h3>
 
-        <p style="text-align-last:justify;">Sea $\textbf{F}$ un campo de fuerza (conservativo). Una partícula se mueve en el espacio partiendo del punto $P_0$ y termina su movimiento en un punto arbitrario $P_1$. Supongamos que este recorrido se puede modelar con una curva paramétrica suave. Para calcular el trabajo que ejerció $\textbf{F}$ sobre la partícula usando una integral de línea, podría resultar muy complicado parametrizar su trayectoria aunque sea</p>
+        <p style="text-align-last:justify;">Sea $\textbf{F}$ un campo de fuerza (conservativo). Una partícula se mueve en el espacio partiendo del punto $P_0$ y termina su movimiento en un punto arbitrario $P_1$. Supongamos que este recorrido se puede modelar con una curva paramétrica suave. Calcular el trabajo que ejerció $\textbf{F}$ sobre la partícula usando una integral de línea, podría resultar muy complicado parametrizar su trayectoria aunque sea</p>
 
         <figure id="ejemplo_trabajo_ejercido_sobre_particula">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_trabajo_ejercido_sobre_particula.html"></div>
@@ -2698,7 +2703,7 @@
             \textbf{r}(t) = \langle 3\cos(t) + \cos(3t), 3\sin(t) + \sin(3t) \rangle \text{, } t \in [0, 2\pi]
           \]</p>
           
-        <p>Queremos encontrar el área de $D$. Esto es equivalente a calcular la integral doble $\iint\limits_D dA$ (<ref ref_id="area_region_planar"></ref>). Para hacer este cálculo sin el teorema de Green, se requeriría partir a $D$ en dos regiones: la región que está arriba del eje $x$ y la que está debajo de ella. Al ser una región simétrica con respecto al eje $x$, basta con obtener el doble del área de la región superior. Posteriormente, se calcularía una integral doble tomando en cuenta que en coordenadas cartesianas, la ecuación de la cardioide es:
+        <p>Queremos encontrar el área de $D$. Esto es equivalente a calcular la integral doble $\iint\limits_D dA$ (<ref ref_id="area_region_planar"></ref>). Para hacer este cálculo sin el teorema de Green, se requeriría partir a $D$ en dos regiones: la región que está arriba del eje $x$ y la que está debajo de ella. Al ser una región simétrica con respecto al eje $x$, basta con obtener el doble del área de la región superior. Posteriormente, se calcularía una integral doble tomando en cuenta que en coordenadas cartesianas, la ecuación del astroide es:
           \[
             (x^2 + y^2 - 16)^3 + 432x^2 y^2 = 0
           \]</p>
@@ -2722,31 +2727,31 @@
             \end{aligned}
           \]</p>
 
-        <p>Por lo tanto, el área de este astroide es $6\pi$.</p>
-
         <figure id="ejemplo_area_region_planar">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_area_region_planar.html"></div>
+          <figcaption>Ingresa una parametrización $\textbf{r}(t)$ de una curva cerrada simple para ver una aproximación del área de la región que encierra.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>Por lo tanto, el área de este astroide es $6\pi$.</p>
+
         <p>El procedimiento anterior, dado cualquier campo vectorial donde $Q_x - P_y = 1$, funciona con cualquier curva planar cerrada.</p>
 
         <h3>Simplificación de integrales con el teorema de Stokes</h3>
 
-        <p>Queremos calcular la integral de superficie $\iint\limits_S \text{rot } \textbf{F} \cdot dS$, donde $\textbf{F} = \langle 9x^2+25y^2, x^2z^2, e^xyz \rangle$ y S es la mitad debajo del eje $z$ de una elipsoide centrada en el origen y orientada hacia afuera, así como se muestra en la siguiente figura.</p>
+        <p style="text-align-last:justify;">Queremos calcular la integral de superficie $\iint\limits_S \text{rot } \textbf{F} \cdot dS$, donde $\textbf{F} = \langle 9x^2+25y^2, x^2z^2, e^xyz \rangle$ y $S$ es la mitad debajo del eje $z$ de</p>
 
         <figure id="elipsoide_y_curva">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/elipsoide_y_curva.html"></div>
+          <figcaption>La mitad inferior de una elipsoide centrada en el origen y el campo vectorial $\textbf{F} = \langle 9x^2+25y^2, x^2z^2, e^xyz \rangle$.</figcaption>
         </figure>
-
-        <p>Esta superficie se puede parametrizar de la siguiente manera:</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>
+        <p>una elipsoide centrada en el origen y orientada hacia afuera, así como se muestra en la <ref ref_id="elipsoide_y_curva"></ref>. Esta superficie se puede parametrizar de la siguiente manera:
           \[
             \textbf{r}_e(u,v) = \langle 5\sin(u)\cos(v), 3\cos(u), -3\sin(u)\sin(v) \rangle
           \]</p>
@@ -2768,13 +2773,11 @@
           \]</p>
 
         <p>Por lo tanto, el flujo del campo $\text{rot } \textbf{F}$ a través de la superficie $S$ es igual a $0$.</p>
-
-        <p style="text-align-last:justify;">Ahora veremos cómo se puede simplificar una integral de línea. Queremos calcular la integral de línea $\int_C \textbf{F} \cdot d\textbf{r}$, donde $\textbf{F} = \langle yz^2, xz^2-z, 2xyz \rangle$ y $C$ es la curva que delimita a la superficie</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>con parametrización $\textbf{r}(u,v) = \langle u+v, u-v, uv \rangle$, definida sobre la siguiente región de Tipo I:
+        <p>Ahora veremos cómo se puede simplificar una integral de línea. Queremos calcular la integral de línea $\int_C \textbf{F} \cdot d\textbf{r}$, donde $\textbf{F} = \langle yz^2, xz^2-z, 2xyz \rangle$ y $C$ es la curva que delimita a la superficie con parametrización $\textbf{r}(u,v) = \langle u+v, u-v, uv \rangle$, definida sobre la siguiente región de Tipo I:
           \[
             D = \{ (u,v) \in \R^2: 0 \leq u \leq 3,\ sin(u) - 1 \leq v \leq sin(u) + 1 \}
           \]</p>
@@ -2791,23 +2794,24 @@
             \end{aligned}
           \]</p>
 
-        <p>Por lo tanto, la circulación del campo $\textbf{F}$ a lo largo de la curva $C$ es igual a $11 - 2\cos(3)$.</p>
+        <p style="text-align-last:justify;">Por lo tanto, la circulación del campo $\textbf{F}$ a lo largo de la curva $C$ es</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>igual a $11 - 2\cos(3)$.</p>
+
         <figure id="ejemplo_aplicacion_stokes">
           <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_stokes.html"></div>
+          <figcaption>Utiliza los controles $u_{min}$, $u_{max}$, $g_1(u)$ y $g_2(u)$ para cambiar la región de Tipo I $D = \{ (x,y) \in \R^2: u_{min} \leq u \leq u_{max},\ g_1(u) \leq v \leq g_2(u) \}$ sobre la cual está definida la superficie $S$ con parametrización $\textbf{r}(u,v)$. Modifica el campo vectorial $\textbf{F}$ y pulsa el botón <i>Calcular</i> para aproximar el flujo de $\text{rot } \textbf{F}$ a través de $S$. Toma en cuenta que, dependiendo de los parámetros introducidos, este cálculo puede ser lento.</figcaption>
         </figure>
-
-        <h3>Flujo de transferencia de calor a través de un sólido</h3>
-
-        <p style="text-align-last:justify;">La Ley de Fourier establece que el flujo de transferencia de calor por conducción es proporcional al gradiente negativo de la temperatura, es decir, $\textbf{F} = -k \nabla T$, donde $k$ es la constante de conductividad térmica medida en watts por metro-kelvin. Sea $E$ un</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>cubo de lado unitario centrado en el punto $(\frac{3}{2}, \frac{1}{2}, \frac{1}{2})$. Si $T(x,y,z) = \ln(x) - \frac{1}{5}yz$ y $k = 1$, ¿cuál es el flujo neto de calor transferido hacia afuera del contorno $S$ de $E$?</p>
+        <h3>Flujo de transferencia de calor a través de un sólido</h3>
+
+        <p>La Ley de Fourier establece que el flujo de transferencia de calor por conducción es proporcional al gradiente negativo de la temperatura, es decir, $\textbf{F} = -k \nabla T$, donde $k$ es la constante de conductividad térmica medida en watts por metro-kelvin. Sea $E$ un cubo de lado unitario centrado en el punto $(\frac{3}{2}, \frac{1}{2}, \frac{1}{2})$. Si $T(x,y,z) = \ln(x) - \frac{1}{5}yz$ y $k = 1$, ¿cuál es el flujo neto de calor transferido hacia afuera del contorno $S$ de $E$?</p>
 
         <p>Primero, tenemos que: 
           \[
@@ -2826,23 +2830,29 @@
 
         <p>Entonces, por el teorema de la divergencia:
           \[
-            \begin{aligned}
-              \oiint\limits_S \textbf{F} \cdot dS &= \iiint\limits_E \text{div } \textbf{F}dV \\
-                                                  &= \int^1_0 \int^1_0 \int^2_1 \frac{1}{x^2} dxdydz \\
-                                                  &= \frac{1}{2} \int^1_0 \int^1_0 dydz \\
-                                                  &= \frac{1}{2} \int^1_0 dz = \frac{1}{2}
-            \end{aligned}
+            \oiint\limits_S \textbf{F} \cdot dS = \iiint\limits_E \text{div } \textbf{F}dV
           \]</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Por lo tanto, el flujo de neto de calor transferido hacia afuera del contorno del cubo es $\frac{1}{2}$.</p>
+        <p>
+          \[
+            \begin{aligned}
+              &= \int^1_0 \int^1_0 \int^2_1 \frac{1}{x^2} dxdydz \\
+              &= \frac{1}{2} \int^1_0 \int^1_0 dydz = \frac{1}{2} \int^1_0 dz = \frac{1}{2}
+            \end{aligned}
+          \]</p>
 
         <figure id="ejemplo_aplicacion_gauss">
           <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_gauss.html"></div>
           <figcaption>Utiliza los controles $a$, $b$, $g_1(x)$ y $g_2(x)$ para cambiar la región de Tipo I $D = \{ (x,y) \in \R^2: a \leq x \leq b,\ g_1(x) \leq y \leq g_2(x) \}$. La región $E$ que se dibujará es el sólido entre $h_1(D)$ y $h_2(D)$.</figcaption>
         </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Por lo tanto, el flujo neto de calor transferido hacia afuera del contorno del cubo es $\frac{1}{2}$.</p>
       </div>
 
       <!--  -->
