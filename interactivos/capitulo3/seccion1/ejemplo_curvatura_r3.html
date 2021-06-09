@@ -48,18 +48,18 @@
       <param name="A_24" value="id='B3(t)' algoritmo='no' expresión='T1(t)*N2(t)-T2(t)*N1(t)' tipo='función' ">
       <param name="A_25" value="id='k(t)' algoritmo='no' expresión='sqrt((_r2(t)*__r3(t)-_r3(t)*__r2(t))^2+(_r3(t)*__r1(t)-_r1(t)*__r3(t))^2+(_r1(t)*__r2(t)-_r2(t)*__r1(t))^2)/(sqrt(_r1(t)^2+_r2(t)^2+_r3(t)^2))^3' tipo='función' info='curvatura' ">
       <param name="A_26" value="id='R(t)' algoritmo='no' expresión='1/k(t)' tipo='función' info='radio de curvatura' ">
-      <param name="A_27" value="id='Q1(t)' algoritmo='no' expresión='r1(t)+R(t)*N1(t)' tipo='función' ">
-      <param name="A_28" value="id='Q2(t)' algoritmo='no' expresión='r2(t)+R(t)*N2(t)' tipo='función' ">
-      <param name="A_29" value="id='Q3(t)' algoritmo='no' expresión='r3(t)+R(t)*N3(t)' tipo='función' ">
+      <param name="A_27" value="id='Q1(t)' algoritmo='no' expresión='r1(t)+R(t)*N1(t)' tipo='función' info='centro de curvatura' ">
+      <param name="A_28" value="id='Q2(t)' algoritmo='no' expresión='r2(t)+R(t)*N2(t)' tipo='función' info='centro de curvatura' ">
+      <param name="A_29" value="id='Q3(t)' algoritmo='no' expresión='r3(t)+R(t)*N3(t)' tipo='función' info='centro de curvatura' ">
       <param name="A_30" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=70;E1.rot.z=-40' ">
       <param name="A_31" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="S_01" value="espacio='E1' tipo='curva' color='0000ff' expresión='x=r1(a+u*(b-a)) y=r2(a+u*(b-a)) z=r3(a+u*(b-a))' cortar='sí' ancho='1' Nu='100' info='r(t)' ">
+      <param name="S_01" value="espacio='E1' tipo='curva' color='0000ff' expresión='t=a+u*(b-a);x=r1(t);y=r2(t);z=r3(t)' cortar='sí' ancho='2' Nu='100' info='r(t)' ">
       <param name="S_02" value="espacio='E1' tipo='segmento' color='000000' dibujar-si='ver_vectores' expresión='(r1(t0),r2(t0),r3(t0)) (r1(t0)+T1(t0),r2(t0)+T2(t0),r3(t0)+T3(t0))' ancho='2' Nu='1' info='T(t₀)' ">
       <param name="S_03" value="espacio='E1' tipo='segmento' color='ff0000' dibujar-si='ver_vectores' expresión='(r1(t0),r2(t0),r3(t0)) (r1(t0)+N1(t0),r2(t0)+N2(t0),r3(t0)+N3(t0))' ancho='2' Nu='1' info='N(t₀)' ">
       <param name="S_04" value="espacio='E1' tipo='segmento' color='008000' dibujar-si='ver_vectores' expresión='(r1(t0),r2(t0),r3(t0)) (r1(t0)+B1(t0),r2(t0)+B2(t0),r3(t0)+B3(t0))' ancho='2' Nu='1' info='B(t₀)' ">
-      <param name="S_05" value="espacio='E1' tipo='curva' color='ff00ff' dibujar-si='ver_circulo' expresión='x=Q1(t0)+R(t0)*cos(u*2pi)*T1(t0)+R(t0)*sin(u*2pi)*N1(t0);y=Q2(t0)+R(t0)*cos(u*2pi)*T2(t0)+R(t0)*sin(u*2pi)*N2(t0);z=Q3(t0)+R(t0)*cos(u*2pi)*T3(t0)+R(t0)*sin(u*2pi)*N3(t0)' ancho='2' Nu='R(t0)<=2?20:(R(t0)<=6?50:80)' info='círculo osculador' ">
-      <param name="S_06" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' dibujar-si='ver_circulo' expresión='(Q1(t0),Q2(t0),Q3(t0))' decimales='2' ancho='1' offset_dist='10' offset_angle='270' info='centro de curvatura' ">
-      <param name="S_07" value="espacio='E1' tipo='segmento' color='008080' dibujar-si='ver_circulo' expresión='(r1(t0),r2(t0),r3(t0)) (Q1(t0),Q2(t0),Q3(t0))' ancho='1' Nu='7' info='radio de curvatura' ">
+      <param name="S_05" value="espacio='E1' tipo='curva' color='ffafaf' dibujar-si='ver_circulo' expresión='rcos=R(t0)*cos(u*2pi);rsin=R(t0)*sin(u*2pi);x=Q1(t0)+rcos*T1(t0)+rsin*N1(t0);y=Q2(t0)+rcos*T2(t0)+rsin*N2(t0);z=Q3(t0)+rcos*T3(t0)+rsin*N3(t0)' ancho='2' Nu='ceil(4pi*R(t0))' info='círculo osculador' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' dibujar-si='ver_circulo' expresión='(Q1(t0),Q2(t0),Q3(t0))' decimales='2' ancho='2' offset_dist='10' offset_angle='270' info='centro de curvatura' ">
+      <param name="S_07" value="espacio='E1' tipo='segmento' color='00ff00' dibujar-si='ver_circulo' expresión='(r1(t0),r2(t0),r3(t0)) (Q1(t0),Q2(t0),Q3(t0))' ancho='1' Nu='7' info='radio de curvatura' ">
       <param name="S_08" value="espacio='E1' tipo='texto' color='000000' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i k(t\i0{\subix\i 0\i0}\i ) = \i0\i{\expr k(t0)\decimals 2\fixed0}\i0}\i0\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='k(t₀)' ">
     </ajs>
   </div>

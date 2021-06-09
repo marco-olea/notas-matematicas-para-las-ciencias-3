@@ -18,20 +18,20 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R2' id='E1' ancho='45%' fijo='sí' O.x='-5' O.y='-45' red='no' red10='no' ejes='no' info='izquierda' ">
+      <param name="E_01" value="tipo='R2' id='E1' ancho='45%' fijo='sí' O.x='-5' O.y='-45' red='no' red10='no' ejes='no' border_width='1' info='izquierda' ">
       <param name="E_02" value="tipo='R3' R3='sí' id='E2' x='55%' ancho='45%' escala='40' O.x='-10' info='derecha' ">
       <param name="E_03" value="tipo='R2' id='E3' x='45%' ancho='10%' fijo='sí' red='no' red10='no' ejes='no' info='flecha' ">
       <param name="C_01" value="id='ver_S' tipo='checkbox' región='interior' espacio='E2' nombre='Ver S' expresión='(0,0,135,40)' valor='1' acción='calcular' parámetro='ver_paralelogramos=(ver_S==0)&&(ver_paralelogramos==0)?1:ver_paralelogramos' position='a_right' ">
       <param name="C_02" value="id='ver_paralelogramos' tipo='checkbox' región='interior' espacio='E2' nombre='Ver paralelogramos' expresión='(135,0,225,40)' valor='1' acción='calcular' parámetro='ver_S=(ver_S==0)&&(ver_paralelogramos==0)?1:ver_S' position='a_right' ">
-      <param name="C_03" value="id='m' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='m' expresión='(0,0,150,40)' valor='1' incr='1' min='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=sel[1]<n?sel[1]:n-1' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_04" value="id='n' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='n' expresión='(0,0,150,40)' valor='1' incr='1' min='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=sel[1]<n?sel[1]:n-1' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='m' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='m' expresión='(0,0,150,40)' valor='3' incr='1' min='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=sel[1]<n?sel[1]:n-1' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='n' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='n' expresión='(0,0,150,40)' valor='3' incr='1' min='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=sel[1]<n?sel[1]:n-1' font_family='Serif' cursiva='sí' image_inc='../../images/inc.svg' image_dec='../../images/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='ua' expresión='-2.5' tipo='variable' ">
       <param name="A_02" value="id='ub' expresión='3.7' tipo='variable' ">
       <param name="A_03" value="id='du' expresión='(ub-ua)/m' tipo='variable' info='Δu' ">
       <param name="A_04" value="id='va' expresión='-2.5' tipo='variable' ">
       <param name="A_05" value="id='vb' expresión='2.5' tipo='variable' ">
       <param name="A_06" value="id='dv' expresión='(vb-va)/n' tipo='variable' info='Δv' ">
-      <param name="A_07" value="id='apuntador_dentro_de_S' expresión='(E1.mouse_x>=ua-0.1)&&(E1.mouse_x<=ub+0.1)&&(E1.mouse_y>=va-0.1)&&(E1.mouse_y<=vb+0.1)' tipo='variable' info='Indica si el ratón está dentro del rectángulo S' ">
+      <param name="A_07" value="id='apuntador_dentro_de_S' expresión='(E1.mouse_x>=ua)&&(E1.mouse_x<=ub)&&(E1.mouse_y>=va)&&(E1.mouse_y<=vb)' tipo='variable' info='Indica si el ratón está dentro del rectángulo S' ">
       <param name="A_08" value="id='r1(u,v)' algoritmo='no' expresión='u' tipo='función' ">
       <param name="A_09" value="id='r2(u,v)' algoritmo='no' expresión='v' tipo='función' ">
       <param name="A_10" value="id='r3(u,v)' algoritmo='no' expresión='(u^2-v^2)/4' tipo='función' ">
@@ -47,7 +47,7 @@
       <param name="A_20" value="id='mostrar_textos' expresión='(m<=10)&&(n<=10)' tipo='variable' ">
       <param name="A_21" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.rot.y=30;E2.rot.z=130;;E1.mouse_x=ua-1;E1.mouse_y=va-1' ">
       <param name="A_22" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="A_23" value="id='E1_mouse_click' evento='sí' condición='E1.mouse_clicked&&apuntador_dentro_de_S' acción='calcular' parámetro='sel[0]=floor(m*(E1.mouse_x-ua)/(ub-ua));sel[1]=floor(n*(E1.mouse_y-va)/(vb-va))' ejecución='alternar' info='Cambiar Sᵢⱼ' ">
+      <param name="A_23" value="id='E1_mouse_click' evento='sí' condición='E1.mouse_clicked&&apuntador_dentro_de_S' acción='calcular' parámetro='sel[0]=floor(m*(E1.mouse_x-ua)/(ub-ua));sel[0]=sel[0]<m?sel[0]:m-1;sel[1]=floor(n*(E1.mouse_y-va)/(vb-va));sel[1]=sel[1]<n?sel[1]:n-1' ejecución='alternar' info='Cambiar Sᵢⱼ' ">
       <param name="G_01" value="espacio='E1' tipo='rectángulo' fondo='sí' color='ff8000' coord_abs='no' expresión='(ua,va,ub-ua,vb-va)' relleno='a0ff8000' ancho='2' border_radius='3' info='D' ">
       <param name="G_02" value="espacio='E1' tipo='segmento' color='ff8000' coord_abs='no' expresión='(s<=m?(ua+du*s):ua,s<=m?va:va+dv*(s-m)) (s<=m?(ua+du*s):ub,s<=m?vb:va+dv*(s-m))' familia='s' s.intervalo='[0,m+n]' s.pasos='m+n' tamaño='0' ancho='1' info='D divisores' ">
       <param name="G_03" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='((ua+ub)/2,vb)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i D\i0}\cf0\fs40 }' ancho='1' align='a_left' anchor='a_bottom_center' info='D texto' ">
