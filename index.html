@@ -1507,10 +1507,12 @@
 
         <h3>Regularidad y suavidad</h3>
 
-        <div class="num_block" prefix="Definición" id="curva_regular_y_suave">
-          Sea $\textbf{r}(t)$ una parametrización de una curva, con $a \leq t \leq b$. <br>
-          Si $\textbf{r}'(t) \not = 0$ para todo $t \in [a,b]$, entonces la curva es <b>regular</b>. <br>
-          Si $\textbf{r}'(t)$ es continuo y además $\textbf{r}'(t) \not = 0$ para todo $t \in [a,b]$, entonces la curva es <b>suave</b>.
+        <div class="num_block" prefix="Definición" id="curva_regular">
+          Sea $\textbf{r}(t)$ una parametrización de una curva, con $a \leq t \leq b$. Si $\textbf{r}'(t) \not = 0$ para todo $t \in [a,b]$, entonces la curva es <b>regular</b>.
+        </div>
+
+        <div class="num_block" prefix="Definición" id="curva_suave">
+          Sea $\textbf{r}(t)$ una parametrización de una curva, con $a \leq t \leq b$. Si $\textbf{r}'(t)$ es continua y además $\textbf{r}'(t) \not = 0$ para todo $t \in [a,b]$, entonces la curva es <b>suave</b>.
         </div>
 
         <p>La regularidad es una condición que garantiza que una parametrización realmente describe una curva. Por ejemplo, la función $\textbf{r}(t) = \langle 1,1 \rangle$ para cualquier dominio es una parametrización válida, pero su imagen es un único punto y no una curva. La suavidad es una condición que garantiza que la curva no tenga cúspides ni esquinas.</p>
@@ -1521,11 +1523,11 @@
         <h3>Longitud de arco</h3>
 
         <div class="num_block" prefix="Teorema" id="longitud_arco">
-          Sea $C$ una curva planar suave definida por la función $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
+          Sea $C$ una curva planar suave definida por la función $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de $C$ es:
             \[
               s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
             \]
-          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. La longitud de arco de C es:
+          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. La longitud de arco de $C$ es:
             \[
               s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2 + [h'(t)^2]} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
             \]
@@ -1551,22 +1553,17 @@
         <p>Ejemplo: Sea $\textbf{r}(t) = \langle 3\cos(t), 3\sin(t), 4t \rangle$, con $t \in [-4\pi, 0]$, como se muestra en la <ref ref_id="reparametrizacion_longitud_arco"></ref>. Se desea encontrar la parametrización por longitud de arco. Primero se debe calcular la función de longitud de arco como se indica en el <ref ref_id="funcion_longitud_arco"></ref>.
           \[
             \begin{aligned}
-              s(t) 
-                &= \int^t_{-4\pi} \Vert \textbf{r}'(u) \Vert du \\
-                &= \int^t_{-4\pi} \Vert \langle -3\sin(u),3\cos(u),4 \rangle \Vert du \\
-                &= \int^t_{-4\pi} 5du = 5t + 20\pi
+              s(t) &= \int^t_{-4\pi} \Vert \textbf{r}'(u) \Vert du \\
+                   &= \int^t_{-4\pi} \Vert \langle -3\sin(u),3\cos(u),4 \rangle \Vert du \\
+                   &= \int^t_{-4\pi} \sqrt{9\sin^2(u) + 9\cos^2(u) + 16} \\
+                   &= \int^t_{-4\pi} \sqrt{9 + 16} \\
+                   &= \int^t_{-4\pi} 5du = 5t + 20\pi
             \end{aligned}
           \]</p>
 
         <p>Luego se reescribe el resultado anterior de tal forma que $t$ esté en términos de $s$:
           \[
             t = \frac{s}{5} - 4\pi
-          \]
-        </p>
-
-        <p>Ahora se sustituye la variable $t$ en $\textbf{r}(t)$ con esta expresión para obtener:
-          \[
-            \textbf{r}(s) = \left\langle 3\cos(\frac{s}{5} - 4\pi),4\sin(\frac{s}{5} - 4\pi),4(\frac{s}{5} - 4\pi) \right\rangle
           \]
         </p>
       </div>
@@ -1577,8 +1574,18 @@
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/reparametrizacion_longitud_arco.html"></div>
           <figcaption>En azul se muestra la curva $\textbf{r}(t) = \langle 3\cos(t), 3\sin(t), 4t \rangle$, definida para $t \in [-4\pi, 0]$. La parametrización por longitud de arco $\textbf{r}(s)$, en rojo, es idéntica a la curva original, pero aquí se muestran separadas para visualizar mejor el ejemplo. Observa que $t_0 = s_0$ no implica que $\textbf{r}(t_0) = \textbf{r}(s_0)$. Pulsa el botón para asignarle un valor a $s_0$ de tal forma que $\textbf{r}(t_0) = \textbf{r}(s_0)$.</figcaption>
         </figure>
+        
+        <p>Ahora se sustituye la variable $t$ en $\textbf{r}(t)$ con esta expresión para obtener:
+          \[
+            \textbf{r}(s) = \left\langle 3\cos(\frac{s}{5} - 4\pi),4\sin(\frac{s}{5} - 4\pi),4(\frac{s}{5} - 4\pi) \right\rangle
+          \]</p>
 
-        <p>Por último se debe sustituir la misma expresión en las cotas originales. Dado que $t \in [-4\pi,0]$, entonces:
+        <p>Por último se debe sustituir la misma expresión en las cotas originales. Dado que $t \in [-4\pi,0]$, entonces:</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>
           \[
             \begin{aligned}
               t \geq -4\pi 
@@ -1586,12 +1593,7 @@
                 &\Rightarrow \frac{s}{5} \geq 0 \\
                 &\Rightarrow s \geq 0
             \end{aligned}
-          \]</p>
-      </div>
-
-      <!--  -->
-      <div class="page">
-        <p>
+          \]
           \[
             \begin{aligned}
               t \leq 0
@@ -1605,43 +1607,42 @@
 
         <h3>Curvatura</h3>
 
-        <p>La curvatura es una medida de qué tanto una curva planar se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenido en un solo plano. La curvatura de una línea recta y de un plano es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
+        <p>La curvatura es una medida de qué tanto una curva planar se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenida en un solo plano. La curvatura de una línea recta y de un plano es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
 
         <div class="num_block" prefix="Definición" id="curvatura">
           Sea $C$ una curva suave definida por la función $\textbf{r}(s)$, donde $s$ es el parámetro de longitud de arco. La <b>curvatura</b> en $s$ es:
             \[
               \kappa = \left\Vert \frac{d\textbf{T}(s)}{ds} \right\Vert = \Vert \textbf{T}'(s) \Vert
             \]
-          Donde $\textbf{T}(s)$ representa el vector tangente unitario a $\textbf{r}(s)$, es decir, $\textbf{T}(s) = \frac{\textbf{r}'(s)}{\Vert \textbf{r}'(s) \Vert}$. Además, el radio del círculo osculador en $s$ se conoce como el <b>radio de curvatura</b>, y su centro es el <b>centro de curvatura</b>.
         </div>
       </div>
 
       <!--  -->
       <div class="page">
+        <p>Donde $\textbf{T}(s)$ representa el vector tangente unitario a $\textbf{r}(s)$, es decir, $\textbf{T}(s) = \frac{\textbf{r}'(s)}{\Vert \textbf{r}'(s) \Vert}$. Además, el radio del círculo osculador en $s$ se conoce como el <b>radio de curvatura</b>, y su centro es el <b>centro de curvatura</b>.</p>
+
         <figure id="ejemplo_curvatura_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r2.html"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle 1 + \frac{3}{10}t \cos(t), 1 + \frac{3}{10}t \sin(t) \rangle$ en azul. También se muestra el círculo osculador (verde), el centro de curvatura (negro) y el radio de curvatura (rojo).</figcaption>
         </figure>
 
-        <p>Encontrar la curvatura usando la definición anterior puede resultar tedioso puesto que se requiere reparametrizar $\textbf{r}$ por longitud de arco, luego calcular $\textbf{T}(s)$ y finalmente derivar esto último. El siguiente teorema proporciona un método más fácil que solamente involucra el parámetro $t$.</p>
-
-        <div class="num_block" prefix="Teorema" id="curvatura_simplificado">
-          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$ diferenciable dos veces en todo su dominio. Entonces la curvatura en $t$ es:
-        </div>
+        <p style="text-align-last:justify;">Encontrar la curvatura usando la definición anterior puede resultar tedioso puesto que se requiere reparametrizar $\textbf{r}$ por longitud de arco, luego calcular $\textbf{T}(s)$ y finalmente derivar esto último. El siguiente teorema proporciona un método más fácil que solamente</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>
-          \[
-            \kappa = \frac{\Vert \textbf{r}'(t) \times \textbf{r}''(t) \Vert}{\Vert \textbf{r}'(t) \Vert^3}
-          \]</p>
+        <p>involucra el parámetro $t$.</p>
+
+        <div class="num_block" prefix="Teorema" id="curvatura_simplificado">
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$ diferenciable dos veces en todo su dominio. Entonces la curvatura en $t$ es:
+            \[
+              \kappa = \frac{\Vert \textbf{r}'(t) \times \textbf{r}''(t) \Vert}{\Vert \textbf{r}'(t) \Vert^3}
+            \]
+        </div>
 
         <h3>Orientación</h3>
 
-        <p>En $\R^2$ la orientación se define por medio de un par ordenado de vectores linealmente independientes $(v,w)$, de tal forma que un ángulo menor que $\pi$ que comienza en $v$ y termina en $w$ es la dirección positiva.</p>
-
-        <p style="text-align-last:justify;">En el plano cartesiano se utiliza la orientación estándar como se</p>
+        <p style="text-align-last:justify;">En $\R^2$ la orientación se define por medio de un par ordenado de</p>
 
         <figure id="orientacion_estandar_r2">
           <center>
@@ -1653,11 +1654,9 @@
 
       <!--  -->
       <div class="page">
-        <p>muestra en la <ref ref_id="orientacion_estandar_r2"></ref>. Esto induce una orientación para curvas: si un punto viaja por una curva de principio a fin, la dirección del recorrido siempre estará ya sea en el sentido de las manecillas del reloj (orientación negativa) o en el sentido contrario al de las manecillas del reloj (orientación positiva).</p> 
-        
-        <p>Esta definición de orientación en $\R^2$ es solamente una convención, se podría definir como positiva la dirección contraria y obtener una nueva orientación.</p>
+        <p>vectores linealmente independientes $(v,w)$, de tal forma que un ángulo menor que $\pi$ que comienza en $v$ y termina en $w$ es la dirección positiva.</p>
 
-        <p style="text-align-last:justify;">Ahora, al considerar espacios de tres dimensiones, surge un</p>
+        <p>En el plano cartesiano se utiliza la orientación estándar como se muestra en la <ref ref_id="orientacion_estandar_r2"></ref>. Esto induce una orientación para curvas: si un punto viaja por una curva de principio a fin, la dirección del recorrido siempre estará ya sea en el sentido de las manecillas del reloj (orientación negativa) o en el sentido contrario a las manecillas del reloj (orientación positiva).</p> 
 
         <figure id="curva_y_su_inversa">
           <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/curva_y_su_inversa.html"></div>
@@ -1667,27 +1666,26 @@
 
       <!--  -->
       <div class="page">
-        <p>problema con esta definición porque el ángulo entre dos vectores puede ser tanto positivo como negativo, dependiendo de la perspectiva del "observador".</p>
+        <p>Esta definición de orientación en $\R^2$ es solamente una convención, se podría definir como positiva la dirección contraria y obtener una nueva orientación.</p>
+
+        <p>Ahora, al considerar espacios de tres dimensiones, surge un problema con esta definición porque el ángulo entre dos vectores puede ser tanto positivo como negativo, dependiendo de la perspectiva del "observador".</p>
         
         <figure id="orientacion_ambigua_r3">
           <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/orientacion_ambigua_r3.html"></div>
           <figcaption>Dos vectores en $\R^3$ no son suficientes para una definición consistente de orientación.</figcaption>
         </figure>
 
-        <p>Por tanto, definiremos dos vectores que, junto con el vector tangente unitario que ya se ha mencionado, conforman un conjunto consistente de tres vectores que describen la orientación de un punto en el espacio.</p>
+        <p style="text-align-last:justify;">Por tanto, definiremos dos vectores que, junto con el vector tangente unitario que ya se ha mencionado, conforman un conjunto</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <div class="num_block" prefix="Definición" id="vectores_normal_binormal">
-          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t)$ sobre un intervalo abierto. Sea $\textbf{T}(t) = \frac{\textbf{r}'(t)}{\Vert \textbf{r}'(t) \Vert}$ el vector tangente unitario a $\textbf{r}(t)$ y supongamos que $\textbf{T}'(t) \not = 0$. <br>
-          El <b>vector normal unitario</b> es:
+        <p>consistente de tres vectores que describen la orientación de un punto en el espacio.</p>
+
+        <div class="num_block" prefix="Definición" id="vector_normal_unitario">
+          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t)$ sobre un intervalo abierto. Sea $\textbf{T}(t) = \frac{\textbf{r}'(t)}{\Vert \textbf{r}'(t) \Vert}$ el vector tangente unitario a $\textbf{r}(t)$ y supongamos que $\textbf{T}'(t) \not = 0$. El <b>vector normal unitario</b> es:
             \[
               \textbf{N}(t) = \frac{\textbf{T}'(t)}{\Vert \textbf{T}'(t) \Vert}
-            \]
-          El <b>vector binormal</b> es:
-            \[
-              \textbf{B}(t) = \textbf{T}(t) \times \textbf{N}(t)
             \]
         </div>
 
@@ -1699,26 +1697,31 @@
 
       <!--  -->
       <div class="page">
-        <p>Si la curva $\textbf{r}(t)$ representa la posición de un objeto en el espacio con respecto al tiempo, el vector $\textbf{T}(t)$ representa la tasa de cambio con la que el objeto varía su posición. El vector $\textbf{N}(t)$ está relacionado con la curvatura; indica qué tan rápidamente la trayectoria del objeto deja de ser una línea. El vector $\textbf{B}(t)$ indica qué tan rápidamente el objeto se sale del plano en el que está su trayectoria.</p>
+        <div class="num_block" prefix="Definición" id="vector_binormal">
+          Sea $C$ una curva espacial suave definida por la función $\textbf{r}(t)$ sobre un intervalo abierto. El <b>vector binormal</b> es:
+            \[
+              \textbf{B}(t) = \textbf{T}(t) \times \textbf{N}(t)
+            \]
+        </div>
 
-        <p style="text-align-last:justify;">Con los vectores anteriores también podemos visualizar el concepto de curvatura en $\R^3$, ya que el círculo osculador en $t$ se</p>
+        <p style="text-align-last:justify;">Si la curva $\textbf{r}(t)$ representa la posición de un objeto en el espacio con respecto al tiempo, el vector $\textbf{T}(t)$ representa la tasa de cambio con la que el objeto varía su posición. El vector $\textbf{N}(t)$ está relacionado con la curvatura; indica qué tan rápidamente la trayectoria del objeto deja de ser una recta. El vector $\textbf{B}(t)$ indica qué tan rápidamente el objeto se sale del plano que recorre.</p>
 
-        <figure id="orientacion_r3">
+        <figure id="ejemplo_curvatura_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r3.html"></div>
-          <figcaption>La curva $\textbf{r}(t) = \langle (1+t)\cos(t),(1+t)\sin(t),t \rangle$, con $t \in [-2\pi,3\pi]$. En magenta se muestra el círculo osculador y en turquesa el radio de curvatura. Los vectores $\textbf{T}(t_0)$, $\textbf{N}(t_0)$ y $\textbf{B}(t_0)$ tienen los mismos colores que en la <ref ref_id="orientacion_r3"></ref>.</figcaption>
+          <figcaption>La curva $\textbf{r}(t) = \langle (1+t)\cos(t),(1+t)\sin(t),t \rangle$, con $t \in [-2\pi,3\pi]$. En rosa se muestra el círculo osculador y en verde claro el radio de curvatura. Los vectores $\textbf{T}(t_0)$, $\textbf{N}(t_0)$ y $\textbf{B}(t_0)$ tienen los mismos colores que en la <ref ref_id="orientacion_r3"></ref>.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>encuentra en el plano generado por $\textbf{T}(t)$ y $\textbf{N}(t)$. En particular, el centro de curvatura es el vector $R \cdot \textbf{N}(t)$, donde $R$ es el radio de curvatura.</p>
+        <p>Con los vectores anteriores también podemos visualizar el concepto de curvatura en $\R^3$, ya que el círculo osculador en $t$ se encuentra en el plano generado por $\textbf{T}(t)$ y $\textbf{N}(t)$, así como se muestra en la <ref ref_id="ejemplo_curvatura_r3"></ref>. En particular, el centro de curvatura es el vector $R \cdot \textbf{N}(t)$, donde $R$ es el radio de curvatura.</p>
       </div>
 
       <!--  -->
       <div class="page">
         <h2 id="sec_c3_la_integral_de_trayectoria">La integral de línea.</h2>
 
-        <p>En esta sección veremos cómo evaluar integrales cuyo dominio de integración no es un intervalo $[a,b]$, sino una curva general. Para esto se requerirá de un concepto conocido como integral de línea.</p>
+        <p>En esta sección veremos cómo evaluar integrales cuyo dominio de integración no es un intervalo $[a,b]$, sino una curva general. Para esto se utiliza un tipo de integral nuevo, llamado integral de línea.</p>
 
         <h3>Integral de línea escalar</h3>
 
@@ -1822,83 +1825,87 @@
       <div class="page">
         <h2 id="sec_c3_integrales_de_linea">Aplicaciones de la integral de línea.</h2>
 
-        <p>Las integrales de línea tienen muchas distintas aplicaciones como calcular la masa de un cable, el área de una superficie, el trabajo realizado sobre una partícula mientras recorre un campo de fuerza y la tasa de flujo de un fluido a lo largo de una curva. En esta sección se presentarán algunos de estos ejemplos.</p>
+        <p>Las integrales de línea tienen distintas aplicaciones como calcular la masa de un cable, el área de una superficie, el trabajo realizado sobre una partícula mientras recorre un campo de fuerza y la tasa de flujo de un fluido a lo largo de una curva. En esta sección se presentarán algunos de estos ejemplos.</p>
 
         <h3>Masa de un cable</h3>
 
-        <p style="text-align-last:justify;">Sea $C$ una curva planar que modela un cable. Su densidad lineal (masa por unidad de longitud) está dada por una función continua</p>
-
-        <figure id="ejemplo_masa_cable">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_masa_cable.html"></div>
-        </figure>
-      </div>
-
-      <!--  -->
-      <div class="page">
-        <p>$\rho (x,y)$. Como la masa es igual a densidad por longitud, entonces podemos aproximar la masa de un pedazo pequeño del cable con $\rho (x^*,y^*) \Delta s$, donde $\Delta s$ es la longitud de dicho pedazo y $(x^*,y^*)$ es un punto dentro de él. Por tanto, la masa total del cable se calcula con la integral de línea escalar $\int_C \rho (x,y) ds$.</p>
+        <p>Sea $C$ una curva planar que modela un cable. Su densidad lineal (masa por unidad de longitud) está dada por una función continua $\rho (x,y)$. Como la masa es igual a densidad por longitud, entonces podemos aproximar la masa de un pedazo pequeño del cable con $\rho (x^*,y^*) \Delta s$, donde $\Delta s$ es la longitud de dicho pedazo y $(x^*,y^*)$ es un punto dentro de él. Por tanto, la masa total del cable se calcula con la integral de línea escalar $\int_C \rho (x,y) ds$.</p>
 
         <h3>Trabajo</h3>
 
-        <p style="text-align-last:justify;">El trabajo fue la motivación para definir la integral de línea vectorial y, por tanto, esa es una de sus principales aplicaciones. Consideremos un objeto que se mueve a lo largo de una curva $C$ y un campo vectorial $\textbf{F}$ que representa un campo de fuerza.</p>
+        <p>El trabajo fue la motivación para definir la integral de línea vectorial y, por tanto, esa es una de sus principales aplicaciones.</p>
 
-        <figure id="ejemplo_masa_cable">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_trabajo.html"></div>
-        </figure>
+        <p style="text-align-last:justify;"> Consideremos un objeto que se mueve a lo largo de una curva $C$ y un campo vectorial $\textbf{F}$ que representa un campo de fuerza. Supongamos que $C$ tiene una parametrización $\textbf{r}(t)$ tal que la curva sólo se recorre una vez para $a \leq t \leq b$. El trabajo requerido para mover el objeto a lo largo de $C$ es $W = \int_C \textbf{F} \cdot \textbf{T} ds$, expresado frecuentemente como $\int_C \textbf{F} \cdot d\textbf{r}$ por la ecuación del <ref ref_id="integral_linea_vectorial_t"></ref>. Ahora notemos que el objeto puede viajar en dos direcciones, y el</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p style="text-align-last:justify;">Supongamos que $C$ tiene una parametrización $\textbf{r}(t)$ tal que la curva sólo se recorre una vez para $a \leq t \leq b$. El trabajo requerido para mover el objeto a lo largo de $C$ es $W = \int_C \textbf{F} \cdot \textbf{T} ds$, expresado frecuentemente como $\int_C \textbf{F} \cdot d\textbf{r}$ por la ecuación del <ref ref_id="integral_linea_vectorial_t"></ref>.</p>
+        <figure id="ejemplo_masa_cable">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_masa_cable.html"></div>
+          <figcaption>Un cable parametrizado por $\textbf{r}(t)$ (con $a \leq t \leq b$) y su función de densidad lineal $\rho(x,y)$. En la parte superior se muestra su masa, pero es importante notar que sólo es una aproximación. El área rosa representa la integral de línea escalar $\int_C \rho(x,y)ds$.</figcaption>
+        </figure>
 
-        <p style="text-align-last:justify;">Ahora notemos que el objeto puede viajar en dos direcciones, y el trabajo requerido por $\textbf{F}$ para moverlo depende de dicha dirección. Intuitivamente, esto es porque si escalas una montaña, la fuerza gravitacional del planeta realiza trabajo negativo sobre ti, pero al descender la montaña por la misma ruta se realiza trabajo positivo. Por lo tanto se debe especificar una dirección positiva para $C$, de tal forma que la dirección contraria será la negativa. Cambia la parametrización de la figura anterior de $\textbf{r}(t)$ a $\textbf{r}(a + b - t)$, esto genera una curva idéntica recorrida en la dirección contraria. Observa que el trabajo es el mismo pero cambia de signo.</p>
+        <p>trabajo requerido por $\textbf{F}$ para moverlo depende de dicha dirección. Intuitivamente, esto es porque si escalas una montaña, la fuerza gravitacional del planeta realiza trabajo negativo sobre ti, pero al descender la montaña por la misma ruta se realiza trabajo positivo. Por lo tanto se debe especificar una dirección positiva para $C$, de tal forma que la dirección contraria será la negativa. Cambia la parametrización de la figura anterior de $\textbf{r}(t)$ a $\textbf{r}(a + b - t)$, esto genera una curva idéntica recorrida en la dirección contraria. Observa que el trabajo es el mismo pero cambia de signo.</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <figure id="ejemplo_trabajo">
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_trabajo.html"></div>
+          <figcaption>La curva $C$ parametrizada por $\textbf{r}(t)$ representa el recorrido de un objeto en el espacio. El dominio del campo de fuerza $\textbf{F}$ contiene a $C$. En la parte superior se muestra una aproximación del trabajo ejercido por $\textbf{F}$ para mover el objeto.</figcaption>
+        </figure>
 
         <h3>Flujo</h3>
 
-        <p>Sea $C$ una curva planar suave definida por la función $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio contiene a $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad ($C$ es permeable). Queremos medir la tasa de flujo con la cual fluye a través de $C$.</p>
+        <p>Sea $C$ una curva planar suave definida por la función $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio contiene a $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad ($C$ es permeable). Queremos medir la tasa de flujo a través de $C$.</p>
 
-        <p style="text-align-last:justify;">Consideremos un pedazo pequeño de $C$ con longitud $\Delta s$ para medir la masa total del fluido que entra o sale de él en una unidad de tiempo. Conforme $\Delta s$ tiende a cero, asemeja una línea recta y, además, todas las partículas del fluido que la atraviesan se mueven prácticamente en la misma dirección y con la misma velocidad. Por</p>
+        <p style="text-align-last:justify;">Consideremos un pedazo pequeño de $C$ con longitud $\Delta s$ para</p>
       </div>
 
       <!--  -->
       <div class="page">
+        <p style="text-align-last:justify;">medir la masa total del fluido que entra o sale de él en una unidad de tiempo. Conforme $\Delta s$ tiende a cero, asemeja una línea recta y, además, todas las partículas del fluido que la atraviesan se mueven prácticamente en la misma dirección y con la misma velocidad. Por tanto, si elegimos un punto arbitrario $\textbf{r}(t^*)$ dentro del pedazo, entonces todas las partículas en su vecindad tendrán el vector de velocidad $\textbf{F}(\textbf{r}(u^*,v^*))$. Durante una unidad de tiempo, el fluido que pasa por el pedazo forma un paralelogramo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de área, entonces la masa del fluido que atraviesa la</p>
+
         <figure id="explicacion_flujo_r2">
           <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion3/explicacion_flujo_r2.html"></div>
+          <figcaption>En rojo se muestra una curva $C$ y en azul un campo vectorial $\textbf{F}$ que representa la velocidad de un fluido. Pulsa el botón para iniciar la animación y ver cómo el fluido atraviesa un pedazo pequeño de $C$ en una unidad de tiempo.</figcaption>
         </figure>
-
-        <p>tanto, si elegimos un punto arbitrario $\textbf{r}(t^*)$ dentro del pedazo, entonces todas las partículas en su vecindad tendrán el vector de velocidad $\textbf{F}(\textbf{r}(u^*,v^*))$. Durante de la unidad de tiempo, el fluido que pasa por el pedazo forma un paralelogramo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de área, entonces la masa del fluido que atraviesa la superficie equivale al área del paralelogramo.</p>
-
-        <p style="text-align-last:justify;">Uno de los lados del paralelogramo claramente mide $\Delta s$. El otro lado representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(t^*)$. Entonces dicho lado es el vector $\textbf{F}(\textbf{r}(t^*))$. La altura del paralelogramo es el producto punto de este último lado con un vector unitario normal a la curva en $t^*$. En consecuencia, la</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>masa que atraviesa el pedazo de $C$ en una unidad de tiempo es $(\textbf{F}(\textbf{r}(t^*)) \cdot \textbf{n}(t^*)) \Delta s$, donde $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $C$ con longitud $\Delta s$ es igual a $\textbf{F} \cdot \textbf{n} \Delta s$, entonces la tasa de flujo con la cual el fluido fluye a través de $C$ es la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{n} ds$.</p>
+        <p style="text-align-last:justify;">superficie equivale al área del paralelogramo. Uno de los lados del paralelogramo claramente mide $\Delta s$. El otro lado representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(t^*)$. Entonces dicho lado es el vector $\textbf{F}(\textbf{r}(t^*))$. La altura del paralelogramo es el producto punto de este último lado con un vector unitario normal a la curva en $t^*$. En consecuencia, la masa que atraviesa el pedazo de $C$ en una unidad de tiempo es $(\textbf{F}(\textbf{r}(t^*)) \cdot \textbf{n}(t^*)) \Delta s$, donde $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $C$ con longitud $\Delta s$ es</p>
 
         <figure id="ejemplo_flujo_r2">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_flujo_r2.html"></div>
+          <figcaption>Una curva $C$ parametrizada por $\textbf{r}(t)$ y un campo vectorial $\textbf{F}$. En la parte superior se muestra una aproximación del flujo de $\textbf{F}$ a través de $C$.</figcaption>
         </figure>
-
-        <h3>Circulación</h3>
-
-        <p style="text-align-last:justify;">Una <b>curva cerrada</b> es una curva para la cual existe una parametrización $\textbf{r}(t)$, $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$ y $\textbf{r}$ es inyectiva sobre el dominio $(a,b)$. A la integral de línea del campo</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>vectorial $\textbf{F}$ a lo largo de una curva cerrada $C$ se le llama <b>circulación</b> de $\textbf{F}$ a lo largo de $C$ y se denota con el símbolo $\oint$.</p>
+        <p>igual a $\textbf{F} \cdot \textbf{n} \Delta s$, entonces la tasa de flujo con la cual el fluido fluye a través de $C$ es la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{n} ds$.</p>
 
-        <p>Supongamos que $\textbf{F}$ representa la velocidad de un fluido. Nota que en una integral de línea vectorial, dado que el integrando es el producto punto de $\textbf{F}$ y $\textbf{T}$, entonces el valor de la integral se maximiza cuando estos dos vectores apuntan en la misma dirección, es cero si son ortogonales y se minimiza cuando apuntan en direcciones opuestas. Por tanto, la circulación $\oint_C \textbf{F} \cdot \textbf{T} ds$ es una medida de la tendencia del fluido a moverse en la dirección de $C$.</p>
+        <h3>Circulación</h3>
+
+        <p>Una <b>curva cerrada</b> es una curva para la cual existe una parametrización $\textbf{r}(t)$, $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$ y $\textbf{r}$ es inyectiva sobre el dominio $(a,b)$. A la integral de línea del campo vectorial $\textbf{F}$ a lo largo de una curva cerrada $C$ se le llama <b>circulación</b> de $\textbf{F}$ a lo largo de $C$ y se denota con el símbolo $\oint$.</p>
 
         <figure id="ejemplo_circulacion">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_circulacion.html"></div>
+          <figcaption>Una curva $C$ parametrizada por $\textbf{r}(t)$ y un campo vectorial $\textbf{F}$. En la parte superior se muestra una aproximación de la circulación de $\textbf{F}$ a lo largo de $C$.</figcaption>
         </figure>
+      </div>
+
+      <!--  -->
+      <div class="page">
+        <p>Supongamos que $\textbf{F}$ representa la velocidad de un fluido. Nota que en una integral de línea vectorial, dado que el integrando es el producto punto de $\textbf{F}$ y $\textbf{T}$, entonces el valor de la integral se maximiza cuando estos dos vectores apuntan en la misma dirección, es cero si son ortogonales y se minimiza cuando apuntan en direcciones opuestas. Por tanto, la circulación $\oint_C \textbf{F} \cdot \textbf{T} ds$ mide qué tanto el fluido se mueve en la dirección de $C$.</p>
       </div>
 
       <!--  -->
       <div class="page">
         <h2 id="sec_c3_parametrización_de_superficies">Parametrización de superficies. Orientación.</h2>
 
-        <p>En esta sección se generalizará el concepto de funciones que describen curvas a un nuevo tipo de parametrización que permite describir superficies generales.</p>
+        <p>En esta sección se generaliza el concepto de funciones que describen curvas a un nuevo tipo de parametrización que permite describir superficies generales.</p>
 
         <h3>Superficie parametrizada</h3>
 
@@ -1912,7 +1919,7 @@
           Donde $x$, $y$ y $z$ son funciones escalares y los parámetros $u$ y $v$ varían sobre una región denominada el <b>espacio</b> o <b>dominio de parámetros</b>. Este es el conjunto de puntos para los cuales $\textbf{r}$ está definida.
         </div>
 
-        <p>Ahora debemos generalizar los conceptos de regularidad y suavidad (<ref ref_id="curva_regular_y_suave"></ref>) para tener condiciones que garanticen que una parametrización dada sea realmente una superficie, y que no tenga cúspides ni esquinas. Por ejemplo, la parametrización $\textbf{r}(u,v) = \langle 1,1,1 \rangle$ es simplemente un punto, y la parametrización $\textbf{r}(u,v) = \langle \cos(u), \sin(v), 0 \rangle$ con $u,v \in [0,2\pi]$ es un círculo en el plano $xy$.</p>
+        <p>Ahora debemos generalizar los conceptos de regularidad y suavidad (<ref ref_id="curva_regular"></ref> y <ref ref_id="curva_suave"></ref>) para tener condiciones que garanticen que una parametrización dada sea realmente una superficie, y que no tenga cúspides ni esquinas. Por ejemplo, la parametrización $\textbf{r}(u,v) = \langle 1,1,1 \rangle$ es simplemente un punto, y la parametrización $\textbf{r}(u,v) = \langle \cos(u), \sin(v), 0 \rangle$ con $u,v \in [0,2\pi]$ es un círculo en el plano $xy$.</p>
       </div>
 
       <!--  -->
@@ -1922,10 +1929,14 @@
           <figcaption>Una superficie paramétrica. El dominio de los parámetros $u$ y $v$ puede ser cualquier región general, pero por simplicidad, aquí sólo se permite ajustar la región rectangular $[u_{min}, u_{max}] \times [v_{min}, v_{max}]$.</figcaption>
         </figure>
 
-        <div class="num_block" prefix="Definición" id="superficie_parametrizada">
-          Sea $\textbf{r}(u,v)$ una parametrización. <br> 
-          Si los vectores tangentes $\textbf{r}_u = \frac{\partial \textbf{r}}{\partial u}$ y $\textbf{r}_v = \frac{\partial \textbf{r}}{\partial v}$ son linealmente independientes para cualquier punto $(u,v)$ en el dominio de parámetros, entonces la superficie es <b>regular</b>. <bibref ref_id="W001">1</bibref> <br>
-          Si $\textbf{r}_u \times \textbf{r}_v \not = 0$ para cualquier punto $(u,v)$ en el dominio de parámetros, entonces la superficie es <b>suave</b>. <bibref ref_id="W002">1</bibref>
+        <div class="num_block" prefix="Definición" id="superficie_regular">
+          Sea $\textbf{r}(u,v)$ una parametrización de una superficie. Si los vectores tangentes $\textbf{r}_u = \frac{\partial \textbf{r}}{\partial u}$ y $\textbf{r}_v = \frac{\partial \textbf{r}}{\partial v}$ son linealmente independientes para cualquier punto $(u,v)$ en el dominio de parámetros, entonces la superficie es <b>regular</b>. <bibref ref_id="W01">1</bibref>
+        </div>
+
+        <br>
+
+        <div class="num_block" prefix="Definición" id="superficie_suave">
+          Sea $\textbf{r}(u,v)$ una parametrización de una superficie. Si $\textbf{r}_u \times \textbf{r}_v \not = 0$ para cualquier punto $(u,v)$ en el dominio de parámetros, entonces la superficie es <b>suave</b>. <bibref ref_id="W02">1</bibref>
         </div>
       </div>
 
@@ -1953,7 +1964,7 @@
             \]
         </div>
 
-        <p>Mientras que en el caso de las curvas la orientación se puede ver como ir "hacia adelante" o "hacia atrás", una superficie orientada nos dice si la orientación es "hacia arriba" o "hacia abajo", o en el caso de superficies como la esfera, "hacia adentro" o "hacia afuera". Además, en todas las curvas se puede elegir una dirección, por lo que todas las curvas se pueden considerar como orientadas. No todas las superficies son orientables. El ejemplo más importante de esto es la banda de Möbius: si posicionas un vector normal en la superficie y lo haces recorrer toda la banda, cuando el vector regrese al punto de partida estará apuntando en la dirección contraria, es decir, la elección de vector no es consistente.</p>
+        <p>Mientras que en el caso de las curvas la orientación se puede ver como ir "hacia adelante" o "hacia atrás", una superficie orientada nos dice si la orientación es "hacia arriba" o "hacia abajo", o en el caso de superficies cerradas como la esfera, "hacia adentro" o "hacia afuera". Además, en todas las curvas se puede elegir una dirección, por lo que todas las curvas se pueden considerar como orientadas. No todas las superficies son orientables. El ejemplo más importante de esto es la banda de Möbius: si posicionas un vector normal en la superficie y lo haces recorrer toda la banda, cuando el vector regrese al punto de partida estará apuntando en la dirección contraria, es decir, la elección de vector no es consistente.</p>
       </div>
 
       <!--  -->
@@ -1968,7 +1979,7 @@
       <div class="page">
         <h2 id="sec_c3_área_de_una_superficie">Área de una superficie.</h2>
 
-        <p>Sea $S$ una superficie con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$, que por simplicidad supondremos que es una región rectangular. Supongamos además que las derivadas parciales de las componentes de $\textbf{r}$ existen y son continuas. Observa en la <ref ref_id="area_superficie_1"></ref> cómo $\textbf{r}$ transforma la región $D$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a la superficie $S$. Sin pérdida de generalidad, sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen en $S$ es $\textbf{r}(u_0,v_0)$. Entonces la imagen de la línea $v = v_0$ es la curva $\textbf{r}(u,v_0)$ y el vector tangente a este curva en el punto $\textbf{r}(u_0,v_0)$ es $\textbf{r}_u(u_0,v_0)$. Análogamente, la imagen de la línea $u = u_0$ es la curva $\textbf{r}(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es $\textbf{r}_v(u_0,v_0)$. Ahora, nota que:
+        <p>Sea $S$ una superficie con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$, que por simplicidad supondremos que es una región rectangular. Supongamos además que las derivadas parciales de las componentes de $\textbf{r}$ existen y son continuas. Observa en la <ref ref_id="area_superficie_1"></ref> cómo $\textbf{r}$ transforma la región $D$ (de $\Delta u$ por $\Delta v$ unidades) en el plano $uv$ a la superficie $S$. Sin pérdida de generalidad, sea $(u_0,v_0)$ el punto en la esquina inferior izquierda de $S$, tal que su imagen en $S$ es $\textbf{r}(u_0,v_0)$. Entonces la imagen de la recta $v = v_0$ es la curva $\textbf{r}(u,v_0)$ y el vector tangente a este curva en el punto $\textbf{r}(u_0,v_0)$ es $\textbf{r}_u(u_0,v_0)$. Análogamente, la imagen de la recta $u = u_0$ es la curva $\textbf{r}(u_0,v)$ y el vector tangente a esta curva en el punto $(x_0,y_0)$ es $\textbf{r}_v(u_0,v_0)$. Ahora, nota que:
           \[
             r_u = \lim_{\Delta u \rightarrow 0} \frac{\textbf{r}(u_0 + \Delta u,v_0) - \textbf{r}(u_0,v_0)}{\Delta u}\ \text{ implica que}
           \]
@@ -1991,7 +2002,7 @@
       <div class="page">
         <figure id="area_superficie_1">
           <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_1.html"></div>
-          <figcaption>Mueve el cursor dentro de $D$ para ver cómo se mapea a un punto de $S$. Conforme $\Delta u$ y $\Delta v$ tienden a cero, los vectores rojos empiezan a medir aproximadamente lo mismo que los verdes.</figcaption>
+          <figcaption>Mueve el cursor dentro de $D$ para ver cómo se mapea a un punto de $S$. Conforme $\Delta u$ y $\Delta v$ tienden a cero, los vectores rojos se empiezan a asemejar a los verdes.</figcaption>
         </figure>
 
         <p>
@@ -2039,7 +2050,7 @@
 
         <p>Anteriormente vimos cómo calcular la integral de una función escalar a lo largo de una curva. En esta sección generalizaremos ese concepto para calcular integrales de funciones reales sobre superficies parametrizadas. El proceso es análogo pero en una dimensión superior.</p>
 
-        <p>Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$ que, al igual que en la sección anterior, supondremos que es una región rectangular para simplificar la notación, aunque en el resultado final la forma de $D$ será completamente irrelevante. Sea $f(x,y,z)$ una función escalar cuyo dominio contiene a $S$. Dividimos la región $D$ en $m \cdot n$ subrectángulos $D_{ij}$ de $\Delta u$ por $\Delta v$ unidades. Esta división, a su vez, divide a $S$ en $m \cdot n$ pedazos $S_{ij}$. Escogemos un punto arbitrario $(u_{ij},v_{ij})$ dentro de cada $D_{ij}$, de tal forma que su imagen $\textbf{r}(u_{ij},v_{ij})$ está dentro de $S_{ij}$. Entonces el volumen del paraleletopo (generalización del paralelepípedo en $n$ dimensiones) con base $S_{ij}$ y altura $f(\textbf{r}(u_{ij},v_{ij}))$ es:
+        <p>Sea $S$ una superficie suave con parametrización $\textbf{r}(u,v)$ sobre un dominio de parámetros $D$ que, al igual que en la sección anterior, supondremos que es una región rectangular para simplificar la notación, aunque en el resultado final la forma de $D$ será completamente irrelevante. Sea $f(x,y,z)$ una función escalar cuyo dominio contiene a $S$. Dividimos la región $D$ en $m \cdot n$ subrectángulos $D_{ij}$ de $\Delta u$ por $\Delta v$ unidades. Esta división, a su vez, divide a $S$ en $m \cdot n$ pedazos $S_{ij}$. Escogemos un punto arbitrario $(u_{ij},v_{ij})$ dentro de cada $D_{ij}$, de tal forma que su imagen $\textbf{r}(u_{ij},v_{ij})$ está dentro de $S_{ij}$. Entonces el volumen del <i>paraleletopo</i> (generalización del paralelepípedo en $n$ dimensiones) con base $S_{ij}$ y altura $f(\textbf{r}(u_{ij},v_{ij}))$ es:
           \[
             f(\textbf{r}(u_{ij},v_{ij})) \Delta S_{ij}
           \]
@@ -2086,9 +2097,9 @@
 
       <!--  -->
       <div class="page">
-        <p>bajo la curva $f(C)$, la integral de superficie escalar de una función $f: \R^3 \rightarrow \R$ sobre una superficie $S$ representa el volumen bajo la hipersuperficie (generalización de una superficie) $f(S)$.</p>
+        <p>bajo la curva $f(C)$, la integral de superficie escalar de una función $f: \R^3 \rightarrow \R$ sobre una superficie $S$ representa el volumen bajo la <i>hipersuperficie</i> (generalización de una superficie) $f(S)$.</p>
         
-        <p>En la siguiente figura se muestra en naranja una región general $D$, cuyo límite inferior es $g_1(u)$ y límite superior es $g_2(u)$; ambas funciones están definidas en el intervalo $[a,b]$. Las líneas $u = a$ y $u = b$ conforman los límites izquierda y derecha de $D$, respectivamente. Para el correcto funcionamiento de la figura, sólo introduce funciones tales que $g_1(u) \leq g_2(u)$ para todo $u \in [a,b]$. En azul se muestra la superficie $S$ con parametrización $\textbf{r}(u,v)$, cuyo dominio de parámetros es $D$. Utiliza el menú de ejemplos para asignar valores predeterminados. Incrementa los valores de $m$ y $n$ para ver más divisiones y pedazos $D_{ij}$ y $S_{ij}$. En cada pedazo $S_{ij}$ se escoge un punto arbitrario $(x,y,z)$ y se evalúa $f$ en ese punto para obtener el volumen del paraleletopo con base $S_{ij}$ y altura $f(x,y,z)$. No se puede mostrar la función $f$ ya que, al tener como dominio a $\R^3$ y codominio $\R$, su gráfica vive en un espacio de cuatro dimensiones.</p>
+        <p>En la siguiente figura se muestra en naranja una región general $D$, cuyo límite inferior es $g_1(u)$ y límite superior es $g_2(u)$; ambas funciones están definidas en el intervalo $[a,b]$. Las rectas $u = a$ y $u = b$ conforman los límites izquierda y derecha de $D$, respectivamente. Para el correcto funcionamiento de la figura, sólo introduce funciones tales que $g_1(u) \leq g_2(u)$ para todo $u \in [a,b]$. En azul se muestra la superficie $S$ con parametrización $\textbf{r}(u,v)$, cuyo dominio de parámetros es $D$. Utiliza el menú de ejemplos para asignar valores predeterminados. Incrementa los valores de $m$ y $n$ para ver más divisiones y pedazos $D_{ij}$ y $S_{ij}$. En cada pedazo $S_{ij}$ se escoge un punto arbitrario $(x,y,z)$ y se evalúa $f$ en ese punto para obtener el volumen del paraleletopo con base $S_{ij}$ y altura $f(x,y,z)$. No se puede mostrar la función $f$ ya que, al tener como dominio a $\R^3$ y codominio $\R$, su gráfica vive en un espacio de cuatro dimensiones.</p>
       </div>
 
       <!--  -->
@@ -2149,68 +2160,76 @@
       <div class="page">
         <h2 id="sec_c3_aplicaciones">Aplicaciones.</h2>
 
-        <p>Las integrales de superficie tienen muchas distintas aplicaciones como calcular la masa de una sábana, la carga total de una superficie y la tasa de flujo de un fluido a través de una superficie. En esta sección se presentarán algunos de estos ejemplos.</p>
+        <p>Las integrales de superficie tienen distintas aplicaciones como calcular la masa de una sábana, la carga total de una superficie y la tasa de flujo de un fluido a través de una superficie. En esta sección se presentarán algunos de estos ejemplos.</p>
         
         <h3>Área de superficie</h3>
 
-        <p style="text-align-last:justify;">De las ecuaciones del <ref ref_id="area_superficie"></ref> y del <ref ref_id="integral_superficie_escalar_uv"></ref> podemos notar que el cálculo del área de superficie de una superficie parametrizada en realidad se hace con una integral de superficie</p>
+        <p style="text-align-last:justify;">De las ecuaciones del <ref ref_id="area_superficie"></ref> y del <ref ref_id="integral_superficie_escalar_uv"></ref> podemos</p>
 
         <figure id="ejemplo_area_superficie">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_area_superficie.html"></div>
+          <figcaption>Una superficie con parametrización $\textbf{r}(u,v)$. En la parte superior se muestra una aproximación de su área de superficie.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>escalar donde $f(x,y,z) = 1$.</p>
+        <p>notar que el cálculo del área de superficie de una superficie parametrizada en realidad se hace con una integral de superficie escalar donde $f(x,y,z) = 1$.</p>
 
         <h3>Masa de una sábana</h3>
 
-        <p style="text-align-last:justify;">Sea $S$ una superficie que modela una sábana de metal. Su densidad superficial (masa por unidad de área) está dada por una función continua $\rho(x,y,z)$. Como la masa es igual a densidad por área, entonces podemos aproximar la masa de un pedazo infinitesimal de la sábana con $\rho(x^*,y^*,z^*) \Delta S$, donde $\Delta S$ es el área de dicho pedazo y $(x^*,y^*,z^*)$ es un punto dentro de él. Por tanto, la masa total de la sábana se calcula con la integral de</p>
+        <p style="text-align-last:justify;">Sea $S$ una superficie que modela una sábana de metal. Su densidad superficial (masa por unidad de área) está dada por una función continua $\rho(x,y,z)$. Como la masa es igual a densidad por área, entonces podemos aproximar la masa de un pedazo</p>
 
         <figure id="ejemplo_masa_sabana">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_masa_sabana.html"></div>
+          <figcaption>Una sábana parametrizada por $\textbf{r}(u,v)$. Su función de densidad $\rho(x,y,z)$ no se puede graficar porque existe en un espacio de cuatro dimensiones. En la parte superior se muestra una aproximación de la masa de la sábana.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>superficie escalar $\iint\limits_S \rho(x,y,z) dS$.</p>
+        <p>infinitesimal de la sábana con $\rho(x^*,y^*,z^*) \Delta S$, donde $\Delta S$ es el área de dicho pedazo y $(x^*,y^*,z^*)$ es un punto dentro de él. Por tanto, la masa total de la sábana se calcula con la integral de superficie escalar $\iint\limits_S \rho(x,y,z) dS$.</p>
 
         <h3>Carga de una superficie</h3>
 
-        <p style="text-align-last:justify;">La densidad de carga superficial (carga eléctrica por unidad de área) de una superficie está dada por una función continua $\sigma = \frac{dQ}{dS}$, donde $dQ$ es una carga eléctrica infinitesimal y $dS$ es el área de superficie del elemento que tiene dicha carga. Sea $S$ una superficie. Podemos aproximar la carga de un pedazo infinitesimal de $S$ con $\sigma(x^*,y^*,z^*) \Delta S$, donde $\Delta S$ es el área de dicho pedazo y $(x^*,y^*,z^*)$ es un punto dentro de él. Por tanto, la carga total</p>
+        <p style="text-align-last:justify;">La densidad de carga superficial (carga eléctrica por unidad de</p>
 
         <figure id="ejemplo_carga_superficie">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_carga_superficie.html"></div>
+          <figcaption>Una superficie parametrizada por $\textbf{r}(u,v)$. Su función de densidad de carga superficial $\sigma(x,y,z)$ no se puede graficar porque existe en un espacio de cuatro dimensiones. En la parte superior se muestra una aproximación de la carga total de la superficie.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>de toda la superficie se calcula con la integral de superficie escalar $\iint\limits_S \sigma(x,y,z) dS$.</p>
+        <p>área) de una superficie está dada por una función continua $\sigma = \frac{dQ}{dS}$, donde $dQ$ es una carga eléctrica infinitesimal y $dS$ es el área de superficie del elemento que tiene dicha carga. Sea $S$ una superficie, podemos aproximar la carga de un pedazo infinitesimal de $S$ con $\sigma(x^*,y^*,z^*) \Delta S$, donde $\Delta S$ es el área de dicho pedazo y $(x^*,y^*,z^*)$ es un punto dentro de él. Por tanto, la carga total de toda la superficie se calcula con la integral de superficie escalar $\iint\limits_S \sigma(x,y,z) dS$.</p>
 
         <h3>Flujo</h3>
 
-        <p style="text-align-last:justify;">Sea $S$ una superficie suave y orientable con parametrización $\textbf{r}(u,v)$. Sea $\textbf{F}(x,y,z)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio contiene a $S$. Supongamos que el fluido puede fluir a través de $S$, pero sin que la superficie altere su movimiento o velocidad ($S$ es permeable). Queremos medir la tasa de flujo con la cual fluye a través de $S$.</p>
+        <p>Sea $S$ una superficie suave y orientable con parametrización $\textbf{r}(u,v)$. Sea $\textbf{F}(x,y,z)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio contiene a $S$. Supongamos que el fluido puede fluir a través de $S$, pero sin que la superficie altere su movimiento o velocidad ($S$ es permeable). Queremos medir la tasa de flujo con la cual fluye a través de $S$.</p>
 
+        <p style="text-align-last:justify;">Consideremos un pedazo pequeño de $S$ con área $\Delta S$ para medir la masa total del fluido que entra o sale de él en una unidad de tiempo. Conforme $\Delta S$ tiende a cero, el pedazo asemeja un paralelogramo y, además, todas las partículas del fluido que la atraviesan se mueven prácticamente en la misma dirección y con la misma velocidad. Por tanto, si elegimos un punto arbitrario $\textbf{r}(u^*,v^*)$ dentro del pedazo, entonces todas las partículas en su vecindad tendrán el vector de velocidad $\textbf{F}(\textbf{r}(u^*,v^*))$. Durante el transcurso de la unidad de tiempo, el fluido que pasa por el pedazo forma un paralelepípedo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de volumen,</p>
+      </div>
+
+      <!--  -->
+      <div class="page">
         <figure id="explicacion_flujo_r3">
           <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion8/explicacion_flujo_r3.html"></div>
+          <figcaption>En rojo se muestra una superficie $S$ y en azul un campo vectorial $\textbf{F}$ que representa la velocidad de un fluido. Pulsa el botón para iniciar la animación y ver cómo el fluido atraviesa un pedazo pequeño de $S$ en una unidad de tiempo.</figcaption>
         </figure>
+
+        <p>entonces la masa del fluido que atraviesa la superficie equivale al volumen del paralelepípedo.</p>
+
+        <p style="text-align-last:justify;">El área de la base del paralelepípedo es $\Delta S$. La arista que conecta las bases del paralelepípedo representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(u^*,v^*)$. Entonces dicha arista es el vector $\textbf{F}(\textbf{r}(u^*,v^*))$. La altura del paralelepípedo es el producto punto de la arista mencionada con el vector unitario normal a la superficie en $(u^*,v^*)$. En consecuencia, la masa que atraviesa el pedazo de $S$ en una unidad de tiempo es</p>  
       </div>
 
       <!--  -->
       <div class="page">
-        <p>Consideremos un pedazo pequeño de $S$ con área $\Delta S$ para medir la masa total del fluido que entra o sale de él en una unidad de tiempo. Conforme $\Delta S$ tiende a cero, el pedazo asemeja un paralelogramo y, además, todas las partículas del fluido que la atraviesan se mueven prácticamente en la misma dirección y con la misma velocidad. Por tanto, si elegimos un punto arbitrario $\textbf{r}(u^*,v^*)$ dentro del pedazo, entonces todas las particulas en su vecindad tendrán el vector de velocidad $\textbf{F}(\textbf{r}(u^*,v^*))$. Durante el transcurso de la unidad de tiempo, el fluido que pasa por el pedazo forma un paralelepípedo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de volumen, entonces la masa del fluido que atraviesa la superficie equivale al volumen del paralelepípedo.</p>
+        <p>$(\textbf{F}(\textbf{r}(u^*,v^*)) \cdot \textbf{N}(u^*,v^*)) \Delta S$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $S$ con área $\Delta S$ es $\textbf{F} \cdot \textbf{N} \Delta S$, entonces la tasa de flujo con la cual el fluido fluye a través de $S$ es la integral de superficie vectorial $\iint\limits_S \textbf{F} \cdot \textbf{N} dS$.</p>
 
-        <p>El área de la base del paralelepípedo es $\Delta S$. La arista que conecta las bases del paralelepípedo representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(u^*,v^*)$. Entonces dicha arista es el vector $\textbf{F}(\textbf{r}(u^*,v^*))$. La altura del paralelepípedo es el producto punto de la arista mencionada con el vector unitario normal a la superficie en $(u^*,v^*)$. En consecuencia, la masa que atraviesa el pedazo de $S$ en una unidad de tiempo es $(\textbf{F}(\textbf{r}(u^*,v^*)) \cdot \textbf{N}(u^*,v^*)) \Delta S$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $S$ con área $\Delta S$ es $\textbf{F} \cdot \textbf{N} \Delta S$, entonces la tasa de flujo con la cual el fluido fluye a través de $S$ es la integral de superficie vectorial $\iint\limits_S \textbf{F} \cdot \textbf{N} dS$.</p>  
-      </div>
-
-      <!--  -->
-      <div class="page">
-        <p></p>
-        <figure id="explicacion_flujo_r3">
+        <figure id="ejemplo_flujo_r3">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_flujo_r3.html"></div>
+          <figcaption>Una superficie $S$ parametrizada por $\textbf{r}(u,v)$ y un campo vectorial $\textbf{F}$. En la parte superior se muestra una aproximación del flujo de $\textbf{F}$ a través de $S$.</figcaption>
         </figure>
       </div>
 
@@ -2849,15 +2868,15 @@
       <div class="page">
         <h1 class="chap_name" id="cap_bibliografia" prefix="">Bibliografía</h1>
 
-        <bibitem id="HS001">
+        <bibitem id="HS01">
           Herman, E & Strang, G. (2016). Calculus Volume 3. Texas, USA: OpenStax.
         </bibitem>
 
-        <bibitem id="W001">
+        <bibitem id="W01">
           Weisstein, Eric W. "Regular Parameterization." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/RegularParameterization.html
         </bibitem>
 
-        <bibitem id="W002">
+        <bibitem id="W02">
           Weisstein, Eric W. "Smooth Surface." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/SmoothSurface.html
         </bibitem>
       </div>
