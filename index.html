@@ -1071,11 +1071,11 @@
       <div class="page">
         <p>componentes pueden tener restricciones en su dominio que a su vez restringen el valor de $t$.</p>
 
-        <p>La gráfica de una función de valores vectoriales de la forma $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j}$ es el conjunto de todos los $(t, \textbf{r}(t))$ y al camino que traza se le llama <b>curva planar</b>. La gráfica de una función de valores vectoriales de la forma $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}$ es el conjunto de todos los $(t, \textbf{r}(t))$ y al camino que traza se le llama <b>curva espacial</b>. Cualquier representación de una curva planar o curva espacial usando una función de valores vectoriales es una <b>parametrización vectorial</b> de dicha curva.</p>
+        <p>La gráfica de una función de valores vectoriales de la forma $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j}$ es el conjunto de todos los $(t, \textbf{r}(t))$ y al camino que traza se le llama <b>curva plana</b>. La gráfica de una función de valores vectoriales de la forma $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}$ es el conjunto de todos los $(t, \textbf{r}(t))$ y al camino que traza se le llama <b>curva espacial</b>. Cualquier representación de una curva plana o curva espacial usando una función de valores vectoriales es una <b>parametrización vectorial</b> de dicha curva.</p>
 
         <figure id="grafica_funcion_valores_vectoriales">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/grafica_funcion_valores_vectoriales.html"></div>
-          <figcaption>Curva planar de $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j}$ (izquierda) y curva espacial de $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}$ (derecha).</figcaption>
+          <figcaption>Curva plana de $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j}$ (izquierda) y curva espacial de $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}$ (derecha).</figcaption>
         </figure>
       </div>
 
@@ -1521,7 +1521,7 @@
         <h3>Longitud de arco</h3>
 
         <div class="num_block" prefix="Teorema" id="longitud_arco">
-          Sea $C$ una curva planar suave definida por la función $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de $C$ es:
+          Sea $C$ una curva plana suave definida por la función $\textbf{r}(t) = \langle f(t),g(t) \rangle$, con $t \in [a,b]$. La longitud de arco de $C$ es:
             \[
               s = \int^b_a \sqrt{[f'(t)]^2 + [g'(t)]^2} dt = \int^b_a \Vert \textbf{r}'(t) \Vert dt
             \]
@@ -1605,7 +1605,7 @@
 
         <h3>Curvatura</h3>
 
-        <p>La curvatura es una medida de qué tanto una curva planar se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenida en un solo plano. La curvatura de una línea recta y de un plano es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
+        <p>La curvatura es una medida de qué tanto una curva plana se desvía de ser una línea recta, o qué tanto una curva espacial se desvía de estar contenida en un solo plano. La curvatura de una línea recta y de un plano es cero. Un círculo de radio $r$ tiene curvatura constante igual a $\frac{1}{r}$. En el caso de una curva general $C$, la curvatura en un punto $P$ se define como la curvatura del <b>círculo osculador</b>. Este es un círculo tangente a $C$ en el punto $P$ que incluye una vecindad infinitésima alrededor de $P$.</p>
 
         <div class="num_block" prefix="Definición" id="curvatura">
           Sea $C$ una curva suave definida por la función $\textbf{r}(s)$, donde $s$ es el parámetro de longitud de arco. La <b>curvatura</b> en $s$ es:
@@ -1723,7 +1723,7 @@
 
         <h3>Integral de línea escalar</h3>
 
-        <p>Sea $C$ una curva suave planar o espacial dada por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Queremos encontrar el área bajo la curva $C$ a lo largo de $f$. Para esto dividiremos el intervalo $[a,b]$ en $n$ subintervalos $[t_{i-1},t_i]$ para $1 \leq i \leq n$, donde $t_0 = a$ y $t_n = b$. Todos los subintervalos tendrán el mismo tamaño $\Delta t = \frac{b - a}{n}$. Los puntos $\textbf{r}(t_0) \text{, } \textbf{r}(t_1) \text{, … , } \textbf{r}(t_n)$ dividen a $C$ en $n$ pedazos cuyas longitudes son $\Delta s_1 \text{, } \Delta s_2 \text{, … , } \Delta s_n$. Sea $t^*_i$ un valor arbitrario en el intervalo $[t_{i-1},t_i]$, para $1 \leq i \leq n$. El producto $f(\textbf{r}(t^*_1)) \Delta s_1$ se aproxima al área de la cara con base $\Delta s_1$ y altura $f(\textbf{r}(t^*_1))$. Se sigue que la siguiente suma se aproxima al área bajo la curva $C$ a lo largo de $f$:
+        <p>Sea $C$ una curva suave plana o espacial dada por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $f$ una función escalar cuyo dominio incluye a $C$. Queremos encontrar el área bajo la curva $C$ a lo largo de $f$. Para esto dividiremos el intervalo $[a,b]$ en $n$ subintervalos $[t_{i-1},t_i]$ para $1 \leq i \leq n$, donde $t_0 = a$ y $t_n = b$. Todos los subintervalos tendrán el mismo tamaño $\Delta t = \frac{b - a}{n}$. Los puntos $\textbf{r}(t_0) \text{, } \textbf{r}(t_1) \text{, … , } \textbf{r}(t_n)$ dividen a $C$ en $n$ pedazos cuyas longitudes son $\Delta s_1 \text{, } \Delta s_2 \text{, … , } \Delta s_n$. Sea $t^*_i$ un valor arbitrario en el intervalo $[t_{i-1},t_i]$, para $1 \leq i \leq n$. El producto $f(\textbf{r}(t^*_1)) \Delta s_1$ se aproxima al área de la cara con base $\Delta s_1$ y altura $f(\textbf{r}(t^*_1))$. Se sigue que la siguiente suma se aproxima al área bajo la curva $C$ a lo largo de $f$:
           \[
             \sum^n_{i=1} f(\textbf{r}(t^*_i)) \Delta s_i
           \]</p>
@@ -1744,7 +1744,7 @@
 
         <figure id="ejemplo_integral_linea_escalar">
           <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_escalar.html"></div>
-          <figcaption>La curva planar $\textbf{r}(t) = \langle t,t^3-2t \rangle$ y la función $f(x,y) = \frac{x^2-y^2}{8} + 1$. Da clic en las casillas de arriba para dibujar o borrar distintos elementos de la figura.</figcaption>
+          <figcaption>La curva plana $\textbf{r}(t) = \langle t,t^3-2t \rangle$ y la función $f(x,y) = \frac{x^2-y^2}{8} + 1$. Da clic en las casillas de arriba para dibujar o borrar distintos elementos de la figura.</figcaption>
         </figure>
       </div>
 
@@ -1827,7 +1827,7 @@
 
         <h3>Masa de un cable</h3>
 
-        <p>Sea $C$ una curva planar que modela un cable. Su densidad lineal (masa por unidad de longitud) está dada por una función continua $\rho (x,y)$. Como la masa es igual a densidad por longitud, entonces podemos aproximar la masa de un pedazo pequeño del cable con $\rho (x^*,y^*) \Delta s$, donde $\Delta s$ es la longitud de dicho pedazo y $(x^*,y^*)$ es un punto dentro de él. Por tanto, la masa total del cable se calcula con la integral de línea escalar $\int_C \rho (x,y) ds$.</p>
+        <p>Sea $C$ una curva plana que modela un cable. Su densidad lineal (masa por unidad de longitud) está dada por una función continua $\rho (x,y)$. Como la masa es igual a densidad por longitud, entonces podemos aproximar la masa de un pedazo pequeño del cable con $\rho (x^*,y^*) \Delta s$, donde $\Delta s$ es la longitud de dicho pedazo y $(x^*,y^*)$ es un punto dentro de él. Por tanto, la masa total del cable se calcula con la integral de línea escalar $\int_C \rho (x,y) ds$.</p>
 
         <h3>Trabajo</h3>
 
@@ -1855,7 +1855,7 @@
 
         <h3>Flujo</h3>
 
-        <p>Sea $C$ una curva planar suave definida por la función $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio contiene a $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad ($C$ es permeable). Queremos medir la tasa de flujo a través de $C$.</p>
+        <p>Sea $C$ una curva plana suave definida por la función $\textbf{r}(t)$. Sea $\textbf{F}(x,y)$ un campo vectorial que representa la velocidad de flujo de un fluido y cuyo dominio contiene a $C$. Supongamos que el fluido puede fluir a través de $C$, pero sin que la curva altere su movimiento o velocidad ($C$ es permeable). Queremos medir la tasa de flujo a través de $C$.</p>
 
         <p style="text-align-last:justify;">Consideremos un pedazo pequeño de $C$ con longitud $\Delta s$ para</p>
       </div>
@@ -2090,7 +2090,7 @@
             \]
         </div>
 
-        <p style="text-align-last:justify;">Así como la integral de línea escalar de una función $f: \R^2 \rightarrow \R$ a lo largo de una curva planar $C$ se puede interpretar como el área</p>
+        <p style="text-align-last:justify;">Así como la integral de línea escalar de una función $f: \R^2 \rightarrow \R$ a lo largo de una curva plana $C$ se puede interpretar como el área</p>
       </div>
 
       <!--  -->
@@ -2509,7 +2509,7 @@
       <div class="page">
         <div class="num_block" prefix="Teorema" id="teorema_green_forma_tangente">
           <b><i>Teorema de Green (Forma Tangente)</i></b>
-          <p>Sea $C$ una curva cerrada simple, suave, planar y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
+          <p>Sea $C$ una curva cerrada simple, suave, plana y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
             \[
               \iint\limits_D (Q_x - P_y)dA = \oint_C \textbf{F} \cdot \textbf{T} ds
             \]</p>
@@ -2521,13 +2521,13 @@
 
         <div class="num_block" prefix="Teorema" id="teorema_green_forma_normal">
           <b><i>Teorema de Green (Forma Normal)</i></b>
-          <p>Sea $C$ una curva cerrada simple, suave, planar y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
+          <p>Sea $C$ una curva cerrada simple, suave, plana y con orientación positiva. Sea $D$ la región que delimita $C$ y sea $\textbf{F} = \langle P,Q \rangle$ un campo vectorial. Si las derivadas parciales de $P$ y $Q$ en $D$ existen y son continuas, entonces:
             \[
               \iint\limits_D (P_x + Q_y)dA = \oint_C \textbf{F} \cdot \textbf{n} ds
             \]</p>
         </div>
 
-        <p>A esta versión del teorema de Green a veces se le llama la <i>forma normal</i> del teorema de Green por la función $\textbf{n}$. Recuerda que para una curva planar $\textbf{r}(t)$, $\textbf{n}(t)$ devuelve un vector unitario normal a la curva en $t$.</p>
+        <p>A esta versión del teorema de Green a veces se le llama la <i>forma normal</i> del teorema de Green por la función $\textbf{n}$. Recuerda que para una curva plana $\textbf{r}(t)$, $\textbf{n}(t)$ devuelve un vector unitario normal a la curva en $t$.</p>
       </div>
 
       <!--  -->
@@ -2735,7 +2735,7 @@
       <div class="page">
         <p>Por lo tanto, el área de este astroide es $6\pi$.</p>
 
-        <p>El procedimiento anterior, dado cualquier campo vectorial donde $Q_x - P_y = 1$, funciona con cualquier curva planar cerrada.</p>
+        <p>El procedimiento anterior, dado cualquier campo vectorial donde $Q_x - P_y = 1$, funciona con cualquier curva plana cerrada.</p>
 
         <h3>Simplificación de integrales con el teorema de Stokes</h3>
 
