@@ -178,11 +178,11 @@
 
         <h2 id="sec_c1_integral_rectangulos">Integral sobre rectángulos. Propiedades de la integral.</h2>
 
-        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlas para encontrar el volumen de un sólido sobre una región rectangular en el plano $z = 0$.</p>
+        <p>En esta sección se analizarán integrales dobles y se mostrará cómo usarlas para encontrar el volumen de un sólido sobre una región rectangular en el plano $xy$.</p>
 
         <h3>Volúmenes e integrales dobles</h3>
 
-        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $z = 0$. Dicho espacio está delimitado por una función continua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
+        <p>Consideremos el espacio arriba de un rectángulo cerrado $R$ que se encuentra en el plano $xy$. Dicho espacio está delimitado por una función continua de dos variables $f(x,y) \geq 0$ definida sobre $R$. Formalmente: 
         \[
           R = [a, b]\times[c, d] = \{(x, y) \in \R^2: a \leq x \leq b, c \leq y \leq d\}
         \]</p>
@@ -229,7 +229,7 @@
         \]</p>
 
         <div id="integral_doble" class="num_block" prefix="Definición">
-          Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
+          Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$ y sea $f:\R^2 \rightarrow \R$ una función. Se define la <b>integral doble de $f$</b> como: 
           \[
             \iint\limits_R f(x,y) dA = \lim_{m,n \rightarrow \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A
           \]
@@ -249,7 +249,7 @@
         <h3>Propiedades de la integral</h3>
 
         <div class="num_block" prefix="Teorema" id="propiedades_integral">
-          Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $z = 0$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:
+          Sea $R = [a, b]\times[c, d]$ una región rectangular en el plano $xy$. Sean $f: \R^2 \rightarrow \R$ y $g: \R^2 \rightarrow \R$ dos funciones integrables sobre $R$. Entonces:
         </div>
 
         <ol>
@@ -348,7 +348,7 @@
         <h3>Integral iterada</h3>
 
         <div class="num_block" prefix="Definición"> 
-          Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f(x,y)$ sobre $R$:
+          Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función. Entonces cada una de las siguientes expresiones define una <b>integral iterada</b> de $f(x,y)$ sobre $R$:
 
           <ol>
             <li>\[\int^b_a\int^d_c f(x,y)dydx = \int^b_a \left[ \int^d_c f(x,y)dy \right] dx\]</li>
@@ -367,7 +367,7 @@
 
         <div class="num_block" prefix="Teorema" id="fubini_debil">
           <b><i>Teorema de Fubini (Débil)</i></b>
-          <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $z = 0$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f(x,y)$ sobre $R$ es igual a una integral iterada:
+          <p>Sea $R = [a,b] \times [c,d]$ una región rectangular en el plano $xy$ y sea $f: \R^2 \rightarrow \R$ una función integrable sobre $R$. Entonces la integral doble de $f(x,y)$ sobre $R$ es igual a una integral iterada:
           \[
             \begin{aligned}
               \iint\limits_R f(x,y)dA
@@ -425,14 +425,14 @@
         <p>Ahora definiremos dos tipos de regiones generales acotadas.</p>
 
         <div class="num_block" prefix="Definición" id="region_general_tipo_i">
-          Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
+          Decimos que una región $D$ en el plano $xy$ es de <b>Tipo I</b> si existen dos funciones $g_1: \R \rightarrow \R$ y $g_2: \R \rightarrow \R$ tales que:
             \[
               D = \{(x,y) \in \R^2: a \leq x \leq b,\ g_1(x) \leq y \leq g_2(x)\}
             \]
         </div>
 
         <div class="num_block" prefix="Definición" id="region_general_tipo_ii">
-          Decimos que una región $D$ en el plano $z = 0$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
+          Decimos que una región $D$ en el plano $xy$ es de <b>Tipo II</b> si existen dos funciones $h_1: \R \rightarrow \R$ y $h_2: \R \rightarrow \R$ tales que:
             \[
               D = \{(x,y) \in \R^2: c \leq y \leq d,\ h_1(y) \leq x \leq h_2(y)\}
             \]
