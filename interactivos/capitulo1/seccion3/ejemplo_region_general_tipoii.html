@@ -17,12 +17,12 @@
       <param name="Versión" value="5.5">
       <param name="editable" value="no">
       <param name="Idioma" value="español">
-      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=1 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R2' id='E1' O.x='-30%' O.y='35%' red='no' red10='no' ejes='404040' eje-x='x' eje-y='y' ">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=2 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' O.x='-30%' O.y='25%' red='no' red10='no' ejes='404040' eje-x='x' eje-y='y' ">
       <param name="C_01" value="id='c' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='c' expresión='(0,0,150,40)' valor='1' max='d-0.01' visible='sí' acción='calcular' parámetro='validar_region()' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="C_02" value="id='d' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='d' expresión='(0,0,150,40)' valor='5' min='c+0.01' visible='sí' acción='calcular' parámetro='validar_region()' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_03" value="id='h1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='h₁(y)' expresión='(0,0,150,40)' valor='sin(y)+3' visible='sí' acción='calcular' parámetro='validar_region()' font_family='Serif' cursiva='sí' info='función h1' ">
-      <param name="C_04" value="id='h2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='norte' espacio='E1' nombre='h₂(y)' expresión='(0,0,150,40)' valor='cos(y)+7' visible='sí' acción='calcular' parámetro='validar_region()' font_family='Serif' cursiva='sí' info='función h2' ">
+      <param name="C_03" value="id='h1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='sur' espacio='E1' nombre='h₁(y)' expresión='(0,0,150,40)' valor='sin(y)+3' visible='sí' acción='calcular' parámetro='validar_region()' font_family='Serif' cursiva='sí' info='función h1' ">
+      <param name="C_04" value="id='h2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='sur' espacio='E1' nombre='h₂(y)' expresión='(0,0,150,40)' valor='cos(y)+7' visible='sí' acción='calcular' parámetro='validar_region()' font_family='Serif' cursiva='sí' info='función h2' ">
       <param name="A_01" value="id='h1(y)' algoritmo='no' expresión='_Eval_(h1_texto)' dominio='(y>=c)&&(y<=d)' tipo='función' ">
       <param name="A_02" value="id='h2(y)' algoritmo='no' expresión='_Eval_(h2_texto)' dominio='(y>=c)&&(y<=d)' tipo='función' ">
       <param name="A_03" value="id='h3(y)' algoritmo='no' expresión='abs(h1(y))>abs(h2(y))?h1(y):h2(y)' tipo='función' info='mayor distancia de h1 y h2' ">

@@ -3,7 +3,6 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>TITULO</title>
-  
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,10 +18,10 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='44%' dibujar-si='1' fijo='sí' escala='48' O.x='-15%' O.y='35%' despl_imagen='arr-izq' fondo='ffffff' red='no' red10='no' ejes='000000' texto='no' números='no' eje-x='u' eje-y='v' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="E_02" value="tipo='R2' id='E2' x='0' y='44%' ancho='100%' alto='56%' dibujar-si='1' fijo='no' escala='48' O.x='-15%' O.y='40%' despl_imagen='arr-izq' fondo='ffffff' red='no' red10='no' ejes='000000' texto='no' números='no' eje-x='x' eje-y='y' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='g_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='x = g(u,v)' expresión='(0,400,400,40)' valor='u-v+4' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_t' ">
-      <param name="C_02" value="id='h_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='y = h(u,v)' expresión='(400,400,400,40)' valor='(u^2)/9+(v^2)/9' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_b' ">
+      <param name="E_01" value="tipo='R2' id='E1' alto='44%' fijo='sí' O.x='-15%' O.y='35%' red='no' red10='no' ejes='000000' eje-x='u' eje-y='v' ">
+      <param name="E_02" value="tipo='R2' id='E2' y='44%' alto='56%' O.x='-15%' O.y='40%' red='no' red10='no' ejes='000000' eje-x='x' eje-y='y' ">
+      <param name="C_01" value="id='g_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='x = g(u,v)' expresión='(0,400,400,40)' valor='u-v+4' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='h_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='y = h(u,v)' expresión='(400,400,400,40)' valor='(u^2)/9+(v^2)/9' visible='sí' font_family='Serif' cursiva='sí' ">
       <param name="A_01" value="id='a' expresión='-2' tipo='variable' ">
       <param name="A_02" value="id='b' expresión='6' tipo='variable' ">
       <param name="A_03" value="id='c' expresión='1' tipo='variable' ">
@@ -31,13 +30,13 @@
       <param name="A_06" value="id='h(u,v)' algoritmo='no' expresión='_Eval_(h_texto)' tipo='función' ">
       <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
       <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='rectángulo' fondo='sí' color='6040ff' coord_abs='no' expresión='(a,c,b-a,d-c)' relleno='a06040ff' ancho='2' border_radius='3' lineDash='solid' info='G' ">
-      <param name="G_02" value="espacio='E1' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='((a+b)/2,(c+d)/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs40 \fs60\i{\*\mjaformula\cf0\i G\i0}\i0\cf1\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='G texto' ">
-      <param name="G_03" value="espacio='E1' tipo='punto' fondo='no' color='000000' coord_abs='no' expresión='(a+0.8*(b-a),c+0.85*(d-c))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs60{\*\mjaformula\i (u,v)\i0}\cf0\fs40 }' decimales='2' fijo='sí' tamaño='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='(u,v)' ">
-      <param name="G_04" value="espacio='E2' tipo='curva' fondo='no' color='ff8000' coord_abs='no' expresión='(s<=1?g(t,s==0?c:d):g(s==2?a:b,t),s<=1?h(t,s==0?c:d):h(s==2?a:b,t))' familia='s' s.intervalo='[0,3]' s.pasos='3' parámetro='t' t.intervalo='[s<=1?a:c,s<=1?b:d]' t.pasos='30' ancho='2' visible='no' editable='no' lineDash='solid' info='R contorno' ">
-      <param name="G_05" value="espacio='E2' tipo='relleno' fondo='no' color='a0ff8000' coord_abs='no' expresión='(g((a+b)/2,(c+d)/2),h((a+b)/2,(c+d)/2))' info='R relleno' ">
-      <param name="G_06" value="espacio='E2' tipo='texto' fondo='no' color='20303a' coord_abs='no' expresión='(g((a+b)/2,(c+d)/2),h((a+b)/2,(c+d)/2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red32\green48\blue58;}\f0\fs40 \fs60{\*\mjaformula\cf0\i R\i0}\cf1\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_center_center' info='R texto' ">
-      <param name="G_07" value="espacio='E2' tipo='punto' fondo='no' color='000000' coord_abs='no' expresión='(g(a+0.8*(b-a),c+0.85*(d-c)), h(a+0.8*(b-a),c+0.85*(d-c)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs60{\*\mjaformula\i (x,y)\i0}\cf0\fs40 }' decimales='2' fijo='sí' tamaño='2' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='(x,y)' ">
+      <param name="G_01" value="espacio='E1' tipo='rectángulo' fondo='sí' color='6040ff' coord_abs='no' expresión='(a,c,b-a,d-c)' relleno='a06040ff' ancho='2' border_radius='3' info='G' ">
+      <param name="G_02" value="espacio='E1' tipo='texto' color='20303a' coord_abs='no' expresión='((a+b)/2,(c+d)/2)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i G\i0}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_center_center' info='G texto' ">
+      <param name="G_03" value="espacio='E1' tipo='punto' color='000000' coord_abs='no' expresión='(a+0.8*(b-a),c+0.85*(d-c))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i (u,v)\i0}\i0\cf0\fs40 }' tamaño='2' info='(u,v)' ">
+      <param name="G_04" value="espacio='E2' tipo='curva' color='ff8000' coord_abs='no' expresión='(s<=1?g(t,s==0?c:d):g(s==2?a:b,t),s<=1?h(t,s==0?c:d):h(s==2?a:b,t))' familia='s' s.intervalo='[0,3]' s.pasos='3' parámetro='t' t.intervalo='[s<=1?a:c,s<=1?b:d]' t.pasos='30' ancho='2' info='R contorno' ">
+      <param name="G_05" value="espacio='E2' tipo='relleno' color='a0ff8000' coord_abs='no' expresión='(g((a+b)/2,(c+d)/2),h((a+b)/2,(c+d)/2))' info='R relleno' ">
+      <param name="G_06" value="espacio='E2' tipo='texto' color='20303a' coord_abs='no' expresión='(g((a+b)/2,(c+d)/2),h((a+b)/2,(c+d)/2))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i R\i0}\i0\cf0\fs40 }' ancho='1' align='a_left' anchor='a_center_center' info='R texto' ">
+      <param name="G_07" value="espacio='E2' tipo='punto' color='000000' coord_abs='no' expresión='(g(a+0.8*(b-a),c+0.85*(d-c)), h(a+0.8*(b-a),c+0.85*(d-c)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red32\green48\blue58;\red0\green0\blue0;}\cf0\f0\fs40 \cf1\fs50\i{\*\mjaformula\i (x,y)\i0}\i0\cf0\fs40 }' tamaño='2' info='(x,y)' ">
     </ajs>
   </div>
 
