@@ -3,7 +3,6 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Gráfica de una función con valores vectoriales</title>
-  
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,25 +18,28 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='400' alto='520' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' red='no' red10='no' ejes='404040' texto='no' números='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="E_02" value="tipo='R3' R3='sí' id='E2' x='400' y='0' ancho='400' alto='520' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='25%' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="E_03" value="tipo='R2' id='controles' x='0' y='520' ancho='800' alto='80' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='f0f8fa' red='no' red10='no' ejes='no' texto='no' números='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='f_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='controles' nombre='f(t)' expresión='(0,0,267,40)' valor='cos(t)' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_s' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' ">
-      <param name="C_02" value="id='g_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='controles' nombre='g(t)' expresión='(267,0,266,40)' valor='sin(t)' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_a' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' ">
-      <param name="C_03" value="id='h_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='controles' nombre='h(t)' expresión='(533,0,267,40)' valor='t' discreto='no' decimales='2' fijo='sí' visible='sí' evaluar='no' respuesta='krypto_0' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' ">
-      <param name="C_04" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='controles' nombre='a' expresión='(0,40,400,40)' valor='0' incr='0.1' max='b' discreto='no' decimales='2' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_05" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='controles' nombre='b' expresión='(400,40,400,40)' valor='6.14' incr='0.1' min='a' discreto='no' decimales='2' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="E_01" value="tipo='R2' id='E1' ancho='400' alto='520' red='no' red10='no' ejes='404040' eje-x='x' eje-y='y' ">
+      <param name="E_02" value="tipo='R3' R3='sí' id='E2' x='400' ancho='400' alto='520' O.y='25%' despliegue='pintor' ">
+      <param name="E_03" value="tipo='R2' id='controles' y='520' ancho='800' alto='80' fondo='f0f8fa' red='no' red10='no' ejes='no' ">
+      <param name="C_01" value="id='f_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='controles' nombre='f(t)' expresión='(0,0,267,40)' valor='cos(t)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='g_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='controles' nombre='g(t)' expresión='(267,0,266,40)' valor='sin(t)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_03" value="id='h_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='controles' nombre='h(t)' expresión='(533,0,267,40)' valor='t' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_04" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='controles' nombre='a' expresión='(0,40,400,40)' max='b-0.01' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='controles' nombre='b' expresión='(400,40,400,40)' valor='6.14' min='a+0.01' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='longitud_ejes' expresión='10' tipo='variable' ">
       <param name="A_02" value="id='f(t)' algoritmo='no' expresión='_Eval_(f_texto)' tipo='función' ">
       <param name="A_03" value="id='g(t)' algoritmo='no' expresión='_Eval_(g_texto)' tipo='función' ">
       <param name="A_04" value="id='h(t)' algoritmo='no' expresión='_Eval_(h_texto)' tipo='función' ">
-      <param name="A_05" value="id='num_pasos_2d' expresión='3*ceil(b-a+0.01)' tipo='variable' ">
-      <param name="A_06" value="id='num_pasos_3d' expresión='3*ceil(b-a+0.01)' ">
+      <param name="A_05" value="id='num_pasos_2d' expresión='3*ceil(b-a)' tipo='variable' ">
+      <param name="A_06" value="id='num_pasos_3d' expresión='3*ceil(b-a)' tipo='variable' ">
       <param name="A_07" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E2.rot.y=30;E2.rot.z=-42.5' ">
       <param name="A_08" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='curva' fondo='no' color='0000ff' coord_abs='no' expresión='(f(t),g(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='num_pasos_2d' ancho='2' visible='no' editable='no' lineDash='solid' ">
-      <param name="S_01" value="espacio='E2' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='1' info='ejes' ">
-      <param name="S_02" value="espacio='E2' tipo='curva' fondo='no' color='0000ff' expresión='x=f(a+u*(b-a));y=g(a+u*(b-a));z=h(a+u*(b-a))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='2' Nu='num_pasos_3d' info='curva espacial' ">
+      <param name="G_01" value="espacio='E1' tipo='curva' color='0000ff' coord_abs='no' expresión='(f(t),g(t))' parámetro='t' t.intervalo='[a,b]' t.pasos='num_pasos_2d' ancho='2' ">
+      <param name="S_01" value="espacio='E2' tipo='segmento' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(4,0,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i\b x\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='10' offset_angle='0' info='x' ">
+      <param name="S_03" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,4,0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i\b y\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='10' offset_angle='180' info='y' ">
+      <param name="S_04" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(0,0,6.5)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;\red238\green255\blue170;}\f0\fs40 \cf0\fs30\i{\*\mjaformula\i\b z\b0\i0}\i0\cf1\fs40 }' decimales='2' ancho='0' offset_dist='10' offset_angle='180' info='z' ">
+      <param name="S_05" value="espacio='E2' tipo='curva' color='0000ff' expresión='t=a+u*(b-a);x=f(t);y=g(t);z=h(t)' ancho='2' Nu='num_pasos_3d' info='curva espacial' ">
     </ajs>
   </div>
 

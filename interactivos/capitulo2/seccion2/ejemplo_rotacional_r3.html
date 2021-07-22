@@ -2,8 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Ejemplo de rotacional en &#8477;&#179;</title>
-  
+  <title>Ejemplo de rotacional en ℝ³</title>
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,13 +18,13 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='op' tipo='numérico' interfaz='menú' región='norte' espacio='E1' nombre='F(x,y,z) =' expresión='(0,0,150,40)' valor='0' decimales='2' fijo='sí' visible='no' opciones='< x \u002c  y \u002c  z >, < -y \u002c  x \u002c  0 >, < 1 \u002c  x² \u002c  y² >, < -yz \u002c  y \u002c  -2xy >' label_color='e0e4e8' label_text_color='000000' font_family='Serif' fuente puntos='0' negrita='no' cursiva='sí' ">
-      <param name="C_02" value="id='ver' tipo='checkbox' región='norte' espacio='E1' nombre='Ver campo vectorial' expresión='(0,0,150,40)' valor='1' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' ">
-      <param name="C_03" value="id='ver_rot' tipo='checkbox' región='norte' espacio='E1' nombre='Ver vector rotacional' expresión='(0,0,150,40)' valor='0' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' ">
-      <param name="C_04" value="id='x0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x₀' expresión='(0,0,150,40)' valor='4' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_05" value="id='y0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y₀' expresión='(0,0,150,40)' valor='4' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_06" value="id='z0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='z₀' expresión='(0,0,150,40)' valor='2.5' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
+      <param name="C_01" value="id='op' tipo='numérico' interfaz='menú' región='norte' espacio='E1' nombre='F(x,y,z) =' expresión='(0,0,150,40)' visible='no' opciones='< x \u002c  y \u002c  z >, < -y \u002c  x \u002c  0 >, < 1 \u002c  x² \u002c  y² >, < -yz \u002c  y \u002c  -2xy >' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='ver' tipo='checkbox' región='norte' espacio='E1' nombre='Ver campo vectorial' expresión='(0,0,150,40)' valor='1' position='a_left' ">
+      <param name="C_03" value="id='ver_rot' tipo='checkbox' región='norte' espacio='E1' nombre='Ver vector rotacional' expresión='(0,0,150,40)' position='a_left' ">
+      <param name="C_04" value="id='x0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x₀' expresión='(0,0,150,40)' valor='4' visible='sí' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='y0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y₀' expresión='(0,0,150,40)' valor='4' visible='sí' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_06" value="id='z0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='z₀' expresión='(0,0,150,40)' valor='2.5' visible='sí' acción='calcular' parámetro='rotx=0;roty=0;rotz=0' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='longitud_ejes' expresión='10' tipo='variable' ">
       <param name="A_02" value="id='rho' expresión='0.25' tipo='variable' info='distancia radial que define la esfera' ">
       <param name="A_03" value="id='esfera_color' matriz='sí' evaluar='una-sola-vez' columnas='3' filas='8' expresión='esfera_color[0,0]=1;esfera_color[0,1]=0;esfera_color[0,2]=0;;esfera_color[1,0]=0;esfera_color[1,1]=0;esfera_color[1,2]=1;;esfera_color[2,0]=0;esfera_color[2,1]=1;esfera_color[2,2]=1;;esfera_color[3,0]=1;esfera_color[3,1]=1;esfera_color[3,2]=0;;esfera_color[4,0]=0;esfera_color[4,1]=1;esfera_color[4,2]=0;;esfera_color[5,0]=1;esfera_color[5,1]=0.6;esfera_color[5,2]=0;;esfera_color[6,0]=1;esfera_color[6,1]=0;esfera_color[6,2]=1;;esfera_color[7,0]=0;esfera_color[7,1]=0;esfera_color[7,2]=0;' tipo='matriz' info='colores de la esfera; 0=rojo,1=verde,2=azul' ">
@@ -37,31 +36,31 @@
       <param name="A_09" value="id='_P(x,y,z)' algoritmo='no' expresión='_Eval_(rotacional[op,0])' tipo='función' ">
       <param name="A_10" value="id='_Q(x,y,z)' algoritmo='no' expresión='_Eval_(rotacional[op,1])' tipo='función' ">
       <param name="A_11" value="id='_R(x,y,z)' algoritmo='no' expresión='_Eval_(rotacional[op,2])' tipo='función' ">
-      <param name="A_12" value="id='a' expresión='floor(x0)-2' tipo='variable' ">
-      <param name="A_13" value="id='b' expresión='ceil(x0)+2' tipo='variable' ">
-      <param name="A_14" value="id='c' expresión='floor(y0)-2' tipo='variable' ">
-      <param name="A_15" value="id='d' expresión='ceil(y0)+2' tipo='variable' ">
-      <param name="A_16" value="id='e' expresión='floor(z0)-2' tipo='variable' ">
-      <param name="A_17" value="id='f' expresión='ceil(z0)+2' tipo='variable' ">
-      <param name="A_18" value="id='xn' expresión='abs(b-a)' tipo='variable' ">
-      <param name="A_19" value="id='yn' expresión='abs(d-c)' tipo='variable' ">
-      <param name="A_20" value="id='zn' expresión='abs(f-e)' tipo='variable' ">
-      <param name="A_21" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
-      <param name="A_22" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
-      <param name="A_23" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
-      <param name="A_24" value="id='_x(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
-      <param name="A_25" value="id='_y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
-      <param name="A_26" value="id='_z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_12" value="id='Fa' expresión='floor(x0)-2' tipo='variable' ">
+      <param name="A_13" value="id='Fb' expresión='ceil(x0)+2' tipo='variable' ">
+      <param name="A_14" value="id='Fc' expresión='floor(y0)-2' tipo='variable' ">
+      <param name="A_15" value="id='Fd' expresión='ceil(y0)+2' tipo='variable' ">
+      <param name="A_16" value="id='Fe' expresión='floor(z0)-2' tipo='variable' ">
+      <param name="A_17" value="id='Ff' expresión='ceil(z0)+2' tipo='variable' ">
+      <param name="A_18" value="id='xn' expresión='abs(Fb-Fa)' tipo='variable' ">
+      <param name="A_19" value="id='yn' expresión='abs(Fd-Fc)' tipo='variable' ">
+      <param name="A_20" value="id='zn' expresión='abs(Ff-Fe)' tipo='variable' ">
+      <param name="A_21" value="id='dx' expresión='(Fb-Fa)/xn' tipo='variable' ">
+      <param name="A_22" value="id='dy' expresión='(Fd-Fc)/yn' tipo='variable' ">
+      <param name="A_23" value="id='dz' expresión='(Ff-Fe)/zn' tipo='variable' ">
+      <param name="A_24" value="id='_x(s)' algoritmo='no' expresión='Fa+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_25" value="id='_y(s)' algoritmo='no' expresión='Fc+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_26" value="id='_z(s)' algoritmo='no' expresión='Fe+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
       <param name="A_27" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=25;E1.rot.z=-45' ">
       <param name="A_28" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0) (s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='7' info='ejes' ">
-      <param name="S_02" value="espacio='E1' tipo='superficie' fondo='no' color='(esfera_color[s,0],esfera_color[s,1],esfera_color[s,2],00)' color_reverso='(esfera_color[s,0],esfera_color[s,1],esfera_color[s,2],00)' expresión='x=rho*sin(pi/2*(u+floor(s/4)))*cos(pi/2*(v+s%4));y=rho*sin(pi/2*(u+floor(s/4)))*sin(pi/2*(v+s%4));z=rho*cos(pi/2*(u+floor(s/4)))' familia='s' s.intervalo='[0,7]' s.pasos='7' rotini='(rotx,roty,rotz)' posini='(x0,y0,z0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' Nu='3' Nv='3' info='esfera ' ">
-      <param name="S_03" value="espacio='E1' tipo='texto' fondo='no' color='000000' expresión='[10,10]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i rot \i0\i\b F\b0\i0\i (x\i0{\subix\i 0\i0}\i ,y\i0{\subix\i 0\i0}\i ,z\i0{\subix\i 0\i0}\i ) = (\i0\i{\expr _P(x0,y0,z0)\decimals 2\fixed0}\i0\i ,\i0\i{\expr _Q(x0,y0,z0)\decimals 2\fixed0}\i0\i ,\i0\i{\expr _R(x0,y0,z0)\decimals 2\fixed0}\i0\i )\i0}\fs40 }' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' border_size='0' shadowColor='false' shadowBlur='0' shadowOffsetX='0' shadowOffsetY='0' info='rotacional' ">
-      <param name="S_04" value="espacio='E1' tipo='segmento' fondo='no' color='0000ff' dibujar-si='ver' expresión='(_x(s),_y(s),_z(s)) (_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='1' info='vectores' ">
-      <param name="S_05" value="espacio='E1' tipo='punto' fondo='no' color='0000ff' color_reverso='0000ff' dibujar-si='ver' expresión='(_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='1.5' offset_dist='10' offset_angle='270' info='&quot;flechas&quot; de los vectores' ">
-      <param name="S_06" value="espacio='E1' tipo='segmento' fondo='no' color='ff0000' dibujar-si='ver_rot' expresión='(x0,y0,z0)(x0+_P(x0,y0,z0),y0+_Q(x0,y0,z0),z0+_R(x0,y0,z0))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='2' Nu='7' info='rotacional' ">
-      <param name="S_07" value="espacio='E1' tipo='punto' fondo='no' color='ff0000' color_reverso='ff0000' dibujar-si='ver_rot' expresión='(x0+_P(x0,y0,z0),y0+_Q(x0,y0,z0),z0+_R(x0,y0,z0))' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='3' offset_dist='10' offset_angle='270' info='rotacional' ">
-      <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='sí' inicio='rotx=0;roty=0;rotz=0' hacer='rotx=(rotx+_P(x0,y0,z0))%360;roty=(roty+_Q(x0,y0,z0))%360;rotz=(rotz+_R(x0,y0,z0))%360' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='000000' expresión='(0,0,0) (s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='7' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='superficie' color='(esfera_color[s,0],esfera_color[s,1],esfera_color[s,2],00)' color_reverso='(esfera_color[s,0],esfera_color[s,1],esfera_color[s,2],00)' expresión='x=rho*sin(pi/2*(u+floor(s/4)))*cos(pi/2*(v+s%4));y=rho*sin(pi/2*(u+floor(s/4)))*sin(pi/2*(v+s%4));z=rho*cos(pi/2*(u+floor(s/4)))' familia='s' s.intervalo='[0,7]' s.pasos='7' rotini='(rotx,roty,rotz)' posini='(x0,y0,z0)' modelo='color' Nu='3' Nv='3' info='esfera ' ">
+      <param name="S_03" value="espacio='E1' tipo='texto' color='000000' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i rot \i0\i\b F\b0\i0\i (x\i0{\subix\i 0\i0}\i ,y\i0{\subix\i 0\i0}\i ,z\i0{\subix\i 0\i0}\i ) = (\i0\i{\expr _P(x0,y0,z0)\decimals 2\fixed0}\i0\i ,\i0\i{\expr _Q(x0,y0,z0)\decimals 2\fixed0}\i0\i ,\i0\i{\expr _R(x0,y0,z0)\decimals 2\fixed0}\i0\i )\i0}\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='rotacional' ">
+      <param name="S_04" value="espacio='E1' tipo='segmento' color='0000ff' dibujar-si='ver' expresión='(_x(s),_y(s),_z(s)) (_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='1' info='vectores' ">
+      <param name="S_05" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' dibujar-si='ver' expresión='(_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1.5' offset_dist='10' offset_angle='270' info='&quot;flechas&quot; de los vectores' ">
+      <param name="S_06" value="espacio='E1' tipo='segmento' color='ff0000' dibujar-si='ver_rot' expresión='(x0,y0,z0)(x0+_P(x0,y0,z0),y0+_Q(x0,y0,z0),z0+_R(x0,y0,z0))' ancho='2' Nu='7' info='rotacional' ">
+      <param name="S_07" value="espacio='E1' tipo='punto' color='ff0000' color_reverso='ff0000' dibujar-si='ver_rot' expresión='(x0+_P(x0,y0,z0),y0+_Q(x0,y0,z0),z0+_R(x0,y0,z0))' decimales='2' ancho='3' offset_dist='10' offset_angle='270' info='rotacional' ">
+      <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='sí' inicio='rotx=0;roty=0;rotz=0' hacer='rotx=(rotx+_P(x0,y0,z0));roty=(roty+_Q(x0,y0,z0));rotz=(rotz+_R(x0,y0,z0))' ">
     </ajs>
   </div>
 

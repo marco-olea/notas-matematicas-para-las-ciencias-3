@@ -2,8 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Ejemplo de divergencia en &#8477;&#179;</title>
-  
+  <title>Ejemplo de divergencia en ℝ³</title>
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,41 +18,41 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='96' O.x='00%' O.y='0%' despl_imagen='arr-izq' fondo='ffffff' despliegue='orden' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='e_x' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x' expresión='(0,0,150,40)' valor='0' incr='0.1' min='-1.5' max='2.5' discreto='no' decimales='1' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_02" value="id='e_y' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y' expresión='(0,0,150,40)' valor='0' incr='0.1' min='-1.5' max='3' discreto='no' decimales='1' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_03" value="id='e_z' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='z' expresión='(0,0,150,40)' valor='0' incr='0.1' min='-1.2' max='1.5' discreto='no' decimales='1' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='96' O.x='00%' O.y='0%' ">
+      <param name="C_01" value="id='e_x' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x' expresión='(0,0,150,40)' min='-1.5' max='2.5' decimales='1' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='e_y' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y' expresión='(0,0,150,40)' min='-1.5' max='3' decimales='1' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='e_z' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='z' expresión='(0,0,150,40)' min='-1.2' max='1.5' decimales='1' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='longitud_ejes' expresión='5' tipo='variable' ">
       <param name="A_02" value="id='P(x,y,z)' algoritmo='no' expresión='-x*y/4' tipo='función' ">
       <param name="A_03" value="id='Q(x,y,z)' algoritmo='no' expresión='y/4' tipo='función' ">
       <param name="A_04" value="id='R(x,y,z)' algoritmo='no' expresión='z/8' tipo='función' ">
       <param name="A_05" value="id='div(x,y,z)' algoritmo='no' expresión='(3-2y)/8' tipo='función' ">
-      <param name="A_06" value="id='a' expresión='e_x-1' tipo='variable' info='límite inferior eje x' ">
-      <param name="A_07" value="id='b' expresión='e_x+1' tipo='variable' info='límite superior eje x' ">
-      <param name="A_08" value="id='c' expresión='e_y-1' tipo='variable' info='límite inferior eje y' ">
-      <param name="A_09" value="id='d' expresión='e_y+1' tipo='variable' info='límite superior eje y' ">
-      <param name="A_10" value="id='e' expresión='e_z-1' tipo='variable' info='límite inferior eje z' ">
-      <param name="A_11" value="id='f' expresión='e_z+1' tipo='variable' info='límite superior eje z' ">
+      <param name="A_06" value="id='Fa' expresión='e_x-1' tipo='variable' info='límite inferior eje x' ">
+      <param name="A_07" value="id='Fb' expresión='e_x+1' tipo='variable' info='límite superior eje x' ">
+      <param name="A_08" value="id='Fc' expresión='e_y-1' tipo='variable' info='límite inferior eje y' ">
+      <param name="A_09" value="id='Fd' expresión='e_y+1' tipo='variable' info='límite superior eje y' ">
+      <param name="A_10" value="id='Fe' expresión='e_z-1' tipo='variable' info='límite inferior eje z' ">
+      <param name="A_11" value="id='Ff' expresión='e_z+1' tipo='variable' info='límite superior eje z' ">
       <param name="A_12" value="id='xn' expresión='4' tipo='variable' info='número de partes en que se divide intervalo en eje x' ">
       <param name="A_13" value="id='yn' expresión='4' tipo='variable' info='número de partes en que se divide intervalo en eje y' ">
       <param name="A_14" value="id='zn' expresión='5' tipo='variable' info='número de partes en que se divide intervalo en eje z' ">
-      <param name="A_15" value="id='dx' expresión='(b-a)/xn' tipo='variable' info='tamaño subintervalo en eje x' ">
-      <param name="A_16" value="id='dy' expresión='(d-c)/yn' tipo='variable' info='tamaño subintervalo en eje x' ">
-      <param name="A_17" value="id='dz' expresión='(f-e)/zn' tipo='variable' info='tamaño subintervalo en eje z' ">
-      <param name="A_18" value="id='_x(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' info='Determina la coordenada x dado s' ">
-      <param name="A_19" value="id='_y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' info='Determina la coordenada y dado s' ">
-      <param name="A_20" value="id='_z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' info='Determina la coordenada z dado s' ">
+      <param name="A_15" value="id='dx' expresión='(Fb-Fa)/xn' tipo='variable' info='tamaño subintervalo en eje x' ">
+      <param name="A_16" value="id='dy' expresión='(Fd-Fc)/yn' tipo='variable' info='tamaño subintervalo en eje x' ">
+      <param name="A_17" value="id='dz' expresión='(Ff-Fe)/zn' tipo='variable' info='tamaño subintervalo en eje z' ">
+      <param name="A_18" value="id='_x(s)' algoritmo='no' expresión='Fa+dx*(s%(xn+1))' tipo='función' info='Determina la coordenada x dado s' ">
+      <param name="A_19" value="id='_y(s)' algoritmo='no' expresión='Fc+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' info='Determina la coordenada y dado s' ">
+      <param name="A_20" value="id='_z(s)' algoritmo='no' expresión='Fe+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' info='Determina la coordenada z dado s' ">
       <param name="A_21" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=12;E1.rot.z=-20' ">
       <param name="A_22" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='flecha' fondo='no' color='0080ff' coord_abs='no' expresión='(_x(s),_y(s)) (_x(s)+P(_x(s),_y(s)),_y(s)+Q(_x(s),_y(s)))' familia='s' s.intervalo='[0,m*n+m+n]' s.pasos='m*n+m+n' decimales='2' fijo='sí' ancho='1' punta='3' flecha='0080ff' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='vectores' ">
-      <param name="G_02" value="espacio='E1' tipo='punto' fondo='no' color='20303a' dibujar-si='0' coord_abs='no' expresión='(_x(s),_y(s))' familia='s' s.intervalo='[0,m*n+m+n]' s.pasos='m*n+m+n' decimales='2' fijo='sí' tamaño='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
-      <param name="S_01" value="espacio='E1' tipo='segmento' fondo='no' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='1' info='ejes' ">
-      <param name="S_02" value="espacio='E1' tipo='segmento' fondo='no' color='0080ff' expresión='(_x(s),_y(s),_z(s))(_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' ancho='1' Nu='1' ">
-      <param name="S_03" value="espacio='E1' tipo='punto' fondo='no' color='0080ff' color_reverso='0080ff' expresión='(_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' decimales='2' fijo='sí' ancho='1.5' offset_dist='10' offset_angle='270' ">
-      <param name="S_04" value="espacio='E1' tipo='esfera' fondo='no' color='80800000' color_reverso='80800000' dibujar-si='div(e_x,e_y,e_z)<0' expresión='Esfera' rotini='(0,0,0)' posini='(e_x,e_y,e_z)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' ancho='1' Nu='10' Nv='10' info='esfera roja' ">
-      <param name="S_05" value="espacio='E1' tipo='esfera' fondo='no' color='80008000' color_reverso='80008000' dibujar-si='div(e_x,e_y,e_z)>0' expresión='Esfera' rotini='(0,0,0)' posini='(e_x,e_y,e_z)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' ancho='1' Nu='10' Nv='10' info='esfera verde' ">
-      <param name="S_06" value="espacio='E1' tipo='esfera' fondo='no' color='80808080' color_reverso='80808080' dibujar-si='div(e_x,e_y,e_z)==0' expresión='Esfera' rotini='(0,0,0)' posini='(e_x,e_y,e_z)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='color' ancho='1' Nu='10' Nv='10' info='esfera azul' ">
-      <param name="S_07" value="espacio='E1' tipo='texto' fondo='no' color='000000' expresión='[10,0]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs50 {\*\mjaformula\i div \i0\i\b F\b0\i0\i  = \i0{\fraction{\num\i 3-2y\i0}{\den\i 8\i0}}}\par\f0\fs50 {\*\mjaformula\i div(\i0\i{\expr e_x\decimals 1\fixed0}\i0\i ,\i0\i{\expr e_y\decimals 1\fixed0}\i0\i ,\i0\i{\expr e_z\decimals 1\fixed0}\i0\i ) = \i0\i{\expr div(e_x,e_y,e_z)\decimals 2\fixed0}\i0}}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' border_size='0' shadowColor='false' shadowBlur='0' shadowOffsetX='0' shadowOffsetY='0' ">
+      <param name="G_01" value="espacio='E1' tipo='flecha' color='0080ff' coord_abs='no' expresión='(_x(s),_y(s)) (_x(s)+P(_x(s),_y(s)),_y(s)+Q(_x(s),_y(s)))' familia='s' s.intervalo='[0,m*n+m+n]' s.pasos='m*n+m+n' ancho='1' punta='3' flecha='0080ff' info='vectores' ">
+      <param name="G_02" value="espacio='E1' tipo='punto' color='20303a' dibujar-si='0' coord_abs='no' expresión='(_x(s),_y(s))' familia='s' s.intervalo='[0,m*n+m+n]' s.pasos='m*n+m+n' tamaño='1' ">
+      <param name="S_01" value="espacio='E1' tipo='segmento' color='000000' expresión='(0,0,0)(s==0?longitud_ejes:0,s==1?longitud_ejes:0,s==2?longitud_ejes:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='1' info='ejes' ">
+      <param name="S_02" value="espacio='E1' tipo='segmento' color='0080ff' expresión='(_x(s),_y(s),_z(s))(_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='1' info='vectores 1' ">
+      <param name="S_03" value="espacio='E1' tipo='punto' color='0080ff' color_reverso='0080ff' expresión='(_x(s)+P(_x(s),_y(s),_z(s)),_y(s)+Q(_x(s),_y(s),_z(s)),_z(s)+R(_x(s),_y(s),_z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1.5' offset_dist='10' offset_angle='270' info='vectores 2' ">
+      <param name="S_04" value="espacio='E1' tipo='esfera' color='80800000' color_reverso='80800000' dibujar-si='div(e_x,e_y,e_z)<0' expresión='Esfera' posini='(e_x,e_y,e_z)' modelo='color' ancho='1' Nu='10' Nv='10' info='esfera roja' ">
+      <param name="S_05" value="espacio='E1' tipo='esfera' color='80008000' color_reverso='80008000' dibujar-si='div(e_x,e_y,e_z)>0' expresión='Esfera' posini='(e_x,e_y,e_z)' modelo='color' ancho='1' Nu='10' Nv='10' info='esfera verde' ">
+      <param name="S_06" value="espacio='E1' tipo='esfera' color='80808080' color_reverso='80808080' dibujar-si='div(e_x,e_y,e_z)==0' expresión='Esfera' posini='(e_x,e_y,e_z)' modelo='color' ancho='1' Nu='10' Nv='10' info='esfera azul' ">
+      <param name="S_07" value="espacio='E1' tipo='texto' color='000000' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs50 {\*\mjaformula\i div \i0\i\b F\b0\i0\i  = \i0{\fraction{\num\i 3-2y\i0}{\den\i 8\i0}}}\par\f0\fs50 {\*\mjaformula\i div(\i0\i{\expr e_x\decimals 1\fixed0}\i0\i ,\i0\i{\expr e_y\decimals 1\fixed0}\i0\i ,\i0\i{\expr e_z\decimals 1\fixed0}\i0\i ) = \i0\i{\expr div(e_x,e_y,e_z)\decimals 2\fixed0}\i0}}' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='texto' ">
     </ajs>
   </div>
 

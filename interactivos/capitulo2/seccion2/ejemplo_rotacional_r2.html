@@ -2,8 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Ejemplo de rotacional en &#8477;&#178;</title>
-  
+  <title>Ejemplo de rotacional en ℝ²</title>
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,10 +18,10 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='sí' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' red='c0c0c0' red10='808080' ejes='404040' texto='no' números='no' eje-x='x' eje-y='y' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='h' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x₀' expresión='(0,0,150,40)' valor='0' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='E1.Ox=-h*48' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_02" value="id='k' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y₀' expresión='(0,0,150,40)' valor='0' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' acción='calcular' parámetro='E1.Oy=k*48' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_03" value="id='op' tipo='numérico' interfaz='menú' región='norte' espacio='E1' nombre='F(x,y) =' expresión='(0,0,150,40)' valor='0' decimales='2' fijo='sí' visible='no' opciones='< 2 \u002c  3 >, < y \u002c  0 >, < -y \u002c  x >, < 1 \u002c  x² >' label_color='e0e4e8' label_text_color='000000' font_family='Serif' fuente puntos='0' negrita='no' cursiva='sí' ">
+      <param name="E_01" value="tipo='R2' id='E1' fijo='sí' red='c0c0c0' red10='808080' ejes='404040' eje-x='x' eje-y='y' ">
+      <param name="C_01" value="id='h' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='x₀' expresión='(0,0,150,40)' visible='sí' acción='calcular' parámetro='E1.Ox=-h*48' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='k' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='y₀' expresión='(0,0,150,40)' visible='sí' acción='calcular' parámetro='E1.Oy=k*48' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='op' tipo='numérico' interfaz='menú' región='norte' espacio='E1' nombre='F(x,y) =' expresión='(0,0,150,40)' visible='no' opciones='< 2 \u002c  3 >, < y \u002c  0 >, < -y \u002c  x >, < 1 \u002c  x² >' font_family='Serif' cursiva='sí' ">
       <param name="A_01" value="id='r' expresión='1' tipo='variable' ">
       <param name="A_02" value="id='a' expresión='floor(h)-9' tipo='variable' ">
       <param name="A_03" value="id='b' expresión='ceil(h)+9' tipo='variable' ">
@@ -41,10 +40,10 @@
       <param name="A_16" value="id='rot(x,y)' algoritmo='no' expresión='op==0?0:(op==1?-1:(op==2?2:2h))' tipo='función' info='rotacional de cada campo vectorial' ">
       <param name="A_17" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
       <param name="A_18" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='segmento' fondo='no' color='964b00' coord_abs='no' expresión='(h,k) (h+r*cos((s*2/5*pi+dt)%(2pi)),k+r*sin((s*2/5*pi+dt)%(2pi)))' familia='s' s.intervalo='[0,4]' s.pasos='4' decimales='2' fijo='sí' tamaño='5' ancho='4' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='dot' info='paddlewheel' ">
-      <param name="G_02" value="espacio='E1' tipo='flecha' fondo='no' color='0000ff' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+P(X(s),Y(s)), Y(s)+Q(X(s),Y(s)))' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' decimales='2' fijo='sí' ancho='1' punta='3' flecha='0000ff' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
-      <param name="G_03" value="espacio='E1' tipo='rectángulo' fondo='no' color='20303a' coord_abs='sí' expresión='(15,20,255,30)' relleno='10c0c0c0' ancho='0' border_radius='0' lineDash='solid' ">
-      <param name="G_04" value="espacio='E1' tipo='texto' fondo='no' color='000000' coord_abs='sí' expresión='(20,20)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs50 {\*\mjaformula\i rot \i0\i\b F\b0\i0\i (x\i0{\subix\i 0\i0}\i ,y\i0{\subix\i 0\i0}\i ) = (0,0,\i0\i{\expr rot(h,k)\decimals 2\fixed0}\i0 )}}' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' align='a_left' anchor='a_top_left' border_size='0' shadowColor='false' shadowBlur='0' shadowOffsetX='0' shadowOffsetY='0' info='rotacional' ">
+      <param name="G_01" value="espacio='E1' tipo='segmento' color='964b00' coord_abs='no' expresión='(h,k) (h+r*cos((s*2/5*pi+dt)%(2pi)),k+r*sin((s*2/5*pi+dt)%(2pi)))' familia='s' s.intervalo='[0,4]' s.pasos='4' tamaño='5' ancho='4' lineDash='dot' info='paddlewheel' ">
+      <param name="G_02" value="espacio='E1' tipo='flecha' color='0000ff' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+P(X(s),Y(s)), Y(s)+Q(X(s),Y(s)))' familia='s' s.intervalo='[0,m*n-1]' s.pasos='m*n-1' ancho='1' punta='3' flecha='0000ff' info='vectores' ">
+      <param name="G_03" value="espacio='E1' tipo='rectángulo' color='20303a' coord_abs='sí' expresión='(15,20,255,30)' relleno='10c0c0c0' ancho='0' info='sombra  atrás del texto para verlo mejor' ">
+      <param name="G_04" value="espacio='E1' tipo='texto' color='000000' coord_abs='sí' expresión='(20,20)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs50 {\*\mjaformula\i rot \i0\i\b F\b0\i0\i (x\i0{\subix\i 0\i0}\i ,y\i0{\subix\i 0\i0}\i ) = (0,0,\i0\i{\expr rot(h,k)\decimals 2\fixed0}\i0 )}}' ancho='1' align='a_left' anchor='a_top_left' info='rotacional' ">
       <param name="Animación" value="pausa='40' controles='sí' auto='sí' repetir='sí' inicio='dt=0' hacer='dt=dt+rot(h,k)*ung;' ">
     </ajs>
   </div>

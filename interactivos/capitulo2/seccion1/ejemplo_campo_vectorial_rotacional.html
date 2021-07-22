@@ -3,7 +3,6 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Ejemplo de un campo rotacional</title>
-  
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,10 +18,10 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=1 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R2' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='48' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ffffff' red='c0c0c0' red10='000000' ejes='404040' texto='no' números='sí' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
-      <param name="C_01" value="id='region' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Región' expresión='(0,0,150,40)' valor='5' incr='1' min='1' max='20' discreto='no' decimales='0' fijo='sí' visible='no' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_02" value="id='densidad' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Densidad' expresión='(0,0,150,40)' valor='3' incr='1' min='1' discreto='no' decimales='0' fijo='sí' visible='no' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_03" value="id='radio' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Círculo' expresión='(0,0,150,40)' valor='1' incr='0.05' discreto='no' decimales='2' fijo='sí' visible='no' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="E_01" value="tipo='R2' id='E1' O.y='-3%' red='c0c0c0' red10='000000' ejes='404040' números='sí' ">
+      <param name="C_01" value="id='region' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Región' expresión='(0,0,150,40)' valor='5' incr='1' min='1' decimales='0' visible='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='densidad' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Densidad' expresión='(0,0,150,40)' valor='3' incr='1' min='1' decimales='0' visible='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_03" value="id='radio' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='Círculo' expresión='(0,0,150,40)' valor='1' incr='0.05' min='0' visible='no' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='P(x,y)' algoritmo='no' expresión='-y/4' tipo='función' ">
       <param name="A_02" value="id='Q(x,y)' algoritmo='no' expresión='x/4' tipo='función' ">
       <param name="A_03" value="id='n' expresión='region' tipo='variable' info='cantidad de círculos' ">
@@ -34,9 +33,8 @@
       <param name="A_09" value="id='h(s)' algoritmo='no' expresión='g[floor(s/d)]' tipo='función' ">
       <param name="A_10" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
       <param name="A_11" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
-      <param name="G_01" value="espacio='E1' tipo='flecha' fondo='no' color='ff0080' coord_abs='no' expresión='(_x(s),_y(s)) (_x(s)+P(_x(s),_y(s)),_y(s)+Q(_x(s),_y(s)))' familia='s' s.intervalo='[0,totales-1]' s.pasos='totales-1' decimales='2' fijo='sí' ancho='1' punta='3' flecha='ff0080' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' info='vectores' ">
-      <param name="G_02" value="espacio='E1' tipo='arco' fondo='no' color='000000' coord_abs='no' centro='(0,0)' radio='radio' inicio='0' fin='360' vectores='no' decimales='2' fijo='sí' ancho='1' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' lineDash='solid' info='círculo' ">
-      <param name="G_03" value="espacio='E1' tipo='punto' fondo='no' color='20303a' dibujar-si='0' coord_abs='no' expresión='(_x(s),_y(s))' familia='s' s.intervalo='[0,totales-1]' s.pasos='totales-1' decimales='2' fijo='sí' tamaño='3' negrita='no' cursiva='no' font_family='SansSerif' fuente puntos='18' ">
+      <param name="G_01" value="espacio='E1' tipo='flecha' color='ff0080' coord_abs='no' expresión='(_x(s),_y(s)) (_x(s)+P(_x(s),_y(s)),_y(s)+Q(_x(s),_y(s)))' familia='s' s.intervalo='[0,totales-1]' s.pasos='totales-1' ancho='1' punta='3' flecha='ff0080' info='vectores' ">
+      <param name="G_02" value="espacio='E1' tipo='arco' color='000000' coord_abs='no' centro='(0,0)' radio='radio' inicio='0' fin='360' ancho='1' info='círculo' ">
     </ajs>
   </div>
 
