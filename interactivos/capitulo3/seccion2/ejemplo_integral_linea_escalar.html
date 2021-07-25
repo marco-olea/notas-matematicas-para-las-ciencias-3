@@ -20,10 +20,10 @@
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
       <param name="E_02" value="tipo='R2' id='E2' x='30' y='30' ancho='200' alto='65' dibujar-si='ver_suma' fijo='sí' escala='1' O.x='-50%' O.y='6' red='no' red10='no' ejes='no' ">
-      <param name="C_01" value="id='ver_f' tipo='checkbox' región='norte' espacio='E1' nombre='f(x,y)' expresión='(0,0,150,40)' valor='1' font_family='Serif' cursiva='sí' position='a_right' ">
-      <param name="C_02" value="id='ver_fr' tipo='checkbox' región='norte' espacio='E1' nombre='f(r(t))' expresión='(0,0,150,40)' font_family='Serif' cursiva='sí' position='a_right' ">
-      <param name="C_03" value="id='ver_int' tipo='checkbox' región='norte' espacio='E1' nombre='Integral de línea' expresión='(0,0,150,40)' valor='1' position='a_right' ">
-      <param name="C_04" value="id='ver_suma' tipo='checkbox' región='norte' espacio='E1' nombre='Aproximación' expresión='(0,0,150,40)' position='a_right' ">
+      <param name="C_01" value="id='ver_f' tipo='checkbox' región='norte' espacio='E1' nombre='f(x,y)' expresión='(0,0,150,40)' valor='1' font_family='Serif' cursiva='sí' position='a_left' ">
+      <param name="C_02" value="id='ver_fr' tipo='checkbox' región='norte' espacio='E1' nombre='f(r(t))' expresión='(0,0,150,40)' font_family='Serif' cursiva='sí' position='a_left' ">
+      <param name="C_03" value="id='ver_int' tipo='checkbox' región='norte' espacio='E1' nombre='Integral de línea' expresión='(0,0,150,40)' valor='1' position='a_left' ">
+      <param name="C_04" value="id='ver_suma' tipo='checkbox' región='norte' espacio='E1' nombre='Aproximación' expresión='(0,0,150,40)' position='a_left' ">
       <param name="C_05" value="id='n' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='n' expresión='(600,0,200,40)' valor='3' incr='1' min='1' decimales='0' visible='sí' dibujar-si='ver_suma' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='longitud_ejes' expresión='15' tipo='variable' ">
       <param name="A_02" value="id='a' expresión='-2' tipo='variable' ">
@@ -49,7 +49,7 @@
       <param name="S_07" value="espacio='E1' tipo='segmento' color='000000' dibujar-si='ver_suma' expresión='(r1(a+dt*(s+1)),r2(a+dt*(s+1)),0) (r1(a+dt*(s+1)),r2(a+dt*(s+1)),f(r1(a+dt*(s+_dt)),r2(a+dt*(s+_dt))))' familia='s' s.intervalo='[0,n-1]' s.pasos='n-1' ancho='1' Nu='1' info='subintervalos 2' ">
       <param name="S_08" value="espacio='E1' tipo='curva' color='000000' dibujar-si='ver_suma' expresión='x=r1(a+dt*(s+u)) y=r2(a+dt*(s+u)) z=f(r1(a+dt*(s+_dt)),r2(a+dt*(s+_dt)))' familia='s' s.intervalo='[0,n-1]' s.pasos='n-1' cortar='sí' ancho='1' Nu='ceil(30/n)' info='subintervalos 3' ">
       <param name="S_09" value="espacio='E1' tipo='superficie' color='40808080' color_reverso='40808080' dibujar-si='ver_suma&&!ver_int' expresión='x=r1(a+dt*(s+u));y=r2(a+dt*(s+u));z=v*f(r1(a+dt*(s+_dt)),r2(a+dt*(s+_dt)))' familia='s' s.intervalo='[0,n-1]' s.pasos='n-1' cortar='sí' modelo='color' Nu='ceil(30/n)' Nv='1' info='subintervalos 4' ">
-      <param name="S_10" value="espacio='E1' tipo='punto' color='ff0000' color_reverso='ff0000' expresión='(r1(a+0.9*(b-a)),r2(a+0.9*(b-a)),0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;}\f0\fs40 \fs50\i{\*\mjaformula\cf0\i\b r\b0\i0\i (t)\i0}\i0\cf0\fs40 }' decimales='2' ancho='0' offset_dist='20' offset_angle='270' ">
+      <param name="S_10" value="espacio='E1' tipo='punto' color='ff0000' color_reverso='ff0000' expresión='(r1(a+0.9*(b-a)),r2(a+0.9*(b-a)),0)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;}\f0\fs40 \fs50\i{\*\mjaformula\cf0\i\b r\b0\i0\i (t)\i0}\i0\cf0\fs40 }' decimales='2' ancho='0' offset_dist='20' offset_angle='270' info='r(t) texto' ">
     </ajs>
   </div>
 

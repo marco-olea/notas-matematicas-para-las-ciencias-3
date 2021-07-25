@@ -18,12 +18,12 @@
       <param name="editable" value="no">
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
-      <param name="E_01" value="tipo='R3' R3='sí' id='E1' ">
+      <param name="E_01" value="tipo='R3' R3='sí' id='E1' despliegue='pintor' ">
       <param name="C_01" value="id='op' tipo='numérico' interfaz='menú' región='interior' espacio='E1' nombre='Superficie:' expresión='(0,0,400,40)' visible='no' opciones='Banda de Möbius, Botella de Klein, Toro, Esfera, Cilindro' ">
-      <param name="C_02" value="id='ver_n' tipo='checkbox' región='interior' espacio='E1' nombre='N' expresión='(400,0,200,40)' valor='1' radio_group='op_normal' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
-      <param name="C_03" value="id='ver_-n' tipo='checkbox' región='interior' espacio='E1' nombre='-N' expresión='(600,0,200,40)' radio_group='op_normal' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
-      <param name="C_04" value="id='u0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='u₀' expresión='(0,0,150,40)' valor='(ua+ub)/2' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_05" value="id='v0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='v₀' expresión='(0,0,150,40)' valor='(va+vb)/2' min='(op==4)||(op==0)?va:&squot;&squot;' max='(op==4)||(op==0)?vb:&squot;&squot;' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_02" value="id='ver_n' tipo='checkbox' región='interior' espacio='E1' nombre='N' expresión='(400,0,200,40)' valor='1' radio_group='op_normal' font_family='Serif' negrita='sí' cursiva='sí' position='a_left' ">
+      <param name="C_03" value="id='ver_-n' tipo='checkbox' región='interior' espacio='E1' nombre='-N' expresión='(600,0,200,40)' radio_group='op_normal' font_family='Serif' negrita='sí' cursiva='sí' position='a_left' ">
+      <param name="C_04" value="id='u0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='u₀' expresión='(0,0,150,40)' valor='(ua+ub)/2' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='v0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='v₀' expresión='(0,0,150,40)' valor='(va+vb)/2' min='(op==4)||(op==0)?va:&squot;&squot;' max='(op==4)||(op==0)?vb:&squot;&squot;' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="A_01" value="id='Nuv' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='4' expresión='Nuv[0,0]=30;Nuv[0,1]=1;;Nuv[1,0]=30;Nuv[1,1]=10;;Nuv[2,0]=30;Nuv[2,1]=15;;Nuv[3,0]=15;Nuv[3,1]=15;;Nuv[4,0]=20;Nuv[4,1]=1;' tipo='matriz' info='número de intervalos en los que se parte el intervalo unitario [0,1] para los parámetros u y v' ">
       <param name="A_02" value="id='r_lim' matriz='sí' evaluar='una-sola-vez' columnas='4' filas='5' expresión='r_lim[0,0]=0;r_lim[0,1]=2pi;r_lim[0,2]=-1;r_lim[0,3]=1;;r_lim[1,0]=0;r_lim[1,1]=pi;r_lim[1,2]=0;r_lim[1,3]=2pi;;r_lim[2,0]=0;r_lim[2,1]=2pi;r_lim[2,2]=0;r_lim[2,3]=2pi;;r_lim[3,0]=0;r_lim[3,1]=pi;r_lim[3,2]=0;r_lim[3,3]=2pi;;r_lim[4,0]=0;r_lim[4,1]=2pi;r_lim[4,2]=0;r_lim[4,3]=3' tipo='matriz' info='opciones de límites de r(u,v): 0=ua,1=ub,2=va,3vb' ">
       <param name="A_03" value="id='ua' expresión='r_lim[op,0]' tipo='variable' ">
@@ -49,7 +49,7 @@
       <param name="A_23" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.y=30;E1.rot.z=-45' ">
       <param name="A_24" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
       <param name="S_01" value="espacio='E1' tipo='superficie' color='700000ff' color_reverso='700000ff' expresión='x=r1(ua+u*(ub-ua),va+v*(vb-va));y=r2(ua+u*(ub-ua),va+v*(vb-va));z=r3(ua+u*(ub-ua),va+v*(vb-va))' cortar='sí' modelo='metal' Nu='Nuv[op,0]' Nv='Nuv[op,1]' info='r(u,v)' ">
-      <param name="S_02" value="espacio='E1' tipo='segmento' color='008000' expresión='(r1(u0,v0),r2(u0,v0),r3(u0,v0)) (r1(u0,v0)+(ver_n?1:-1)*N1,r2(u0,v0)+(ver_n?1:-1)*N2,r3(u0,v0)+(ver_n?1:-1)*N3)' cortar='sí' ancho='2' Nu='1' info='N' ">
+      <param name="S_02" value="espacio='E1' tipo='segmento' color='008000' expresión='(r1(u0,v0),r2(u0,v0),r3(u0,v0)) (r1(u0,v0)+(ver_n?1:-1)*N1,r2(u0,v0)+(ver_n?1:-1)*N2,r3(u0,v0)+(ver_n?1:-1)*N3)' cortar='sí' ancho='3' Nu='1' info='N' ">
     </ajs>
   </div>
 

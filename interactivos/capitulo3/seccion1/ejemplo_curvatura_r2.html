@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Ejemplo de curvatura en &#8477;&#178;</title>
+  <title>Ejemplo de curvatura en ℝ²</title>
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -19,10 +19,10 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R2' id='E1' O.x='-24' red='no' red10='no' eje-x='x' eje-y='y' ">
-      <param name="C_01" value="id='t0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₀' expresión='(0,0,150,40)' min='0' max='th_lim' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="A_01" value="id='a' expresión='1' tipo='variable' ">
-      <param name="A_02" value="id='b' expresión='0.32' tipo='variable' ">
-      <param name="A_03" value="id='th_lim' expresión='9/2*pi' tipo='variable' ">
+      <param name="C_01" value="id='t0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₀' expresión='(0,0,150,40)' min='0' max='th_lim' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="A_01" value="id='a' expresión='1' tipo='variable' info='metadata de la curva' ">
+      <param name="A_02" value="id='b' expresión='0.32' tipo='variable' info='metadata de la curva' ">
+      <param name="A_03" value="id='th_lim' expresión='9/2*pi' tipo='variable' info='la curva estará definida sobre [0,th_lim]' ">
       <param name="A_04" value="id='f' matriz='sí' evaluar='una-sola-vez' columnas='2' filas='3' expresión='f[0,0]=&squot;(a+b*t)*cos(t)&squot;;f[0,1]=&squot;(a+b*t)*sin(t)&squot;;;f[1,0]=&squot;b*cos(t)-sin(t)*(a+b*t)&squot;;f[1,1]=&squot;b*sin(t)+cos(t)*(a+b*t)&squot;;;f[2,0]=&squot;-2*b*sin(t)-cos(t)*(a+b*t)&squot;;f[2,1]=&squot;2*b*cos(t)-sin(t)*(a+b*t)&squot;' tipo='matriz' info='filas: 0=función original; 1=primera derivada; 2=segunda derivada' ">
       <param name="A_05" value="id='x1(t)' algoritmo='no' expresión='_Eval_(f[0,0])' tipo='función' ">
       <param name="A_06" value="id='x2(t)' algoritmo='no' expresión='_Eval_(f[0,1])' tipo='función' ">

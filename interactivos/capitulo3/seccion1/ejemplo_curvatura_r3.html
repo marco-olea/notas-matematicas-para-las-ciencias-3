@@ -20,8 +20,7 @@
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='30' ">
       <param name="C_01" value="id='t0' tipo='numérico' interfaz='pulsador' región='sur' espacio='E1' nombre='t₀' expresión='(0,0,150,40)' valor='0.36' min='a' max='b' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_02" value="id='ver_vectores' tipo='checkbox' región='norte' espacio='E1' nombre='Ver vectores' expresión='(0,0,150,40)' position='a_right' ">
-      <param name="C_03" value="id='ver_circulo' tipo='checkbox' región='norte' espacio='E1' nombre='Ver círculo osculador' expresión='(0,0,150,40)' valor='1' position='a_right' ">
+      <param name="C_02" value="id='ver_vectores' tipo='checkbox' región='norte' espacio='E1' nombre='Ver vectores' expresión='(0,0,150,40)' position='a_left' ">
       <param name="A_01" value="id='a' expresión='-2pi' tipo='variable' ">
       <param name="A_02" value="id='b' expresión='3pi' tipo='variable' ">
       <param name="A_03" value="id='dt' expresión='0.0001' tipo='variable' ">
@@ -57,9 +56,9 @@
       <param name="S_02" value="espacio='E1' tipo='segmento' color='000000' dibujar-si='ver_vectores' expresión='(r1(t0),r2(t0),r3(t0)) (r1(t0)+T1(t0),r2(t0)+T2(t0),r3(t0)+T3(t0))' ancho='2' Nu='1' info='T(t₀)' ">
       <param name="S_03" value="espacio='E1' tipo='segmento' color='ff0000' dibujar-si='ver_vectores' expresión='(r1(t0),r2(t0),r3(t0)) (r1(t0)+N1(t0),r2(t0)+N2(t0),r3(t0)+N3(t0))' ancho='2' Nu='1' info='N(t₀)' ">
       <param name="S_04" value="espacio='E1' tipo='segmento' color='008000' dibujar-si='ver_vectores' expresión='(r1(t0),r2(t0),r3(t0)) (r1(t0)+B1(t0),r2(t0)+B2(t0),r3(t0)+B3(t0))' ancho='2' Nu='1' info='B(t₀)' ">
-      <param name="S_05" value="espacio='E1' tipo='curva' color='ffafaf' dibujar-si='ver_circulo' expresión='rcos=R(t0)*cos(u*2pi);rsin=R(t0)*sin(u*2pi);x=Q1(t0)+rcos*T1(t0)+rsin*N1(t0);y=Q2(t0)+rcos*T2(t0)+rsin*N2(t0);z=Q3(t0)+rcos*T3(t0)+rsin*N3(t0)' ancho='2' Nu='ceil(4pi*R(t0))' info='círculo osculador' ">
-      <param name="S_06" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' dibujar-si='ver_circulo' expresión='(Q1(t0),Q2(t0),Q3(t0))' decimales='2' ancho='2' offset_dist='10' offset_angle='270' info='centro de curvatura' ">
-      <param name="S_07" value="espacio='E1' tipo='segmento' color='00ff00' dibujar-si='ver_circulo' expresión='(r1(t0),r2(t0),r3(t0)) (Q1(t0),Q2(t0),Q3(t0))' ancho='1' Nu='7' info='radio de curvatura' ">
+      <param name="S_05" value="espacio='E1' tipo='curva' color='ffafaf' expresión='rcos=R(t0)*cos(u*2pi);rsin=R(t0)*sin(u*2pi);x=Q1(t0)+rcos*T1(t0)+rsin*N1(t0);y=Q2(t0)+rcos*T2(t0)+rsin*N2(t0);z=Q3(t0)+rcos*T3(t0)+rsin*N3(t0)' ancho='2' Nu='ceil(4pi*R(t0))' info='círculo osculador' ">
+      <param name="S_06" value="espacio='E1' tipo='punto' color='000000' color_reverso='000000' expresión='(Q1(t0),Q2(t0),Q3(t0))' decimales='2' ancho='2' offset_dist='10' offset_angle='270' info='centro de curvatura' ">
+      <param name="S_07" value="espacio='E1' tipo='segmento' color='00ff00' expresión='(r1(t0),r2(t0),r3(t0)) (Q1(t0),Q2(t0),Q3(t0))' ancho='1' Nu='7' info='radio de curvatura' ">
       <param name="S_08" value="espacio='E1' tipo='texto' color='000000' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs60\i{\*\mjaformula\i k(t\i0{\subix\i 0\i0}\i ) = \i0\i{\expr k(t0)\decimals 2\fixed0}\i0}\i0\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='k(t₀)' ">
     </ajs>
   </div>

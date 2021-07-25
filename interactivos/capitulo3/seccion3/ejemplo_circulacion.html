@@ -19,13 +19,13 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R2' id='E1' border_width='1' ">
-      <param name="C_01" value="id='F1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='F(x,y)' expresión='(0,0,480,40)' valor='(x-y)/5' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_02" value="id='F2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(480,0,240,40)' valor='x/5' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_03" value="id='l' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' expresión='(720,0,80,40)' valor='6' min='1' discreto='sí' decimales='1' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_04" value="id='r1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='r(t)' expresión='(0,560,266,40)' valor='(t+5)*cos(t)' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_05" value="id='r2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(266,560,134,40)' valor='2*sin(t)' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_06" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='a' expresión='(400,560,200,40)' valor='pi/2' max='b-0.01' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
-      <param name="C_07" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='b' expresión='(600,560,200,40)' valor='5pi/2' min='a+0.01' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_01" value="id='F1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='F(x,y)' expresión='(0,520,480,40)' valor='(x-y)/5' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_02" value="id='F2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(480,520,240,40)' valor='x/5' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_03" value="id='l' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' expresión='(720,520,80,40)' valor='6' min='1' discreto='sí' decimales='1' visible='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_04" value="id='a' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='a' expresión='(0,560,200,40)' valor='pi/2' max='b-0.01' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_05" value="id='b' tipo='numérico' interfaz='pulsador' región='interior' espacio='E1' nombre='b' expresión='(200,560,200,40)' valor='5pi/2' min='a+0.01' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
+      <param name="C_06" value="id='r1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' nombre='r(t)' expresión='(400,560,266,40)' valor='(t+5)*cos(t)' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_07" value="id='r2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(666,560,134,40)' valor='2*sin(t)' visible='sí' font_family='Serif' cursiva='sí' ">
       <param name="A_01" value="id='_a' expresión='r1((a+b)/2)-l' tipo='variable' ">
       <param name="A_02" value="id='_b' expresión='r1((a+b)/2)+l' tipo='variable' ">
       <param name="A_03" value="id='_c' expresión='r2((a+b)/2)-l' tipo='variable' ">
@@ -45,7 +45,7 @@
       <param name="A_17" value="id='_r2(t)' algoritmo='no' expresión='(r2(t+0.0001)-r2(t))/0.0001' tipo='función' ">
       <param name="A_18" value="id='n' expresión='20*ceil(b-a)' tipo='variable' ">
       <param name="A_19" value="id='dt' expresión='(b-a)/n' tipo='variable' ">
-      <param name="A_20" value="id='circulacion()' algoritmo='sí' expresión='0' local='i' inicio='i=0;suma=0' hacer='suma=suma+(F1(r1(a+dt*(i+0.5)),r2(a+dt*(i+0.5)))*_r1(a+dt*(i+0.5))+F2(r1(a+dt*(i+0.5)),r2(a+dt*(i+0.5)))*_r2(a+dt*(i+0.5)))*dt;i=i+1' mientras='i<n' tipo='función' ">
+      <param name="A_20" value="id='circulacion()' algoritmo='sí' expresión='0' local='i' inicio='i=0;suma=0' hacer='t=a+dt*(i+0.5);suma=suma+(F1(r1(t),r2(t))*_r1(t)+F2(r1(t),r2(t))*_r2(t))*dt;i=i+1' mientras='i<n' tipo='función' ">
       <param name="A_21" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' ">
       <param name="A_22" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='circulacion()' ">
       <param name="G_01" value="espacio='E1' tipo='flecha' color='400000ff' coord_abs='no' expresión='(X(s),Y(s)) (X(s)+F1(X(s),Y(s)),Y(s)+F2(X(s),Y(s)))' familia='s' s.intervalo='[0,xn*yn+xn+yn]' s.pasos='xn*yn+xn+yn' ancho='1' punta='1' flecha='400000ff' info='F(x,y)' ">
