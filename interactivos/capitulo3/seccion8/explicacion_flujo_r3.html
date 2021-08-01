@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Flujo  a través de una superficie</title>
+  <title>Flujo a través de una superficie</title>
   <script type="text/javascript" src="../../lib/descartes-min.js" charset="utf-8"></script>
 </head>
 
@@ -21,21 +21,21 @@
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='0' ">
       <param name="C_01" value="id='repetir' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='►' expresión='(0,0,150,40)' color='000000' color-int='f0f8ff' fuente puntos='19' acción='animar' ">
       <param name="C_02" value="id='parar' interfaz='botón' tipo='numérico' región='sur' espacio='E1' nombre='◼' expresión='(0,0,150,40)' color='222222' color-int='f0f8ff' fuente puntos='19' acción='inicio' ">
-      <param name="A_01" value="id='a' expresión='-1' tipo='variable' ">
-      <param name="A_02" value="id='b' expresión='1' tipo='variable' ">
-      <param name="A_03" value="id='c' expresión='-2' tipo='variable' ">
-      <param name="A_04" value="id='d' expresión='0' tipo='variable' ">
-      <param name="A_05" value="id='e' expresión='-2' tipo='variable' ">
-      <param name="A_06" value="id='f' expresión='0.5' tipo='variable' ">
+      <param name="A_01" value="id='Fa' expresión='-1' tipo='variable' ">
+      <param name="A_02" value="id='Fb' expresión='1' tipo='variable' ">
+      <param name="A_03" value="id='Fc' expresión='-2' tipo='variable' ">
+      <param name="A_04" value="id='Fd' expresión='0' tipo='variable' ">
+      <param name="A_05" value="id='Fe' expresión='-2' tipo='variable' ">
+      <param name="A_06" value="id='Ff' expresión='0.5' tipo='variable' ">
       <param name="A_07" value="id='xn' expresión='3' tipo='variable' ">
       <param name="A_08" value="id='yn' expresión='4' tipo='variable' ">
       <param name="A_09" value="id='zn' expresión='4' tipo='variable' ">
-      <param name="A_10" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
-      <param name="A_11" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
-      <param name="A_12" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
-      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
-      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
-      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_10" value="id='dx' expresión='(Fb-Fa)/xn' tipo='variable' ">
+      <param name="A_11" value="id='dy' expresión='(Fd-Fc)/yn' tipo='variable' ">
+      <param name="A_12" value="id='dz' expresión='(Ff-Fe)/zn' tipo='variable' ">
+      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='Fa+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='Fc+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='Fe+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
       <param name="A_16" value="id='__' expresión='0' tipo='variable' info='arriba de esta variable están las definiciones necesarias para dibujar el campo vectorial' ">
       <param name="A_17" value="id='ua' expresión='-2' tipo='variable' ">
       <param name="A_18" value="id='ub' expresión='2' tipo='variable' ">

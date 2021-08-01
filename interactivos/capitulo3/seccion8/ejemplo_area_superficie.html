@@ -44,12 +44,11 @@
       <param name="A_16" value="id='du' expresión='(ub-ua)/m' tipo='variable' ">
       <param name="A_17" value="id='dv' expresión='(vb-va)/n' tipo='variable' ">
       <param name="A_18" value="id='int_sup()' algoritmo='sí' expresión='0' local='i' inicio='i=0;suma=0' hacer='int_sup_aux(i);i=i+1' mientras='i<m' tipo='función' ">
-      <param name="A_19" value="id='int_sup_aux(i)' algoritmo='sí' expresión='0' local='j' inicio='j=0' hacer='uu=ua+du*(i+0.5);vv=va+dv*(j+0.5);;val=f(r1(uu,vv),r2(uu,vv),r3(uu,vv));val=val*sqrt(N1(uu,vv)^2+N2(uu,vv)^2+N3(uu,vv)^2);val=val*du*dv;;suma=suma+val;;j=j+1' mientras='j<n' tipo='función' info='aproximación de la integral de superficie (por suma)' ">
+      <param name="A_19" value="id='int_sup_aux(i)' algoritmo='sí' expresión='0' local='j,uu,vv' inicio='j=0' hacer='uu=ua+du*(i+0.5);vv=va+dv*(j+0.5);;val=f(r1(uu,vv),r2(uu,vv),r3(uu,vv));val=val*sqrt(N1(uu,vv)^2+N2(uu,vv)^2+N3(uu,vv)^2);val=val*du*dv;;suma=suma+val;;j=j+1' mientras='j<n' tipo='función' info='aproximación de la integral de superficie (por suma)' ">
       <param name="A_20" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.rot.z=0' ">
       <param name="A_21" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='int_sup()' ">
-      <param name="S_01" value="espacio='E1' tipo='superficie' color='400000ff' color_reverso='400000ff' expresión='x=r1(ua+u*(ub-ua),va+v*(vb-va));y=r2(ua+u*(ub-ua),va+v*(vb-va));z=r3(ua+u*(ub-ua),va+v*(vb-va))' modelo='metal' Nu='3*ceil(ub-ua)' Nv='3*ceil(vb-va)' info='S' ">
+      <param name="S_01" value="espacio='E1' tipo='superficie' color='400000ff' color_reverso='400000ff' expresión='uu=ua+u*(ub-ua);vv=va+v*(vb-va);x=r1(uu,vv);y=r2(uu,vv);z=r3(uu,vv)' modelo='metal' Nu='3*ceil(ub-ua)' Nv='3*ceil(vb-va)' info='S' ">
       <param name="S_02" value="espacio='E1' tipo='texto' color='000000' expresión='[20,20]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green0\blue0;}\cf0\f0\fs50 área {\*\mjaformula\i =∬\i0{\subix\i S\i0}\i  1dS ≈ \i0{\expr suma\decimals 2\fixed1}}}' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='integral de superficie' ">
-      <param name="S_03" value="espacio='E1' tipo='segmento' color='000000' dibujar-si='0' expresión='(0,0,0)(s==0?15:0, s=1?15:0, s==2?15:0)' familia='s' s.intervalo='[0,2]' s.pasos='2' ancho='1' Nu='7' ">
     </ajs>
   </div>
 
