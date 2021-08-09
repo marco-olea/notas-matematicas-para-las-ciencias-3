@@ -19,12 +19,12 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E2' ">
-      <param name="C_01" value="id='F1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' nombre='F(x,y,z)' expresión='(0,0,400,40)' valor='y*z^2' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_02" value="id='F2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(400,0,200,40)' valor='x*z^2-z' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_03" value="id='F3_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(600,0,200,40)' valor='2x*y*z' visible='sí' font_family='Serif' cursiva='sí' ">
-      <param name="C_04" value="id='ver_F' tipo='checkbox' región='interior' espacio='E2' nombre='F' expresión='(0,40,400,40)' font_family='Serif' cursiva='sí' position='a_right' ">
-      <param name="C_05" value="id='ver_rotF' tipo='checkbox' región='interior' espacio='E2' nombre='rot F' expresión='(400,40,400,40)' font_family='Serif' cursiva='sí' position='a_right' ">
-      <param name="C_06" value="id='btn' interfaz='botón' tipo='numérico' región='interior' espacio='E2' nombre='Calcular' expresión='(0,80,200,40)' color='222222' color-int='f0f8ff' fuente puntos='19' acción='calcular' parámetro='int_sup()' info='botón de calcular' ">
+      <param name="C_01" value="id='ver_F' tipo='checkbox' región='interior' espacio='E2' nombre='F' expresión='(0,0,400,40)' font_family='Serif' cursiva='sí' position='a_left' ">
+      <param name="C_02" value="id='ver_rotF' tipo='checkbox' región='interior' espacio='E2' nombre='rot F' expresión='(400,0,400,40)' font_family='Serif' cursiva='sí' position='a_left' ">
+      <param name="C_03" value="id='btn' interfaz='botón' tipo='numérico' región='interior' espacio='E2' nombre='Calcular' expresión='(0,40,200,40)' color='222222' color-int='f0f8ff' fuente puntos='19' acción='calcular' parámetro='int_sup()' info='botón de calcular' ">
+      <param name="C_04" value="id='F1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' nombre='F(x,y,z)' expresión='(0,640,400,40)' valor='y*z^2' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_05" value="id='F2_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(400,640,200,40)' valor='x*z^2-z' visible='sí' font_family='Serif' cursiva='sí' ">
+      <param name="C_06" value="id='F3_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(600,640,200,40)' valor='2x*y*z' visible='sí' font_family='Serif' cursiva='sí' ">
       <param name="C_07" value="id='ua' tipo='numérico' interfaz='pulsador' región='interior' espacio='E2' nombre='uₘᵢₙ' expresión='(0,680,400,40)' max='ub' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="C_08" value="id='ub' tipo='numérico' interfaz='pulsador' región='interior' espacio='E2' nombre='uₘₐₓ' expresión='(400,680,400,40)' valor='3' min='ua' visible='sí' font_family='Serif' cursiva='sí' image_inc='../../../images/descartes/inc.svg' image_dec='../../../images/descartes/dec.svg' btn_pos='h_left_right' ">
       <param name="C_09" value="id='g1_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' nombre='g₁(u)' expresión='(0,720,400,40)' valor='sin(u)-1' visible='sí' font_family='Serif' cursiva='sí' ">
@@ -34,21 +34,21 @@
       <param name="C_13" value="id='r3_texto' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E2' expresión='(600,760,200,40)' valor='u*v' visible='sí' font_family='Serif' cursiva='sí' ">
       <param name="A_01" value="id='upm' expresión='(ua+ub)/2' tipo='variable' info='punto medio entra ua y ub' ">
       <param name="A_02" value="id='vpm' expresión='(g1(upm)+g2(upm))/2' tipo='variable' info='punto medio entra g1(upm) y g2(upm)' ">
-      <param name="A_03" value="id='a' expresión='r1(upm,vpm)-3' tipo='variable' ">
-      <param name="A_04" value="id='b' expresión='r1(upm,vpm)+3' tipo='variable' ">
-      <param name="A_05" value="id='c' expresión='r2(upm,vpm)-3' tipo='variable' ">
-      <param name="A_06" value="id='d' expresión='r2(upm,vpm)+3' tipo='variable' ">
-      <param name="A_07" value="id='e' expresión='r3(upm,vpm)-3' tipo='variable' ">
-      <param name="A_08" value="id='f' expresión='r3(upm,vpm)+3' tipo='variable' ">
+      <param name="A_03" value="id='Fa' expresión='r1(upm,vpm)-3' tipo='variable' ">
+      <param name="A_04" value="id='Fb' expresión='r1(upm,vpm)+3' tipo='variable' ">
+      <param name="A_05" value="id='Fc' expresión='r2(upm,vpm)-3' tipo='variable' ">
+      <param name="A_06" value="id='Fd' expresión='r2(upm,vpm)+3' tipo='variable' ">
+      <param name="A_07" value="id='Fe' expresión='r3(upm,vpm)-3' tipo='variable' ">
+      <param name="A_08" value="id='Ff' expresión='r3(upm,vpm)+3' tipo='variable' ">
       <param name="A_09" value="id='xn' expresión='5' tipo='variable' ">
       <param name="A_10" value="id='yn' expresión='5' tipo='variable' ">
       <param name="A_11" value="id='zn' expresión='5' tipo='variable' ">
-      <param name="A_12" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
-      <param name="A_13" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
-      <param name="A_14" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
-      <param name="A_15" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
-      <param name="A_16" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
-      <param name="A_17" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_12" value="id='dx' expresión='(Fb-Fa)/xn' tipo='variable' ">
+      <param name="A_13" value="id='dy' expresión='(Fd-Fc)/yn' tipo='variable' ">
+      <param name="A_14" value="id='dz' expresión='(Ff-Fe)/zn' tipo='variable' ">
+      <param name="A_15" value="id='X(s)' algoritmo='no' expresión='Fa+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_16" value="id='Y(s)' algoritmo='no' expresión='Fc+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_17" value="id='Z(s)' algoritmo='no' expresión='Fe+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
       <param name="A_18" value="id='F1(x,y,z)' algoritmo='no' expresión='_Eval_(F1_texto)' tipo='función' ">
       <param name="A_19" value="id='F2(x,y,z)' algoritmo='no' expresión='_Eval_(F2_texto)' tipo='función' ">
       <param name="A_20" value="id='F3(x,y,z)' algoritmo='no' expresión='_Eval_(F3_texto)' tipo='función' ">
@@ -84,7 +84,7 @@
       <param name="S_06" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(r1(upm,vpm),r2(upm,vpm),r3(upm,vpm))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red0\green128\blue0;}\cf0\f0\fs40 S}' decimales='2' ancho='1' offset_dist='30' offset_angle='270' info='S texto' ">
       <param name="S_07" value="espacio='E2' tipo='curva' color='ff0000' expresión='uu=s==0?ua:(s==1?ub:ua+u*(ub-ua));vv=s==2?g1(uu):(s==3?g2(uu):g1(uu)+u*(g2(uu)-g1(uu)));x=r1(uu,vv);y=r2(uu,vv);z=r3(uu,vv)' familia='s' s.intervalo='[0,3]' s.pasos='3' cortar='sí' ancho='3' Nu='s==0?pasos2:(s==1?pasos3:pasos1)' info='contornos de S' ">
       <param name="S_08" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' expresión='(r1(ua,g2(ua)),r2(ua,g2(ua)),r3(ua,g2(ua)))' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red255\green0\blue0;}\cf0\f0\fs40 C}' decimales='2' ancho='1' offset_dist='20' offset_angle='90' info='C texto' ">
-      <param name="S_09" value="espacio='E2' tipo='texto' color='000000' expresión='[210,82]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i ∬\i0{\subix\i S\i0}rot\i ·dS =\i0{\integral{\from\i C\i0}{\to}{\what\i\b F\b0\i0\i ·d\i0\i\b r\b0\i0}}\i ≈ \i0\i{\expr suma\decimals 3\fixed1}\i0}\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='texto' ">
+      <param name="S_09" value="espacio='E2' tipo='texto' color='000000' expresión='[210,42]' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}\f0\fs40 \fs50{\*\mjaformula\i ∬\i0{\subix\i S\i0}rot \i\b F\b0\i0\i ·dS =\i0{\integral{\from\i C\i0}{\to}{\what\i\b F\b0\i0\i ·d\i0\i\b r\b0\i0}}\i ≈ \i0\i{\expr suma\decimals 3\fixed1}\i0}\fs40 }' decimales='2' ancho='1' align='a_left' anchor='a_top_left' info='texto' ">
       <param name="S_10" value="espacio='E2' tipo='segmento' color='0000ff' dibujar-si='ver_F' expresión='(X(s),Y(s),Z(s)) (X(s)+F1(X(s),Y(s),Z(s)),Y(s)+F2(X(s),Y(s),Z(s)),Z(s)+F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' ancho='1' Nu='1' info='F líneas' ">
       <param name="S_11" value="espacio='E1' tipo='punto' color='0000ff' color_reverso='0000ff' dibujar-si='ver_F' expresión='(X(s)+F1(X(s),Y(s),Z(s)),Y(s)+F2(X(s),Y(s),Z(s)),Z(s)+F3(X(s),Y(s),Z(s)))' familia='s' s.intervalo='[0,(xn+1)*(yn+1)*(zn+1)-1]' s.pasos='(xn+1)*(yn+1)*(zn+1)-1' decimales='2' ancho='1' offset_dist='10' offset_angle='270' info='F puntos' ">
       <param name="S_12" value="espacio='E2' tipo='punto' color='eeffaa' color_reverso='6090a0' dibujar-si='ver_F' expresión='(a,d,f)' texto='{\rtf1\uc0{\fonttbl\f0\fcharset0 Times New Roman;}{\colortbl\red238\green255\blue170;\red0\green0\blue255;}\cf0\f0\fs40 \cf1\fs50{\*\mjaformula\i\b F\b0\i0}\cf0\fs40 }' decimales='2' ancho='0' offset_dist='20' offset_angle='135' info='F texto' ">

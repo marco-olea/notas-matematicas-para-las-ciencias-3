@@ -19,23 +19,23 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='30' O.x='100' O.y='90' ">
-      <param name="C_01" value="id='ver_F' tipo='checkbox' región='interior' espacio='E1' nombre='Ver F(x,y,z)' expresión='(0,0,400,40)' valor='1' position='a_right' ">
-      <param name="C_02" value="id='ver_rotF' tipo='checkbox' región='interior' espacio='E1' nombre='Ver rot F(x,y,z)' expresión='(400,0,400,40)' position='a_right' ">
-      <param name="A_01" value="id='a' expresión='-10' tipo='variable' ">
-      <param name="A_02" value="id='b' expresión='6' tipo='variable' ">
-      <param name="A_03" value="id='c' expresión='-8' tipo='variable' ">
-      <param name="A_04" value="id='d' expresión='4' tipo='variable' ">
-      <param name="A_05" value="id='e' expresión='-2' tipo='variable' ">
-      <param name="A_06" value="id='f' expresión='9' tipo='variable' ">
+      <param name="C_01" value="id='ver_F' tipo='checkbox' región='interior' espacio='E1' nombre='Ver F(x,y,z)' expresión='(0,0,400,40)' valor='1' position='a_left' ">
+      <param name="C_02" value="id='ver_rotF' tipo='checkbox' región='interior' espacio='E1' nombre='Ver rot F(x,y,z)' expresión='(400,0,400,40)' position='a_left' ">
+      <param name="A_01" value="id='Fa' expresión='-10' tipo='variable' ">
+      <param name="A_02" value="id='Fb' expresión='6' tipo='variable' ">
+      <param name="A_03" value="id='Fc' expresión='-8' tipo='variable' ">
+      <param name="A_04" value="id='Fd' expresión='4' tipo='variable' ">
+      <param name="A_05" value="id='Fe' expresión='-2' tipo='variable' ">
+      <param name="A_06" value="id='Ff' expresión='9' tipo='variable' ">
       <param name="A_07" value="id='xn' expresión='5' tipo='variable' ">
       <param name="A_08" value="id='yn' expresión='4' tipo='variable' ">
       <param name="A_09" value="id='zn' expresión='4' tipo='variable' ">
-      <param name="A_10" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
-      <param name="A_11" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
-      <param name="A_12" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
-      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
-      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
-      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_10" value="id='dx' expresión='(Fb-Fa)/xn' tipo='variable' ">
+      <param name="A_11" value="id='dy' expresión='(Fd-Fc)/yn' tipo='variable' ">
+      <param name="A_12" value="id='dz' expresión='(Ff-Fe)/zn' tipo='variable' ">
+      <param name="A_13" value="id='X(s)' algoritmo='no' expresión='Fa+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_14" value="id='Y(s)' algoritmo='no' expresión='Fc+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_15" value="id='Z(s)' algoritmo='no' expresión='Fe+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
       <param name="A_16" value="id='F1(x,y,z)' algoritmo='no' expresión='-z/5' tipo='función' ">
       <param name="A_17" value="id='F2(x,y,z)' algoritmo='no' expresión='y/5' tipo='función' ">
       <param name="A_18" value="id='F3(x,y,z)' algoritmo='no' expresión='x/5' tipo='función' ">

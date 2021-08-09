@@ -19,8 +19,8 @@
       <param name="Idioma" value="español">
       <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
       <param name="E_01" value="tipo='R3' R3='sí' id='E1' escala='58' O.y='-35' ">
-      <param name="C_01" value="id='ver_F' tipo='checkbox' región='norte' espacio='E1' nombre='F' expresión='(0,0,150,40)' valor='1' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
-      <param name="C_02" value="id='ver_rotF' tipo='checkbox' región='norte' espacio='E1' nombre='rot F' expresión='(0,0,150,40)' font_family='Serif' negrita='sí' cursiva='sí' position='a_right' ">
+      <param name="C_01" value="id='ver_F' tipo='checkbox' región='norte' espacio='E1' nombre='F' expresión='(0,0,150,40)' valor='1' font_family='Serif' negrita='sí' cursiva='sí' position='a_left' ">
+      <param name="C_02" value="id='ver_rotF' tipo='checkbox' región='norte' espacio='E1' nombre='rot F' expresión='(0,0,150,40)' font_family='Serif' negrita='sí' cursiva='sí' position='a_left' ">
       <param name="A_01" value="id='ua' expresión='0' tipo='variable' ">
       <param name="A_02" value="id='ub' expresión='pi' tipo='variable' ">
       <param name="A_03" value="id='va' expresión='0' tipo='variable' ">
@@ -28,21 +28,21 @@
       <param name="A_05" value="id='r1(u,v)' algoritmo='no' expresión='5sin(u)*cos(v)' tipo='función' ">
       <param name="A_06" value="id='r2(u,v)' algoritmo='no' expresión='3*cos(u)' tipo='función' ">
       <param name="A_07" value="id='r3(u,v)' algoritmo='no' expresión='-3sin(u)*sin(v)' tipo='función' ">
-      <param name="A_08" value="id='a' expresión='-5' tipo='variable' ">
-      <param name="A_09" value="id='b' expresión='5' tipo='variable' ">
-      <param name="A_10" value="id='c' expresión='-3' tipo='variable' ">
-      <param name="A_11" value="id='d' expresión='3' tipo='variable' ">
-      <param name="A_12" value="id='e' expresión='-3' tipo='variable' ">
-      <param name="A_13" value="id='f' expresión='0' tipo='variable' ">
+      <param name="A_08" value="id='Fa' expresión='-5' tipo='variable' ">
+      <param name="A_09" value="id='Fb' expresión='5' tipo='variable' ">
+      <param name="A_10" value="id='Fc' expresión='-3' tipo='variable' ">
+      <param name="A_11" value="id='Fd' expresión='3' tipo='variable' ">
+      <param name="A_12" value="id='Fe' expresión='-3' tipo='variable' ">
+      <param name="A_13" value="id='Ff' expresión='0' tipo='variable' ">
       <param name="A_14" value="id='xn' expresión='6' tipo='variable' ">
       <param name="A_15" value="id='yn' expresión='5' tipo='variable' ">
       <param name="A_16" value="id='zn' expresión='3' tipo='variable' ">
-      <param name="A_17" value="id='dx' expresión='(b-a)/xn' tipo='variable' ">
-      <param name="A_18" value="id='dy' expresión='(d-c)/yn' tipo='variable' ">
-      <param name="A_19" value="id='dz' expresión='(f-e)/zn' tipo='variable' ">
-      <param name="A_20" value="id='X(s)' algoritmo='no' expresión='a+dx*(s%(xn+1))' tipo='función' ">
-      <param name="A_21" value="id='Y(s)' algoritmo='no' expresión='c+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
-      <param name="A_22" value="id='Z(s)' algoritmo='no' expresión='e+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
+      <param name="A_17" value="id='dx' expresión='(Fb-Fa)/xn' tipo='variable' ">
+      <param name="A_18" value="id='dy' expresión='(Fd-Fc)/yn' tipo='variable' ">
+      <param name="A_19" value="id='dz' expresión='(Ff-Fe)/zn' tipo='variable' ">
+      <param name="A_20" value="id='X(s)' algoritmo='no' expresión='Fa+dx*(s%(xn+1))' tipo='función' ">
+      <param name="A_21" value="id='Y(s)' algoritmo='no' expresión='Fc+dy*(floor(s/(xn+1))%(yn+1))' tipo='función' ">
+      <param name="A_22" value="id='Z(s)' algoritmo='no' expresión='Fe+dz*floor(s/((xn+1)*(yn+1)))' tipo='función' ">
       <param name="A_23" value="id='F1(x,y,z)' algoritmo='no' expresión='(9x^2+25y^2)/500' tipo='función' ">
       <param name="A_24" value="id='F2(x,y,z)' algoritmo='no' expresión='(x^2*z^2)/500' tipo='función' ">
       <param name="A_25" value="id='F3(x,y,z)' algoritmo='no' expresión='(2.71^x*y*z)/500' tipo='función' ">
