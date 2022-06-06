@@ -5,6 +5,7 @@ body {
 
 .page h1 {
   color: var(--h1-color);
+  margin-top: 0;
 }
 .page h2 {
   color: var(--h2-color);
@@ -136,7 +137,6 @@ figcaption[class="interactive_note"] {
 
 /* esta linea es solo para ver el limite del texto, para que no sobre pase los números */
 .page_number {
-  border-top: 1px solid #ddd;
   padding: 0.5em 3.75em 0 3.75em;
 }
 .page:nth-child(even) .page_number {
@@ -144,4 +144,8 @@ figcaption[class="interactive_note"] {
 }
 .page:nth-child(odd) .page_number {
   text-align: left;
+}
+
+body.dark .invertcolor {
+  filter: invert(1) hue-rotate(180deg);
 }

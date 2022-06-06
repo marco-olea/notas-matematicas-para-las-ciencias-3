@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="extra/style.css" type="text/css">
 
   <!-- inclusión de la biblioteca KaTex -->
-  <link rel="stylesheet" type="text/css" href="extra/katex/katex.min.css"/>
+  <link rel="stylesheet" type="text/css" href="extra/katex/katex.min.css">
   <script src="extra/katex/katex.min.js"></script>
   <script src="extra/katex/auto-render.min.js"></script>
   <script>
@@ -66,7 +66,6 @@
 
       <!--  -->
       <div class="page" style="display:flex; align-items:center; justify-content:center;">
-        <!-- <a style="width:50%" target="_blank" href="http://descartes.matem.unam.mx/"><img src="images/general/logo_descartes.svg" width="100%"></a> -->
       </div>
 
       <!--  -->
@@ -75,7 +74,7 @@
         <p><b style="font-size:180%;">Notas para el curso Matemáticas para las Ciencias 3</b></p>
 
         <br><br><br><br><br><br><br><br><br>
-        <img src="images/general/logo_UNAM.svg" height="75px" style="float:right;padding-top:0.5em;">
+        <img src="images/general/logo_UNAM.svg" height="75px" class="invertcolor" style="float:right; padding-top:0.5em;">
         <p style="text-align:left; margin:0;">
           <br>
           Marco Iván Olea Olvera <br>
@@ -142,11 +141,10 @@
         <div class="toc_link" href="#sec_c3_área_de_una_superficie"></div>
         <div class="toc_link" href="#sec_c3_integral_de_funciones_reales_sobre_superficies"></div>
         <div class="toc_link" href="#sec_c3_integral_de_superficie"></div>
+        <div class="toc_link" href="#sec_c3_aplicaciones"></div>
       </div>
 
       <div class="page">
-        <div class="toc_link" href="#sec_c3_aplicaciones"></div>
-
         <div class="toc_link" href="#cap_teorema_de_green_y_strokes"></div>
         <div class="toc_link" href="#sec_c4_campos_conservativos"></div>
         <div class="toc_link" href="#sec_c4_teorema_de_green"></div>
@@ -166,7 +164,7 @@
 
         <p>Este libro abarca el temario principal del curso Matemáticas para las Ciencias Aplicadas III, asignatura obligatoria para las carreras de Ciencias de la Computación y Ciencias de la Tierra. Uno de sus objetivos es la visualización de los conceptos presentados en la materia. A la gran mayoría de las figuras contenidas aquí se les pueden modificar sus parámetros y observar el significado geométrico de realizar dichos cambios.</p>
 
-        <p>No es la finalidad de este libro demostrar formalmente teoremas, ni indagar en la teoría del Cálculo. Se trata de sustentar el material del profesor, proporcionando al alumno un contexto visual de los temás que expone en su curso.</p>
+        <p>No es la finalidad de este libro demostrar formalmente teoremas, ni indagar en la teoría del Cálculo. Se trata de sustentar el material del profesor, proporcionando al alumno un contexto visual de los temas que expone en su curso.</p>
       </div>
 
 
@@ -197,7 +195,7 @@
         <p>Para esto dividiremos la región $R$ en rectángulos $R_{ij}$ de área $\Delta A$ cuyos lados miden $\Delta x$ y $\Delta y$. Esto se logra dividiendo el intervalo $[a, b]$ en $m$ subintervalos del mismo tamaño y dividiendo el intervalo $[c, d]$ en $n$ subintervalos del mismo tamaño (Figura 1.1). Por tanto: $\Delta x = \frac{b - a}{m}$, $\Delta y = \frac{d - c}{n}$, y $\Delta A = \Delta x \Delta y$.</p>
 
         <figure id="region_rectangular">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/region_rectangular.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/region_rectangular.html" poster="poster/page_8.png"></div>
           <figcaption>La región $R$ dividida en $m \cdot n$ rectángulos $R_{ij}$. Haz clic dentro de dichos rectángulos para cambiar los puntos $(x^*_{ij}, y^*_{ij})$.</figcaption>
         </figure>
 
@@ -212,7 +210,7 @@
         \]</p>
 
         <figure>
-          <div class="interactive" width="800" height="640" src="interactivos/capitulo1/seccion1/integral_rectangulos.html"></div>
+          <div class="interactive" width="800" height="640" src="interactivos/capitulo1/seccion1/integral_rectangulos.html" poster="poster/page_9.png"></div>
           <figcaption>Experimenta cambiando la función $f(x,y)$, los intervalos $[a, b]$ y $[c, d]$, la cantidad de rectángulos interiores con $m$ y $n$, y los puntos $(x^*_{ij}, y^*_{ij})$ con la figura en la parte superior izquierda.</figcaption>
         </figure>
 
@@ -265,7 +263,7 @@
         
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_1.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_1.html" poster="poster/page_11.png"></div>
           <figcaption>El volumen del sólido bajo $f(x,y)$ más el volumen del sólido bajo $g(x,y)$ es igual al volumen del sólido bajo $f(x,y) + g(x,y)$.</figcaption>
         </figure>
       </div>
@@ -280,7 +278,7 @@
         </ol>
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_2.html" poster="poster/page_12.png"></div>
           <figcaption>El volumen del sólido bajo $cf(x,y)$ es igual a $c$ veces el volumen del sólido bajo $f(x,y)$.</figcaption>
         </figure>
       </div>
@@ -295,7 +293,7 @@
         </ol>
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_3.html" poster="poster/page_13.png"></div>
           <figcaption>El volumen del sólido entre $f(x,y)$ y $R$ es igual al volumen del sólido entre $f(x,y)$ y $S$ más el volumen del sólido entre $f(x,y)$ y $T$.</figcaption>
         </figure>
       </div>
@@ -310,8 +308,8 @@
         </ol>
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_4.html"></div>
-          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) < f(x,y)$, entonces el volumen del sólido bajo $g(x,y)$ es menor al volumen del sólido bajo $f(x,y)$.</figcaption>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_4.html" poster="poster/page_14.png"></div>
+          <figcaption>Usa la barra para cambiar la superficie $z = g(x,y)$. Observa que si existe al menos un $(x,y) \in R$ tal que $g(x,y) &lt; f(x,y)$, entonces el volumen del sólido bajo $g(x,y)$ es menor al volumen del sólido bajo $f(x,y)$.</figcaption>
         </figure>
       </div>
 
@@ -326,7 +324,7 @@
         </ol>
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_5.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_5.html" poster="poster/page_15.png"></div>
           <figcaption>Observa el volumen del prisma rectangular de base $R$ y altura $m$, así como el volumen del prisma rectangular de base $R$ y altura $M$.</figcaption>
         </figure>
       </div>
@@ -341,7 +339,7 @@
         </ol>
 
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_6.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion1/propiedades_integral_6.html" poster="poster/page_16.png"></div>
           <figcaption>El área bajo la curva $h_1(x)$ (rojo) multiplicado por el área bajo la curva $h_2(y)$ (verde) es igual al volumen del sólido bajo la superficie $z = f(x,y) = h_1(x)h_2(y)$.</figcaption>
         </figure>
       </div>
@@ -364,13 +362,11 @@
             <li>\[\int^d_c\int^b_a f(x,y)dxdy = \int^d_c \left[ \int^b_a f(x,y)dx \right] dy\]</li>
           </ol>
         </div>
-
-        <p style="text-align-last:justify">La expresión (1) significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra</p>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>respecto a $x$. La expresión (2) significa que se integra $f(x,y)$ respecto a $x$, tratando a $y$ como constante, y luego el resultado se integra respecto a $y$.</p>
+        <p>La expresión (1) significa que se integra $f(x,y)$ respecto a $y$, tratando a $x$ como constante, y luego el resultado se integra respecto a $x$. La expresión (2) significa que se integra $f(x,y)$ respecto a $x$, tratando a $y$ como constante, y luego el resultado se integra respecto a $y$.</p>
 
         <h3>Teorema de Fubini</h3>
 
@@ -380,9 +376,9 @@
           \[
             \begin{aligned}
               \iint\limits_R f(x,y)dA
-              &= \iint\limits_R f(x,y)dxdy \\
-              &= \int^b_a\int^d_c f(x,y)dydx \\
-              &= \int^d_c\int^b_a f(x,y)dxdy
+              &amp;= \iint\limits_R f(x,y)dxdy \\
+              &amp;= \int^b_a\int^d_c f(x,y)dydx \\
+              &amp;= \int^d_c\int^b_a f(x,y)dxdy
             \end{aligned}
           \]</p>
         </div>
@@ -391,12 +387,12 @@
       <!--  -->
       <div class="page">
         <figure>
-          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion2/fubini_debil_1.html"></div>
+          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion2/fubini_debil_1.html" poster="poster/page_19_1.png"></div>
           <figcaption>$\int^b_a\int^d_c f(x,y)dydx$</figcaption>
         </figure>
 
         <figure>
-          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion2/fubini_debil_2.html"></div>
+          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion2/fubini_debil_2.html" poster="poster/page_19_2.png"></div>
           <figcaption>$\int^d_c\int^b_a f(x,y)dxdy$</figcaption>
         </figure>
       </div>
@@ -412,7 +408,7 @@
         <p>Sea $D$ una región general acotada. Supongamos que su contorno es una curva simple, cerrada, continua y suave por partes. Como $D$ es acotada, debe existir una región rectangular $R$ (en el mismo plano) que contiene a $D$ ($D \subseteq R$), como se muestra en la <ref ref_id="region_general"></ref>.</p>
 
         <figure id="region_general">
-          <div class="interactive" width="800" height="525" src="interactivos/capitulo1/seccion3/region_general.html"></div>
+          <div class="interactive" width="800" height="525" src="interactivos/capitulo1/seccion3/region_general.html" poster="poster/page_20.png"></div>
           <figcaption>Ejemplo de una región general acotada $D$ y la región rectangular $R$ que lo contiene.</figcaption>
         </figure>
       </div>
@@ -423,8 +419,8 @@
         \[
           g(x,y) = 
             \begin{cases}
-              f(x,y) & \text{si } (x,y) \in D \\
-              0 & \text{si } (x,y) \not\in D
+              f(x,y) &amp; \text{si } (x,y) \in D \\
+              0 &amp; \text{si } (x,y) \not\in D
             \end{cases}
         \]
         </p>
@@ -451,12 +447,12 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_region_general_tipoi">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_region_general_tipoi.html"></div>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_region_general_tipoi.html" poster="poster/page_22_1.png"></div>
           <figcaption>Ejemplo de una región de Tipo I. La parte sombreada sólo se mostrará si $g_1(x) \leq g_2(x)$ para todo $a \leq x \leq b$.</figcaption>
         </figure>
 
         <figure id="ejemplo_region_general_tipoii">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_region_general_tipoii.html"></div>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_region_general_tipoii.html" poster="poster/page_22_2.png"></div>
           <figcaption>Ejemplo de una región de Tipo II. La parte sombreada sólo se mostrará si $h_1(y) \leq h_2(y)$ para todo $c \leq y \leq d$.</figcaption>
         </figure>
       </div>
@@ -464,7 +460,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_region_general_tipoi_y_tipoii">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_region_general_tipoi_y_tipoii.html"></div>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_region_general_tipoi_y_tipoii.html" poster="poster/page_23.png"></div>
           <figcaption>Ejemplo de una región que se puede describir como Tipo I y Tipo II.</figcaption>
         </figure>
 
@@ -510,12 +506,12 @@
       <!--  -->
       <div class="page">
         <figure>
-          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion3/fubini_fuerte_1.html"></div>
+          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion3/fubini_fuerte_1.html" poster="poster/page_25_1.png"></div>
           <figcaption>$\int^b_a \int^{g_2(x)}_{g_1(x)} f(x,y)dydx$</figcaption>
         </figure>
 
         <figure>
-          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion3/fubini_fuerte_2.html"></div>
+          <div class="interactive" width="530" height="300" src="interactivos/capitulo1/seccion3/fubini_fuerte_2.html" poster="poster/page_25_2.png"></div>
           <figcaption>$\int^d_c \int^{h_2(y)}_{h_1(y)} f(x,y)dxdy$</figcaption>
         </figure>
       </div>
@@ -526,10 +522,9 @@
 
         <p>Las integrales dobles pueden ser más fáciles de calcular si se cambian de coordenadas rectangulares a coordenadas polares. Ahora explicaremos el concepto de una integral doble en una región rectangular definida con coordenadas polares.</p>
 
-        <p>Cuando definimos la integral doble de una función continua sobre una región rectangular, dividimos dicha región en rectángulos más pequeños cuyos lados $\Delta x$ y $\Delta y$ eran paralelos a los ejes de las abscisas y ordenadas, y eran de tamaño constante (<ref ref_id="region_rectangular"></ref>). En coordenadas polares, trabajaremos con <b>rectángulos polares</b> cuyos lados $\Delta r$ y $\Delta \theta$ son de tamaño constante. Formalmente:
-        \[
-          R = \{(r, \theta): a \leq r \leq b, \alpha \leq \theta \leq \beta\}
-        \]</p>
+        <p>Cuando definimos la integral doble de una función continua sobre una región rectangular, dividimos dicha región en rectángulos más pequeños cuyos lados $\Delta x$ y $\Delta y$ eran paralelos a los ejes de las abscisas y ordenadas, y eran de tamaño constante (<ref ref_id="region_rectangular"></ref>). En coordenadas polares, trabajaremos con <b>rectángulos polares</b> cuyos lados $\Delta r$ y $\Delta \theta$ son de tamaño constante. Formalmente:</p>
+
+        <span style="padding:-1em 0">\[ R = \{(r, \theta): a \leq r \leq b, \alpha \leq \theta \leq \beta\} \]</span>
 
         <p>Sea $f(r,\theta)$ (con $f: \R^2 \rightarrow \R$) una función definida sobre un rectángulo polar $R$. Dividiremos el intervalo $[a, b]$ en $m$ subintervalos de tamaño $\Delta r = \frac{b - a}{m}$ y dividiremos el intervalo $[\alpha, \beta]$ en $n$ subintervalos de tamaño $\Delta \theta = \frac{\beta - \alpha}{n}$. Por lo tanto, los círculos $r_i$ para $1 \leq i \leq m$ y las semirectas $\theta_j$ para $1 \leq j \leq n$ dividen el rectángulo polar $R$ en $m \cdot n$ rectángulos polares $R_{ij}$ más pequeños.</p>
 
@@ -541,15 +536,15 @@
       <!--  -->
       <div class="page">
         <figure id="rectangulo_polar">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/rectangulo_polar.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/rectangulo_polar.html" poster="poster/page_27.png"></div>
           <figcaption>Un rectángulo polar $R$ dividido en $m \cdot n$ rectángulos polares $R_{ij}$.</figcaption>
         </figure>
 
         <p>base mayor $r_i \Delta \theta$ y base menor $r_{i-1} \Delta \theta$. Por tanto, el área del rectángulo polar $R_{ij}$ es:
           \[
             \begin{aligned}
-                \Delta A &= \frac{1}{2} \Delta r (r_{i-1}\Delta \theta + r_i \Delta \theta) \\
-                &= \frac{1}{2} (r_{i-1} + r_i) \Delta r \Delta \theta
+                \Delta A &amp;= \frac{1}{2} \Delta r (r_{i-1}\Delta \theta + r_i \Delta \theta) \\
+                &amp;= \frac{1}{2} (r_{i-1} + r_i) \Delta r \Delta \theta
             \end{aligned}
           \]</p>
 
@@ -562,7 +557,7 @@
       <!--  -->
       <div class="page">
         <figure id="integral_sobre_polar_rectangular">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_rectangular.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_rectangular.html" poster="poster/page_28.png"></div>
           <figcaption>Una suma de Riemann doble sobre un rectángulo polar.</figcaption>
         </figure>
 
@@ -586,8 +581,8 @@
           \[
             \begin{aligned}
               \iint\limits_R f(r,\theta)dA
-                &= \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) \Delta A \\
-                &= \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
+                &amp;= \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) \Delta A \\
+                &amp;= \lim_{m,n \rightarrow \infty} \sum^m_{i=1} \sum^n_{j=1} f(r^*_{ij}, \theta^*_{ij}) r^*_{ij} \Delta r \Delta \theta
             \end{aligned}
           \]
         </div>
@@ -597,7 +592,7 @@
           \iint\limits_R f(r,\theta)dA = \iint\limits_R f(r,\theta)r\ drd\theta = \int\limits^{\theta=\beta}_{\theta=\alpha} \int\limits^{r=b}_{r=a} f(r,\theta)r\ drd\theta
         \]</p>
 
-        <p>Observa que la expresión $dA$ se sutituye por $rdrd\theta$ al trabajar con coordenadas polares.</p>
+        <p>Observa que la expresión $dA$ se sustituye por $rdrd\theta$ al trabajar con coordenadas polares.</p>
 
         <p>Todas la propiedades enunciadas en el <ref ref_id="propiedades_integral"></ref> para las integrales dobles en coordenadas rectangulares también aplican para coordenadas polares.</p>
 
@@ -626,12 +621,12 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_polar_general_tipoi">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_polar_general_tipoi.html"></div>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_polar_general_tipoi.html" poster="poster/page_31_1.png"></div>
           <figcaption>Ejemplo de una región de Tipo I. La parte sombreada sólo se mostrará si $g_1(r) \leq g_2(r)$ para todo $a \leq r \leq b$.</figcaption>
         </figure>
 
         <figure id="ejemplo_polar_general_tipoii">
-          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_polar_general_tipoii.html"></div>
+          <div class="interactive" width="675" height="375" src="interactivos/capitulo1/seccion3/ejemplo_polar_general_tipoii.html" poster="poster/page_31_2.png"></div>
           <figcaption>Ejemplo de una región de Tipo II. La parte sombreada sólo se mostrará si $h_1(\theta) \leq h_2(\theta)$ para todo $\alpha \leq \theta \leq \beta$.</figcaption>
         </figure>
       </div>
@@ -639,7 +634,7 @@
       <!--  -->
       <div class="page">
         <figure>
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_general.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion3/integral_sobre_polar_general.html" poster="poster/page_32.png"></div>
           <figcaption>Observa el sólido que se encuentra entre una región polar general y una función continua $f(r,\theta)$.</figcaption>
         </figure>
       </div>
@@ -662,13 +657,13 @@
           Sea $T: G \rightarrow R$ una transformación, donde $G \subseteq \R^2$ es una región en el plano $uv$ y $R \subseteq \R^2$ es una región en otro plano. Decimos que $T$ es <b>inyectiva</b> si para todo $(u_1,v_1),(u_2,v_2) \in G$ tal que $(u_1,v_1) \not = (u_2,v_2)$, entonces $T(u_1,v_1) \not = T(u_2,v_2)$.
         </div>
 
-        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la tranformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son la función identidad.</p>
+        <p>Para probar que $T$ es una transformación inyectiva, se supone $T(u_1,v_1) = T(u_2,v_2)$ y se muestra que $(u_1,v_1) = (u_2,v_2)$. Si la transformación $T$ es inyectiva en el dominio $G$, entonces existe la inversa $T^{-1}$ con el dominio $R$ tal que $T^{-1} \circ T$ y $T \circ T^{-1}$ son la función identidad.</p>
       </div>
 
       <!--  -->
       <div class="page">
         <figure id="ejemplo_transformacion_planar">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo1/seccion4/ejemplo_transformacion_planar.html"></div>
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo1/seccion4/ejemplo_transformacion_planar.html" poster="poster/page_34.png"></div>
           <figcaption>Una transformación de una región $G$ en el plano $uv$ a una región $R$ en el plano $xy$, mediante el cambio de variables $x = g(u,v)$ y $y = h(u,v)$, es decir, $T(u,v) = (g(u,v),h(u,v))$.</figcaption>
         </figure>
       </div>
@@ -729,7 +724,7 @@
       <!--  -->
       <div class="page">
         <figure id="jacobiano_explicacion">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/jacobiano_explicacion.html" poster="poster/page_37.png"></div>
           <figcaption>Mueve el cursor dentro de $S$ para ver cómo se mapea a un punto de $R$. Los vectores verdes miden aproximadamente lo mismo que los morados, por lo que el área de $R$ se aproxima al área del paralelogramo $(\Delta A \approx \Vert \Delta u \textbf{r}_u \times \Delta v \textbf{r}_v \Vert)$.</figcaption>
         </figure>
 
@@ -737,22 +732,22 @@
           \[
             \begin{aligned}
               \textbf{r}_u \times \textbf{r}_v = \left| \begin{array}{ccc}
-                                                          \textbf{i}                                 & \textbf{j}                                 & \textbf{k} \\[5pt]
-                                                          \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} & 0          \\[11pt]
-                                                          \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v} & 0
-                                                        \end{array} \right| &= \left| \begin{array}{cc}
-                                                                                        \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
-                                                                                        \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+                                                          \textbf{i}                                 &amp; \textbf{j}                                 &amp; \textbf{k} \\[5pt]
+                                                          \displaystyle\frac{\partial x}{\partial u} &amp; \displaystyle\frac{\partial y}{\partial u} &amp; 0          \\[11pt]
+                                                          \displaystyle\frac{\partial x}{\partial v} &amp; \displaystyle\frac{\partial y}{\partial v} &amp; 0
+                                                        \end{array} \right| &amp;= \left| \begin{array}{cc}
+                                                                                        \displaystyle\frac{\partial x}{\partial u} &amp; \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+                                                                                        \displaystyle\frac{\partial x}{\partial v} &amp; \displaystyle\frac{\partial y}{\partial v}
                                                                                       \end{array} \right| \textbf{k} \\
-                                                                            &= \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k}
+                                                                            &amp;= \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k}
             \end{aligned}
           \]</p>
 
         <p>De donde:
           \[
             \begin{aligned}
-              \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert &= \left\Vert \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k} \right\Vert \\
-                                                                      &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Vert \textbf{k} \Vert
+              \left\Vert \textbf{r}_u \times \textbf{r}_v \right\Vert &amp;= \left\Vert \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \textbf{k} \right\Vert \\
+                                                                      &amp;= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right| \Vert \textbf{k} \Vert
             \end{aligned}
           \]</p>
       </div>
@@ -762,7 +757,7 @@
         <p>
           \[
             \begin{aligned}
-                                                                      &= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right|
+                                                                      &amp;= \left| \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right) \right|
             \end{aligned}
           \]</p>
 
@@ -776,8 +771,8 @@
           \[
             J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|
             = \left| \begin{array}{cc}
-              \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
-              \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+              \displaystyle\frac{\partial x}{\partial u} &amp; \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+              \displaystyle\frac{\partial x}{\partial v} &amp; \displaystyle\frac{\partial y}{\partial v}
             \end{array} \right|
             = \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right)
           \]
@@ -791,13 +786,13 @@
         <p>Nota que usualmente el Jacobiano se denota simplemente con $J(u,v) = \left| \frac{\partial (x,y)}{\partial (u,v)} \right|$. Observa además que:
         \[
           \left| \begin{array}{cc}
-            \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[11pt]
-            \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+            \displaystyle\frac{\partial x}{\partial u} &amp; \displaystyle\frac{\partial y}{\partial u} \\[11pt]
+            \displaystyle\frac{\partial x}{\partial v} &amp; \displaystyle\frac{\partial y}{\partial v}
           \end{array} \right|
           = \left( \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} \right)
           = \left| \begin{array}{cc}
-            \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial x}{\partial v} \\[11pt]
-            \displaystyle\frac{\partial y}{\partial u} & \displaystyle\frac{\partial y}{\partial v}
+            \displaystyle\frac{\partial x}{\partial u} &amp; \displaystyle\frac{\partial x}{\partial v} \\[11pt]
+            \displaystyle\frac{\partial y}{\partial u} &amp; \displaystyle\frac{\partial y}{\partial v}
           \end{array} \right|
         \]</p>
 
@@ -818,7 +813,7 @@
         <p style="text-align-last:justify">Ahora observa en la <ref ref_id="cambio_variables"></ref> que dividimos la región $S$ en el plano $uv$ en subrectángulos $S_{ij}$ tales que los subrectángulos $R_{ij}$</p>
 
         <figure id="cambio_variables">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/cambio_variables.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion5/cambio_variables.html" poster="poster/page_39.png"></div>
           <figcaption>Selecciona un subrectángulo $S_{ij}$ para ver su imagen $R_{ij}$ en la región $R$. Observa que conforme aumentan $m$ y $n$, la suma del área de todos los paralelogramos formados por los vectores tangentes a $\textbf{r}(u_i,v)$ y $\textbf{r}(u,v_j)$ en los puntos $(x_{ij},y_{ij})$ se va aproximando al área de $R$.</figcaption>
         </figure>
       </div>
@@ -830,9 +825,9 @@
         <p>Entonces la integral doble de $f$ sobre $R$ es:
           \[
             \begin{aligned}
-              \iint\limits_R &f(x,y)dA \\
-                &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A \\
-                &= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(g(u_{ij},v_{ij}),h(u_{ij},v_{ij})) |J(u_{ij},v_{ij})| \Delta u \Delta v
+              \iint\limits_R &amp;f(x,y)dA \\
+                &amp;= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(x_{ij},y_{ij}) \Delta A \\
+                &amp;= \lim\limits_{m,n \rightarrow \infty} \sum\limits^m_{i=1} \sum\limits^n_{j=1} f(g(u_{ij},v_{ij}),h(u_{ij},v_{ij})) |J(u_{ij},v_{ij})| \Delta u \Delta v
             \end{aligned}
           \]</p>
 
@@ -879,8 +874,8 @@
         <p>Para ilustrar esto, veamos un ejemplo de cómo calcular el área entre dos curvas polares. Consideremos las distintas regiones delimitadas por el círculo $r = 3\cos(\theta)$, la cardioide $r = 1 + \cos(\theta)$ y la recta $\theta = 0$, como se puede observar en la <ref ref_id="ejemplo_area_entre_curvas_polares"></ref>. Primero debemos encontrar los puntos de intersección. Igualando las primeras dos ecuaciones nos da:
         \[
           \begin{aligned}
-            3\cos(\theta) = 1 + \cos(\theta) &\Rightarrow 2\cos(\theta) = 1 \\
-                                             &\Rightarrow \theta = \arccos \left( \frac{1}{2} \right) = \frac{\pi}{3}
+            3\cos(\theta) = 1 + \cos(\theta) &amp;\Rightarrow 2\cos(\theta) = 1 \\
+                                             &amp;\Rightarrow \theta = \arccos \left( \frac{1}{2} \right) = \frac{\pi}{3}
           \end{aligned}
         \]</p>
 
@@ -890,7 +885,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_area_entre_curvas_polares">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_area_entre_curvas_polares.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_area_entre_curvas_polares.html" poster="poster/page_43.png"></div>
           <figcaption>Haz clic en cualquiera de las cuatro regiones para activar o desactivarla y observa cómo se actualizan los límites de integración.</figcaption>
         </figure>
 
@@ -906,22 +901,22 @@
         <p>
           \[
             \begin{aligned}
-              D_1 &= \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\} \text{,} \\
-              D_2 &= \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\} \quad \text{y} \\
-              D_3 &= \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}
+              D_1 &amp;= \{(x,y): -2 \leq x \leq 0, 0 \leq y \leq (x + 2)^2\} \text{,} \\
+              D_2 &amp;= \{(x,y): 0 \leq y \leq 4, 0 \leq x \leq (y - \frac{1}{16}y^3)\} \quad \text{y} \\
+              D_3 &amp;= \{(x,y): -4 \leq y \leq 0, -2 \leq x \leq (y - \frac{1}{16}y^3)\}
             \end{aligned}
           \]</p>
 
         <p>Aquí, $D_1$ es de Tipo I mientras que $D_2$ y $D_3$ son de Tipo II. Por tanto, el volumen es:
           \[
             \begin{aligned}
-              V &= \iint\limits_D (y - 2x + 5)dA \\
-              V &= \iint\limits_{D_1} (y - 2x + 5)dA \\
-                &    \hspace{5em} + \iint\limits_{D_2} (y - 2x + 5)dA \\
-                &    \hspace{5em} + \iint\limits_{D_3} (y - 2x + 5)dA \\
-              V &= \int\limits_{x=-2}^{x=0} \int\limits_{y=0}^{y=(x+2)^2} (y - 2x + 5)dydx \\
-                &    \hspace{5em} + \int\limits_{y=0}^{y=4} \int\limits_{x=0}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
-                &    \hspace{5em} + \int\limits_{y=-4}^{y=0} \int\limits_{x=-2}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy
+              V &amp;= \iint\limits_D (y - 2x + 5)dA \\
+              V &amp;= \iint\limits_{D_1} (y - 2x + 5)dA \\
+                &amp;    \hspace{5em} + \iint\limits_{D_2} (y - 2x + 5)dA \\
+                &amp;    \hspace{5em} + \iint\limits_{D_3} (y - 2x + 5)dA \\
+              V &amp;= \int\limits_{x=-2}^{x=0} \int\limits_{y=0}^{y=(x+2)^2} (y - 2x + 5)dydx \\
+                &amp;    \hspace{5em} + \int\limits_{y=0}^{y=4} \int\limits_{x=0}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy \\
+                &amp;    \hspace{5em} + \int\limits_{y=-4}^{y=0} \int\limits_{x=-2}^{x=y-\frac{1}{16}y^3} (y - 2x + 5)dxdy
             \end{aligned}
           \]</p>
       </div>
@@ -934,7 +929,7 @@
           \]</p>
 
         <fig id="ejemplo_calcular_volumen">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_calcular_volumen.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_calcular_volumen.html" poster="poster/page_45.png"></div>
           <figcaption>El sólido acotado por la función $f(x,y)$ y la región $D = D_1 \cup D_2 \cup D_3$.</figcaption>
         </fig>
 
@@ -953,14 +948,14 @@
         <p>función de dos variables sobre una región general $D$, con la diferencia de que se divide entre un área en vez de dividir entre el tamaño de un intervalo.</p>
 
         <div class="num_block" prefix="Definición">
-          Si $f(x,y)$ es integrable sobre una región $D$ contenida en un plano y tiene área $A(D) > 0$, entonces el <b>valor promedio</b> de $f$ se define como:
+          Si $f(x,y)$ es integrable sobre una región $D$ contenida en un plano y tiene área $A(D) &gt; 0$, entonces el <b>valor promedio</b> de $f$ se define como:
           \[
             f_\text{pro} = \frac{1}{A(D)} \iint\limits_D f(x,y)dA = \frac{1}{\iint\limits_D 1dA} \iint\limits_D f(x,y)dA
           \]
         </div>
 
         <fig id="ejemplo_valor_promedio">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_valor_promedio.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo1/seccion6/ejemplo_valor_promedio.html" poster="poster/page_46.png"></div>
           <figcaption>El valor promedio de la función $f(x,y)$ definida sobre el triángulo cuyos vértices son $(1,1)$, $(6,1)$ y $(3,9)$.</figcaption>
         </fig>
       </div>
@@ -1017,7 +1012,7 @@
       <!--  -->
       <div class="page">
         <fig id="ejemplo_cambio_variables">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion6/ejemplo_cambio_variables.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo1/seccion6/ejemplo_cambio_variables.html" poster="poster/page_49.png"></div>
           <figcaption>La región $R$ en el plano $xy$ y su transformación al plano $uv$.</figcaption>
         </fig>
 
@@ -1027,12 +1022,12 @@
             \[
               J(u,v) = \frac{\partial (x,y)}{\partial (u,v)}
               = \left| \begin{array}{cc}
-                \displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial y}{\partial u} \\[3ex]
-                \displaystyle\frac{\partial x}{\partial v} & \displaystyle\frac{\partial y}{\partial v}
+                \displaystyle\frac{\partial x}{\partial u} &amp; \displaystyle\frac{\partial y}{\partial u} \\[3ex]
+                \displaystyle\frac{\partial x}{\partial v} &amp; \displaystyle\frac{\partial y}{\partial v}
               \end{array} \right|
               = \left| \begin{array}{cc}
-                \displaystyle\frac{1}{2} & -\displaystyle\frac{1}{2} \\[2ex]
-                \displaystyle\frac{1}{2} & \displaystyle\frac{1}{2}
+                \displaystyle\frac{1}{2} &amp; -\displaystyle\frac{1}{2} \\[2ex]
+                \displaystyle\frac{1}{2} &amp; \displaystyle\frac{1}{2}
               \end{array} \right|
               = \frac{1}{2}
             \]</li>
@@ -1083,7 +1078,7 @@
         <p>La gráfica de una función de valores vectoriales de la forma $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j}$ es el conjunto de todos los $(t, \textbf{r}(t))$ y al camino que traza se le llama <b>curva plana</b>. La gráfica de una función de valores vectoriales de la forma $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}$ es el conjunto de todos los $(t, \textbf{r}(t))$ y al camino que traza se le llama <b>curva espacial</b>. Cualquier representación de una curva plana o curva espacial usando una función de valores vectoriales es una <b>parametrización vectorial</b> de dicha curva.</p>
 
         <figure id="grafica_funcion_valores_vectoriales">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/grafica_funcion_valores_vectoriales.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/grafica_funcion_valores_vectoriales.html" poster="poster/page_52.png"></div>
           <figcaption>Curva plana de $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j}$ (izquierda) y curva espacial de $\textbf{r}(t) = f(t)\textbf{i} + g(t)\textbf{j} + h(t)\textbf{k}$ (derecha).</figcaption>
         </figure>
       </div>
@@ -1122,7 +1117,7 @@
         <p>Como no se puede representar $\R^4$ visualmente, los campos vectoriales en $\R^2$ se dibujan en un plano. Esto es, si el punto $(a,b)$ está asociado al vector $\langle x,y \rangle$, entonces se dibuja $\langle x,y \rangle$ sobre $(a,b)\text{.}$ Se deben escoger los suficientes vectores para ver la forma general, pero no tantos que la gráfica deje de ser entendible.</p>
 
         <figure id="ejemplo_campo_vectorial_r2">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r2.html" poster="poster/page_54.png"></div>
           <figcaption>Ejemplo de un campo vectorial $F(x,y) = \langle P(x,y), Q(x,y) \rangle$ en $\R^2$. Utiliza el control "Región" para manipular la región $D \subseteq \R^2$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
 
@@ -1136,7 +1131,7 @@
         <p>En un <b>campo radial</b>, todos los vectores apuntan directamente al origen o directamente en dirección contraria al origen. Es decir, el vector asociado al punto $(a,b)$ es perpendicular al círculo con centro en el origen que contiene a $(a,b)$ y todos los vectores en dicho círculo tienen la misma magnitud.</p>
 
         <figure id="ejemplo_campo_vectorial_radial">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_radial.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_radial.html" poster="poster/page_55.png"></div>
           <figcaption>El campo radial $F(x,y) = -\frac{x}{4}\textbf{i} - \frac{y}{4}\textbf{j}$.</figcaption>
         </figure>
 
@@ -1148,7 +1143,7 @@
         <p>A diferencia de los campos radiales, en los campos rotacionales el vector asociado al punto $(a,b)$ es tangente (no perpendicular) al círculo con radio $r = \sqrt{x^2 + y^2}$.</p>
 
         <figure id="ejemplo_campo_vectorial_rotacional">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_rotacional.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_rotacional.html" poster="poster/page_56.png"></div>
           <figcaption>El campo rotacional $F(x,y) = -\frac{y}{4}\textbf{i} + \frac{x}{4}\textbf{j}$.</figcaption>
         </figure>
 
@@ -1191,7 +1186,7 @@
         <p>Esto es, si el punto $(a,b,c)$ está asociado al vector $\langle x,y,z \rangle$, entonces se dibuja $\langle x,y,z \rangle$ sobre $(a,b,c)$. Se debe escoger una cantidad suficientemente grande de vectores para ver la forma general.</p>
 
         <figure id="ejemplo_campo_vectorial_r3">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_vectorial_r3.html" poster="poster/page_58.png"></div>
           <figcaption>Ejemplo de un campo vectorial $\textbf{F} = \langle P, Q, R \rangle$ en $\R^3$. Utiliza el control "Región" para manipular la región $D \subseteq \R^3$ y el control "Densidad" para aumentar o disminuir la cantidad de vectores que se muestran.</figcaption>
         </figure>
       
@@ -1236,9 +1231,9 @@
         \[
           \begin{aligned}
             \textbf{F}
-              &= \frac{G m_1 m_2}{\left\Vert (x,y,z) \right\Vert^3} (x,y,z) \\ 
+              &amp;= \frac{G m_1 m_2}{\left\Vert (x,y,z) \right\Vert^3} (x,y,z) \\ 
             \textbf{F}
-              &= \left\langle \frac{-G m_1 m_2 x}{(x^2 + y^2 + z^2)^{3/2}}, \frac{-G m_1 m_2 y}{(x^2 + y^2 + z^2)^{3/2}}, \frac{-G m_1 m_2 z}{(x^2 + y^2 + z^2)^{3/2}} \right\rangle
+              &amp;= \left\langle \frac{-G m_1 m_2 x}{(x^2 + y^2 + z^2)^{3/2}}, \frac{-G m_1 m_2 y}{(x^2 + y^2 + z^2)^{3/2}}, \frac{-G m_1 m_2 z}{(x^2 + y^2 + z^2)^{3/2}} \right\rangle
           \end{aligned}
         \]
 
@@ -1249,7 +1244,7 @@
         </p>
 
         <figure id="ejemplo_campo_gravitacional">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_gravitacional.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion1/ejemplo_campo_gravitacional.html" poster="poster/page_60.png"></div>
           <figcaption>Un campo gravitacional donde $m_1 = 900000 \text{kg}$ y $m_2 = 100000 \text{kg}$. La constante de gravitación universal es $G = 6.67384 \times 10^{-11} \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$. Observa que las magnitudes de los vectores incrementan conforme se acercan al origen.</figcaption>
         </figure>
       </div>
@@ -1284,7 +1279,7 @@
         <p>El teorema anterior muestra que la mayoría de los campos vectoriales no son conservativos, ya que es difícil satisfacer la propiedad de las derivadas cruzadas.</p>
 
         <figure id="ejemplo_derivadas_cruzadas">
-          <div class="interactive" width="908" height="680" src="interactivos/capitulo2/seccion1/ejemplo_derivadas_cruzadas.html"></div>
+          <div class="interactive" width="908" height="680" src="interactivos/capitulo2/seccion1/ejemplo_derivadas_cruzadas.html" poster="poster/page_62.png"></div>
           <figcaption>Las gráficas de $P(x,y)$, $Q(x,y)$, $p(y)$ y $q(x)$. El <ref ref_id="derivadas_cruzadas"></ref> afirma que las dos líneas rojas siempre tendrán la misma pendiente, para cualquier $(x_0, y_0)$.</figcaption>
         </figure>
 
@@ -1329,7 +1324,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_divergencia_r2">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r2.html" poster="poster/page_65.png"></div>
           <figcaption>Pulsa el botón "►" para mover los puntos a su posición final después de aplicar la transformación $\textbf{F}_{\textbf{1}} = \left\langle x,y \right\rangle$, $\textbf{F}_{\textbf{2}} = \left\langle -x,-y \right\rangle$ o $\textbf{F}_{\textbf{3}} = \left\langle 1,2 \right\rangle$.</figcaption>
         </figure>
 
@@ -1345,7 +1340,7 @@
         <p style="text-align-last:justify;">Una aplicación física de la divergencia ocurre con los campos magnéticos. Un campo magnético es un campo vectorial que describe la influencia magnética sobre cargas y corrientes eléctricas. La ley de Gauss para el magnetismo indica que si $\textbf{B}$ es</p>
 
         <figure id="ejemplo_divergencia_r3">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_divergencia_r3.html" poster="poster/page_66.png"></div>
           <figcaption>El campo vectorial $\textbf{F}(x,y,z) = \left\langle -\frac{xy}{4}, \frac{y}{4}, \frac{z}{8} \right\rangle$. Usa los pulsadores para controlar la posición de la esfera, la cual es verde cuando la divergencia es positiva, roja cuando es negativa y gris cuando es cero. Observa cómo cambia la entrada y salida de vectores al mover la esfera.</figcaption>
         </figure>
       </div>
@@ -1367,8 +1362,8 @@
             \[
               \begin{aligned}
                 rot \textbf{ F} 
-                &= (R_y - Q_z)\textbf{i} + (P_z - R_x)\textbf{j} + (Q_x - P_y)\textbf{k} \\
-                &= \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)\textbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right)\textbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\textbf{k}
+                &amp;= (R_y - Q_z)\textbf{i} + (P_z - R_x)\textbf{j} + (Q_x - P_y)\textbf{k} \\
+                &amp;= \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)\textbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right)\textbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\textbf{k}
               \end{aligned}
             \]
           Es importante notar que, ya sea que se trate de un campo vectorial en $\R^2$ o en $\R^3$, el rotacional existe en un espacio de tres dimensiones.
@@ -1380,7 +1375,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_rotacional_r2">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r2.html" poster="poster/page_68.png"></div>
           <figcaption>Selecciona un campo vectorial y un punto $(x_0,y_0)$ para ver cómo rota la "rueda" al colocarla ahí. Nota que la tercera componente del vector rotacional indica la dirección y rapidez de la rotación.</figcaption>
         </figure>
 
@@ -1394,7 +1389,7 @@
         <p>componente $x$ del vector rotacional indica la dirección y rapidez con la que gira la esfera con respecto al eje $x$, donde un valor positivo significa que gira en el sentido contrario a las manecillas del reloj, suponiendo que el eje se observa desde el lado positivo hacia el negativo, tal como se muestra en la siguiente figura:</p>
 
         <figure id="ejemplo_rotacional_r3">
-          <div class="interactive" width="600" height="450" src="interactivos/capitulo2/seccion2/giros_respecto_a_ejes.html"></div>
+          <div class="interactive" width="600" height="450" src="interactivos/capitulo2/seccion2/giros_respecto_a_ejes.html" poster="poster/page_69.png"></div>
         </figure>
         
         <p>Análogamente, los componentes $y$ y $z$ del vector rotacional indican la dirección y rapidez con la que gira la esfera con respecto a los ejes $y$ y $z$, respectivamente. La magnitud de este vector representa la rapidez neta con la que está girando la esfera.</p>
@@ -1404,7 +1399,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_rotacional_r3">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion2/ejemplo_rotacional_r3.html" poster="poster/page_70.png"></div>
           <figcaption>Selecciona un campo vectorial y un punto $(x_0,y_0,z_0)$ para ver cómo gira la esfera al colocarla ahí.</figcaption>
         </figure>
       </div>
@@ -1431,18 +1426,17 @@
           Entonces $\textbf{r}$ es diferenciable sobre el intervalo cerrado $[a,b]$.
         </div>
 
-        <p style="text-align-last:justify;">El cálculo de la derivada de una función con valores vectoriales también se puede realizar simplemente obteniendo las derivadas de cada componente, ya sea que la función esté en dos o tres dimensiones. La prueba de esto se sigue directamente de la</p>
+        <p>El cálculo de la derivada de una función con valores vectoriales también se puede realizar simplemente obteniendo las derivadas de cada componente, ya sea que la función esté en dos o tres dimensiones. La prueba de esto se sigue directamente de la definición anterior y la definición de límite.</p>
       </div>
 
       <!--  -->
       <div class="page">
         <figure id="ejemplo_derivada_funcion_valores_vectoriales">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/ejemplo_derivada_funcion_valores_vectoriales.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/ejemplo_derivada_funcion_valores_vectoriales.html" poster="poster/page_72.png"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle \cos(t),\sin(t),t \rangle$. La línea roja representa el vector $\frac{1}{\Delta t} (\textbf{r}(t_0 + \Delta t) - \textbf{r}(t_0))$. Observa que $\textbf{r}(t_0 + \Delta t) - \textbf{r}(t_0)$ es secante a la curva, pero conforme $\Delta t$ tiende a cero, se aproxima al vector tangente a la curva $\textbf{r}'(t_0)$.</figcaption>
         </figure>
 
-        <p>definición anterior y la definición de límite.</p>
-
+        <br>
         <div class="num_block" prefix="Teorema" id="diferenciacion_funcion_valores_vectoriales">
           Sean $f$, $g$ y $h$ funciones reales diferenciables. <br>
           Si $\textbf{r}(t) = \langle f(t),g(t) \rangle$, entonces:
@@ -1474,7 +1468,7 @@
           \]</p>
 
         <figure id="propiedades_derivada_funcion_valores_vectoriales_1">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_1.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_1.html" poster="poster/page_73.png"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle \sin(t),\frac{t^2}{4},\frac{t}{2} \rangle$ en azul, con $t \in [0,6]$.</figcaption>
         </figure>
       </div>
@@ -1491,7 +1485,7 @@
           \]</p>
 
         <figure id="propiedades_derivada_funcion_valores_vectoriales_2">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo2/seccion3/propiedades_derivada_funcion_valores_vectoriales_2.html" poster="poster/page_74.png"></div>
           <figcaption>Las curvas $\textbf{r}(t) = \langle t^2/4,t/2,t \rangle$ en azul, $\textbf{s}(t) = \langle t,t^{3/2},1-\sin(t) \rangle$ en verde y $\textbf{r}(t) + \textbf{s}(t)$ en naranja. Los vectores $\textbf{r}(t_0)$ y $\textbf{s}(t_0)$ se encuentran en sus respectivas curvas y se vuelven a trazar en el origen para formar un paralelogramo cuya diagonal es su suma $\textbf{r}'(t_0) + \textbf{s}'(t_0)$ (por definición de suma de vectores). Este vector siempre será igual a $\frac{d}{dt} [\textbf{r}(t_0) + \textbf{s}(t_0)]$.</figcaption>
         </figure>
       </div>
@@ -1560,11 +1554,11 @@
         <p>Ejemplo: Sea $\textbf{r}(t) = \langle 3\cos(t), 3\sin(t), 4t \rangle$, con $t \in [-4\pi, 0]$, como se muestra en la <ref ref_id="reparametrizacion_longitud_arco"></ref>. Se desea encontrar la parametrización por longitud de arco. Primero se debe calcular la función de longitud de arco como se indica en el <ref ref_id="funcion_longitud_arco"></ref>.
           \[
             \begin{aligned}
-              s(t) &= \int^t_{-4\pi} \Vert \textbf{r}'(u) \Vert du \\
-                   &= \int^t_{-4\pi} \Vert \langle -3\sin(u),3\cos(u),4 \rangle \Vert du \\
-                   &= \int^t_{-4\pi} \sqrt{9\sin^2(u) + 9\cos^2(u) + 16} \\
-                   &= \int^t_{-4\pi} \sqrt{9 + 16} \\
-                   &= \int^t_{-4\pi} 5du = 5t + 20\pi
+              s(t) &amp;= \int^t_{-4\pi} \Vert \textbf{r}'(u) \Vert du \\
+                   &amp;= \int^t_{-4\pi} \Vert \langle -3\sin(u),3\cos(u),4 \rangle \Vert du \\
+                   &amp;= \int^t_{-4\pi} \sqrt{9\sin^2(u) + 9\cos^2(u) + 16} \\
+                   &amp;= \int^t_{-4\pi} \sqrt{9 + 16} \\
+                   &amp;= \int^t_{-4\pi} 5du = 5t + 20\pi
             \end{aligned}
           \]</p>
 
@@ -1578,7 +1572,7 @@
       <!--  -->
       <div class="page">
         <figure id="reparametrizacion_longitud_arco">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/reparametrizacion_longitud_arco.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/reparametrizacion_longitud_arco.html" poster="poster/page_79.png"></div>
           <figcaption>En azul se muestra la curva $\textbf{r}(t) = \langle 3\cos(t), 3\sin(t), 4t \rangle$, definida para $t \in [-4\pi, 0]$. La parametrización por longitud de arco $\textbf{r}(s)$, en rojo, es idéntica a la curva original, pero aquí se muestran separadas para visualizar mejor el ejemplo. Observa que $t_0 = s_0$ no implica que $\textbf{r}(t_0) = \textbf{r}(s_0)$. Pulsa el botón para asignarle un valor a $s_0$ de tal forma que $\textbf{r}(t_0) = \textbf{r}(s_0)$.</figcaption>
         </figure>
         
@@ -1596,17 +1590,17 @@
           \[
             \begin{aligned}
               t \geq -4\pi 
-                &\Rightarrow \frac{s}{5} - 4\pi \geq -4\pi \\
-                &\Rightarrow \frac{s}{5} \geq 0 \\
-                &\Rightarrow s \geq 0
+                &amp;\Rightarrow \frac{s}{5} - 4\pi \geq -4\pi \\
+                &amp;\Rightarrow \frac{s}{5} \geq 0 \\
+                &amp;\Rightarrow s \geq 0
             \end{aligned}
           \]
           \[
             \begin{aligned}
               t \leq 0
-                &\Rightarrow \frac{s}{5} - 4\pi \leq 0 \\
-                &\Rightarrow \frac{s}{5} \leq 4\pi \\
-                &\Rightarrow s \leq 20\pi
+                &amp;\Rightarrow \frac{s}{5} - 4\pi \leq 0 \\
+                &amp;\Rightarrow \frac{s}{5} \leq 4\pi \\
+                &amp;\Rightarrow s \leq 20\pi
             \end{aligned}
           \]</p>
 
@@ -1629,7 +1623,7 @@
         <p>Donde $\textbf{T}(s)$ representa el vector tangente unitario a $\textbf{r}(s)$, es decir, $\textbf{T}(s) = \frac{\textbf{r}'(s)}{\Vert \textbf{r}'(s) \Vert}$. Además, el radio del círculo osculador en $s$ se conoce como el <b>radio de curvatura</b>, y su centro es el <b>centro de curvatura</b>.</p>
 
         <figure id="ejemplo_curvatura_r2">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r2.html" poster="poster/page_81.png"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle 1 + \frac{3}{10}t \cos(t), 1 + \frac{3}{10}t \sin(t) \rangle$ en azul. También se muestra el círculo osculador (verde), el centro de curvatura (negro) y el radio de curvatura (rojo).</figcaption>
         </figure>
 
@@ -1666,7 +1660,7 @@
         <p>En el plano cartesiano se utiliza la orientación estándar como se muestra en la <ref ref_id="orientacion_estandar_r2"></ref>. Esto induce una orientación para curvas: si un punto viaja por una curva de principio a fin, la dirección del recorrido siempre estará ya sea en el sentido de las manecillas del reloj (orientación negativa) o en el sentido contrario a las manecillas del reloj (orientación positiva).</p> 
 
         <figure id="curva_y_su_inversa">
-          <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/curva_y_su_inversa.html"></div>
+          <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/curva_y_su_inversa.html" poster="poster/page_83.png"></div>
           <figcaption>Las curvas $\textbf{r}(t)$ y $\textbf{r}(a + b - t)$ son idénticas pero tienen orientación contraria. Aquí se muestran separadas para visualizar mejor el ejemplo.</figcaption>
         </figure>
       </div>
@@ -1678,7 +1672,7 @@
         <p>Ahora, al considerar espacios de tres dimensiones, surge un problema con esta definición porque el ángulo entre dos vectores puede ser tanto positivo como negativo, dependiendo de la perspectiva del "observador".</p>
         
         <figure id="orientacion_ambigua_r3">
-          <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/orientacion_ambigua_r3.html"></div>
+          <div class="interactive" width="700" height="525" src="interactivos/capitulo3/seccion1/orientacion_ambigua_r3.html" poster="poster/page_84.png"></div>
           <figcaption>Dos vectores en $\R^3$ no son suficientes para una definición consistente de orientación.</figcaption>
         </figure>
 
@@ -1697,7 +1691,7 @@
         </div>
 
         <figure id="orientacion_r3">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/orientacion_r3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/orientacion_r3.html" poster="poster/page_85.png"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle f(t),g(t),h(t) \rangle$, con $t \in [a,b]$. Puedes cambiar las cotas y las funciones pero se debe cumplir $\textbf{T}'(t) \not = 0$. Nota los vectores ortogonales $\textbf{T}(t_0)$ (negro), $\textbf{N}(t_0)$ (rojo) y $\textbf{B}(t_0)$ (verde).</figcaption>
         </figure>
       </div>
@@ -1714,7 +1708,7 @@
         <p style="text-align-last:justify;">Si la curva $\textbf{r}(t)$ representa la posición de un objeto en el espacio con respecto al tiempo, el vector $\textbf{T}(t)$ representa la tasa de cambio con la que el objeto varía su posición. El vector $\textbf{N}(t)$ está relacionado con la curvatura; indica qué tan rápidamente la trayectoria del objeto deja de ser una recta. El vector $\textbf{B}(t)$ indica qué tan rápidamente el objeto se sale del plano que recorre.</p>
 
         <figure id="ejemplo_curvatura_r3">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion1/ejemplo_curvatura_r3.html" poster="poster/page_86.png"></div>
           <figcaption>La curva $\textbf{r}(t) = \langle (1+t)\cos(t),(1+t)\sin(t),t \rangle$, con $t \in [-2\pi,3\pi]$. En rosa se muestra el círculo osculador y en verde claro el radio de curvatura. Los vectores $\textbf{T}(t_0)$, $\textbf{N}(t_0)$ y $\textbf{B}(t_0)$ tienen los mismos colores que en la <ref ref_id="orientacion_r3"></ref>.</figcaption>
         </figure>
       </div>
@@ -1752,7 +1746,7 @@
         <p style="text-align-last:justify;">Nuevamente aparece la variable $s$ que representa la longitud de arco. Esto puede complicar el cálculo de la integral de línea escalar, por lo que será útil convertir $\int_C fds$ a una integral cuya variable de</p>
 
         <figure id="ejemplo_integral_linea_escalar">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_escalar.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_escalar.html" poster="poster/page_89.png"></div>
           <figcaption>La curva plana $\textbf{r}(t) = \langle t,t^3-2t \rangle$ y la función $f(x,y) = \frac{x^2-y^2}{8} + 1$. Da clic en las casillas de arriba para dibujar o borrar distintos elementos de la figura.</figcaption>
         </figure>
       </div>
@@ -1763,10 +1757,10 @@
           \[
             \begin{aligned}
               \Delta s_i \approx \Vert \textbf{r}(t_{i+1}) - \textbf{r}(t_i) \Vert
-                &= \Vert \textbf{r}(t_i + \Delta t) - \textbf{r}(t_i) \Vert \\
-                &= \Vert \Delta t \frac{\textbf{r}(t_i + \Delta t) - \textbf{r}(t_i)}{\Delta t} \Vert \\
-                &= \Vert \Delta t \ \textbf{r}'(t_i) \Vert \\
-                &= |\Delta t| \ \Vert \textbf{r}'(t_i) \Vert = \Vert \textbf{r}'(t_i) \Vert \Delta t
+                &amp;= \Vert \textbf{r}(t_i + \Delta t) - \textbf{r}(t_i) \Vert \\
+                &amp;= \Vert \Delta t \frac{\textbf{r}(t_i + \Delta t) - \textbf{r}(t_i)}{\Delta t} \Vert \\
+                &amp;= \Vert \Delta t \ \textbf{r}'(t_i) \Vert \\
+                &amp;= |\Delta t| \ \Vert \textbf{r}'(t_i) \Vert = \Vert \textbf{r}'(t_i) \Vert \Delta t
             \end{aligned}
           \]</p>
 
@@ -1800,12 +1794,12 @@
             \]
         </div>
 
-        <p>La deducción de la ecuación anterior es muy similar a la de las integrales de línea escalares, pero en vez de integrar una función escalar cualquiera, se integra $\textbf{F} \cdot \textbf{T}$, donde $\cdot$ denota el producto punto. Esto es porque el trabajo realizado por el campo vectorial $\textbf{F}$ para mover la partícula del punto $\textbf{r}(t_1)$ al punto $\textbf{r}(t_2)$, con $a \leq t_1 < t_2 \leq b$, es $\textbf{F}(\textbf{r}(t_2)) \cdot (\Delta s\ \textbf{T}(\textbf{r}(t_2)))$, donde $\Delta s$ es la longitud del arco entre los dos puntos.</p>
+        <p>La deducción de la ecuación anterior es muy similar a la de las integrales de línea escalares, pero en vez de integrar una función escalar cualquiera, se integra $\textbf{F} \cdot \textbf{T}$, donde $\cdot$ denota el producto punto. Esto es porque el trabajo realizado por el campo vectorial $\textbf{F}$ para mover la partícula del punto $\textbf{r}(t_1)$ al punto $\textbf{r}(t_2)$, con $a \leq t_1 &lt; t_2 \leq b$, es $\textbf{F}(\textbf{r}(t_2)) \cdot (\Delta s\ \textbf{T}(\textbf{r}(t_2)))$, donde $\Delta s$ es la longitud del arco entre los dos puntos.</p>
 
         <p>Al igual que con las integrales de línea escalares, debemos expresar la integral en términos de $t$ para facilitar su evaluación. Ya vimos que $\Delta s_i = \Vert \textbf{r}'(t_i) \Vert \Delta t$. Como $\textbf{T}(t_i) = \frac{\textbf{r}'(t_i)}{\Vert \textbf{r}'(t_i) \Vert}$, entonces la suma de la definición anterior converge a la integral dada en el siguiente teorema.</p>
 
         <div class="num_block" prefix="Teorema" id="integral_linea_vectorial_t">
-          Sea $C$ una curva suave definida por la función $\textbf{r}(t)$, con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. Entonces:
+          Sea $C$ una curva suave definida por la función $\textbf{r}(t),$ con $t \in [a,b]$. Sea $\textbf{F}$ un campo vectorial cuyo dominio incluye a $C$. Entonces:
             \[
               \int_C \textbf{F} \cdot \textbf{T} ds = \int^b_a \textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t) dt
             \]
@@ -1815,7 +1809,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_integral_linea_vectorial_r2">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r2.html"></div>
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r2.html" poster="poster/page_92.png"></div>
           <figcaption>El campo vectorial $\textbf{F}(x,y) = \langle x - y, y - 2x \rangle$, cuyo dominio incluye la curva $\textbf{r}(t) = \langle t^3 - 6t, t \rangle$. La barra verde representa el integrando $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$ evaluado en $t_0$. El área bajo la curva que traza es la integral de línea vectorial.</figcaption>
         </figure>
       </div>
@@ -1823,7 +1817,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_integral_linea_vectorial_r3">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r3.html"></div>
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion2/ejemplo_integral_linea_vectorial_r3.html" poster="poster/page_93.png"></div>
           <figcaption>El campo vectorial $\textbf{F}(x,y,z) = \langle x, -z, y \rangle$, cuyo dominio incluye la curva $C$ definida por $\textbf{r}(t) = \langle \cos(t), \sin(t), t \rangle$. Al igual que en la figura anterior, la integral de línea vectorial $\int_C \textbf{F} \cdot \textbf{T} ds$ es el área bajo al curva $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$.</figcaption>
         </figure>
       </div>
@@ -1848,7 +1842,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_masa_cable">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_masa_cable.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_masa_cable.html" poster="poster/page_95.png"></div>
           <figcaption>Un cable parametrizado por $\textbf{r}(t)$ (con $a \leq t \leq b$) y su función de densidad lineal $\rho(x,y)$. En la parte superior se muestra su masa, pero es importante notar que sólo es una aproximación. El área rosa representa la integral de línea escalar $\int_C \rho(x,y)ds$.</figcaption>
         </figure>
 
@@ -1858,7 +1852,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_trabajo">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_trabajo.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_trabajo.html" poster="poster/page_96.png"></div>
           <figcaption>La curva $C$ parametrizada por $\textbf{r}(t)$ representa el recorrido de un objeto en el espacio. El dominio del campo de fuerza $\textbf{F}$ contiene a $C$. En la parte superior se muestra una aproximación del trabajo ejercido por $\textbf{F}$ para mover el objeto.</figcaption>
         </figure>
 
@@ -1874,7 +1868,7 @@
         <p style="text-align-last:justify;">medir la masa total del fluido que entra o sale de él en una unidad de tiempo. Conforme $\Delta s$ tiende a cero, asemeja una línea recta y, además, todas las partículas del fluido que la atraviesan se mueven prácticamente en la misma dirección y con la misma velocidad. Por tanto, si elegimos un punto arbitrario $\textbf{r}(t^*)$ dentro del pedazo, entonces todas las partículas en su vecindad tendrán el vector de velocidad $\textbf{F}(\textbf{r}(u^*,v^*))$. Durante una unidad de tiempo, el fluido que pasa por el pedazo forma un paralelogramo. Suponiendo que el fluido tiene una densidad uniforme de una unidad de masa por unidad de área, entonces la masa del fluido que atraviesa la</p>
 
         <figure id="explicacion_flujo_r2">
-          <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion3/explicacion_flujo_r2.html"></div>
+          <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion3/explicacion_flujo_r2.html" poster="poster/page_97.png"></div>
           <figcaption>En rojo se muestra una curva $C$ y en azul un campo vectorial $\textbf{F}$ que representa la velocidad de un fluido. Pulsa el botón para iniciar la animación y ver cómo el fluido atraviesa un pedazo pequeño de $C$ en una unidad de tiempo.</figcaption>
         </figure>
       </div>
@@ -1884,7 +1878,7 @@
         <p style="text-align-last:justify;">superficie equivale al área del paralelogramo. Uno de los lados del paralelogramo claramente mide $\Delta s$. El otro lado representa el desplazamiento que causó el campo vectorial $\textbf{F}$ a la partícula en $\textbf{r}(t^*)$. Entonces dicho lado es el vector $\textbf{F}(\textbf{r}(t^*))$. La altura del paralelogramo es el producto punto de este último lado con un vector unitario normal a la curva en $t^*$. En consecuencia, la masa que atraviesa el pedazo de $C$ en una unidad de tiempo es $(\textbf{F}(\textbf{r}(t^*)) \cdot \textbf{n}(t^*)) \Delta s$, donde $\textbf{n}(t)$ es una función que devuelve un vector unitario normal a la curva en $t$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $C$ con longitud $\Delta s$ es</p>
 
         <figure id="ejemplo_flujo_r2">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_flujo_r2.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_flujo_r2.html" poster="poster/page_98.png"></div>
           <figcaption>Una curva $C$ parametrizada por $\textbf{r}(t)$ y un campo vectorial $\textbf{F}$. En la parte superior se muestra una aproximación del flujo de $\textbf{F}$ a través de $C$.</figcaption>
         </figure>
       </div>
@@ -1898,7 +1892,7 @@
         <p>Una <b>curva cerrada</b> es una curva para la cual existe una parametrización $\textbf{r}(t)$, $a \leq t \leq b$, tal que $\textbf{r}(a) = \textbf{r}(b)$ y $\textbf{r}$ es inyectiva sobre el dominio $(a,b)$. A la integral de línea del campo vectorial $\textbf{F}$ a lo largo de una curva cerrada $C$ se le llama <b>circulación</b> de $\textbf{F}$ a lo largo de $C$ y se denota con el símbolo $\oint$.</p>
 
         <figure id="ejemplo_circulacion">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_circulacion.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion3/ejemplo_circulacion.html" poster="poster/page_99.png"></div>
           <figcaption>Una curva $C$ parametrizada por $\textbf{r}(t)$ y un campo vectorial $\textbf{F}$. En la parte superior se muestra una aproximación de la circulación de $\textbf{F}$ a lo largo de $C$.</figcaption>
         </figure>
       </div>
@@ -1932,7 +1926,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_superficie_parametrizada">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_superficie_parametrizada.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_superficie_parametrizada.html" poster="poster/page_102.png"></div>
           <figcaption>Una superficie paramétrica. El dominio de los parámetros $u$ y $v$ puede ser cualquier región general, pero por simplicidad, aquí sólo se permite ajustar la región rectangular $[u_{min}, u_{max}] \times [v_{min}, v_{max}]$.</figcaption>
         </figure>
 
@@ -1950,7 +1944,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_superficie_parametrizada">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_superficie_regular_y_suave.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_superficie_regular_y_suave.html" poster="poster/page_103.png"></div>
           <figcaption>Ejemplos de superficies suaves y no suaves. El vector $\textbf{r}_u \times \textbf{r}_v$ desaparece cuando es igual a cero, y esto implica que la superficie no es regular ni suave.</figcaption>
         </figure>
 
@@ -1977,7 +1971,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_orientacion_superficie">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_orientacion_superficie.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion4/ejemplo_orientacion_superficie.html" poster="poster/page_105.png"></div>
           <figcaption>Selecciona las distintas opciones y mueve el vector normal unitario (verde) para determinar cuáles superficies son orientables.</figcaption>
         </figure>
       </div>
@@ -2008,7 +2002,7 @@
       <!--  -->
       <div class="page">
         <figure id="area_superficie_1">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_1.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_1.html" poster="poster/page_107.png"></div>
           <figcaption>Mueve el cursor dentro de $D$ para ver cómo se mapea a un punto de $S$. Conforme $\Delta u$ y $\Delta v$ tienden a cero, los vectores rojos se empiezan a asemejar a los verdes.</figcaption>
         </figure>
 
@@ -2030,7 +2024,7 @@
       <!--  -->
       <div class="page">
         <figure id="area_superficie_2">
-          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_2.html"></div>
+          <div class="interactive" width="800" height="400" src="interactivos/capitulo3/seccion5/area_superficie_2.html" poster="poster/page_108.png"></div>
           <figcaption>Haz clic en un subrectángulo $D_{ij}$ para ver su imagen $S_{ij}$ en la superficie $S$. Observa que conforme aumentan $m$ y $n$, los pedazos $S_{ij}$ empiezan a asemejar paralelogramos, por lo que podemos aproximar su área con $\Vert \textbf{r}_u(u_{ij},v_{ij}) \times \textbf{r}_v(u_{ij},v_{ij}) \Vert \Delta u \Delta v$, y la suma del área de todos estos pedazos se aproxima al área de superficie de $S$.</figcaption>
         </figure>
 
@@ -2112,7 +2106,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_integral_superficie_escalar">
-          <div class="interactive" width="800" height="1080" src="interactivos/capitulo3/seccion6/ejemplo_integral_superficie_escalar.html"></div>
+          <div class="interactive" width="800" height="1080" src="interactivos/capitulo3/seccion6/ejemplo_integral_superficie_escalar.html" poster="poster/page_113.png"></div>
         </figure>
       </div>
 
@@ -2157,7 +2151,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_integral_superficie_vectorial">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion7/ejemplo_integral_superficie_vectorial.html"></div>
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo3/seccion7/ejemplo_integral_superficie_vectorial.html" poster="poster/page_116.png"></div>
           <figcaption>El campo vectorial $\textbf{F} = \langle x,-z,y \rangle$ y la paraboloide $S$ parametrizada por $\textbf{r}(u,v) = \langle u\cos(v), u\sin(v), 9 - u^2 \rangle$ sobre el rectángulo $[0,3] \times [0,2\pi]$. La barra verde representa el integrando $\textbf{F}(\textbf{r}(u,v)) \cdot \textbf{N}(u,v)$ evaluado en $(u_0,v_0)$. El volumen bajo la superficie que traza es la integral de superficie vectorial.</figcaption>
         </figure>
         
@@ -2174,7 +2168,7 @@
         <p style="text-align-last:justify;">De las ecuaciones del <ref ref_id="area_superficie"></ref> y del <ref ref_id="integral_superficie_escalar_uv"></ref> podemos</p>
 
         <figure id="ejemplo_area_superficie">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_area_superficie.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_area_superficie.html" poster="poster/page_117.png"></div>
           <figcaption>Una superficie con parametrización $\textbf{r}(u,v)$. En la parte superior se muestra una aproximación de su área de superficie.</figcaption>
         </figure>
       </div>
@@ -2188,7 +2182,7 @@
         <p style="text-align-last:justify;">Sea $S$ una superficie que modela una sábana de metal. Su densidad superficial (masa por unidad de área) está dada por una función continua $\rho(x,y,z)$. Como la masa es igual a densidad por área, entonces podemos aproximar la masa de un pedazo</p>
 
         <figure id="ejemplo_masa_sabana">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_masa_sabana.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_masa_sabana.html" poster="poster/page_118.png"></div>
           <figcaption>Una sábana parametrizada por $\textbf{r}(u,v)$. Su función de densidad $\rho(x,y,z)$ no se puede graficar porque existe en un espacio de cuatro dimensiones. En la parte superior se muestra una aproximación de la masa de la sábana.</figcaption>
         </figure>
       </div>
@@ -2202,7 +2196,7 @@
         <p style="text-align-last:justify;">La densidad de carga superficial (carga eléctrica por unidad de</p>
 
         <figure id="ejemplo_carga_superficie">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_carga_superficie.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_carga_superficie.html" poster="poster/page_119.png"></div>
           <figcaption>Una superficie parametrizada por $\textbf{r}(u,v)$. Su función de densidad de carga superficial $\sigma(x,y,z)$ no se puede graficar porque existe en un espacio de cuatro dimensiones. En la parte superior se muestra una aproximación de la carga total de la superficie.</figcaption>
         </figure>
       </div>
@@ -2221,7 +2215,7 @@
       <!--  -->
       <div class="page">
         <figure id="explicacion_flujo_r3">
-          <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion8/explicacion_flujo_r3.html"></div>
+          <div class="interactive" width="600" height="450" src="interactivos/capitulo3/seccion8/explicacion_flujo_r3.html" poster="poster/page_121.png"></div>
           <figcaption>En rojo se muestra una superficie $S$ y en azul un campo vectorial $\textbf{F}$ que representa la velocidad de un fluido. Pulsa el botón para iniciar la animación y ver cómo el fluido atraviesa un pedazo pequeño de $S$ en una unidad de tiempo.</figcaption>
         </figure>
 
@@ -2235,7 +2229,7 @@
         <p>$(\textbf{F}(\textbf{r}(u^*,v^*)) \cdot \textbf{N}(u^*,v^*)) \Delta S$. Por lo tanto, dado que la masa que fluye a través de un pedazo de $S$ con área $\Delta S$ es $\textbf{F} \cdot \textbf{N} \Delta S$, entonces la tasa de flujo con la cual el fluido fluye a través de $S$ es la integral de superficie vectorial $\iint\limits_S \textbf{F} \cdot \textbf{N} dS$.</p>
 
         <figure id="ejemplo_flujo_r3">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_flujo_r3.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo3/seccion8/ejemplo_flujo_r3.html" poster="poster/page_122.png"></div>
           <figcaption>Una superficie $S$ parametrizada por $\textbf{r}(u,v)$ y un campo vectorial $\textbf{F}$. En la parte superior se muestra una aproximación del flujo de $\textbf{F}$ a través de $S$.</figcaption>
         </figure>
       </div>
@@ -2272,7 +2266,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_tipos_curvas">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion1/ejemplo_tipos_curvas.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion1/ejemplo_tipos_curvas.html" poster="poster/page_125.png"></div>
           <figcaption>Tipos de curvas que pueden ser o no ser cerradas, y ser o no simples.</figcaption>
         </figure>
 
@@ -2290,7 +2284,7 @@
         </div>
 
         <figure id="ejemplo_tipos_regiones">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion1/ejemplo_tipos_regiones.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion1/ejemplo_tipos_regiones.html" poster="poster/page_126.png"></div>
           <figcaption>Una región simplemente conexa (azul), una región conexa pero no simplemente conexa (verde) y una región disconexa (rojo). En las regiones simplemente conexas cualquier curva cerrada simple (como un círculo) contenida completamente dentro de la superficie se puede contraer, permaneciendo en la región, hasta ser un punto. En las regiones no simplemente conexas (como el toro), existen curvas tales que al contraerlos se pueden salir de la región, sin embargo, al ser conexas, sigue existiendo una trayectoria entre cualquier par de puntos contenida dentro de la región.</figcaption>
         </figure>
       </div>
@@ -2327,10 +2321,10 @@
           \[
             \begin{aligned}
               \oint_C \textbf{F} \cdot d\textbf{r} 
-                &= \oint_C \nabla f \cdot d\textbf{r} \\
-                &= f(\textbf{r}(b)) - f(\textbf{r}(a)) \\
-                &= f(\textbf{r}(b)) - f(\textbf{r}(b)) \\
-                &= 0
+                &amp;= \oint_C \nabla f \cdot d\textbf{r} \\
+                &amp;= f(\textbf{r}(b)) - f(\textbf{r}(a)) \\
+                &amp;= f(\textbf{r}(b)) - f(\textbf{r}(b)) \\
+                &amp;= 0
             \end{aligned}
           \]</p>
 
@@ -2344,7 +2338,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_teorema_fundamental_integrales_linea">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_teorema_fundamental_integrales_linea.html"></div>
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_teorema_fundamental_integrales_linea.html" poster="poster/page_129.png"></div>
           <figcaption>El campo conservativo $\textbf{F}(x,y) = \langle y + 2, x \rangle$, cuya función potencial es $f(x,y) = xy + 2x$, definida sobre la curva $\textbf{r}(t) = \langle t^3 - 6t, t \rangle$ con $t \in [-2.9,2.9]$. El <ref ref_id="teorema_fundamental_integrales_linea"></ref> establece que $f$ en realidad es una función que representa el área bajo la curva $\textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t)$ entre $0$ y $t$.</figcaption>
         </figure>
       </div>
@@ -2352,7 +2346,7 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_independencia_trayectoria">
-          <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_independencia_trayectoria.html"></div>
+          <div class="interactive" width="800" height="1000" src="interactivos/capitulo4/seccion1/ejemplo_independencia_trayectoria.html" poster="poster/page_130.png"></div>
           <figcaption>El campo conservativo $\textbf{F} = \nabla (y^2 - xy)$. Su dominio contiene las curvas $\textbf{r}_1(t) = \langle -t^2 + 2\pi t, t \rangle$ y $\textbf{r}_2(t) = \langle 3\sin(t), t \rangle$, definidas sobre el intervalo $[0, 2\pi]$. Abajo se calcula la integral de línea de $\textbf{F}$ a lo largo de $\textbf{r}_0$ en $[0,t_0]$ y a lo largo de $\textbf{r}_1$ en $[0,t_1]$. Por el <ref ref_id="campos_conservativos_son_independientes_trayectoria"></ref>, cuando $t_0 = 2\pi = t_1$, las integrales serán iguales.</figcaption>
         </figure>
       </div>
@@ -2410,9 +2404,9 @@
             \[
               \begin{aligned}
                 g_y(x,y) + h'(y) = Q(x,y) 
-                  &\Rightarrow 3e^x y^2 + x + h'(y) = Q(x,y) \\
-                  &\Rightarrow h'(y) = Q(x,y) - 3e^x y^2 - x \\
-                  &\Rightarrow h'(y) = 0
+                  &amp;\Rightarrow 3e^x y^2 + x + h'(y) = Q(x,y) \\
+                  &amp;\Rightarrow h'(y) = Q(x,y) - 3e^x y^2 - x \\
+                  &amp;\Rightarrow h'(y) = 0
               \end{aligned}
             \]</li>
         </ol>
@@ -2457,10 +2451,10 @@
           <li value="3" style="list-style:none;">
             \[
               \begin{aligned}
-                g_y(x,y,z) + h_y(y,z) &= Q(x,y,z) \\
-                             h_y(y,z) &= Q(x,y,z) - g_y(x,y,z) \\
-                             h_y(y,z) &= 3x^2 y^2 z + e^y \sin(z) - 3x^2 y^2 z \\
-                             h_y(y,z) &= e^y \sin(z)
+                g_y(x,y,z) + h_y(y,z) &amp;= Q(x,y,z) \\
+                             h_y(y,z) &amp;= Q(x,y,z) - g_y(x,y,z) \\
+                             h_y(y,z) &amp;= 3x^2 y^2 z + e^y \sin(z) - 3x^2 y^2 z \\
+                             h_y(y,z) &amp;= e^y \sin(z)
               \end{aligned}
             \]</li>
 
@@ -2477,11 +2471,11 @@
           <li>Sabemos que el resultado del paso anterior es igual a $R(x,y,z)$ y por tanto $\phi'(z) = R(x,y,z) - g_z(x,y,z) - \xi_z(y,z)$.
             \[
               \begin{aligned}
-                g_z(x,y,z) + \xi_z(y,z) + \phi'(z) &= R(x,y,z) \\
-                                          \phi'(z) &= R(x,y,z) - g_z(x,y,z) - \xi_z(y,z) \\
-                                          \phi'(z) &= x^2 y^3 + e^y \cos(z) + \frac{1}{z} - x^2 y^3 \\
-                                                   &\qquad - e^y \cos(z) \\
-                                          \phi'(z) &= \frac{1}{z}
+                g_z(x,y,z) + \xi_z(y,z) + \phi'(z) &amp;= R(x,y,z) \\
+                                          \phi'(z) &amp;= R(x,y,z) - g_z(x,y,z) - \xi_z(y,z) \\
+                                          \phi'(z) &amp;= x^2 y^3 + e^y \cos(z) + \frac{1}{z} - x^2 y^3 \\
+                                                   &amp;\qquad - e^y \cos(z) \\
+                                          \phi'(z) &amp;= \frac{1}{z}
               \end{aligned}
             \]</li>
         </ol>
@@ -2509,7 +2503,7 @@
         <p>El teorema de Green relaciona una integral de línea a lo largo de una curva cerrada simple $C$ con una integral doble sobre la región $D$ acotada por $C$. La región $D$ consiste en todos los puntos dentro de y sobre $C$, es decir, $C \subset D$. En el planteamiento del teorema de Green se usa la convención de que la orientación positiva de $C$ consiste en un recorrido de $C$ en el sentido contrario al de las manecillas del reloj, de tal forma que, cuando un punto recorre la curva, la región que acota siempre está a la izquierda del punto.</p>
 
         <figure id="convencion_para_teorema_green">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/convencion_para_teorema_green.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/convencion_para_teorema_green.html" poster="poster/page_136.png"></div>
           <figcaption>La orientación de curvas utilizada por convención para el teorema de Green.</figcaption>
         </figure>
       </div>
@@ -2542,11 +2536,11 @@
       <!--  -->
       <div class="page">
         <figure id="ejemplo_teorema_green">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/ejemplo_teorema_green.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/ejemplo_teorema_green.html" poster="poster/page_138.png"></div>
           <figcaption>Un campo vectorial $\textbf{F} = \langle P,Q \rangle$ cuyo dominio contiene la región $D$ delimitada por la curva $C$. En su forma tangente, el teorema de Green establece que el volumen del sólido sobre $D$ acotado por $Q_x - P_y$ es igual a la circulación de $\textbf{F}$ a lo largo de $C$. En su forma normal, el teorema de Green establece que el volumen del sólido sobre $D$ acotado por $P_x + Q_y$ es igual al flujo de $\textbf{F}$ a través de $C$.</figcaption>
         </figure>
 
-        <p style="text-align-last:justify;">Hasta ahora sólamente se han mostrado ejemplos con regiones simplemente conexas, pero el teorema de Green también aplica para regiones que no son simplemente conexas. Consideremos una región $D$ acotada por una curva cerrada simple $C$ con orientación positiva. Supongamos que $D$ tienen una cantidad finita de huecos, cada uno delimitado por una curva con orientación negativa, así como se muestra en la <ref ref_id="teorema_green_regiones_generales"></ref>. Dividimos a $D$ en dos</p>
+        <p style="text-align-last:justify;">Hasta ahora solamente se han mostrado ejemplos con regiones simplemente conexas, pero el teorema de Green también aplica para regiones que no son simplemente conexas. Consideremos una región $D$ acotada por una curva cerrada simple $C$ con orientación positiva. Supongamos que $D$ tienen una cantidad finita de huecos, cada uno delimitado por una curva con orientación negativa, así como se muestra en la <ref ref_id="teorema_green_regiones_generales"></ref>. Dividimos a $D$ en dos</p>
       </div>
 
       <!--  -->
@@ -2554,7 +2548,7 @@
         <p>regiones $D_1$ y $D_2$, acotadas por las curvas $C_1$ y $C_2$, respectivamente, de tal forma que $D = D_1 \cup D_2$ y ni $D_1$ ni $D_2$ tienen huecos. Cada una de las regiones $D_1$ y $D_2$ resulta ser simplemente conexa. Ambas $C_1$ y $C_2$ están orientadas positivamente y tienen cotas comunes. Al evaluar una integral de línea vectorial a lo largo de estas curvas, dichas cotas comunes se cancelan ya que están definidas por la misma curva pero con orientación contraria, por lo que las integrales tienen el mismo valor absoluto pero con signo opuesto.</p>
 
         <figure id="teorema_green_regiones_generales">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/teorema_green_regiones_generales.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion2/teorema_green_regiones_generales.html" poster="poster/page_139.png"></div>
           <figcaption>Aplicación del teorema de Green en una región que tiene dos huecos y no es simplemente conexa. Observa que las cotas comunes se cancelan, ya que $\int_{P_2} \textbf{F} \cdot d\textbf{r} = -\int_{-P_2} \textbf{F} \cdot d\textbf{r}$, $\int_{P_4} \textbf{F} \cdot d\textbf{r} = -\int_{-P_4} \textbf{F} \cdot d\textbf{r}$ y $\int_{P_6} \textbf{F} \cdot d\textbf{r} = -\int_{-P_6} \textbf{F} \cdot d\textbf{r}$.</figcaption>
         </figure>
       </div>
@@ -2564,9 +2558,9 @@
         <p>Si $\textbf{F}$ es un campo vectorial cuyo dominio contiene a $D$, entonces el teorema de Green establece que:
           \[
             \begin{aligned}
-              \iint\limits_D (Q_x - P_y)dA &= \iint\limits_{D_1} (Q_x - P_y)dA + \iint\limits_{D_2} (Q_x - P_y)dA \\
-                                           &= \oint_{C_1} \textbf{F} \cdot d\textbf{r} + \oint_{C_2} \textbf{F} \cdot d\textbf{r} \\
-                                           &= \oint_C \textbf{F} \cdot d\textbf{r}
+              \iint\limits_D (Q_x - P_y)dA &amp;= \iint\limits_{D_1} (Q_x - P_y)dA + \iint\limits_{D_2} (Q_x - P_y)dA \\
+                                           &amp;= \oint_{C_1} \textbf{F} \cdot d\textbf{r} + \oint_{C_2} \textbf{F} \cdot d\textbf{r} \\
+                                           &amp;= \oint_C \textbf{F} \cdot d\textbf{r}
             \end{aligned}
           \]</p>
 
@@ -2582,7 +2576,7 @@
         <p style="text-align-last:justify;">Sea $S$ una superficie suave y orientada con vector normal unitario</p>
 
         <figure id="convencion_para_teorema_stokes">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/convencion_para_teorema_stokes.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/convencion_para_teorema_stokes.html" poster="poster/page_141.png"></div>
           <figcaption>La orientación de curvas utilizada por convención para el teorema de Stokes. En azul se muestra la superficie $S$ y en rojo su límite $C$. Selecciona $\textbf{N}$ o $-\textbf{N}$ para cambiar la elección de vector normal unitario.</figcaption>
         </figure>
       </div>
@@ -2612,14 +2606,14 @@
         <p>
           \[
             \begin{aligned}
-              &= \iint\limits_S \text{rot } \textbf{F} \cdot \textbf{N} dS \\
-              &= \iint\limits_S \langle R_y - Q_z, P_z - R_x, Q_x - P_y \rangle \cdot \textbf{k} dA \\
-              &= \iint\limits_S (Q_x - P_y) dA
+              &amp;= \iint\limits_S \text{rot } \textbf{F} \cdot \textbf{N} dS \\
+              &amp;= \iint\limits_S \langle R_y - Q_z, P_z - R_x, Q_x - P_y \rangle \cdot \textbf{k} dA \\
+              &amp;= \iint\limits_S (Q_x - P_y) dA
             \end{aligned}
           \]</p>
 
         <figure id="ejemplo_teorema_stokes">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/ejemplo_teorema_stokes.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion3/ejemplo_teorema_stokes.html" poster="poster/page_143.png"></div>
           <figcaption>Un campo vectorial $\textbf{F}(x,y,z)$ cuyo dominio contiene la superficie $S$ delimitada por la curva $C$. Observa que la región $D$ es la proyección de $S$ sobre el plano $xy$, y la curva $C'$ es la proyección de $C$ sobre el mismo plano. El teorema de Stokes establece que el flujo de $\text{rot } \textbf{F}$ a través de $S$ es igual a la circulación de $\textbf{F}$ a lo largo de $C$.</figcaption>
         </figure>
       </div>
@@ -2651,8 +2645,8 @@
         <p>campo vectorial $\textbf{F}$ dentro de un sólido $E$ es igual al flujo de $\textbf{F}$ a través de $S$.</p>
 
         <figure id="ejemplo_teorema_gauss">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion4/ejemplo_teorema_gauss.html"></div>
-          <figcaption>El sólido $E$ y el campo vectorial $\textbf{F} = \langle -x, -y, z^2 \rangle$. La divergencia de este campo es $\frac{\partial (-x)}{\partial x} + \frac{\partial (-y)}{\partial y} + \frac{\partial (z^2)}{\partial z} = 2z - 2$, lo cual implica que es una fuente en $z > 1$ y un sumidero en $z < 1$. El teorema de Gauss establece que la suma de la divergencia (fuentes y sumideros) a lo largo de todo el sólido $E$ es igual al flujo de $\textbf{F}$ a través de la superficie roja encierra a $E$.</figcaption>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion4/ejemplo_teorema_gauss.html" poster="poster/page_146.png"></div>
+          <figcaption>El sólido $E$ y el campo vectorial $\textbf{F} = \langle -x, -y, z^2 \rangle$. La divergencia de este campo es $\frac{\partial (-x)}{\partial x} + \frac{\partial (-y)}{\partial y} + \frac{\partial (z^2)}{\partial z} = 2z - 2$, lo cual implica que es una fuente en $z &gt; 1$ y un sumidero en $z &lt; 1$. El teorema de Gauss establece que la suma de la divergencia (fuentes y sumideros) a lo largo de todo el sólido $E$ es igual al flujo de $\textbf{F}$ a través de la superficie roja encierra a $E$.</figcaption>
         </figure>
       </div>
 
@@ -2694,14 +2688,14 @@
         <p style="text-align-last:justify;">Sea $\textbf{F}$ un campo de fuerza (conservativo). Una partícula se mueve en el espacio partiendo del punto $P_0$ y termina su movimiento en un punto arbitrario $P_1$. Supongamos que este recorrido se puede modelar con una curva paramétrica suave. Calcular el trabajo que ejerció $\textbf{F}$ sobre la partícula usando una integral de línea, podría resultar muy complicado parametrizar su trayectoria aunque sea</p>
 
         <figure id="ejemplo_trabajo_ejercido_sobre_particula">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_trabajo_ejercido_sobre_particula.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_trabajo_ejercido_sobre_particula.html" poster="poster/page_148.png"></div>
           <figcaption>Utiliza los controles para cambiar el campo de fuerza $\nabla f(x,y,z)$, el punto de partida $P_0 = (x_0,y_0,z_0)$ y el punto de término $P_1 = (x_1,y_1,z_1)$ de la partícula. Se muestran tres distintas trayectorias que pudo haber tomado la partícula, pero el trabajo ejercido por $\nabla f$ no depende de ninguna de ellas.</figcaption>
         </figure>
       </div>
 
       <!--  -->
       <div class="page">
-        <p>una curva suave. Pero gracias al Teorema Fundamental para Integrales de Línea, la trayectoria de la partícula es irrelevante, y el trabajo ejercido depende sólamente de la funcion potencial $f$ de $\textbf{F}$ evaluada en $P_0$ y $P_1$.</p>
+        <p>una curva suave. Pero gracias al Teorema Fundamental para Integrales de Línea, la trayectoria de la partícula es irrelevante, y el trabajo ejercido depende solamente de la función potencial $f$ de $\textbf{F}$ evaluada en $P_0$ y $P_1$.</p>
 
         <h3>Área de una región general en el plano</h3>
 
@@ -2726,16 +2720,16 @@
         <p>
           \[
             \begin{aligned}
-              &= \int_C \textbf{F} \cdot d\textbf{r} \\
-              &= \int^{2\pi}_0 \langle 3\sin(t) - \sin(3t), 6\cos(t) + 2\cos(3t) \rangle \\
-              & \hspace{3.5em} \cdot \langle -3\sin(t) - 3\sin(3t), 3\cos(t) - 3\cos(3t) \rangle\ dt \\
-              &= \int^{2\pi}_0 \left[ \frac{9}{2} \cos(2t) - 3\cos(4t) - \frac{3}{4}\cos(6t) + 3 \right] dt \\
-              &= \left[ \frac{9}{4} \sin(2t) - \frac{3}{4} \sin(4t) - \frac{3}{4} \sin(6t) + 3t \right]^{2\pi}_0 = 6\pi
+              &amp;= \int_C \textbf{F} \cdot d\textbf{r} \\
+              &amp;= \int^{2\pi}_0 \langle 3\sin(t) - \sin(3t), 6\cos(t) + 2\cos(3t) \rangle \\
+              &amp; \hspace{3.5em} \cdot \langle -3\sin(t) - 3\sin(3t), 3\cos(t) - 3\cos(3t) \rangle\ dt \\
+              &amp;= \int^{2\pi}_0 \left[ \frac{9}{2} \cos(2t) - 3\cos(4t) - \frac{3}{4}\cos(6t) + 3 \right] dt \\
+              &amp;= \left[ \frac{9}{4} \sin(2t) - \frac{3}{4} \sin(4t) - \frac{3}{4} \sin(6t) + 3t \right]^{2\pi}_0 = 6\pi
             \end{aligned}
           \]</p>
 
         <figure id="ejemplo_area_region_planar">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_area_region_planar.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/ejemplo_area_region_planar.html" poster="poster/page_150.png"></div>
           <figcaption>Ingresa una parametrización $\textbf{r}(t)$ de una curva cerrada simple para ver una aproximación del área de la región que encierra.</figcaption>
         </figure>
       </div>
@@ -2751,7 +2745,7 @@
         <p style="text-align-last:justify;">Queremos calcular la integral de superficie $\iint\limits_S \text{rot } \textbf{F} \cdot dS$, donde $\textbf{F} = \langle 9x^2+25y^2, x^2z^2, e^xyz \rangle$ y $S$ es la mitad debajo del eje $z$ de</p>
 
         <figure id="elipsoide_y_curva">
-          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/elipsoide_y_curva.html"></div>
+          <div class="interactive" width="800" height="600" src="interactivos/capitulo4/seccion5/elipsoide_y_curva.html" poster="poster/page_151.png"></div>
           <figcaption>La mitad inferior de una elipsoide centrada en el origen y el campo vectorial $\textbf{F} = \langle 9x^2+25y^2, x^2z^2, e^xyz \rangle$.</figcaption>
         </figure>
       </div>
@@ -2771,11 +2765,11 @@
         <p>Entonces, por el teorema de Stokes:
           \[
             \begin{aligned}
-              \iint\limits_S \text{rot } \textbf{F} \cdot dS &= \int_C \textbf{F} \cdot d\textbf{r} \\
-                                                             &= \int_C \textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t) dt \\
-                                                             &= \int^{2\pi}_0 \langle 225, 0, 0 \rangle \cdot \langle -5\sin(t), 3\cos(t), 0 \rangle\ dt \\
-                                                             &= -1125 \int^{2\pi}_0 \sin(t) dt \\
-                                                             &= -1125 \left[ -\cos(t) \right]^{2\pi}_0 = 0
+              \iint\limits_S \text{rot } \textbf{F} \cdot dS &amp;= \int_C \textbf{F} \cdot d\textbf{r} \\
+                                                             &amp;= \int_C \textbf{F}(\textbf{r}(t)) \cdot \textbf{r}'(t) dt \\
+                                                             &amp;= \int^{2\pi}_0 \langle 225, 0, 0 \rangle \cdot \langle -5\sin(t), 3\cos(t), 0 \rangle\ dt \\
+                                                             &amp;= -1125 \int^{2\pi}_0 \sin(t) dt \\
+                                                             &amp;= -1125 \left[ -\cos(t) \right]^{2\pi}_0 = 0
             \end{aligned}
           \]</p>
 
@@ -2792,12 +2786,12 @@
         <p>Para calcular $\int_C \textbf{F} \cdot d\textbf{r}$ directamente, se requiere sumar las integrales de línea de $\textbf{F}$ a lo largo de las cuatro curvas que conforman a $C$: $\textbf{r}(0,v)$, $\textbf{r}(3,v)$, $\textbf{r}(u,\sin(u)-1)$ y $\textbf{r}(u,\sin(u)+1)$. No es muy complicado, pero como $\text{rot } \textbf{F} = \langle 1,0,0 \rangle$, esta integral se puede reducir bastante con el teorema de Stokes:
           \[
             \begin{aligned}
-              \int_C \textbf{F} \cdot d\textbf{r} &= \iint\limits_S \text{rot } \textbf{F} \cdot dS \\
-                                                  &= \iint\limits_D \text{rot } \textbf{F}(\textbf{r}(u,v)) \cdot (\textbf{r}_u \times \textbf{r}_v) dudv \\
-                                                  &= \int^3_0 \int^{\sin(u)+1}_{\sin(u)-1} \langle 1,0,0 \rangle \cdot \langle u+v, v-u, -2 \rangle dvdu \\
-                                                  &= \int^3_0 \int^{\sin(u)+1}_{\sin(u)-1} (u + v) dvdu \\
-                                                  &= 2\int^3_0 (\sin(u) + u) du \\
-                                                  &= 2 \left[ \frac{1}{2} u^2 - \cos(u) \right]^3_0 = 11 - 2\cos(3)
+              \int_C \textbf{F} \cdot d\textbf{r} &amp;= \iint\limits_S \text{rot } \textbf{F} \cdot dS \\
+                                                  &amp;= \iint\limits_D \text{rot } \textbf{F}(\textbf{r}(u,v)) \cdot (\textbf{r}_u \times \textbf{r}_v) dudv \\
+                                                  &amp;= \int^3_0 \int^{\sin(u)+1}_{\sin(u)-1} \langle 1,0,0 \rangle \cdot \langle u+v, v-u, -2 \rangle dvdu \\
+                                                  &amp;= \int^3_0 \int^{\sin(u)+1}_{\sin(u)-1} (u + v) dvdu \\
+                                                  &amp;= 2\int^3_0 (\sin(u) + u) du \\
+                                                  &amp;= 2 \left[ \frac{1}{2} u^2 - \cos(u) \right]^3_0 = 11 - 2\cos(3)
             \end{aligned}
           \]</p>
 
@@ -2809,7 +2803,7 @@
         <p>igual a $11 - 2\cos(3)$.</p>
 
         <figure id="ejemplo_aplicacion_stokes">
-          <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_stokes.html"></div>
+          <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_stokes.html" poster="poster/page_154.png"></div>
           <figcaption>Utiliza los controles $u_{min}$, $u_{max}$, $g_1(u)$ y $g_2(u)$ para cambiar la región de Tipo I $D = \{ (x,y) \in \R^2: u_{min} \leq u \leq u_{max},\ g_1(u) \leq v \leq g_2(u) \}$ sobre la cual está definida la superficie $S$ con parametrización $\textbf{r}(u,v)$. Modifica el campo vectorial $\textbf{F}$ y pulsa el botón <i>Calcular</i> para aproximar el flujo de $\text{rot } \textbf{F}$ a través de $S$. Toma en cuenta que, dependiendo de los parámetros introducidos, este cálculo puede ser lento.</figcaption>
         </figure>
       </div>
@@ -2846,13 +2840,13 @@
         <p>
           \[
             \begin{aligned}
-              &= \int^1_0 \int^1_0 \int^2_1 \frac{1}{x^2} dxdydz \\
-              &= \frac{1}{2} \int^1_0 \int^1_0 dydz = \frac{1}{2} \int^1_0 dz = \frac{1}{2}
+              &amp;= \int^1_0 \int^1_0 \int^2_1 \frac{1}{x^2} dxdydz \\
+              &amp;= \frac{1}{2} \int^1_0 \int^1_0 dydz = \frac{1}{2} \int^1_0 dz = \frac{1}{2}
             \end{aligned}
           \]</p>
 
         <figure id="ejemplo_aplicacion_gauss">
-          <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_gauss.html"></div>
+          <div class="interactive" width="800" height="800" src="interactivos/capitulo4/seccion5/ejemplo_aplicacion_gauss.html" poster="poster/page_156.png"></div>
           <figcaption>Utiliza los controles $a$, $b$, $g_1(x)$ y $g_2(x)$ para cambiar la región de Tipo I $D = \{ (x,y) \in \R^2: a \leq x \leq b,\ g_1(x) \leq y \leq g_2(x) \}$. La región $E$ que se dibujará es el sólido entre $h_1(D)$ y $h_2(D)$.</figcaption>
         </figure>
       </div>
@@ -2873,7 +2867,7 @@
         <h1 class="chap_name" id="cap_bibliografia" prefix="">Bibliografía</h1>
 
         <bibitem id="SH16">
-          Strang, G., & Herman, E. (2016). Calculus Volume 3 (1ra ed). OpenStax.
+          Strang, G., &amp; Herman, E. (2016). Calculus Volume 3 (1ra ed). OpenStax.
         </bibitem>
 
         <bibitem id="Mo12">
@@ -2885,25 +2879,23 @@
         </bibitem>
 
         <bibitem id="Sw79">
-          Swokowski, E. W. (1979). Calculus with analytic geometry (2da ed.). Prindle, Weber & Schmidt Incorporated.
+          Swokowski, E. W. (1979). Calculus with analytic geometry (2da ed.). Prindle, Weber &amp; Schmidt Incorporated.
         </bibitem>
 
         <bibitem id="We20">
-          Weisstein, Eric W. "Regular Parameterization." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/RegularParameterization.html
+          Weisstein, Eric W. "Regular Parameterization." From MathWorld--A Wolfram Web Resource. <a href="https://mathworld.wolfram.com/RegularParameterization.html" target="_blank">https://mathworld.wolfram.com/RegularParameterization.html</a>
         </bibitem>
 
         <bibitem id="We21">
-          Weisstein, Eric W. "Smooth Surface." From MathWorld--A Wolfram Web Resource. https://mathworld.wolfram.com/SmoothSurface.html
+          Weisstein, Eric W. "Smooth Surface." From MathWorld--A Wolfram Web Resource. <a href="https://mathworld.wolfram.com/SmoothSurface.html" target="_blank">https://mathworld.wolfram.com/SmoothSurface.html</a>
         </bibitem>
       </div>
 
       <!--  -->
-      <div class="page">
-
-      </div>
+      <div class="page"></div>
 
       <!--  -->
-      <div class="page" num="" style="background-image: radial-gradient(white, #ecf0f1, #e3e5e7); display:flex; align-items:center; justify-content:center;"></div>
+      <div class="page invertcolor" num="" style="background-image: radial-gradient(white, #ecf0f1, #e3e5e7); display:flex; align-items:center; justify-content:center;"></div>
 
     <!-- [cierra] pages_container -->
     </div>
